@@ -7,7 +7,8 @@ import useFetch from "../useFetch";
 const KlasseList = ({options, selected}) => {
 
     const {data: klassetrinn, error, isPending} = useFetch('http://localhost:9000/klasser/');
-
+    //const [answer, setAnswer] = useState(options);
+    
     
 
     return ( 
@@ -23,9 +24,10 @@ const KlasseList = ({options, selected}) => {
                 klassetrinn.map((klasse) =>(
                     <CustomButton 
                     key={klasse.id}
-                    options={klasse.klassetrinn}
+                    options={klasse}
                     onClick={() =>{
-                        selected(klasse.id)
+                        //setAnswer([klasse])
+                        selected(klasse)
                     }}
                     >
                     {klasse.klassetrinn}- trinn

@@ -5,7 +5,7 @@ const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
-    //const [answer, setAnswer] = useState(null);
+    const [answer, setAnswer] = useState(null);
     
       
       //runs every re-render
@@ -27,7 +27,7 @@ const useFetch = (url) => {
               setData(data);
               setIsPending(false);
               setError(null);
-              //setAnswer(data);
+              setAnswer(answer);
 
           })
           .catch(err => {

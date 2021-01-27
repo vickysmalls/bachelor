@@ -13,10 +13,11 @@ class App extends Component {
   }
   
 
+  //
   computeAnswer = (answer) =>{
     if(answer){
         this.setState({
-          valgtTrinn: this.state.valgteFag + 1
+          valgtTrinn: this.state.valgteFag
         });
     }
     console.log(answer);
