@@ -6,10 +6,8 @@ import useFetch from "../useFetch";
 
 const KlasseList = ({options, selected}) => {
 
-    //const [answer, setAnswer] = useState(options);
     const {data: klassetrinn, error, isPending} = useFetch('http://localhost:9000/klasser/');
-   
-    
+
     
 
     return ( 
@@ -26,12 +24,17 @@ const KlasseList = ({options, selected}) => {
                     <CustomButton 
                     key={klasse.id}
                     options={klasse.klassetrinn}
-                    //onClick={handleClick}
+                    onClick={() =>{
+                        selected(klasse.id)
+                    }}
                     >
                     {klasse.klassetrinn}- trinn
                     </CustomButton>
                 ))
+                
+                
             }
+            
         </div>
      );
 }

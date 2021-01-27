@@ -8,17 +8,19 @@ import { Component } from 'react';
 class App extends Component {
 
   state ={
-    obligFagBank: [],
+    valgtTrinn: []
 
   }
+  
 
-  //check is correct answer and add points (score) and amount of responses (clicks)
-  computeAnswer = (answer, correctAnswer) =>{
-    if(answer === correctAnswer){
+  computeAnswer = (answer) =>{
+    if(answer){
         this.setState({
-          obligFagBank: this.state.obligFagBank
+          valgtTrinn: this.state.valgteFag + 1
         });
     }
+    console.log(answer);
+    
 }
 
   render(){
@@ -28,7 +30,9 @@ class App extends Component {
       <Navbar/>
       <div className="content">
       <div className='klasseliste'>
-        <KlasseList/>
+        <KlasseList
+        selected = {answer => this.computeAnswer(answer)}
+        />
       </div>
       <div className="fagcard">
         <FagCard/>
