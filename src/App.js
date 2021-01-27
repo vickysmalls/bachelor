@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import FagCard from './fag-card/oblig-fag-card';
+import Navbar from './Header/Header';
+import KlasseList from './VelgKlasse/KlasseList';
 import './App.css';
+import { Component } from 'react';
+//import VelgKlassetrinn from './VelgKlasse/VelgKlassetrinn';
 
-function App() {
-  return (
+class App extends Component {
+
+  state ={
+    obligFagBank: [],
+
+  }
+
+  //check is correct answer and add points (score) and amount of responses (clicks)
+  computeAnswer = (answer, correctAnswer) =>{
+    if(answer === correctAnswer){
+        this.setState({
+          obligFagBank: this.state.obligFagBank
+        });
+    }
+}
+
+  render(){
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <div className="content">
+      <div className='klasseliste'>
+        <KlasseList/>
+      </div>
+      <div className="fagcard">
+        <FagCard/>
+        <FagCard/>
+        <FagCard/>
+      </div>
+      
+      </div>
+      
     </div>
   );
+  }
+  
 }
 
 export default App;

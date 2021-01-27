@@ -1,0 +1,39 @@
+import { useState  } from "react";
+import CustomButton from "../CustomButton/CustomButton";
+import FagCard from "../fag-card/oblig-fag-card";
+import ObligFag from "../oblig-fag/oblig-fag";
+import useFetch from "../useFetch";
+
+const KlasseList = ({options, selected}) => {
+
+    //const [answer, setAnswer] = useState(options);
+    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:9000/klasser/');
+   
+    
+    
+
+    return ( 
+        <div className="klasse-list">
+            {
+                isPending && <div>Loading...</div>
+            }
+            {
+                error && <div>{error}</div>
+            }
+            {
+                klassetrinn && 
+                klassetrinn.map((klasse) =>(
+                    <CustomButton 
+                    key={klasse.id}
+                    options={klasse.klassetrinn}
+                    //onClick={handleClick}
+                    >
+                    {klasse.klassetrinn}- trinn
+                    </CustomButton>
+                ))
+            }
+        </div>
+     );
+}
+ 
+export default KlasseList;

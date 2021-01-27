@@ -1,0 +1,14 @@
+.header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    background-color: #FFDC00;
+    
+  }
+  .header-text{
+    font-size: 60px;
+    padding-left: 20px;
+  }
+  

@@ -1,0 +1,90 @@
+{
+  "klasser": [
+    {
+    "id": 1,
+    "klassetrinn": "1-7",
+    "obligFag": [
+      {
+        "id": 1,
+        "fag": "Naturfag"
+      },
+      {
+        "id": 2,
+        "fag": "Matte"
+      },
+      {
+        "id": 3,
+        "fag": "Engelsk"
+      }
+  
+    ],
+    "valgFag": [
+      {
+        "id": 1,
+        "fag": "Naturfag"
+      },
+      {
+        "id": 2,
+        "fag": "Matte"
+      },
+      {
+        "id": 3,
+        "fag": "Engelsk"
+      },
+      {
+        "id": 4,
+        "fag": "KRLE"
+      },
+      {
+        "id": 5,
+        "fag": "GYM"
+      }
+  
+    ]
+  },
+  {
+    "id": 2,
+    "klassetrinn": "5-10",
+    "obligFag": [
+      {
+        "id": 4,
+        "fag": "Naturfag"
+      },
+      {
+        "id": 5,
+        "fag": "Matte"
+      },
+      {
+        "id": 6,
+        "fag": "Engelsk"
+      }
+  
+    ],
+    "valgFag": [
+      {
+        "id": 6,
+        "fag": "Naturfag"
+      },
+      {
+        "id": 7,
+        "fag": "Matte"
+      },
+      {
+        "id": 8,
+        "fag": "Engelsk"
+      },
+      {
+        "id": 9,
+        "fag": "KRLE"
+      },
+      {
+        "id": 10,
+        "fag": "GYM"
+      }
+  
+    ]
+  }
+
+  ]
+  
+}
