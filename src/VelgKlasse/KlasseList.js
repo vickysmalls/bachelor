@@ -30,7 +30,7 @@ const KlasseList = ({options, selected}) => {
                         selected(klasse)
                     }}
                     >
-                    {klasse.klassetrinn}- trinn
+                    Grunnskolelærer {klasse.klassetrinn} trinn
                     </CustomButton>
                 ))
                 

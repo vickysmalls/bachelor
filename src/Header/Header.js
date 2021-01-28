@@ -1,10 +1,14 @@
 import './Header.css';
+import logo from './Logo.png';
+import logo2 from './OsloMet logo for nett.png';
 const Header = () => {
     return ( 
     <div className="header">
-        <h2>Oslo Met</h2>
-      </div>
-     );
+        
+        <img src={logo2} alt="OslometLogo"/>
+    </div>
+    );
+      
 }
  
 export default Header;
