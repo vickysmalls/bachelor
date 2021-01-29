@@ -3,26 +3,18 @@ import Navbar from './Header/Header';
 import KlasseList from './VelgKlasse/KlasseList';
 import './App.css';
 import { Component } from 'react';
+import VelgMaster from './VelgMaster/VelgMaster';
+import SingleKlasse from './VelgKlasse/SingleKlasse';
 //import VelgKlassetrinn from './VelgKlasse/VelgKlassetrinn';
 
 class App extends Component {
 
+  /*
   state ={
-    valgtTrinn: []
-
+    valgtTrinn: [],
+    btns: ['1-7', '5-10']
   }
-  
-
-  //
-  computeAnswer = (answer) =>{
-    if(answer){
-        this.setState({
-          valgtTrinn: this.state.valgteFag
-        });
-    }
-    console.log(answer);
-    
-}
+  */
 
   render(){
 
@@ -32,9 +24,14 @@ class App extends Component {
       <div className="content">
       <div className='klasseliste'>
         <KlasseList
-        selected = {answer => this.computeAnswer(answer)}
+        //selected = {answer => this.computeAnswer(answer)}
+        
+        //btns={this.state.btns}
+        
         />
+       
       </div>
+      
       <div className="fagcard">
         <FagCard/>
         <FagCard/>

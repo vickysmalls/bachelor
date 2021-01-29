@@ -19,9 +19,22 @@ const useFetchOblig = (url) => {
                   throw Error('Could not fetch the data for that resource');
                   
               }
+              
               return res.json()
           })
           .then(data => {
+              /*
+            let productCopy;
+
+            if(data){
+              data= this.state.data;
+            }
+            else{
+              data= this.state.data.filter(item=>
+                 item.fag===data)
+            }*/
+        
+            
               setData(data);
               
 

@@ -1,5 +1,5 @@
 .custom-button {
-    min-width: 165px;
+    min-width: 350px;
     width: auto;
     height: 50px;
     letter-spacing: 0.5px;
@@ -9,7 +9,6 @@
     background-color: black;
     color: white;
     text-transform: uppercase;
-    font-family: 'Open Sans Condensed';
     font-weight: bolder;
     border: none;
     cursor: pointer;
@@ -25,11 +24,7 @@
     color: black;
     border: 1px solid black;
 }
-.custom-button, .inverted {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-}
+
 .custom-button, .inverted:hover {
     background-color: black;
     color: white;
