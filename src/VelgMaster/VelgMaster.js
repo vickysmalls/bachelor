@@ -7,10 +7,19 @@ import SingelKlasse from '../VelgKlasse/SingleKlasse';
 
 const VelgMaster = (props) => {
 
-    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/masterfag');
+    
+    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
     //const [answer, setAnswer] = useState(options);
-    const [answer, setAnswer] = useState();
-    const [single, setSingle] = useState();
+    //const [answer, setAnswer] = useState();
+    const [loggedIn, isLoggedIn] = useState(false);
+
+    function handleLoginClick() {
+        this.setState({isLoggedIn: true});
+      }
+    
+    function  handleLogoutClick() {
+        this.setState({isLoggedIn: false});
+      }
     
 
     //logger tabellen av svaret fra klassetrinn
@@ -41,8 +50,10 @@ const VelgMaster = (props) => {
         <div className='card-container'>
 
             {
-                klassetrinn && 
+                klassetrinn &&
                     klassetrinn.map((oblig)=>(
+                        //om klasseId er det samme som answer fra KlasseList =>
+                        oblig.klasseId ===props.answer &&
                     <CustomButton 
                         key={oblig.id}
                         options={oblig.fag}
@@ -50,7 +61,7 @@ const VelgMaster = (props) => {
                             //setAnswer([klasse])
                             //selected(oblig)
                             handleClick(oblig)
-                            setAnswer(oblig)
+                            //setAnswer(oblig)
                             //answer1(oblig.id)
                         }}
                         >
@@ -61,11 +72,16 @@ const VelgMaster = (props) => {
                
           
             }
+            {
+                
+
+           
+            }
  
         </div>
         <div className="ny">
         {
-            <SingelKlasse options={answer}></SingelKlasse>
+            <h1>{props.answer}</h1>
         }
         </div>
         </div>

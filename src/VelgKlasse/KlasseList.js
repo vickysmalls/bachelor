@@ -4,7 +4,7 @@ import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
 
 
-const KlasseList = ({id}) => {
+const KlasseList = ({selected}) => {
 
     
     const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/klasser');
@@ -17,6 +17,8 @@ const KlasseList = ({id}) => {
     function handleClick(e) {
         console.log('The link was clicked.');
         console.log(e);
+        const id = e.id;
+        console.log('id fra handleClick = '+id);
         
     }
     
@@ -42,7 +44,7 @@ const KlasseList = ({id}) => {
                         //selected(klasse)
                         handleClick((klasse))
                         
-                        setAnswer(klasse)
+                        setAnswer(klasse.id)
                     }}
                     >
                     Grunnskolelærer {klasse.klassetrinn} trinn
@@ -55,7 +57,10 @@ const KlasseList = ({id}) => {
                 
             }
             {
-                <VelgMaster answer={answer}/>
+                <VelgMaster answer={answer}></VelgMaster>
+            }
+            {
+                
             }
             
 
