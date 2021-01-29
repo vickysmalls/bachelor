@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
-import FagCard from '../fag-card/oblig-fag-card';
 import useFetch from '../useFetch';
 
 

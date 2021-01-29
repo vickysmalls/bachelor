@@ -3,9 +3,6 @@ import Navbar from './Header/Header';
 import KlasseList from './VelgKlasse/KlasseList';
 import './App.css';
 import { Component } from 'react';
-import VelgMaster from './VelgMaster/VelgMaster';
-import SingleKlasse from './VelgKlasse/SingleKlasse';
-//import VelgKlassetrinn from './VelgKlasse/VelgKlassetrinn';
 
 class App extends Component {
 

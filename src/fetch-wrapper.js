@@ -21,7 +21,7 @@ function post(url, body) {
     return fetch(url, requestOptions);
 }
 
-/*
+
 function handleResponse(response) {
     return response.text().then(text => {
         const data = text && JSON.parse(text);
@@ -34,4 +34,3 @@ function handleResponse(response) {
         return data;
     });
 }
-*/

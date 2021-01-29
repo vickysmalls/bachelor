@@ -1,7 +1,5 @@
 import { useState  } from "react";
 import CustomButton from "../CustomButton/CustomButton";
-import FagCard from "../fag-card/oblig-fag-card";
-import ObligFag from "../oblig-fag/oblig-fag";
 import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
 
@@ -9,7 +7,7 @@ import VelgMaster from "../VelgMaster/VelgMaster";
 const KlasseList = ({id}) => {
 
     
-    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:9000/klasser/');
+    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/klasser');
     const [answer, setAnswer] = useState(klassetrinn);
      
     
@@ -21,24 +19,11 @@ const KlasseList = ({id}) => {
         console.log(e);
         
     }
-
-    //logger tabellen av svaret fra klassetrinn
-    function computeAnswer (answer){
     
-        if(answer==='1-7'){
-            this.setState({
-              valgtTrinn: this.state.valgteFag
-              
-            });
-        }
-        
-        
-        console.log(answer);
-    }
-    
-
     return ( 
+        
         <div className="klasse-list">
+        <h2>Velg Klassetrinn</h2>
             {
                 isPending && <div>Loading...</div>
             }
@@ -53,7 +38,7 @@ const KlasseList = ({id}) => {
                     options={klasse}
                     onClick={() =>{
                         //setAnswer([klasse])
-                        computeAnswer(klasse)
+                        
                         //selected(klasse)
                         handleClick((klasse))
                         

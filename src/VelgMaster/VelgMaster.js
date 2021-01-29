@@ -2,14 +2,12 @@ import React, {useState} from 'react'
 import './VelgMaster.css';
 import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
-import KlasseList from '../VelgKlasse/KlasseList';
-import FagCard from '../fag-card/oblig-fag-card';
 import SingelKlasse from '../VelgKlasse/SingleKlasse';
 
 
 const VelgMaster = (props) => {
 
-    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:9000/klasser/');
+    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/masterfag');
     //const [answer, setAnswer] = useState(options);
     const [answer, setAnswer] = useState();
     const [single, setSingle] = useState();
@@ -39,14 +37,12 @@ const VelgMaster = (props) => {
 
     return ( 
         <div>
+        <h2>Velg Masteremne</h2>
         <div className='card-container'>
-            
-            
-              
+
             {
                 klassetrinn && 
-                klassetrinn.map((klasse) =>(
-                    klasse.masterFag.map((oblig)=>(
+                    klassetrinn.map((oblig)=>(
                     <CustomButton 
                         key={oblig.id}
                         options={oblig.fag}
@@ -58,11 +54,11 @@ const VelgMaster = (props) => {
                             //answer1(oblig.id)
                         }}
                         >
-                         {oblig.fag}
+                         {oblig.fagnavn}
                     </CustomButton>
                     ))
                     
-                ))
+               
           
             }
  
