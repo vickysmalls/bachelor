@@ -1,15 +1,14 @@
 import React, {useState} from 'react'
-import './VelgMaster.css';
 import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
 import SingelKlasse from '../VelgKlasse/SingleKlasse';
-import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
+import VelgMaster from '../VelgMaster/VelgMaster';
 
 
-const VelgMaster = (props) => {
+const ObligFagCard = (props) => {
 
     
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
+    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
     const [obj, setObj] = useState();
     const [answer, setAnswer] = useState();
     
@@ -26,7 +25,7 @@ const VelgMaster = (props) => {
 
     return ( 
         <div>
-        <h2>Velg Masteremne</h2>
+        <h2>Obligs</h2>
         <div className='card-container'>
 
             {
@@ -41,7 +40,7 @@ const VelgMaster = (props) => {
                             //setAnswer([klasse])
                             //selected(oblig)
                             handleClick(oblig)
-                            setAnswer(oblig.id)
+                            //setAnswer(oblig.id)
                             setObj(oblig)
                             //answer1(oblig.id)
                         }}
@@ -50,25 +49,27 @@ const VelgMaster = (props) => {
                     </CustomButton>
                     ))
                     
+                    
+                    
                
           
             }
-            {
-                
-
-           
-            }
+            
  
         </div>
         <div className="ny">
         {
-            <VelgMuligheter obj={obj} answer={answer}/>
-            //<h1>{props.answer}</h1>
+            
+            <VelgMaster answer={props.answer}></VelgMaster>
+            
+
+       
         }
+        
         </div>
         </div>
         
         
      );
 };
-export default VelgMaster;
+export default ObligFagCard;

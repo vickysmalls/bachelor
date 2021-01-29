@@ -6,59 +6,69 @@ import {useState, useEffect} from 'react';
 
 
 
-const FagCard = () => {
+const FagCard = (props) => {
 
-    const [answer, setAnswer] = useState(null);
+    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/obligfag/');
+    const [obj, setObj] = useState();
+    const [answer, setAnswer] = useState();
     
-
-    const {data: obligFags, isPending, error} = useFetch('http://localhost:5000/api/obligfag/');
-
+    
+   
+    //logger ved trykk
     function handleClick(e) {
         console.log('The link was clicked.');
         
         console.log(e);
         
     }
+    
 
-    return (
+    return ( 
         <div>
-        <h2>Obliatoriske fag</h2>
-        <div className="card-container">
-        {
-            isPending && <div>Loading...</div>
-        }
-        {
-            error && <div>{error}</div>
-        }
-        {
-            //Viser de obliatoriske fagene
-            obligFags && 
-            obligFags.map((klasse) =>(
+        <h2>Velg Masteremne</h2>
+        <div className='card-container'>
 
+            {
+                klassetrinn &&
+                    klassetrinn.map((oblig)=>(
+                        //om klasseId er det samme som answer fra KlasseList =>
+                        klassetrinn.klasseId ===props.answer &&
                     <CustomButton 
-                    key={klasse.id}
-                    options={klasse}
-                    onClick={() =>{
-                        //setAnswer([klasse])
-                        
-                        handleClick((klasse))
-                        
-                        setAnswer(klasse)
-                    }}
-                    >
-                    {klasse.fagnavn}
+                        //key={oblig.klasseId}
+                        options={oblig}
+                        onClick={() =>{
+                            //setAnswer([klasse])
+                            //selected(oblig)
+                            handleClick(oblig)
+                            setAnswer(oblig.id)
+                            setObj(oblig)
+                            //answer1(oblig.id)
+                        }}
+                        >
+                         {oblig.fagnavn}
                     </CustomButton>
-            ))
-        }
+                    ))
+                    
+               
+          
+            }
+            {
+                
+
+           
+            }
+ 
+        </div>
+        <div className="ny">
         {
             
+            //<h1>{props.answer}</h1>
         }
-        
-          
         </div>
         </div>
         
-      );
+        
+     );
     };
 
 

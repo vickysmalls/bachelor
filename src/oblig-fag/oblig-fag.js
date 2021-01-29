@@ -22,6 +22,7 @@ const ObligFag = ({options, selected}) => {
                     
                 )
             }
+            
              
              </div>   
             

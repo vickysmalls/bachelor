@@ -28,6 +28,7 @@ const useFetch = (url, id) => {
               setIsPending(false);
               setError(null);
               setAnswer(answer);
+              
 
           })
           .catch(err => {

@@ -3,6 +3,7 @@ import Navbar from './Header/Header';
 import KlasseList from './VelgKlasse/KlasseList';
 import './App.css';
 import { Component } from 'react';
+import SemesterList from './Semester/Semester';
 
 class App extends Component {
 
@@ -28,8 +29,11 @@ class App extends Component {
         />
        
       </div>
+      <div>
       
+      </div>
       <div className="fagcard">
+      
         <FagCard/>
         <FagCard/>
         <FagCard/>

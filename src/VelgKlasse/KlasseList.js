@@ -2,6 +2,8 @@ import { useState  } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
+import FagCard from '../oblig-fag/oblig-fag';
+import ObligFagCard from "../oblig-fag/oblig-fag-card";
 
 
 const KlasseList = ({selected}) => {
@@ -9,6 +11,8 @@ const KlasseList = ({selected}) => {
     
     const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/klasser');
     const [answer, setAnswer] = useState(klassetrinn);
+    const [obj, setObj] = useState();
+    const [key, setKey] = useState();
      
     
     
@@ -36,12 +40,12 @@ const KlasseList = ({selected}) => {
                 klassetrinn && 
                 klassetrinn.map((klasse) =>(
                     <CustomButton 
-                    key={klasse.id}
+                    //key={klasse.id}
                     options={klasse}
                     onClick={() =>{
                         //setAnswer([klasse])
-                        
-                        //selected(klasse)
+                        setKey(klasse.id)
+                        setObj(klasse)
                         handleClick((klasse))
                         
                         setAnswer(klasse.id)
@@ -57,8 +61,10 @@ const KlasseList = ({selected}) => {
                 
             }
             {
-                <VelgMaster answer={answer}></VelgMaster>
+                <ObligFagCard answer={answer}></ObligFagCard>
             }
+            
+            
             {
                 
             }
