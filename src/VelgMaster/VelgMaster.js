@@ -66,6 +66,7 @@ const VelgMaster = ({answer}) => {
                             setMasterId(oblig.id)
                             setFagnavn(oblig.fagnavn)
                             //setSemester(oblig.semester)
+                            visVidereClick(visVidere)
                         }}
                         >
                          {oblig.fagnavn}
@@ -83,11 +84,7 @@ const VelgMaster = ({answer}) => {
  
         </div>
 
-        <div>
-        {
-            <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
-        }
-        </div>
+        
 
 
         <div className="ny">
