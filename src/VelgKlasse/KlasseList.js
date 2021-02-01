@@ -17,7 +17,7 @@ const KlasseList = ({ handleClick}) => {
     //brukes til å lagre objektet
     const [obj, setObj] = useState();
     const [obligState, setObligState] = useState();
-    const [to, setTo] = useState();
+    const [visVidere, setVisVidere] = useState(false);
     
     
     
@@ -28,6 +28,12 @@ const KlasseList = ({ handleClick}) => {
         const id = e.id;
         console.log('id fra handleClick = '+id);
         
+    }
+
+    function visVidereClick(){
+        console.log('vis videre klikket');
+        console.log(visVidere);
+        setVisVidere(true)
     }
     
     return ( 
@@ -49,6 +55,8 @@ const KlasseList = ({ handleClick}) => {
                         setObligState(klasse.fagnavn)
                         setAnswer(klasse.id)
                         handleClick(klasse.id)
+                        visVidereClick(visVidere)
+                        
                     }}
                     >
                     Grunnskolelærer {klasse.klassetrinn} trinn
@@ -58,12 +66,11 @@ const KlasseList = ({ handleClick}) => {
                     
                 ))
                 
-                
             }
             {
                 //gjør answer og obj til props, slik at den kan brukes i ObligFagCard
                 //aswer blir klasse id, som blir satt i onClick funkjsonen
-                
+                visVidere &&
                 <ObligFagCard 
                 answer={answer}
                 obj={obj}    
