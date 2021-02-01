@@ -30,9 +30,10 @@ const KlasseList = ({ handleClick}) => {
         
     }
 
-    function visVidereClick(){
+    function visVidereClick(visVidere){
         console.log('vis videre klikket');
         console.log(visVidere);
+        
         setVisVidere(true)
     }
     
@@ -71,9 +72,10 @@ const KlasseList = ({ handleClick}) => {
                 //gjør answer og obj til props, slik at den kan brukes i ObligFagCard
                 //aswer blir klasse id, som blir satt i onClick funkjsonen
                 visVidere &&
-                <ObligFagCard 
+                <VelgMaster 
                 answer={answer}
-                obj={obj}    
+                obj={obj}
+                
 
                 />
                 

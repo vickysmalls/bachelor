@@ -4,6 +4,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
 import SingelKlasse from '../VelgKlasse/SingleKlasse';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
+import ObligFagCard from '../oblig-fag/oblig-fag-card';
 
 
 const VelgMaster = ({answer}) => {
@@ -14,6 +15,8 @@ const VelgMaster = ({answer}) => {
     // slik at det brukes/ lagres i neste komponent
     const [fagNavn, setFagnavn] = useState();
     const [masterId, setMasterId] = useState();
+    const [visVidere, setVisVidere] = useState(false);
+
     
     
     /*
@@ -32,6 +35,13 @@ const VelgMaster = ({answer}) => {
         
         console.log(e);
         
+    }
+
+    function visVidereClick(visVidere){
+        console.log('vis videre klikket');
+        //console.log(visVidere);
+        
+        setVisVidere(true)
     }
     
 
@@ -72,12 +82,23 @@ const VelgMaster = ({answer}) => {
             }
  
         </div>
+
+        <div>
+        {
+            <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
+        }
+        </div>
+
+
         <div className="ny">
         {
-            //lager props av statene slik at de kan brukes i VelgMuligheter komponenten
-            <VelgMuligheter masterId={masterId} fagNavn={fagNavn}/>
-            //<h1>{props.answer}</h1>
+            visVidere&&
+            <ObligFagCard masterId={masterId} fagNavn={fagNavn} answer={answer}/>
         }
+        
+        
+        
+        
         </div>
         </div>
         

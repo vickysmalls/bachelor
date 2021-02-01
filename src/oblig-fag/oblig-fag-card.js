@@ -3,16 +3,24 @@ import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
 import SingelKlasse from '../VelgKlasse/SingleKlasse';
 import VelgMaster from '../VelgMaster/VelgMaster';
+import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 
 
-const ObligFagCard = ({answer, obj}) => {
+const ObligFagCard = ({answer, masterId, obj}) => {
 
     
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
     //const [obj, setObj] = useState(klassetrinn);
     const [obligState, setObligState] = useState();
-    
+    const [visVidere, setVisVidere] = useState(false);
+
+    function visVidereClick(visVidere){
+        console.log('vis videre klikket');
+        console.log(visVidere);
+        
+        setVisVidere(true)
+    }
     
    
     //logger ved trykk
@@ -41,10 +49,12 @@ const ObligFagCard = ({answer, obj}) => {
                                 
                                 handleClick(oblig)
                                 setObligState(oblig)
+                                
+                                
                             }}
                         >
                          {oblig.fagnavn}
-                    </CustomButton>
+                        </CustomButton>
                     ))
                    
                     
@@ -53,12 +63,18 @@ const ObligFagCard = ({answer, obj}) => {
           
             }
             
+            
  
         </div>
+
+        <div>{
+                <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
+            }</div>
         <div className="ny">
         {
             
-            <VelgMaster answer={answer}></VelgMaster>
+            visVidere&&
+            <VelgMuligheter masterId={masterId} answer={answer}></VelgMuligheter>
             
 
        
