@@ -25,7 +25,7 @@ const FagCard = (props) => {
 
     return ( 
         <div>
-        <h2>Velg Masteremne</h2>
+        <h2>Velg </h2>
         <div className='card-container'>
 
             {
@@ -33,17 +33,17 @@ const FagCard = (props) => {
                     klassetrinn.map((oblig)=>(
                         //om klasseId er det samme som answer fra KlasseList =>
                         klassetrinn.klasseId ===props.answer &&
-                    <CustomButton 
-                        //key={oblig.klasseId}
-                        options={oblig}
-                        onClick={() =>{
-                            //setAnswer([klasse])
-                            //selected(oblig)
-                            handleClick(oblig)
-                            setAnswer(oblig.id)
-                            setObj(oblig)
-                            //answer1(oblig.id)
-                        }}
+                        <CustomButton 
+                            key={oblig.id}
+                            options={oblig}
+                            onClick={() =>{
+                                //setAnswer([klasse])
+                                //selected(oblig)
+                                handleClick(oblig)
+                                setAnswer(oblig.id)
+                                setObj(oblig)
+                                //answer1(oblig.id)
+                            }}
                         >
                          {oblig.fagnavn}
                     </CustomButton>

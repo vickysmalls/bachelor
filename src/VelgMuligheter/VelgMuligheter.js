@@ -1,20 +1,23 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
-import SemesterList from '../Semester/Semester';
+import ObligFag from '../oblig-fag/oblig-fag';
+import ObligFagCard from '../oblig-fag/oblig-fag-card';
+import Semester5 from '../Semester/Semester5';
 import useFetch from '../useFetch';
 
 
 
-const VelgMuligheter = (props) => {
+const VelgMuligheter = ({obj, masterId, semester}) => {
 
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
-    //const [answer, setAnswer] = useState(options);
-    const [answer, setAnswer] = useState();
-    
+    //const [answer, setAnswer] = useState();
+    //const [mulighetId, setMulighetId] = useState();
+    const [semesterId, setSemesterId] = useState();
 
     
 
+    
     
     //logger ved trykk
     function handleClick(e) {
@@ -24,34 +27,45 @@ const VelgMuligheter = (props) => {
         
     }
     
+    
 
     return ( 
         <div>
+        <h2>muligheter</h2>
+        <div className=''>
         
-        <div className='ca'>
-        <h2>Muligheter</h2>
             {
                 klassetrinn &&
-                    klassetrinn.map((oblig)=>(
-                        
-                        //om masterFagId er det samme som answer fra KlasseList =>
-                        oblig.masterFagId ===props.answer &&
-                        <div className='card-container'>
-                        
-                            <CustomButton 
-                                //key={oblig.masterFagId}
-                                options={oblig.fagnavn}
-                                onClick={() =>{
-                                    //setAnswer([klasse])
-                                    //selected(oblig)
-                                    handleClick(oblig)
-                                    setAnswer(oblig)
-                                    //answer1(oblig.id)
-                                }}
-                                >
-                                {oblig.fagnavn}
-                            </CustomButton>
-                        </div>))
+                        klassetrinn.map((oblig)=>(
+                            
+                            //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
+                            oblig.masterFagId === masterId &&
+                            
+                            <div className='card-container'>
+                            
+                            
+                                <CustomButton 
+                                    key={oblig.id}
+                                    semester={oblig.semester}
+                                    fag={oblig.fagnavn}
+                                    
+                                    onClick={() => {
+                                        setSemesterId(oblig.semester)
+                                        
+
+                                    }}
+                                    
+                                    >
+                                    {oblig.fagnavn}
+                                </CustomButton>
+                                <CustomButton 
+                                    >
+                                    {obj}
+                                </CustomButton>
+                                <Semester5 semester ={oblig.semester} masterId ={oblig.masterFagId}/>
+                                
+                                
+                            </div>))
                     
                
           

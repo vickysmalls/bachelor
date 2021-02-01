@@ -6,13 +6,24 @@ import SingelKlasse from '../VelgKlasse/SingleKlasse';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 
 
-const VelgMaster = (props) => {
+const VelgMaster = ({answer}) => {
 
+    //setter masterfag tabellen til masterFag
+    const {data: masterFag, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
     
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
-    const [obj, setObj] = useState();
-    const [answer, setAnswer] = useState();
+    // slik at det brukes/ lagres i neste komponent
+    const [fagNavn, setFagnavn] = useState();
+    const [masterId, setMasterId] = useState();
     
+    
+    /*
+    Forsøk på filtrering
+
+    //const {data: muligheter} = useFetch(`http://localhost:5000/api/muligheter/`);
+    const filterSemester = (semester) =>{
+        setSemester(muligheter.filter((klasse) => klasse.semester === semester
+        ))
+      }*/
     
    
     //logger ved trykk
@@ -30,20 +41,21 @@ const VelgMaster = (props) => {
         <div className='card-container'>
 
             {
-                klassetrinn &&
-                    klassetrinn.map((oblig)=>(
-                        //om klasseId er det samme som answer fra KlasseList =>
-                        oblig.klasseId ===props.answer &&
+                masterFag &&
+                    masterFag.map((oblig)=>(
+                        //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
+                        oblig.klasseId === answer &&
+                        
                     <CustomButton 
-                        //key={oblig.klasseId}
+                        key={oblig.id}
                         options={oblig}
                         onClick={() =>{
-                            //setAnswer([klasse])
-                            //selected(oblig)
+                            //filterSemester(oblig.filterSemester)
+                            //setter funcksjoner og states når den trykkes på
                             handleClick(oblig)
-                            setAnswer(oblig.id)
-                            setObj(oblig)
-                            //answer1(oblig.id)
+                            setMasterId(oblig.id)
+                            setFagnavn(oblig.fagnavn)
+                            //setSemester(oblig.semester)
                         }}
                         >
                          {oblig.fagnavn}
@@ -62,7 +74,8 @@ const VelgMaster = (props) => {
         </div>
         <div className="ny">
         {
-            <VelgMuligheter obj={obj} answer={answer}/>
+            //lager props av statene slik at de kan brukes i VelgMuligheter komponenten
+            <VelgMuligheter masterId={masterId} fagNavn={fagNavn}/>
             //<h1>{props.answer}</h1>
         }
         </div>

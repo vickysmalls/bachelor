@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import CustomButton from '../CustomButton/CustomButton';
 
-//Brukes ikke
+//IKKE SLETT
 const ObligFag = ({options, selected}) => {
     const [answer, setAnswer] = useState(options);
     return(

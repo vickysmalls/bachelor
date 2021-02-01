@@ -5,7 +5,8 @@ const useFetch = (url, id) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
-    const [answer, setAnswer] = useState(null);
+    const [obligFag, setObligFag] = useState(null);
+    
     
       
       //runs every re-render
@@ -27,7 +28,7 @@ const useFetch = (url, id) => {
               setData(data);
               setIsPending(false);
               setError(null);
-              setAnswer(answer);
+              setObligFag(obligFag);
               
 
           })
@@ -47,7 +48,7 @@ const useFetch = (url, id) => {
         //only run the function after the first initial render
     }, [url]);
 
-    return {data, isPending, error}
+    return {data, isPending, error, obligFag}
 
 }
 

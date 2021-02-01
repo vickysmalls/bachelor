@@ -6,14 +6,18 @@ import FagCard from '../oblig-fag/oblig-fag';
 import ObligFagCard from "../oblig-fag/oblig-fag-card";
 
 
-const KlasseList = ({selected}) => {
+const KlasseList = ({ handleClick}) => {
 
-    
+    //henter tabellen klasser og plasserer det i klassetrinn
     const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/klasser');
+
+    //setter klassetrinn til å bli answer
     const [answer, setAnswer] = useState(klassetrinn);
+
+    //brukes til å lagre objektet
     const [obj, setObj] = useState();
-    const [key, setKey] = useState();
-     
+    const [obligState, setObligState] = useState();
+    const [to, setTo] = useState();
     
     
     
@@ -30,25 +34,21 @@ const KlasseList = ({selected}) => {
         
         <div className="klasse-list">
         <h2>Velg Klassetrinn</h2>
+            
             {
-                isPending && <div>Loading...</div>
-            }
-            {
-                error && <div>{error}</div>
-            }
-            {
+                //sjekker om klassetrinn er ok, deretter mappe gjennom klassene
                 klassetrinn && 
                 klassetrinn.map((klasse) =>(
                     <CustomButton 
-                    //key={klasse.id}
+                    key={klasse.id}
                     options={klasse}
+                    
                     onClick={() =>{
-                        //setAnswer([klasse])
-                        setKey(klasse.id)
-                        setObj(klasse)
-                        handleClick((klasse))
-                        
+                        //setter statene fra øverst, og funksjonen handleclick
+                        setObj(klasse)  
+                        setObligState(klasse.fagnavn)
                         setAnswer(klasse.id)
+                        handleClick(klasse.id)
                     }}
                     >
                     Grunnskolelærer {klasse.klassetrinn} trinn
@@ -61,7 +61,15 @@ const KlasseList = ({selected}) => {
                 
             }
             {
-                <ObligFagCard answer={answer}></ObligFagCard>
+                //gjør answer og obj til props, slik at den kan brukes i ObligFagCard
+                //aswer blir klasse id, som blir satt i onClick funkjsonen
+                
+                <ObligFagCard 
+                answer={answer}
+                obj={obj}    
+
+                />
+                
             }
             
             

@@ -5,12 +5,13 @@ import SingelKlasse from '../VelgKlasse/SingleKlasse';
 import VelgMaster from '../VelgMaster/VelgMaster';
 
 
-const ObligFagCard = (props) => {
+const ObligFagCard = ({answer, obj}) => {
 
     
+    
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
-    const [obj, setObj] = useState();
-    const [answer, setAnswer] = useState();
+    //const [obj, setObj] = useState(klassetrinn);
+    const [obligState, setObligState] = useState();
     
     
    
@@ -32,23 +33,20 @@ const ObligFagCard = (props) => {
                 klassetrinn &&
                     klassetrinn.map((oblig)=>(
                         //om klasseId er det samme som answer fra KlasseList =>
-                        oblig.klasseId ===props.answer &&
-                    <CustomButton 
-                        //key={oblig.klasseId}
-                        options={oblig}
-                        onClick={() =>{
-                            //setAnswer([klasse])
-                            //selected(oblig)
-                            handleClick(oblig)
-                            //setAnswer(oblig.id)
-                            setObj(oblig)
-                            //answer1(oblig.id)
-                        }}
+                        oblig.klasseId ===answer &&
+                        <CustomButton 
+                            key={oblig.id}
+                            options={oblig}
+                            onClick={() =>{
+                                
+                                handleClick(oblig)
+                                setObligState(oblig)
+                            }}
                         >
                          {oblig.fagnavn}
                     </CustomButton>
                     ))
-                    
+                   
                     
                     
                
@@ -60,7 +58,7 @@ const ObligFagCard = (props) => {
         <div className="ny">
         {
             
-            <VelgMaster answer={props.answer}></VelgMaster>
+            <VelgMaster answer={answer}></VelgMaster>
             
 
        
