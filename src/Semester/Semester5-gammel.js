@@ -5,7 +5,7 @@ import ObligFagCard from '../oblig-fag/oblig-fag-card';
 import useFetch from '../useFetch';
 import SemesterCard5 from './Semester5-card';
 
-const Semester5 = ({masterId, semester}) => {
+const Semester5Gammel = ({masterId, semester}) => {
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
     
     
@@ -29,7 +29,7 @@ const Semester5 = ({masterId, semester}) => {
                             
                             //oblig.MasterFagId === masterId &&
                             //om semester = 5 vis semester og semeseter fag
-                            oblig.semester === semester &&
+                            oblig.semester === 5 &&
                             
                             <div className=''>
                             
@@ -59,4 +59,4 @@ const Semester5 = ({masterId, semester}) => {
      );
 }
  
-export default Semester5;
+export default Semester5Gammel;

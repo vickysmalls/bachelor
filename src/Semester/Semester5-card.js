@@ -1,6 +1,6 @@
 const SemesterCard5 = ({semesterId}) => {
     return ( 
-        <div>s</div>
+        <div></div>
      );
 }
  

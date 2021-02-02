@@ -5,6 +5,8 @@ import useFetch from '../useFetch';
 import SingelKlasse from '../VelgKlasse/SingleKlasse';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagCard from '../oblig-fag/oblig-fag-card';
+const _ = require("lodash");  
+
 
 
 const VelgMaster = ({answer}) => {
@@ -43,6 +45,7 @@ const VelgMaster = ({answer}) => {
         
         setVisVidere(true)
     }
+
     
 
     return ( 
@@ -52,7 +55,9 @@ const VelgMaster = ({answer}) => {
 
             {
                 masterFag &&
+                    
                     masterFag.map((oblig)=>(
+                        
                         //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
                         oblig.klasseId === answer &&
                         
@@ -89,8 +94,12 @@ const VelgMaster = ({answer}) => {
 
         <div className="ny">
         {
+            
             visVidere&&
-            <ObligFagCard masterId={masterId} fagNavn={fagNavn} answer={answer}/>
+            
+                <ObligFagCard masterId={masterId} fagNavn={fagNavn} answer={answer}/>
+        
+            
         }
         
         

@@ -4,6 +4,7 @@ import ObligFag from '../oblig-fag/oblig-fag';
 import ObligFagCard from '../oblig-fag/oblig-fag-card';
 import Semester5 from '../Semester/Semester5';
 import useFetch from '../useFetch';
+import Muligheter from './Muligheter';
 
 
 
@@ -15,9 +16,6 @@ const VelgMuligheter = ({obj, masterId, semester}) => {
     //const [mulighetId, setMulighetId] = useState();
     const [semesterId, setSemesterId] = useState();
 
-    
-
-    
     
     //logger ved trykk
     function handleClick(e) {
@@ -32,54 +30,75 @@ const VelgMuligheter = ({obj, masterId, semester}) => {
     return ( 
         <div>
         <h2>muligheter</h2>
-        <div className=''>
+        <div className="fag-card">
         
-            {
-                klassetrinn &&
-                        klassetrinn.map((oblig)=>(
-                            
-                            //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
-                            oblig.masterFagId === masterId &&
-                            
-                            <div className='card-container'>
-                            
-                            
-                                <CustomButton 
-                                    key={oblig.id}
-                                    semester={oblig.semester}
-                                    fag={oblig.fagnavn}
-                                    
-                                    onClick={() => {
-                                        setSemesterId(oblig.semester)
-                                        
-
-                                    }}
-                                    
-                                    >
-                                    {oblig.fagnavn}
-                                </CustomButton>
-                                <CustomButton 
-                                    >
-                                    {obj}
-                                </CustomButton>
-                                <Semester5 semester ={oblig.semester} masterId ={oblig.masterFagId}/>
-                                
-                                
-                            </div>))
-                    
-               
-          
-            }
-            {
-                
-
-           
-            }
- 
         </div>
-        <div className="ny">
+
+        <div className='card-container'>
+        <h3>Semester 4</h3>
+            {
+                //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+                <Muligheter semester={4} masterId={masterId}/>
+
+            }
+
+        </div>
+        <div className='card-container'>
+        <h3>Semester 5</h3>
+            {
+                //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+                <Muligheter semester={5} masterId={masterId}/>
+
+            }
+
+        </div>
+
+        <div className='card-container'>
+        <h3>Semester 6</h3>
         {
+            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+            <Muligheter semester={6} masterId={masterId}/>
             
+
+        }
+        </div>
+
+        <div className='card-container'>
+        <h3>Semester 7</h3>
+        {
+            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+            <Muligheter semester={7} masterId={masterId}/>
+            
+
+        }
+        </div>
+        
+        <div className='card-container'>
+        <h3>Semester 8</h3>
+        {
+            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+            <Muligheter semester={8} masterId={masterId}/>
+            
+
+        }
+        
+        </div>
+
+        <div className='card-container'>
+        <h3>Semester 9</h3>
+        {
+            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+            <Muligheter semester={9} masterId={masterId}/>
+            
+
+        }
+
+        </div>
+
+        <div className='card-container'>
+        <h3>Semester 5, alle fag</h3>
+        {
+            <Semester5 semester={5}/>
         }
         </div>
         </div>

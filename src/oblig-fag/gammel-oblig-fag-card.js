@@ -7,7 +7,7 @@ const _ = require("lodash");
 
 
 
-const ObligFagCard = ({answer, masterId, obj}) => {
+const GamleObligFagCard = ({answer, masterId, obj}) => {
 
     
     
@@ -43,32 +43,50 @@ const ObligFagCard = ({answer, masterId, obj}) => {
     return ( 
         <div>
         <h2>Obligs</h2>
-
-        <h2>Semester 1</h2>
         <div className='card-container'>
+            
             {
+                
+                klassetrinn &&
                     // det sorterte arrayet mappes
-                    <ObligFagSemester semester={1} answer={answer}/>
+                    sorted.map((oblig)=>(
+                        //om klasseId er det samme som answer fra KlasseList =>
+                        oblig.klasseId ===answer &&
+                        oblig.semester ===1 &&
+                        <CustomButton 
+                            key={oblig.id} 
+                        >
+                         {oblig.fagnavn}
+                        </CustomButton>
+                        
+                    ))
             }
 
         </div>
 
-        <h2>Semester 2</h2>
+        
         <div className='card-container'>
+            
             {
+                
+                klassetrinn &&
                     // det sorterte arrayet mappes
-                    <ObligFagSemester semester={2} answer={answer}/>
+                    sorted.map((oblig)=>(
+                        //om klasseId er det samme som answer fra KlasseList =>
+                        oblig.klasseId ===answer &&
+                        oblig.semester ===2 &&
+                        <CustomButton 
+                            key={oblig.id} 
+                        >
+                         {oblig.fagnavn}
+                        </CustomButton>
+                        
+                    ))
             }
 
         </div>
-        <h2>Semester 2</h2>
-        <div className='card-container'>
-            {
-                    // det sorterte arrayet mappes
-                    <ObligFagSemester semester={3} answer={answer}/>
-            }
 
-        </div>
+        
 
         
 
@@ -91,4 +109,4 @@ const ObligFagCard = ({answer, masterId, obj}) => {
         
      );
 };
-export default ObligFagCard;
+export default GamleObligFagCard;

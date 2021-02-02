@@ -9,7 +9,7 @@ import ObligFagCard from "../oblig-fag/oblig-fag-card";
 const KlasseList = ({ handleClick}) => {
 
     //henter tabellen klasser og plasserer det i klassetrinn
-    const {data: klassetrinn, error, isPending} = useFetch('http://localhost:5000/api/klasser');
+    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/klasser`);
 
     //setter klassetrinn til å bli answer
     const [answer, setAnswer] = useState(klassetrinn);
