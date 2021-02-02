@@ -35,44 +35,58 @@ const VelgMuligheter = ({obj, masterId, semester}) => {
         </div>
 
         <div className='card-container'>
-        <h3>Semester 4</h3>
-            {
-                //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-                <Muligheter semester={4} masterId={masterId}/>
+        <h3>Semester 4, alle fag</h3>
+        {
+            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+            <Muligheter semester={4} masterId={masterId}/>
 
-            }
-
-        </div>
-        <div className='card-container'>
-        <h3>Semester 5</h3>
-            {
-                //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-                <Muligheter semester={5} masterId={masterId}/>
-
-            }
-
+        }
+        {
+            
+            <Semester5 semester={4}/>
+        }
+        
         </div>
 
         <div className='card-container'>
-        <h3>Semester 6</h3>
+        <h3>Semester 5, alle fag</h3>
+        {
+            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+            <Muligheter semester={5} masterId={masterId}/>
+
+        }
+        {
+            
+            <Semester5 semester={5}/>
+        }
+        
+        </div>
+
+        <div className='card-container'>
+        <h3>Semester 6, alle fag</h3>
         {
             //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
             <Muligheter semester={6} masterId={masterId}/>
-            
 
         }
+        {
+            
+            <Semester5 semester={6}/>
+        }
+        
         </div>
 
         <div className='card-container'>
-        <h3>Semester 7</h3>
+        <h3>Semester 7, alle fag</h3>
         {
             //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
             <Muligheter semester={7} masterId={masterId}/>
-            
 
         }
-        </div>
         
+        
+        </div>
+
         <div className='card-container'>
         <h3>Semester 8</h3>
         {
@@ -89,18 +103,13 @@ const VelgMuligheter = ({obj, masterId, semester}) => {
         {
             //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
             <Muligheter semester={9} masterId={masterId}/>
-            
-
+           
         }
+        
 
         </div>
 
-        <div className='card-container'>
-        <h3>Semester 5, alle fag</h3>
-        {
-            <Semester5 semester={5}/>
-        }
-        </div>
+        
         </div>
         
         

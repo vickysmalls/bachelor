@@ -42,7 +42,7 @@ const Semester5 = ({masterId, semester}) => {
                                         
                                     }}
                                 >
-                                    semester:{oblig.semester}, fag: 
+                                    
                                     {oblig.fagnavn}
                                 </CustomButton>
                                 <SemesterCard5 semester ={semester}/>

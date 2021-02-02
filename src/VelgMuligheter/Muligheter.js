@@ -35,7 +35,7 @@ const Muligheter = ({obj, masterId, semester}) => {
     return ( 
         <div>
         
-        <div className=''>
+        <div className='mulighet-svar'>
 
             {              
                         sorted.map((oblig)=>(
@@ -43,7 +43,9 @@ const Muligheter = ({obj, masterId, semester}) => {
                             //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
                             oblig.masterFagId === masterId &&
                             oblig.semester === semester &&
-                                <CustomButton 
+                                <CustomButton
+                                    //setter fargen på den valgte fagveien
+                                    style={{backgroundColor: 'red'}} 
                                     key={oblig.id}
                                     
                                     fag={oblig.fagnavn}
