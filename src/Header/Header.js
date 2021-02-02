@@ -1,5 +1,4 @@
 import './Header.css';
-import logo from './Logo.png';
 import logo2 from './OsloMet logo for nett.png';
 const Header = () => {
     return ( 

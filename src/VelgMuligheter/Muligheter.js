@@ -1,23 +1,16 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
-import ObligFag from '../oblig-fag/oblig-fag';
-import ObligFagCard from '../oblig-fag/oblig-fag-card';
-import Semester5 from '../Semester/Semester5';
 import useFetch from '../useFetch';
 const _ = require("lodash");  
 
 
 
 
-const Muligheter = ({obj, masterId, semester}) => {
+const Muligheter = ({masterId, semester}) => {
 
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
-    //const [answer, setAnswer] = useState();
-    //const [mulighetId, setMulighetId] = useState();
-    const [semesterId, setSemesterId] = useState();
-
-    
+   
     //logger ved trykk
     function handleClick(e) {
         console.log('The link was clicked.');
@@ -47,32 +40,18 @@ const Muligheter = ({obj, masterId, semester}) => {
                                     //setter fargen på den valgte fagveien
                                     style={{backgroundColor: 'red'}} 
                                     key={oblig.id}
-                                    
                                     fag={oblig.fagnavn}
-                                    
-                                    onClick={() => {
-                                        setSemesterId(oblig.semester)
-                                        
-
+                                    onClick ={() =>{
+                                        handleClick(oblig);
                                     }}
-                                    
-                                    >
+                                >
                                     {oblig.fagnavn}
                                 </CustomButton>
-                                
-                                
-                                
-                                
+                                 
                             ))
-                    
-               
-          
-            }
-            {
-                
 
-           
             }
+            
  
         </div>
         <div className="ny">

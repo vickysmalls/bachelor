@@ -12,9 +12,8 @@ const ObligFagCard = ({answer, masterId, obj}) => {
     
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
-    //const [obj, setObj] = useState(klassetrinn);
-    const [obligState, setObligState] = useState();
     const [visVidere, setVisVidere] = useState(false);
+
 
     function visVidereClick(visVidere){
         console.log('vis videre klikket');
@@ -72,9 +71,12 @@ const ObligFagCard = ({answer, masterId, obj}) => {
 
         
 
-        <div>{
+        <div>
+            {
                 <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
-            }</div>
+            }
+        </div>
+        
         <div className="ny">
         {
             

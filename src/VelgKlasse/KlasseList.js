@@ -2,8 +2,6 @@ import { useState  } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
-import FagCard from '../oblig-fag/oblig-fag';
-import ObligFagCard from "../oblig-fag/oblig-fag-card";
 
 
 const KlasseList = ({ handleClick}) => {
@@ -16,7 +14,6 @@ const KlasseList = ({ handleClick}) => {
 
     //brukes til å lagre objektet
     const [obj, setObj] = useState();
-    const [obligState, setObligState] = useState();
     const [visVidere, setVisVidere] = useState(false);
     
     
@@ -53,7 +50,6 @@ const KlasseList = ({ handleClick}) => {
                     onClick={() =>{
                         //setter statene fra øverst, og funksjonen handleclick
                         setObj(klasse)  
-                        setObligState(klasse.fagnavn)
                         setAnswer(klasse.id)
                         handleClick(klasse.id)
                         visVidereClick(visVidere)

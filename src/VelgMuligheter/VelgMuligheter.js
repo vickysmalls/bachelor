@@ -1,32 +1,13 @@
 import React, {useState} from 'react'
-import CustomButton from '../CustomButton/CustomButton';
-import ObligFag from '../oblig-fag/oblig-fag';
-import ObligFagCard from '../oblig-fag/oblig-fag-card';
-import Semester5 from '../Semester/Semester5';
+import Semester from '../Semester/Semester';
 import useFetch from '../useFetch';
 import Muligheter from './Muligheter';
 
 
 
-const VelgMuligheter = ({obj, masterId, semester}) => {
+const VelgMuligheter = ({masterId}) => {
 
     
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
-    //const [answer, setAnswer] = useState();
-    //const [mulighetId, setMulighetId] = useState();
-    const [semesterId, setSemesterId] = useState();
-
-    
-    //logger ved trykk
-    function handleClick(e) {
-        console.log('The link was clicked.');
-        
-        console.log(e);
-        
-    }
-    
-    
-
     return ( 
         <div>
         <h2>muligheter</h2>
@@ -43,7 +24,7 @@ const VelgMuligheter = ({obj, masterId, semester}) => {
         }
         {
             
-            <Semester5 semester={4}/>
+            <Semester semester={4}/>
         }
         
         </div>
@@ -57,7 +38,7 @@ const VelgMuligheter = ({obj, masterId, semester}) => {
         }
         {
             
-            <Semester5 semester={5}/>
+            <Semester semester={5}/>
         }
         
         </div>
@@ -71,7 +52,7 @@ const VelgMuligheter = ({obj, masterId, semester}) => {
         }
         {
             
-            <Semester5 semester={6}/>
+            <Semester semester={6}/>
         }
         
         </div>

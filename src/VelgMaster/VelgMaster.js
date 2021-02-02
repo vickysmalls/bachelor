@@ -2,8 +2,6 @@ import React, {useState} from 'react'
 import './VelgMaster.css';
 import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
-import SingelKlasse from '../VelgKlasse/SingleKlasse';
-import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagCard from '../oblig-fag/oblig-fag-card';
 const _ = require("lodash");  
 
@@ -20,16 +18,6 @@ const VelgMaster = ({answer}) => {
     const [visVidere, setVisVidere] = useState(false);
 
     
-    
-    /*
-    Forsøk på filtrering
-
-    //const {data: muligheter} = useFetch(`http://localhost:5000/api/muligheter/`);
-    const filterSemester = (semester) =>{
-        setSemester(muligheter.filter((klasse) => klasse.semester === semester
-        ))
-      }*/
-    
    
     //logger ved trykk
     function handleClick(e) {
@@ -39,14 +27,6 @@ const VelgMaster = ({answer}) => {
         
     }
 
-    function visVidereClick(visVidere){
-        console.log('vis videre klikket');
-        //console.log(visVidere);
-        
-        setVisVidere(true)
-    }
-
-    
 
     return ( 
         <div>
@@ -65,45 +45,25 @@ const VelgMaster = ({answer}) => {
                         key={oblig.id}
                         options={oblig}
                         onClick={() =>{
-                            //filterSemester(oblig.filterSemester)
-                            //setter funcksjoner og states når den trykkes på
                             handleClick(oblig)
                             setMasterId(oblig.id)
                             setFagnavn(oblig.fagnavn)
-                            //setSemester(oblig.semester)
-                            visVidereClick(visVidere)
+                            setVisVidere(true)
                         }}
                         >
                          {oblig.fagnavn}
                     </CustomButton>
                     ))
-                    
-               
-          
             }
-            {
-                
-
            
-            }
- 
         </div>
 
-        
-
-
         <div className="ny">
-        {
-            
+        {   
             visVidere&&
-            
-                <ObligFagCard masterId={masterId} fagNavn={fagNavn} answer={answer}/>
+            <ObligFagCard masterId={masterId} fagNavn={fagNavn} answer={answer}/>
         
-            
         }
-        
-        
-        
         
         </div>
         </div>
