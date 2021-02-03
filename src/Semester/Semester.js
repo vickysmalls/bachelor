@@ -16,9 +16,9 @@ const Semester = ({semester}) => {
     
 
     return ( 
-        <div>
+        <>
         
-        <div className=''>
+        
         
             {
                 klassetrinn &&
@@ -47,9 +47,9 @@ const Semester = ({semester}) => {
                 ))
             }
  
-        </div>
         
-    </div>
+        
+    </>
         
         
      );

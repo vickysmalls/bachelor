@@ -26,9 +26,9 @@ const Muligheter = ({masterId, semester}) => {
     
 
     return ( 
-        <div>
         
-        <div className='mulighet-svar'>
+        
+        <>
 
             {              
                         sorted.map((oblig)=>(
@@ -53,13 +53,9 @@ const Muligheter = ({masterId, semester}) => {
             }
             
  
-        </div>
-        <div className="ny">
-        {
-            
-        }
-        </div>
-        </div>
+        </>
+        
+        
         
         
      );

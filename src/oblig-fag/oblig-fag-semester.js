@@ -17,7 +17,7 @@ const ObligFagSemester = ({answer, semester}) => {
     
 
     return ( 
-        <div>
+        <>
 
             {
                 
@@ -40,7 +40,7 @@ const ObligFagSemester = ({answer, semester}) => {
             }
 
         
-        </div>
+        </>
         
         
      );
