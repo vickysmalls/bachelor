@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
+
 import useFetch from '../useFetch';
 
-const Semester = ({semester}) => {
+const Semester = ({masterId, semester}) => {
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
     
     
@@ -14,11 +15,10 @@ const Semester = ({semester}) => {
         
     }
     
-
     return ( 
-        <>
+        <div>
         
-        
+        <div className=''>
         
             {
                 klassetrinn &&
@@ -34,22 +34,25 @@ const Semester = ({semester}) => {
                                 <CustomButton 
                                     key={oblig.id}
                                     semester={oblig.semester}
+                                    klasseId = {oblig.klasseId}
                                     onClick = {() =>{
                                         handleClick(oblig)
-                                        
+
                                     }}
                                 >
-                                    
+                                    semester:{oblig.semester}, fag: 
+
                                     {oblig.fagnavn}
                                 </CustomButton>
+                               
                                           
                             </div>
                 ))
             }
  
+        </div>
         
-        
-    </>
+    </div>
         
         
      );

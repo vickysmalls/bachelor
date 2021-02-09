@@ -1,4 +1,3 @@
-import FagCard from './fag-card/oblig-fag-card';
 import Navbar from './Header/Header';
 import KlasseList from './VelgKlasse/KlasseList';
 import './App.css';

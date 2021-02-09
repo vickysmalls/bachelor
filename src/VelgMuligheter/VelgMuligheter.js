@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
+import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
 import useFetch from '../useFetch';
 import Muligheter from './Muligheter';
 
 
 
-const VelgMuligheter = ({masterId}) => {
+const VelgMuligheter = ({masterId, answer}) => {
 
     
     return ( 
@@ -44,6 +45,10 @@ const VelgMuligheter = ({masterId}) => {
             <Muligheter semester={6} masterId={masterId}/>
 
         }
+        {
+            <Semester semester={6} klasseId ={1}/>
+        }
+        
         
         
         </div>

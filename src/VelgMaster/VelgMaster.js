@@ -16,6 +16,7 @@ const VelgMaster = ({answer}) => {
     const [fagNavn, setFagnavn] = useState();
     const [masterId, setMasterId] = useState();
     const [visVidere, setVisVidere] = useState(false);
+    const [farge, setFarge] = useState();
 
     
    
@@ -24,6 +25,13 @@ const VelgMaster = ({answer}) => {
         console.log('The link was clicked.');
         
         console.log(e);
+        
+    }
+
+    function byttFarge(farge){
+        console.log('vis videre klikket');
+        console.log(visVidere);
+        
         
     }
 
@@ -49,6 +57,7 @@ const VelgMaster = ({answer}) => {
                             setMasterId(oblig.id)
                             setFagnavn(oblig.fagnavn)
                             setVisVidere(true)
+                            
                         }}
                         >
                          {oblig.fagnavn}

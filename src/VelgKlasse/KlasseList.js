@@ -36,7 +36,7 @@ const KlasseList = ({ handleClick}) => {
     
     return ( 
         
-        <div className="klasse-list">
+        <div className=''>
         <h2>Velg Klassetrinn</h2>
             
             {
@@ -48,6 +48,7 @@ const KlasseList = ({ handleClick}) => {
                     options={klasse}
                     
                     onClick={() =>{
+                        
                         //setter statene fra øverst, og funksjonen handleclick
                         setObj(klasse)  
                         setAnswer(klasse.id)
