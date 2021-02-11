@@ -3,7 +3,7 @@ import CustomButton from '../CustomButton/CustomButton';
 
 import useFetch from '../useFetch';
 
-const Semester = ({masterId, semester}) => {
+const Semester = ({klasseId, semester}) => {
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
     
     
@@ -27,6 +27,7 @@ const Semester = ({masterId, semester}) => {
                             //oblig.MasterFagId === masterId &&
                             //om semester = 5 vis semester og semeseter fag
                             oblig.semester === semester &&
+                            oblig.klasseId === klasseId &&
                             
                             <div className=''>
                             

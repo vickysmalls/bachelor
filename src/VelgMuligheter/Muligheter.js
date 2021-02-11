@@ -1,15 +1,18 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
+import Semester from '../Semester/Semester';
 import useFetch from '../useFetch';
 const _ = require("lodash");  
 
 
 
 
-const Muligheter = ({masterId, semester}) => {
+const Muligheter = ({masterId, semester, isTrue, klasseId}) => {
 
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
+
+    //const [isTrue, setIsTrue] = useState(false);
    
     //logger ved trykk
     function handleClick(e) {
@@ -25,13 +28,19 @@ const Muligheter = ({masterId, semester}) => {
     
     
 
+       
     return ( 
         
         
         <>
+        
+        
+        
 
-            {              
-                        sorted.map((oblig)=>(
+            {   
+                klassetrinn &&
+                
+                    sorted.map((oblig)=>(
                             
                             //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
                             oblig.masterFagId === masterId &&
@@ -41,16 +50,27 @@ const Muligheter = ({masterId, semester}) => {
                                     style={{backgroundColor: 'red'}} 
                                     key={oblig.id}
                                     fag={oblig.fagnavn}
+                                    
                                     onClick ={() =>{
                                         handleClick(oblig);
+                                        //setIsTrue(true);
+                                        isTrue(true);
+                                        
                                     }}
                                 >
                                     {oblig.fagnavn}
                                 </CustomButton>
                                  
                             ))
+                
+                    
+                         
+                        
 
             }
+            
+
+           
             
  
         </>

@@ -9,6 +9,8 @@ import Muligheter from './Muligheter';
 const VelgMuligheter = ({masterId, answer}) => {
 
     
+    const [isTrue, setIsTrue] = useState(false);
+
     return ( 
         <div>
         <h2>muligheter</h2>
@@ -23,6 +25,11 @@ const VelgMuligheter = ({masterId, answer}) => {
             <Muligheter semester={4} masterId={masterId}/>
 
         }
+        {
+            <Semester semester={4} klasseId ={answer}/>
+        }
+        
+        
         
         
         </div>
@@ -42,11 +49,13 @@ const VelgMuligheter = ({masterId, answer}) => {
         <h3>Semester 6</h3>
         {
             //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
+           
             <Muligheter semester={6} masterId={masterId}/>
 
         }
         {
-            <Semester semester={6} klasseId ={1}/>
+            
+            <Semester semester={6} klasseId ={answer}/>
         }
         
         
