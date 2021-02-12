@@ -3,8 +3,8 @@ import CustomButton from '../CustomButton/CustomButton';
 
 import useFetch from '../useFetch';
 
-const Semester = ({klasseId, semester}) => {
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
+const Semester = ({klasseId, semester, klassetrinn}) => {
+    //const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
     
     
     //logger ved trykk

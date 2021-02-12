@@ -7,10 +7,10 @@ const _ = require("lodash");
 
 
 
-const Muligheter = ({masterId, semester, isTrue, klasseId}) => {
+const Muligheter = ({masterId, semester, isTrue, klasseId, klassetrinn, sorted, answer}) => {
 
     
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
+    //const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
 
     //const [isTrue, setIsTrue] = useState(false);
    
@@ -23,8 +23,8 @@ const Muligheter = ({masterId, semester, isTrue, klasseId}) => {
     }
 
        //lager et array som sortrer etter semester
-       const iteratees = obj => obj.semester;
-       const sorted = _.sortBy(klassetrinn, iteratees);
+       //const iteratees = obj => obj.semester;
+       //const sorted = _.sortBy(klassetrinn, iteratees);
     
     
 
@@ -38,13 +38,14 @@ const Muligheter = ({masterId, semester, isTrue, klasseId}) => {
         
 
             {   
-                klassetrinn &&
+                klassetrinn&&
                 
                     sorted.map((oblig)=>(
                             
                             //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
                             oblig.masterFagId === masterId &&
                             oblig.semester === semester &&
+                            
                                 <CustomButton
                                     //setter fargen på den valgte fagveien
                                     style={{backgroundColor: 'red'}} 
@@ -61,7 +62,9 @@ const Muligheter = ({masterId, semester, isTrue, klasseId}) => {
                                     {oblig.fagnavn}
                                 </CustomButton>
                                  
-                            ))
+                            
+                            
+                                ))
                 
                     
                          
