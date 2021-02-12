@@ -14,9 +14,7 @@ const VelgMuligheter = ({masterId, answer}) => {
     return ( 
         <div>
         <h2>muligheter</h2>
-        
-        
-        
+
 
         <div className='card-container'>
         <h3>Semester 4</h3>
@@ -49,8 +47,7 @@ const VelgMuligheter = ({masterId, answer}) => {
         <h3>Semester 6</h3>
         {
             //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-           
-            <Muligheter semester={6} masterId={masterId}/>
+            <Muligheter setIsTrue={true} semester={6} masterId={masterId}/>
 
         }
         {
@@ -58,8 +55,7 @@ const VelgMuligheter = ({masterId, answer}) => {
             <Semester semester={6} klasseId ={answer}/>
         }
         
-        
-        
+
         </div>
 
         <div className='card-container'>
