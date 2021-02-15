@@ -38,13 +38,19 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         <div className='card-container'>
         <h3>Semester 4</h3>
+        
         {
-            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+        } 
 
-        }
-        {
-            <Semester klassetrinn={klassetrinn}  semester={4} klasseId ={answer}/>
+        {(
+            masterId ===10  || masterId ===11 || masterId ===12 
+         ) 
+         ? 
+         (
+            <Semester klassetrinn={klassetrinn} semester={4} klasseId ={answer}/>
+         ) 
+        : null
         }
         
         
@@ -55,9 +61,12 @@ const VelgMuligheter = ({masterId, answer}) => {
         <div className='card-container'>
         <h3>Semester 5</h3>
         {
-            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+        } 
 
+        {masterId === 1 && (
+            <Semester klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
+        )
         }
         
         
@@ -70,9 +79,15 @@ const VelgMuligheter = ({masterId, answer}) => {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
         } 
 
-        {masterId === 1 && (
+        {(
+            masterId ===1  || masterId ===2 || masterId ===3 || masterId ===4 || masterId ===5 ||
+            masterId ===6 || masterId ===7 || masterId ===8 || masterId ===9
+         ) 
+         ? 
+         (
             <Semester klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
-        )
+         ) 
+        : null
         }
     
 
@@ -88,9 +103,12 @@ const VelgMuligheter = ({masterId, answer}) => {
         <div className='card-container'>
         <h3>Semester 7</h3>
         {
-            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+        } 
 
+        {masterId === 1 && (
+            <Semester klassetrinn={klassetrinn} semester={7} klasseId ={answer}/>
+        )
         }
         
         
@@ -100,10 +118,12 @@ const VelgMuligheter = ({masterId, answer}) => {
         <div className='card-container'>
         <h3>Semester 8</h3>
         {
-            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
-            
+            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
+        } 
 
+        {masterId === 1 && (
+            <Semester klassetrinn={klassetrinn} semester={8} klasseId ={answer}/>
+        )
         }
         
         
@@ -112,9 +132,12 @@ const VelgMuligheter = ({masterId, answer}) => {
         <div className='card-container'>
         <h3>Semester 9</h3>
         {
-            //Viser veien til master, basert på gitt semeseter og på svaret (masterId)
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
-           
+            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+        } 
+
+        {masterId ===1 && (
+            <Semester klassetrinn={klassetrinn} semester={9} klasseId ={answer}/>
+        )
         }
         
         
