@@ -91,10 +91,6 @@ const ObligFagCard = ({answer, masterId, obj}) => {
             
             visVidere&&
             <VelgMuligheter masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
-<<<<<<< HEAD
-
-=======
->>>>>>> 20deafbe5266a99c798720c0c0c18f9424bd9cb2
             
 
        
