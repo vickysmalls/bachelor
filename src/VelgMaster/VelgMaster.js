@@ -19,6 +19,10 @@ const VelgMaster = ({answer}) => {
     const [visVidere, setVisVidere] = useState(false);
     const [farge, setFarge] = useState();
     const [obj, setObj] = useState();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 20deafbe5266a99c798720c0c0c18f9424bd9cb2
 
     
    
@@ -54,6 +58,7 @@ const VelgMaster = ({answer}) => {
                     <CustomButton 
                         key={oblig.id}
                         options={oblig}
+                        
                         onClick={() =>{
                             handleClick(oblig)
                             setMasterId(oblig.id)

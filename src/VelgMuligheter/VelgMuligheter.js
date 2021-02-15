@@ -67,11 +67,11 @@ const VelgMuligheter = ({masterId, answer}) => {
         <h3>Semester 6</h3>
         
         {
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+            <Muligheter semester={6} masterId={masterId}/>
         } 
 
         {masterId === 1 && (
-            <Semester klassetrinn={klassetrinn}  semester={6} klasseId ={answer}/>
+            <Semester semester={6} klasseId ={answer}/>
         )
         }
     

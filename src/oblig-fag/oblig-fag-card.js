@@ -15,6 +15,7 @@ const ObligFagCard = ({answer, masterId, obj}) => {
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
     const [visVidere, setVisVidere] = useState(false);
+    
 
     
 
@@ -90,7 +91,10 @@ const ObligFagCard = ({answer, masterId, obj}) => {
             
             visVidere&&
             <VelgMuligheter masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 20deafbe5266a99c798720c0c0c18f9424bd9cb2
             
 
        
