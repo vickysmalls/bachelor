@@ -15,8 +15,10 @@ const VelgMaster = ({answer}) => {
     // slik at det brukes/ lagres i neste komponent
     const [fagNavn, setFagnavn] = useState();
     const [masterId, setMasterId] = useState();
+    //const [mulighetTrue, setMulighetTrue] = useState();
     const [visVidere, setVisVidere] = useState(false);
     const [farge, setFarge] = useState();
+    const [obj, setObj] = useState();
 
     
    

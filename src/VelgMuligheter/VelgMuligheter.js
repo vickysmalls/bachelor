@@ -67,13 +67,14 @@ const VelgMuligheter = ({masterId, answer}) => {
         <h3>Semester 6</h3>
         
         {
-            
-                       
-            <Lala/>
-            //<Semester klassetrinn={klassetrinn}  semester={6} klasseId ={answer}/>
-            
-            
+            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+        } 
+
+        {masterId === 1 && (
+            <Semester klassetrinn={klassetrinn}  semester={6} klasseId ={answer}/>
+        )
         }
+    
 
             
           

@@ -12,7 +12,7 @@ const Muligheter = ({masterId, semester, isTrue, klasseId, klassetrinn, sorted, 
     
     //const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
 
-    //const [isTrue, setIsTrue] = useState(false);
+    const [mulighetTrue, setMulighetTrue] = useState(false);
    
     //logger ved trykk
     function handleClick(e) {

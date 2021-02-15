@@ -3,6 +3,8 @@ import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagSemester from './oblig-fag-semester';
+import Muligheter from '../VelgMuligheter/Muligheter';
+
 const _ = require("lodash");  
 
 
@@ -13,6 +15,8 @@ const ObligFagCard = ({answer, masterId, obj}) => {
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
     const [visVidere, setVisVidere] = useState(false);
+
+    
 
 
     function visVidereClick(visVidere){
@@ -60,7 +64,7 @@ const ObligFagCard = ({answer, masterId, obj}) => {
             }
 
         </div>
-        <h2>Semester 2</h2>
+        <h2>Semester 3</h2>
         <div className='card-container'>
             {
                     // det sorterte arrayet mappes
@@ -68,6 +72,10 @@ const ObligFagCard = ({answer, masterId, obj}) => {
             }
 
         </div>
+
+        
+
+        
 
         
 
@@ -81,7 +89,8 @@ const ObligFagCard = ({answer, masterId, obj}) => {
         {
             
             visVidere&&
-            <VelgMuligheter masterId={masterId} answer={answer}></VelgMuligheter>
+            <VelgMuligheter masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
+
             
 
        
