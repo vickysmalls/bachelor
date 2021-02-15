@@ -43,14 +43,16 @@ const VelgMuligheter = ({masterId, answer}) => {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
         } 
 
-        {(
-            masterId ===10  || masterId ===11 || masterId ===12 
-         ) 
-         ? 
-         (
-            <Semester klassetrinn={klassetrinn} semester={4} klasseId ={answer}/>
-         ) 
-        : null
+        {
+            (
+                masterId ===1 || masterId ===2 || masterId ===10  || masterId ===11 || masterId ===12 
+            ) 
+        ? 
+            (
+                <Semester klassetrinn={klassetrinn} semester={4} klasseId ={answer}/>
+            ) 
+        : 
+            null
         }
         
         
@@ -64,9 +66,16 @@ const VelgMuligheter = ({masterId, answer}) => {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
-        {masterId === 1 && (
-            <Semester klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
-        )
+        {
+            (
+                masterId ===10  || masterId ===11 || masterId ===12 
+            ) 
+        ? 
+            (
+                <Semester klassetrinn={klassetrinn} semester={4} klasseId ={answer}/>
+            ) 
+        : 
+            null
         }
         
         
@@ -91,13 +100,6 @@ const VelgMuligheter = ({masterId, answer}) => {
         }
     
 
-            
-          
-            
-          
-        
-        
-
         </div>
 
         <div className='card-container'>
@@ -107,7 +109,7 @@ const VelgMuligheter = ({masterId, answer}) => {
         } 
 
         {masterId === 1 && (
-            <Semester klassetrinn={klassetrinn} semester={7} klasseId ={answer}/>
+            <Semester klassetrinn={klassetrinn} semester={8} klasseId ={answer}/>
         )
         }
         
