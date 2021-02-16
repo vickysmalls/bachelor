@@ -40,7 +40,8 @@ const VelgMuligheter = ({masterId, answer}) => {
         {
             //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
             (
-                masterId ===1 || masterId ===2 || masterId ===10  || masterId ===11 || masterId ===12 
+                masterId ===1 || masterId ===2 || masterId ===10  || 
+                masterId ===11 || masterId ===12 || masterId ===13 || masterId ===27
             ) 
         ? 
             (
@@ -63,7 +64,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         {
             (
-                masterId ===10  || masterId ===11 || masterId ===12 
+                masterId ===10  || masterId ===11 || masterId ===12 || masterId ===13 || masterId ===27
             ) 
         ? 
             (
@@ -85,7 +86,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         {(
             masterId ===1  || masterId ===2 || masterId ===3 || masterId ===4 || masterId ===5 ||
-            masterId ===6 || masterId ===7 || masterId ===8 || masterId ===9
+            masterId ===6 || masterId ===7 || masterId ===8 || masterId ===9 || masterId ===27
          ) 
          ? 
          (
