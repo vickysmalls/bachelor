@@ -71,6 +71,7 @@ const ObligFagCard = ({answer, masterId, obj}) => {
                     // det sorterte arrayet mappes
                     <ObligFagSemester semester={3} answer={answer}/>
             }
+            
 
         </div>
 

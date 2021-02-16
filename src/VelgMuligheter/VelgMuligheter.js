@@ -14,13 +14,7 @@ const VelgMuligheter = ({masterId, answer}) => {
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
 
-    function Lala (){
-        if(React.isValidElement(<CustomButton/> )){
-            return <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
-        }
-        return <Semester klassetrinn={klassetrinn}  semester={6} klasseId ={answer}/>
-
-    }
+    
 
 
     //lager et array som sortrer etter semester
@@ -44,6 +38,7 @@ const VelgMuligheter = ({masterId, answer}) => {
         } 
 
         {
+            //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
             (
                 masterId ===1 || masterId ===2 || masterId ===10  || masterId ===11 || masterId ===12 
             ) 
@@ -72,7 +67,7 @@ const VelgMuligheter = ({masterId, answer}) => {
             ) 
         ? 
             (
-                <Semester klassetrinn={klassetrinn} semester={4} klasseId ={answer}/>
+                <Semester klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
             ) 
         : 
             null
@@ -109,9 +104,13 @@ const VelgMuligheter = ({masterId, answer}) => {
         } 
 
         {masterId === 1 && (
-            <Semester klassetrinn={klassetrinn} semester={8} klasseId ={answer}/>
+            <Semester klassetrinn={klassetrinn} semester={7} klasseId ={answer}/>
         )
         }
+        {
+            <ObligFagSemester semester={7} answer={answer}/>
+        }
+        
         
         
         
@@ -127,6 +126,9 @@ const VelgMuligheter = ({masterId, answer}) => {
             <Semester klassetrinn={klassetrinn} semester={8} klasseId ={answer}/>
         )
         }
+        {
+            <ObligFagSemester semester={8} answer={answer}/>
+        }
         
         
         </div>
@@ -141,7 +143,9 @@ const VelgMuligheter = ({masterId, answer}) => {
             <Semester klassetrinn={klassetrinn} semester={9} klasseId ={answer}/>
         )
         }
-        
+        {
+            <ObligFagSemester semester={9} answer={answer}/>
+        }
         
 
         </div>
