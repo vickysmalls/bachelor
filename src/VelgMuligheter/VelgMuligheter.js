@@ -64,7 +64,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         {
             (
-                masterId ===10  || masterId ===11 || masterId ===12 || masterId ===13 || masterId ===27
+                masterId ===11 || masterId ===12 || masterId ===13 
             ) 
         ? 
             (
