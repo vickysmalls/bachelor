@@ -7,7 +7,7 @@ import Popup from './Popup/Popup';
 
 function App () {
 
-  const [buttonPopup, setButtonPopup] = useState(false);
+
 
 
   
@@ -27,15 +27,7 @@ function App () {
       </div>
       </div>
       
-      <main>
-        <h1>React Popups</h1>
-        <br/><br/>
-          <button onClick={() => setButtonPopup(true)}>Open Popup</button>
-      </main>
-
-      <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
-        <h3>Min popup</h3>
-      </Popup>
+      
       
       </div>
      

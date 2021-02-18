@@ -54,57 +54,38 @@ const ObligFagCard = ({answer, masterId, obj}) => {
     return ( 
         
         <>
-        //Popup som vises
-        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
-        <h3>Min popup</h3><br/>
-        </Popup>
-
+        
 
         <h2>Obligs</h2>
         
 
       
 
-        <h2>Semester 1</h2>
-        <div className='card-container'>
-        
-        
-        
-            <button 
-            onClick={() =>{ 
-                setButtonPopup(true)
-                
-            }}>
-
-            <FaEnvelopeOpenText size='2em'/>
-        </button>
-        
-        
-       
+        <h2>Semester 1</h2>   
             {
                     // det sorterte arrayet mappes
                     <ObligFagSemester semester={1} answer={answer}/>
             }
 
-        </div>
+       
 
         <h2>Semester 2</h2>
-        <div className='card-container'>
+        
             {
                     // det sorterte arrayet mappes
                     <ObligFagSemester semester={2} answer={answer}/>
             }
 
-        </div>
+       
         <h2>Semester 3</h2>
-        <div className='card-container'>
+        
             {
                     // det sorterte arrayet mappes
                     <ObligFagSemester semester={3} answer={answer}/>
             }
             
 
-        </div>
+        
 
         
 
@@ -129,6 +110,10 @@ const ObligFagCard = ({answer, masterId, obj}) => {
         }
         
         </div>
+        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
+            <h3>Min popup</h3><br/>
+            
+        </Popup>
         </>
         
         

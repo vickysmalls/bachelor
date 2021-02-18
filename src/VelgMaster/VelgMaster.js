@@ -41,7 +41,7 @@ const VelgMaster = ({answer}) => {
 
 
     return ( 
-        <div>
+        <>
         <h2>Velg Masteremne</h2>
         <div className='card-container'>
 
@@ -83,11 +83,7 @@ const VelgMaster = ({answer}) => {
            
         </div>
         
-        // Popupen
-        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
-            <h3>Min popup</h3><br/>
-            <h5>{fagNavn}</h5>
-        </Popup>
+       
 
         <div className="ny">
         {   
@@ -97,7 +93,13 @@ const VelgMaster = ({answer}) => {
         }
         
         </div>
-        </div>
+        
+        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
+        <h3>Min popup</h3><br/>
+        <h5>{fagNavn}</h5>
+        </Popup>
+        
+        </>
         
         
      );
