@@ -78,11 +78,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         {
             (
-<<<<<<< HEAD
-                masterId ===10  || masterId ===11 || masterId ===12 || masterId ===13 
-=======
-                masterId ===11 || masterId ===12 || masterId ===13 
->>>>>>> e33778d7033178b0a15f7fa2c39a6880cb98b171
+                masterId===10 || masterId ===11 || masterId ===12 || masterId ===13 
             ) 
         ? 
             (

@@ -46,14 +46,7 @@ const Muligheter = ({masterId, semester, setShow, show, klassetrinn, sorted, clo
                             oblig.masterFagId === masterId &&
                             oblig.semester === semester &&
                             <>
-                            
-                            
-                            
-                        
-                            <button onClick={() => setShow(true)} >
-                            
-                            <FaEnvelopeOpenText size='2em'/>
-                            </button>
+                          
                                 <CustomButton
                                 
                                 
@@ -73,7 +66,7 @@ const Muligheter = ({masterId, semester, setShow, show, klassetrinn, sorted, clo
                                 
                                     {oblig.fagnavn}
                                 </CustomButton>
-                                <Modal show={show} close = {close}/>
+                                
 
                             </>
                             
