@@ -2,18 +2,17 @@ import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
 import Semester from '../Semester/Semester';
 import useFetch from '../useFetch';
+import { Modal } from '../Modal/Modal';
+import { FaEnvelopeOpenText } from 'react-icons/fa';
 const _ = require("lodash");  
 
 
 
 
-const Muligheter = ({masterId, semester, isTrue, klasseId, klassetrinn, sorted, answer}) => {
+const Muligheter = ({masterId, semester, setShow, show, klassetrinn, sorted, close}) => {
 
     
-    //const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
-
-    const [mulighetTrue, setMulighetTrue] = useState(false);
-   
+    
     //logger ved trykk
     function handleClick(e) {
         console.log('The link was clicked.');
@@ -34,7 +33,8 @@ const Muligheter = ({masterId, semester, isTrue, klasseId, klassetrinn, sorted, 
         
         <>
         
-        
+       
+      
         
 
             {   
@@ -45,8 +45,18 @@ const Muligheter = ({masterId, semester, isTrue, klasseId, klassetrinn, sorted, 
                             //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
                             oblig.masterFagId === masterId &&
                             oblig.semester === semester &&
+                            <>
                             
+                            
+                            
+                        
+                            <button onClick={() => setShow(true)} >
+                            
+                            <FaEnvelopeOpenText size='2em'/>
+                            </button>
                                 <CustomButton
+                                
+                                
                                     //setter fargen på den valgte fagveien
                                     style={{backgroundColor: 'red'}} 
                                     key={oblig.id}
@@ -54,33 +64,29 @@ const Muligheter = ({masterId, semester, isTrue, klasseId, klassetrinn, sorted, 
                                     
                                     onClick ={() =>{
                                         handleClick(oblig);
-                                        //setIsTrue(true);
-                                        isTrue(true);
+                                    
+                                        
+                                        
                                         
                                     }}
                                 >
+                                
                                     {oblig.fagnavn}
                                 </CustomButton>
-                                 
+                                <Modal show={show} close = {close}/>
+
+                            </>
                             
-                            
-                                ))
-                
+                        ))
+                    }
                     
-                         
-                        
-
-            }
+               </>
+               
+             );
             
 
+            };
            
-            
- 
-        </>
-        
-        
-        
-        
-     );
-};
+
 export default Muligheter;
+

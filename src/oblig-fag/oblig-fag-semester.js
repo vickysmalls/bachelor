@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
+import { FaEnvelopeOpenText } from 'react-icons/fa';
 import CustomButton from '../CustomButton/CustomButton';
+import Popup from '../Popup/Popup';
 import useFetch from '../useFetch';
 const _ = require("lodash");  
 
@@ -11,12 +13,15 @@ const ObligFagSemester = ({answer, semester}) => {
     
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
 
+
+
     //lager et array som sortrer etter semester
     const iteratees = obj => obj.semester;
     const sorted = _.sortBy(klassetrinn, iteratees);
     
 
     return ( 
+        
         <>
         
 
@@ -27,6 +32,10 @@ const ObligFagSemester = ({answer, semester}) => {
                         //om klasseId er det samme som answer fra KlasseList =>
                         oblig.klasseId ===answer &&
                         oblig.semester ===semester &&
+                        
+
+                       
+
                         <CustomButton 
                             key={oblig.id}
                             
@@ -34,16 +43,18 @@ const ObligFagSemester = ({answer, semester}) => {
                          {oblig.fagnavn}
                         </CustomButton>
                         
+                        
                     ))
+                    
             }
-            {
-                
-            }
-
+            
+            
         
         </>
         
         
+        
      );
+     
 };
 export default ObligFagSemester;

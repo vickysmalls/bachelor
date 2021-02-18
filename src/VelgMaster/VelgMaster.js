@@ -3,6 +3,8 @@ import './VelgMaster.css';
 import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
 import ObligFagCard from '../oblig-fag/oblig-fag-card';
+import Popup from '../Popup/Popup';
+import { FaEnvelopeOpenText } from 'react-icons/fa';
 const _ = require("lodash");  
 
 
@@ -17,7 +19,7 @@ const VelgMaster = ({answer}) => {
     const [masterId, setMasterId] = useState();
     //const [mulighetTrue, setMulighetTrue] = useState();
     const [visVidere, setVisVidere] = useState(false);
-    const [farge, setFarge] = useState();
+    const [buttonPopup, setButtonPopup] = useState(false);
     const [obj, setObj] = useState();
 
     
@@ -50,6 +52,16 @@ const VelgMaster = ({answer}) => {
                         
                         //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
                         oblig.klasseId === answer &&
+                        <>
+                        
+                        <button 
+                        onClick={() =>{ 
+                            setButtonPopup(true)
+                            setFagnavn(oblig.fagnavn)
+                        }}>
+
+                        <FaEnvelopeOpenText size='2em'/>
+                    </button>
                         
                     <CustomButton 
                         key={oblig.id}
@@ -65,10 +77,17 @@ const VelgMaster = ({answer}) => {
                         >
                          {oblig.fagnavn}
                     </CustomButton>
+                    </>
                     ))
             }
            
         </div>
+        
+        // Popupen
+        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
+            <h3>Min popup</h3><br/>
+            <h5>{fagNavn}</h5>
+        </Popup>
 
         <div className="ny">
         {   

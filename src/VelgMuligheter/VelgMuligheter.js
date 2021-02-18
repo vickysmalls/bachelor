@@ -1,13 +1,16 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
+import { Modal } from '../Modal/Modal';
 import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
 import useFetch from '../useFetch';
 import Muligheter from './Muligheter';
+import {FaEnvelopeOpenText} from 'react-icons/fa';
+
 const _ = require("lodash");  
 
 
-
+//popup
 
 const VelgMuligheter = ({masterId, answer}) => {
 
@@ -15,18 +18,29 @@ const VelgMuligheter = ({masterId, answer}) => {
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
 
     
-
-
     //lager et array som sortrer etter semester
     const iteratees = obj => obj.semester;
     const sorted = _.sortBy(klassetrinn, iteratees);
  
-    
-    const [isTrue, setIsTrue] = useState(false);
-    
+    const [show, setShow] = useState(false);
+
+    const close = () =>{
+        setShow(false);
+    }
+   
+
 
     return ( 
-        <div>
+        
+        
+        <>
+        {show ? <div onClick={close} > </div> : null}
+        <button className='btn-openModal' onClick={() => setShow(true)}>
+          Open Modal
+        </button>
+
+       
+
         <h2>muligheter</h2>
 
 
@@ -64,7 +78,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         {
             (
-                masterId ===10  || masterId ===11 || masterId ===12 || masterId ===13 || masterId ===27
+                masterId ===10  || masterId ===11 || masterId ===12 || masterId ===13 
             ) 
         ? 
             (
@@ -152,7 +166,7 @@ const VelgMuligheter = ({masterId, answer}) => {
         </div>
 
         
-        </div>
+        </>
         
         
      );
