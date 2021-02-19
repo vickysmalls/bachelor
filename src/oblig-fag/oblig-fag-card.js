@@ -1,30 +1,14 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
-import useFetch from '../useFetch';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagSemester from './oblig-fag-semester';
-import Muligheter from '../VelgMuligheter/Muligheter';
-import { Modal } from '../Modal/Modal';
-import Popup from '../Popup/Popup';
-import { FaEnvelopeOpenText } from 'react-icons/fa';
-
-const _ = require("lodash");  
-
 
 
 const ObligFagCard = ({answer, masterId, obj}) => {
 
     
     
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
     const [visVidere, setVisVidere] = useState(false);
-
-
-    
-
-    const [buttonPopup, setButtonPopup] = useState(false);
-
-
 
     function visVidereClick(visVidere){
         console.log('vis videre klikket');
@@ -32,25 +16,7 @@ const ObligFagCard = ({answer, masterId, obj}) => {
         
         setVisVidere(true)
     }
-    
-   
-    //logger ved trykk
-    function handleClick(e) {
-        console.log('The link was clicked.');
-        
-        console.log(e);
-        
-    }
-
-
-    //lager et array som sortrer etter semester
-    const iteratees = obj => obj.semester;
-    const sorted = _.sortBy(klassetrinn, iteratees);
-    
-    
-
-    
-
+ 
     return ( 
         
         <>
@@ -110,10 +76,7 @@ const ObligFagCard = ({answer, masterId, obj}) => {
         }
         
         </div>
-        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
-            <h3>Min popup</h3><br/>
-            
-        </Popup>
+       
         </>
         
         

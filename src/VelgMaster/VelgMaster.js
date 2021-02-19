@@ -3,7 +3,6 @@ import './VelgMaster.css';
 import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
 import ObligFagCard from '../oblig-fag/oblig-fag-card';
-import Popup from '../Popup/Popup';
 import { FaEnvelopeOpenText } from 'react-icons/fa';
 const _ = require("lodash");  
 
@@ -19,7 +18,6 @@ const VelgMaster = ({answer}) => {
     const [masterId, setMasterId] = useState();
     //const [mulighetTrue, setMulighetTrue] = useState();
     const [visVidere, setVisVidere] = useState(false);
-    const [buttonPopup, setButtonPopup] = useState(false);
     const [obj, setObj] = useState();
 
     
@@ -56,7 +54,7 @@ const VelgMaster = ({answer}) => {
                         
                         <button 
                         onClick={() =>{ 
-                            setButtonPopup(true)
+                            
                             setFagnavn(oblig.fagnavn)
                         }}>
 
@@ -94,10 +92,7 @@ const VelgMaster = ({answer}) => {
         
         </div>
         
-        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
-        <h3>Min popup</h3><br/>
-        <h5>{fagNavn}</h5>
-        </Popup>
+        
         
         </>
         

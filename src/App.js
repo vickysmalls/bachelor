@@ -2,15 +2,12 @@ import Navbar from './Header/Header';
 import KlasseList from './VelgKlasse/KlasseList';
 import './App.css';
 import {useState} from 'react';
-import Popup from './Popup/Popup';
+import Modal from './Modal/Modal';
+
+
 
 
 function App () {
-
-
-
-
-  
 
 
     return (
@@ -19,15 +16,13 @@ function App () {
       
 
       <div className="content">
-      <div className='fagcard'>
+        <div className='fagcard'>
 
-       <KlasseList/>
+          <KlasseList/>
+          
         
-       
+        </div>
       </div>
-      </div>
-      
-      
       
       </div>
      

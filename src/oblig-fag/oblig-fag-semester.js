@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import { FaEnvelopeOpenText } from 'react-icons/fa';
 import CustomButton from '../CustomButton/CustomButton';
-import Popup from '../Popup/Popup';
+import InfoButton from '../CustomButton/InfoButton';
+import Modal from '../Modal/Modal';
 import useFetch from '../useFetch';
 const _ = require("lodash");  
 
@@ -14,12 +14,13 @@ const ObligFagSemester = ({answer, semester}) => {
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/obligfag/`);
 
 
-    const [buttonPopup, setButtonPopup] = useState(false);
     const [fagnavn, setFagnavn] = useState();
     //const [semester, setSemester] = useState();
     const [emnekode, setEmneKode] = useState();
     const [studiepoeng, setStudiepoeng] = useState();
     const [klasseId ,setKlasseId] = useState();
+    const [isOpen, setIsOpen] = useState(false);
+
     
 
     //lager et array som sortrer etter semester
@@ -39,21 +40,19 @@ const ObligFagSemester = ({answer, semester}) => {
                         oblig.klasseId ===answer &&
                         oblig.semester ===semester &&
                         <>
-                        <button 
+
+                        <InfoButton 
                             onClick={() =>{ 
-                                setButtonPopup(true)
+                                setIsOpen(true)
                                 setFagnavn(oblig.fagnavn)
                                 //setSemester(oblig.semester)
                                 setEmneKode(oblig.emnekode)
                                 setStudiepoeng(oblig.studiepoeng)
                                 setKlasseId(oblig.klasseId)
                                 
-                            }}>
+                            }}> 
+                        </InfoButton>
 
-                            <FaEnvelopeOpenText size='2em'/>
-                        </button>
-
-                       
 
                         <CustomButton 
                             key={oblig.id}
@@ -67,9 +66,14 @@ const ObligFagSemester = ({answer, semester}) => {
                     
             }
         </div>
-        <Popup trigger={buttonPopup} setTrigger = {setButtonPopup}>
-            <h3>Info om {fagnavn}</h3><br/>
-           
+        
+
+            <Modal 
+                open= {isOpen} 
+                onClose={() => setIsOpen(false)}
+            >
+                <h3>Info om {fagnavn}</h3><br/>
+
                 <ul>
                     <li>
                     Fagnavn: {fagnavn}
@@ -84,8 +88,7 @@ const ObligFagSemester = ({answer, semester}) => {
                     klassetrinn: {klasseId}
                     </li>
                 </ul>
-
-            </Popup>
+            </Modal>
 
         </>
         

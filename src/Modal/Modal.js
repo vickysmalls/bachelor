@@ -1,40 +1,24 @@
-import React, { useRef, useEffect } from 'react';
-import './Modal.css';
+import React from 'react'
+import ReactDom from 'react-dom';
+import { FaEnvelopeOpenText, FaRegWindowClose } from 'react-icons/fa';
+import '../Popup/Popup.css';
 
+export default function Modal({children, open, onClose}) {
+    if (! open) return null
 
-export const Modal = ({ close, show, fag }) => {
-  
-
-  
-
-  return (
-    <>
-
-    <div className="modal-wrapper"
-        style= {{
-            opacity: show ? '1' : 0
-        }}
-    >
-        <div className="modal-header">
-            <p>Welcome</p>
-            <span onClick={close} className='close-modal-btn' >X</span>
-        </div>
-        <div className="modal-content">
-            <div className="modal-body">
-                <h4>Modal</h4>
-                <p >{}</p>
-            
-            <div className="modal-footer">
-                <button onClick={close} className='btn-cancel'>Close</button>
+    return ReactDom.createPortal (
+        <>
+    
+        <div className='popup'>
+        <div className="popup-inner">
+          <button>
+            <FaRegWindowClose onClick={onClose} size='1.5em' className="close-btn"/>
+          </button>
+            {children}
             </div>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-    </>
-  );
-};
+          </div>
+        </>,
+        document.getElementById('portal')
+        
+    )
+}

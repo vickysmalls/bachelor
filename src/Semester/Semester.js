@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
-
-import useFetch from '../useFetch';
+import InfoButton from '../CustomButton/InfoButton';
+import Modal from '../Modal/Modal';
 
 const Semester = ({klasseId, semester, klassetrinn}) => {
-    //const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
     
     
     //logger ved trykk
@@ -14,11 +13,18 @@ const Semester = ({klasseId, semester, klassetrinn}) => {
         console.log(e);
         
     }
+
+    const [fagnavn, setFagnavn] = useState();
+    //const [semester, setSemester] = useState();
+    const [emnekode, setEmneKode] = useState();
+    const [studiepoeng, setStudiepoeng] = useState();
+    
+    const [isOpen, setIsOpen] = useState(false);
     
     return ( 
-        <div>
         
-        <div className=''>
+        
+        <>
         
             {
                 klassetrinn &&
@@ -28,8 +34,25 @@ const Semester = ({klasseId, semester, klassetrinn}) => {
                             //om semester = 5 vis semester og semeseter fag
                             oblig.semester === semester &&
                             oblig.klasseId === klasseId &&
+                        
+                            <>
+
                             
-                            <div className=''>
+                            <InfoButton 
+                            onClick={() =>{ 
+                                setIsOpen(true)
+                                setFagnavn(oblig.fagnavn)
+                                //setSemester(oblig.semester)
+                                setEmneKode(oblig.emnekode)
+                                setStudiepoeng(oblig.studiepoeng)
+                                //setKlasseId(oblig.klasseId)
+                                
+                            }}>
+
+                            
+                        </InfoButton>
+                                
+
                             
                             
                                 <CustomButton 
@@ -47,13 +70,36 @@ const Semester = ({klasseId, semester, klassetrinn}) => {
                                 </CustomButton>
                                
                                           
-                            </div>
+                            </>
                 ))
             }
+            
+            <Modal 
+                open= {isOpen} 
+                onClose={() => setIsOpen(false)}
+            >
+            <h3>Info om {fagnavn}</h3><br/>
+
+            <ul>
+                <li>
+                Fagnavn: {fagnavn}
+                </li>
+                <li>
+                Emnekode: {emnekode}
+                </li>
+                <li>
+                Studiepoeng: {studiepoeng}
+                </li>
+                <li>
+                klassetrinn: {klasseId}
+                </li>
+            </ul>
+        </Modal>
  
-        </div>
+        </>
         
-    </div>
+        
+    
         
         
      );
