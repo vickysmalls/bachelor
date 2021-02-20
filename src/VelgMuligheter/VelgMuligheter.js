@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
+import InfoButton from '../CustomButton/InfoButton';
 import Modal from '../Modal/Modal';
 import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
@@ -148,9 +149,13 @@ const VelgMuligheter = ({masterId, answer}) => {
         )
         }
         {
+            
             <ObligFagSemester semester={8} answer={answer}/>
+
         }
-        
+        {
+            
+        }
         
         </div>
 
@@ -197,18 +202,20 @@ const VelgMuligheter = ({masterId, answer}) => {
             <div className="semester4">
             <h1>semester 4</h1>
                 <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
-                
-                <CustomButton>{valgtFag4}</CustomButton>
+                {valgtFag4 &&
+                <CustomButton>{valgtFag4}</CustomButton>}
             </div>
             <div className="semester5">
             <h1>semester 5</h1>
                 <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
-                <CustomButton>{valgtFag5}</CustomButton>    
+                {valgtFag5 &&
+                <CustomButton>{valgtFag5}</CustomButton>   }
             </div>
             <div className="semester6">
             <h1>semester 6</h1>
                 <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
-                <CustomButton>{valgtFag6}</CustomButton>
+                {valgtFag6 &&
+                    <CustomButton>{valgtFag6}</CustomButton>}
             </div>
             <div className="semester7">
             <h1>semester 7</h1>
