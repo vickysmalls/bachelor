@@ -1,7 +1,10 @@
 import React, {useState} from 'react'
+import CustomButton from '../CustomButton/CustomButton';
+import Modal from '../Modal/Modal';
 import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
 import useFetch from '../useFetch';
+import ResultatCard from '../VisResultat/Resultat-card';
 import Muligheter from './Muligheter';
 
 const _ = require("lodash");  
@@ -13,10 +16,20 @@ const VelgMuligheter = ({masterId, answer}) => {
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
 
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const [valgtFag, setValgtFag] = useState();
+
+    const [videre, setVidere] = useState(false);
+
+
     
     //lager et array som sortrer etter semester
     const iteratees = obj => obj.semester;
     const sorted = _.sortBy(klassetrinn, iteratees);
+
+   
  
 
     return ( 
@@ -153,6 +166,70 @@ const VelgMuligheter = ({masterId, answer}) => {
         
 
         </div>
+
+        <div>
+        <CustomButton onClick={() => setVidere(true)}>Videre</CustomButton>
+        </div>
+
+        <div>
+        {videre &&
+        <div>
+            <div className="semester1">
+            <h1>semester 1</h1>
+                <ObligFagSemester semester={1} answer={answer}/>
+            </div>
+            <div className="semester2">
+            <h1>semester 2</h1>
+                <ObligFagSemester semester={2} answer={answer}/>    
+            </div>
+            <div className="semester3">
+            <h1>semester 3</h1>
+                <ObligFagSemester semester={3} answer={answer}/>    
+            </div>
+            <div className="semester4">
+            <h1>semester 4</h1>
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+            </div>
+            <div className="semester5">
+            <h1>semester 5</h1>
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>    
+            </div>
+            <div className="semester6">
+            <h1>semester 6</h1>
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+            </div>
+            <div className="semester7">
+            <h1>semester 7</h1>
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+                <ObligFagSemester semester={7} answer={answer}/>
+
+            </div>
+            <div className="semester8">
+            <h1>semester 8</h1>
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
+                <ObligFagSemester semester={8} answer={answer}/>
+
+            </div>
+            <div className="semester9">
+            <h1>semester 9</h1>
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+                <ObligFagSemester semester={9} answer={answer}/>
+
+            </div>
+            
+           
+        </div>
+        }
+
+        </div>
+
+        <button onClick={() => setIsOpen(true)}>Klikk</button>
+
+        <Modal 
+        open= {isOpen} 
+        onClose={() => setIsOpen(false)}
+
+        >{valgtFag}</Modal>
 
         
         </>

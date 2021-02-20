@@ -6,6 +6,8 @@ import '../Popup/Popup.css';
 export default function Modal({children, open, onClose}) {
     if (! open) return null
 
+    //Create portal gjør at man kan ha den i ooriginal html (DOM) index.html
+    //Gjør at man kan manipulere og bruke popupen over alt det andre
     return ReactDom.createPortal (
         <>
     

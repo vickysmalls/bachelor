@@ -31,7 +31,7 @@ const ObligFagSemester = ({answer, semester}) => {
     return ( 
         
         <>
-        <div className="card-container">
+        <>
          {
                 
                     // det sorterte arrayet mappes
@@ -65,7 +65,7 @@ const ObligFagSemester = ({answer, semester}) => {
                     ))
                     
             }
-        </div>
+        </>
         
 
             <Modal 

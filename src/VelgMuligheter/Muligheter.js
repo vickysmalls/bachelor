@@ -24,6 +24,8 @@ const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
     const [klasseId ,setKlasseId] = useState();
     const [isOpen, setIsOpen] = useState(false);
 
+    const [resultat, setResultat] = useState();
+
        
     return ( 
         
@@ -64,6 +66,7 @@ const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
                                 
                                 onClick ={() =>{
                                     handleClick(oblig);
+                                    
                                 
                                     
                                     

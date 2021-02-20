@@ -15,7 +15,7 @@ const Semester = ({klasseId, semester, klassetrinn}) => {
     }
 
     const [fagnavn, setFagnavn] = useState();
-    //const [semester, setSemester] = useState();
+    const [valgtFag, setValgtFag] = useState();
     const [emnekode, setEmneKode] = useState();
     const [studiepoeng, setStudiepoeng] = useState();
     
@@ -61,6 +61,7 @@ const Semester = ({klasseId, semester, klassetrinn}) => {
                                     klasseId = {oblig.klasseId}
                                     onClick = {() =>{
                                         handleClick(oblig)
+                                        
 
                                     }}
                                 >
