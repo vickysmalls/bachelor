@@ -13,7 +13,7 @@ const _ = require("lodash");
 
 
 
-const VelgMuligheter = ({masterId, answer}) => {
+const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
@@ -21,6 +21,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    //for å filtrere muligheter i Semester, når man ser hva man har valgt
     const [muligheterId1, setMuligheterId1] = useState();
     const [muligheterId2, setMuligheterId2] = useState();
     const [muligheterId3, setMuligheterId3] = useState();
@@ -55,13 +56,14 @@ const VelgMuligheter = ({masterId, answer}) => {
         <h3>Semester 4</h3> <h1>{valgtFag4}</h1> <h2>{muligheterId1}</h2>
         
         {
-            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+            <Muligheter fa  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
         } 
 
         {
             //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
             (
-                masterId ===1  || masterId ===2  || masterId ===3  || masterId ===11 || 
+                //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===11 || 
+                fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  ||fagNavn.includes('Engelsk')|| fagNavn.includes('Profesjonsrettet pedagogikk') ||
                 masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
                 masterId ===16 || masterId ===17 || masterId ===24 || masterId ===25 || 
                 masterId ===26 || masterId ===27 
@@ -95,7 +97,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         {
             (
-                masterId ===11 || masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
+                fagNavn.includes('Profesjonsrettet pedagogikk')|| masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
                 masterId ===16 || masterId ===17 || masterId ===24 || masterId ===25 || masterId ===26 || 
                 masterId ===27
             ) 
@@ -118,9 +120,12 @@ const VelgMuligheter = ({masterId, answer}) => {
         } 
 
         {(
-            masterId ===1  || masterId ===2  || masterId ===3  || masterId ===4  || masterId ===5  || 
-            masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
-            masterId ===11 || masterId ===15 || masterId ===16 || masterId ===17 || masterId === 18 ||
+            //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===4  || masterId ===5  ||
+            fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  ||fagNavn.includes('Engelsk')|| fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøvning')|| 
+            //masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
+            fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  ||fagNavn.includes('Tegnspråk')|| 
+
+             masterId ===15 || masterId ===16 || masterId ===17 || masterId === 18 ||
             masterId ===19 || masterId ===20 || masterId ===21 || masterId ===22 || masterId ===23 
          ) 
          ? 

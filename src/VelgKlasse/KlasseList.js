@@ -34,6 +34,7 @@ const KlasseList = ({ handleClick}) => {
         setVisVidere(true)
     }
     
+    
     return ( 
         
         <div className=''>
