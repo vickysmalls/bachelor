@@ -19,9 +19,13 @@ const VelgMuligheter = ({masterId, answer}) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
-    const [valgtFag, setValgtFag] = useState();
+    const [valgtFag4, setValgtFag4] = useState();
+    const [valgtFag5, setValgtFag5] = useState();
+    const [valgtFag6, setValgtFag6] = useState();
+
 
     const [videre, setVidere] = useState(false);
+
 
 
     
@@ -41,7 +45,7 @@ const VelgMuligheter = ({masterId, answer}) => {
 
 
         <div className='card-container'>
-        <h3>Semester 4</h3>
+        <h3>Semester 4</h3> <h1>{valgtFag4}</h1>
         
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
@@ -57,7 +61,7 @@ const VelgMuligheter = ({masterId, answer}) => {
             ) 
         ? 
             (
-                <Semester klassetrinn={klassetrinn} semester={4} klasseId ={answer}/>
+                <Semester setValgtFag={setValgtFag4} valgtFag={valgtFag4} klassetrinn={klassetrinn} semester={4} klasseId ={answer}/>
             ) 
         : 
             null
@@ -69,7 +73,7 @@ const VelgMuligheter = ({masterId, answer}) => {
         </div>
 
         <div className='card-container'>
-        <h3>Semester 5</h3>
+        <h3>Semester 5</h3><h1>{valgtFag5}</h1>
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
@@ -82,7 +86,7 @@ const VelgMuligheter = ({masterId, answer}) => {
             ) 
         ? 
             (
-                <Semester klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
+                <Semester setValgtFag={setValgtFag5} valgtFag={valgtFag5} klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
             ) 
         : 
             null
@@ -92,7 +96,7 @@ const VelgMuligheter = ({masterId, answer}) => {
         </div>
 
         <div className='card-container'>
-        <h3>Semester 6</h3>
+        <h3>Semester 6</h3><h1>{valgtFag6}</h1>
         
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
@@ -106,7 +110,7 @@ const VelgMuligheter = ({masterId, answer}) => {
          ) 
          ? 
          (
-            <Semester klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
+            <Semester setValgtFag={setValgtFag6} valgtFag={valgtFag6}  klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
          ) 
         : null
         }
@@ -173,6 +177,10 @@ const VelgMuligheter = ({masterId, answer}) => {
 
         <div>
         {videre &&
+            <>
+            
+           
+           
         <div>
             <div className="semester1">
             <h1>semester 1</h1>
@@ -189,14 +197,18 @@ const VelgMuligheter = ({masterId, answer}) => {
             <div className="semester4">
             <h1>semester 4</h1>
                 <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+                
+                <CustomButton>{valgtFag4}</CustomButton>
             </div>
             <div className="semester5">
             <h1>semester 5</h1>
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>    
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+                <CustomButton>{valgtFag5}</CustomButton>    
             </div>
             <div className="semester6">
             <h1>semester 6</h1>
                 <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+                <CustomButton>{valgtFag6}</CustomButton>
             </div>
             <div className="semester7">
             <h1>semester 7</h1>
@@ -219,17 +231,12 @@ const VelgMuligheter = ({masterId, answer}) => {
             
            
         </div>
+        </>
         }
 
         </div>
 
-        <button onClick={() => setIsOpen(true)}>Klikk</button>
-
-        <Modal 
-        open= {isOpen} 
-        onClose={() => setIsOpen(false)}
-
-        >{valgtFag}</Modal>
+        
 
         
         </>

@@ -3,19 +3,15 @@ import CustomButton from '../CustomButton/CustomButton';
 import InfoButton from '../CustomButton/InfoButton';
 import Modal from '../Modal/Modal';
 
-const Semester = ({klasseId, semester, klassetrinn}) => {
+const Semester = ({klasseId, semester, klassetrinn, setValgtFag}) => {
     
     
     //logger ved trykk
-    function handleClick(e) {
-        console.log('The link was clicked.');
-        
-        console.log(e);
-        
-    }
+    function handleChange(ele) {
+        setValgtFag(ele);
+      }
 
     const [fagnavn, setFagnavn] = useState();
-    const [valgtFag, setValgtFag] = useState();
     const [emnekode, setEmneKode] = useState();
     const [studiepoeng, setStudiepoeng] = useState();
     
@@ -60,7 +56,7 @@ const Semester = ({klasseId, semester, klassetrinn}) => {
                                     semester={oblig.semester}
                                     klasseId = {oblig.klasseId}
                                     onClick = {() =>{
-                                        handleClick(oblig)
+                                        handleChange(oblig.fagnavn)
                                         
 
                                     }}
