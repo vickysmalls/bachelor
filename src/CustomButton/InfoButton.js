@@ -10,9 +10,7 @@ const InfoButton = ({
         className='infoknapp'
         {...otherProps}
         >
-        
-        <FaEnvelopeOpenText size='2em'/>
-        
+            <FaEnvelopeOpenText size='2em'/>
         </button>
                
      );

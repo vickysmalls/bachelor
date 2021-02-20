@@ -5,7 +5,7 @@ import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagSemester from './oblig-fag-semester';
 import './oblig-fag.css';
 
-const ObligFagCard = ({answer, masterId, obj}) => {
+const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
     
     
@@ -72,7 +72,7 @@ const ObligFagCard = ({answer, masterId, obj}) => {
         {
             
             visVidere&&
-            <VelgMuligheter masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
+            <VelgMuligheter fagNavn ={fagNavn} masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
             
 
        
