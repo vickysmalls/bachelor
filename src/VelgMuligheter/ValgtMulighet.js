@@ -4,16 +4,13 @@ import InfoButton from '../CustomButton/InfoButton';
 import Modal from '../Modal/Modal';
 import Muligheter from '../VelgMuligheter/Muligheter';
 
-const Semester = ({klasseId, semester, klassetrinn, setMuligheterId}) => {
+const ValgtMulighet = ({klasseId, semester, klassetrinn, muligheterId}) => {
     
     
     //
     
        //
-    function handleMuligheter(ele) {
-        
-        setMuligheterId(ele);
-      }
+    
 
     const [fagnavn, setFagnavn] = useState();
     const [emnekode, setEmneKode] = useState();
@@ -31,10 +28,8 @@ const Semester = ({klasseId, semester, klassetrinn, setMuligheterId}) => {
                     
                         klassetrinn.map((oblig)=>(
                             
-                            //oblig.MasterFagId === masterId &&
-                            //om semester = 5 vis semester og semeseter fag
-                            oblig.semester === semester &&
-                            oblig.klasseId === klasseId &&
+                            
+                            oblig.id === muligheterId &&
                             
                         
                             <>
@@ -61,12 +56,7 @@ const Semester = ({klasseId, semester, klassetrinn, setMuligheterId}) => {
                                     key={oblig.id}
                                     semester={oblig.semester}
                                     klasseId = {oblig.klasseId}
-                                    onClick = {() =>{
                                     
-                                        handleMuligheter(oblig.id)
-                                        
-
-                                    }}
                                 >
                                     semester:{oblig.semester}, fag: 
 
@@ -108,5 +98,5 @@ const Semester = ({klasseId, semester, klassetrinn, setMuligheterId}) => {
         
      );
 }
- 
-export default Semester;
+
+export default ValgtMulighet;
