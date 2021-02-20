@@ -32,9 +32,9 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
        
 
-        
-        <div className="card-container">
         <h2>Semester 2</h2>
+        <div className="fag">
+        
             {
                     // det sorterte arrayet mappes
                 <ObligFagSemester semester={2} answer={answer}/>
@@ -44,9 +44,9 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
             
 
        
-        
-        <div className="card-container">
         <h2>Semester 3</h2>
+        <div className="fag">
+        
             {
                     // det sorterte arrayet mappes
                     <ObligFagSemester semester={3} answer={answer}/>

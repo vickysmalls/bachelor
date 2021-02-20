@@ -42,7 +42,21 @@ const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
                         oblig.masterFagId === masterId &&
                         oblig.semester === semester &&
                         <>
-                        <InfoButton 
+                        
+                      
+                            <CustomButton
+                                //setter fargen på den valgte fagveien
+                                style={{backgroundColor: 'red'}} 
+                                key={oblig.id}
+                                fag={oblig.fagnavn}
+                                
+                                onClick ={() =>{
+                                    handleClick(oblig);   
+                            }}>
+                                {oblig.fagnavn}
+                            </CustomButton>
+
+                            <InfoButton 
                             onClick={() =>{ 
                                 setIsOpen(true)
                                 setFagnavn(oblig.fagnavn)
@@ -52,30 +66,7 @@ const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
                                 setKlasseId(oblig.klasseId)
                                 
                             }}>
-
-                            
-                        </InfoButton>
-                      
-                            <CustomButton
-                            
-                            
-                                //setter fargen på den valgte fagveien
-                                style={{backgroundColor: 'red'}} 
-                                key={oblig.id}
-                                fag={oblig.fagnavn}
-                                
-                                onClick ={() =>{
-                                    handleClick(oblig);
-                                    
-                                
-                                    
-                                    
-                                    
-                                }}
-                            >
-                            
-                                {oblig.fagnavn}
-                            </CustomButton>
+                            </InfoButton>
                             
 
                         </>

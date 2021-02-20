@@ -44,8 +44,8 @@ const ObligFagSemester = ({answer, semester}) => {
 
                         <CustomButton 
                             key={oblig.id}
-                            
                         >
+
                          {oblig.fagnavn}
                         </CustomButton>
 
@@ -57,7 +57,6 @@ const ObligFagSemester = ({answer, semester}) => {
                                 setEmneKode(oblig.emnekode)
                                 setStudiepoeng(oblig.studiepoeng)
                                 setKlasseId(oblig.klasseId)
-                                
                             }}> 
                         </InfoButton>                        
                       </>  

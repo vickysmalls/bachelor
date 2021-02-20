@@ -1,4 +1,4 @@
-const { FaEnvelopeOpenText } = require("react-icons/fa")
+const { AiFillQuestionCircle } = require("react-icons/ai")
 
 const InfoButton = ({
     children,
@@ -10,7 +10,7 @@ const InfoButton = ({
         className='infoknapp'
         {...otherProps}
         >
-            <FaEnvelopeOpenText size='2em'/>
+            <AiFillQuestionCircle size='2em'/>
         </button>
                
      );

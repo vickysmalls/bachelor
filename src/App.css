@@ -20,10 +20,6 @@
   transition: transform 0.25s ease-out;
 }
 
-.card-container:hover {
-  
-}
-
 h2 {
   text-align: center;
 }
