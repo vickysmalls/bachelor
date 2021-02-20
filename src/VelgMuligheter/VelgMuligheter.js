@@ -43,8 +43,6 @@ const VelgMuligheter = ({masterId, answer}) => {
         <>
 
         <h2>muligheter</h2>
-
-
         <div className='card-container'>
         <h3>Semester 4</h3> <h1>{valgtFag4}</h1>
         

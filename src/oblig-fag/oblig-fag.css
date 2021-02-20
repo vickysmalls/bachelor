@@ -1,0 +1,7 @@
+.fag{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(50px, 50px);
+    width: 100px;
+}

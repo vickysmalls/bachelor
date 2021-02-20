@@ -3,7 +3,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import Modal from '../Modal/Modal';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagSemester from './oblig-fag-semester';
-
+import './oblig-fag.css';
 
 const ObligFagCard = ({answer, masterId, obj}) => {
 
@@ -21,15 +21,9 @@ const ObligFagCard = ({answer, masterId, obj}) => {
     return ( 
         
         <>
-        
-
         <h2>Obligs</h2>
-        
-
-      
-
-        <h2>Semester 1</h2>   
-        <div className="card-container">
+        <h2>Semester 1</h2> 
+        <div className="fag">
             {
                     // det sorterte arrayet mappes
                     <ObligFagSemester semester={1} answer={answer}/>
@@ -38,8 +32,9 @@ const ObligFagCard = ({answer, masterId, obj}) => {
 
        
 
-        <h2>Semester 2</h2>
+        
         <div className="card-container">
+        <h2>Semester 2</h2>
             {
                     // det sorterte arrayet mappes
                 <ObligFagSemester semester={2} answer={answer}/>
@@ -49,8 +44,9 @@ const ObligFagCard = ({answer, masterId, obj}) => {
             
 
        
-        <h2>Semester 3</h2>
+        
         <div className="card-container">
+        <h2>Semester 3</h2>
             {
                     // det sorterte arrayet mappes
                     <ObligFagSemester semester={3} answer={answer}/>

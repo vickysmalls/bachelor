@@ -25,49 +25,38 @@ const VelgMaster = ({answer}) => {
     //logger ved trykk
     function handleClick(e) {
         console.log('The link was clicked.');
-        
         console.log(e);
-        
     }
 
    
     return ( 
-        
         <>
         <h2>Velg Masteremne</h2>
-        <div className='card-container'>
-
+        <div className='masterfag'>
             {
-                masterFag &&
-                    
-                    masterFag.map((oblig)=>(
-                        
-                        //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
-                        oblig.klasseId === answer &&
-                        <>
-
-                            <CustomButton 
-                                key={oblig.id}
-                                options={oblig}
-                                
-                                onClick={() =>{
-                                    handleClick(oblig)
-                                    setMasterId(oblig.id)
-                                    setFagnavn(oblig.fagnavn)
-                                    setVisVidere(true)
-                                    
-                                }}
-                                >
-                                {oblig.fagnavn}
-                            </CustomButton>
-                    </>
-                    ))
-            }
-           
+                masterFag && masterFag.map((oblig)=>(
+                    //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
+                    oblig.klasseId === answer &&
+                    <>
+                    <div className='masterknapper'>
+                        <CustomButton
+                            key={oblig.id}
+                            options={oblig}                
+                            onClick={() =>{
+                                handleClick(oblig)
+                                setMasterId(oblig.id)
+                                setFagnavn(oblig.fagnavn)
+                                setVisVidere(true)                        
+                            }}
+                            >
+                            {oblig.fagnavn}
+                        </CustomButton>
+                    </div>    
+                </>
+                ))
+            }       
         </div>
         
-       
-
         <div className="ny">
         {   
             visVidere&&

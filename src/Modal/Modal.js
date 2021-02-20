@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDom from 'react-dom';
 import { FaEnvelopeOpenText, FaRegWindowClose } from 'react-icons/fa';
-import '../Popup/Popup.css';
+import './Modal.css';
 
 export default function Modal({children, open, onClose}) {
     if (! open) return null
 
-    //Create portal gjør at man kan ha den i ooriginal html (DOM) index.html
+    //Create portal gjør at man kan ha den i original html (DOM) index.html
     //Gjør at man kan manipulere og bruke popupen over alt det andre
     return ReactDom.createPortal (
         <>

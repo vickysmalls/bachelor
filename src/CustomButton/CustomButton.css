@@ -1,32 +1,33 @@
 .custom-button {
-    min-width: 350px;
-    width: auto;
     height: 50px;
+    width: 600px; /* for å fikse bredden på knappene om man endrer tesksten */
     letter-spacing: 0.5px;
     line-height: 50px;
-    padding: 0 35px 0 35px;
+    padding: fill;
     font-size: 15px;
-    background-color: black;
-    color: white;
     text-transform: uppercase;
     font-weight: bolder;
     border: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    margin-top: 5px;
-    
-  
+    text-align: center;
 }
 
 .custom-button:hover {
-    background-color: white;
+    background-color: #FFDC00;
     color: black;
-    border: 1px solid black;
+    box-shadow: 0 0 20px rgba(33,33,33,.2);
+    transform: scale(1.01);
+    transition: transform 0.25s ease-out;
 }
 
 .custom-button, .inverted:hover {
-    background-color: black;
-    color: white;
+    background-color: #FFDC00;
+    color: black;
     border: none;
+}
+
+.infoknapp{
+    width: 40px;
 }

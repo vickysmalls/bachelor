@@ -3,6 +3,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import InfoButton from '../CustomButton/InfoButton';
 import Modal from '../Modal/Modal';
 import useFetch from '../useFetch';
+import './oblig-fag.css';
 const _ = require("lodash");  
 
 
@@ -41,7 +42,14 @@ const ObligFagSemester = ({answer, semester}) => {
                         oblig.semester ===semester &&
                         <>
 
-                        <InfoButton 
+                        <CustomButton 
+                            key={oblig.id}
+                            
+                        >
+                         {oblig.fagnavn}
+                        </CustomButton>
+
+                        <InfoButton className='infoknapp'
                             onClick={() =>{ 
                                 setIsOpen(true)
                                 setFagnavn(oblig.fagnavn)
@@ -51,16 +59,7 @@ const ObligFagSemester = ({answer, semester}) => {
                                 setKlasseId(oblig.klasseId)
                                 
                             }}> 
-                        </InfoButton>
-
-
-                        <CustomButton 
-                            key={oblig.id}
-                            
-                        >
-                         {oblig.fagnavn}
-                        </CustomButton>
-                        
+                        </InfoButton>                        
                       </>  
                     ))
                     
