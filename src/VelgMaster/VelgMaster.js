@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useReducer} from 'react'
 import './VelgMaster.css';
 import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
@@ -19,6 +19,8 @@ const VelgMaster = ({answer}) => {
     const [fagNavn, setFagnavn] = useState();
     const [masterId, setMasterId] = useState();
     const [visVidere, setVisVidere] = useState(false);    
+
+    
    
     //logger ved trykk
     function handleClick(e) {

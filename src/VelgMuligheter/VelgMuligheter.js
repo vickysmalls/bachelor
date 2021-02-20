@@ -187,53 +187,73 @@ const VelgMuligheter = ({masterId, answer}) => {
            
            
         <div>
+        <div className='card-container'>
             <div className="semester1">
             <h1>semester 1</h1>
                 <ObligFagSemester semester={1} answer={answer}/>
             </div>
-            <div className="semester2">
-            <h1>semester 2</h1>
-                <ObligFagSemester semester={2} answer={answer}/>    
+        </div>
+        
+            
+            <div className='card-container'>
+                <div className="semester2">
+                <h1>semester 2</h1>
+                    <ObligFagSemester semester={2} answer={answer}/>    
+                </div>
             </div>
-            <div className="semester3">
-            <h1>semester 3</h1>
-                <ObligFagSemester semester={3} answer={answer}/>    
+            <div className='card-container'>
+                <div className="semester3">
+                <h1>semester 3</h1>
+                    <ObligFagSemester semester={3} answer={answer}/>    
+                </div>
             </div>
-            <div className="semester4">
-            <h1>semester 4</h1>
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
-                {valgtFag4 &&
-                <CustomButton>{valgtFag4}</CustomButton>}
+            <div className='card-container'>
+                <div className="semester4">
+                <h1>semester 4</h1>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+                    {valgtFag4 &&
+                    <CustomButton>{valgtFag4}</CustomButton>}
+                </div>
             </div>
-            <div className="semester5">
-            <h1>semester 5</h1>
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
-                {valgtFag5 &&
-                <CustomButton>{valgtFag5}</CustomButton>   }
+            <div className='card-container'>
+                <div className="semester5">
+                <h1>semester 5</h1>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+                    {valgtFag5 &&
+                    <CustomButton>{valgtFag5}</CustomButton>   }
+                </div>
             </div>
-            <div className="semester6">
-            <h1>semester 6</h1>
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
-                {valgtFag6 &&
-                    <CustomButton>{valgtFag6}</CustomButton>}
+            <div className='card-container'>
+                <div className="semester6">
+                <h1>semester 6</h1>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+                    {valgtFag6 &&
+                        <CustomButton>{valgtFag6}</CustomButton>}
+                </div>
             </div>
-            <div className="semester7">
-            <h1>semester 7</h1>
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
-                <ObligFagSemester semester={7} answer={answer}/>
+            <div className='card-container'>
+                <div className="semester7">
+                <h1>semester 7</h1>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+                    <ObligFagSemester semester={7} answer={answer}/>
 
+                </div>
             </div>
-            <div className="semester8">
-            <h1>semester 8</h1>
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
-                <ObligFagSemester semester={8} answer={answer}/>
+            <div className='card-container'>
+                <div className="semester8">
+                <h1>semester 8</h1>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
+                    <ObligFagSemester semester={8} answer={answer}/>
 
+                </div>
             </div>
-            <div className="semester9">
-            <h1>semester 9</h1>
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
-                <ObligFagSemester semester={9} answer={answer}/>
+            <div className='card-container'>
+                <div className="semester9">
+                <h1>semester 9</h1>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+                    <ObligFagSemester semester={9} answer={answer}/>
 
+                </div>
             </div>
             
            
