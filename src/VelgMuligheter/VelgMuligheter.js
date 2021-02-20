@@ -1,6 +1,5 @@
 import React, {useReducer, useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
-import InfoButton from '../CustomButton/InfoButton';
 import Modal from '../Modal/Modal';
 import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
@@ -8,6 +7,7 @@ import useFetch from '../useFetch';
 import ResultatCard from '../VisResultat/Resultat-card';
 import Muligheter from './Muligheter';
 import ValgtMulighet from './ValgtMulighet';
+
 
 const _ = require("lodash");  
 
@@ -56,7 +56,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <h3>Semester 4</h3> <h1>{valgtFag4}</h1> <h2>{muligheterId1}</h2>
         
         {
-            <Muligheter fa  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+            <Muligheter fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
         } 
 
         {
@@ -89,8 +89,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         </div>
 
-        <div className='card-container'>
-        <h3>Semester 5</h3><h1>{valgtFag5}</h1>
+        <h2>Semester 5</h2>
+        <div className='fag'>
+        
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
@@ -112,8 +113,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         </div>
 
-        <div className='card-container'>
-        <h3>Semester 6</h3><h1>{valgtFag6}</h1>
+        <h2>Semester 6</h2>
+        <div className='fag'>
+        
         
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
@@ -138,8 +140,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         </div>
 
-        <div className='card-container'>
-        <h3>Semester 7</h3>
+        <h2>Semester 7</h2>
+        <div className='fag'>
+        
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
         } 
@@ -157,8 +160,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         </div>
 
-        <div className='card-container'>
-        <h3>Semester 8</h3>
+        <h2>Semester 8</h2>
+        <div className='fag'>
+        
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
         } 
@@ -178,8 +182,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         </div>
 
-        <div className='card-container'>
-        <h3>Semester 9</h3>
+        <h2>Semester 9</h2>
+        <div className='fag'>
+        
         {
             <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
         } 
@@ -205,9 +210,10 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <>
  
         <div>
+        <h1>semester 1</h1>
         <div className='card-container'>
             <div className="semester1">
-            <h1>semester 1</h1>
+            
                 <ObligFagSemester semester={1} answer={answer}/>
             </div>
         </div>

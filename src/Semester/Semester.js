@@ -40,19 +40,7 @@ const Semester = ({klasseId, semester, klassetrinn, setMuligheterId}) => {
                             <>
 
                             
-                            <InfoButton 
-                            onClick={() =>{ 
-                                setIsOpen(true)
-                                setFagnavn(oblig.fagnavn)
-                                //setSemester(oblig.semester)
-                                setEmneKode(oblig.emnekode)
-                                setStudiepoeng(oblig.studiepoeng)
-                                //setKlasseId(oblig.klasseId)
-                                
-                            }}>
-
-                            
-                        </InfoButton>
+                        
                                 
 
                             
@@ -62,17 +50,22 @@ const Semester = ({klasseId, semester, klassetrinn, setMuligheterId}) => {
                                     semester={oblig.semester}
                                     klasseId = {oblig.klasseId}
                                     onClick = {() =>{
-                                    
                                         handleMuligheter(oblig.id)
-                                        
-
                                     }}
                                 >
-                                    semester:{oblig.semester}, fag: 
-
-                                    {oblig.fagnavn}
+                                    semester:{oblig.semester}, fag:{oblig.fagnavn}
                                 </CustomButton>
                                
+                                <InfoButton 
+                                    onClick={() =>{ 
+                                    setIsOpen(true)
+                                    setFagnavn(oblig.fagnavn)
+                                    //setSemester(oblig.semester)
+                                    setEmneKode(oblig.emnekode)
+                                    setStudiepoeng(oblig.studiepoeng)
+                                    //setKlasseId(oblig.klasseId) 
+                                }}>
+                                </InfoButton>
                                           
                             </>
                 ))

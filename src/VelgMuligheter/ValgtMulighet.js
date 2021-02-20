@@ -5,17 +5,9 @@ import Modal from '../Modal/Modal';
 import Muligheter from '../VelgMuligheter/Muligheter';
 
 const ValgtMulighet = ({klasseId, semester, klassetrinn, muligheterId}) => {
-    
-    
-    //
-    
-       //
-    
-
     const [fagnavn, setFagnavn] = useState();
     const [emnekode, setEmneKode] = useState();
     const [studiepoeng, setStudiepoeng] = useState();
-    
     const [isOpen, setIsOpen] = useState(false);
     
     return ( 
@@ -33,25 +25,6 @@ const ValgtMulighet = ({klasseId, semester, klassetrinn, muligheterId}) => {
                             
                         
                             <>
-
-                            
-                            <InfoButton 
-                            onClick={() =>{ 
-                                setIsOpen(true)
-                                setFagnavn(oblig.fagnavn)
-                                //setSemester(oblig.semester)
-                                setEmneKode(oblig.emnekode)
-                                setStudiepoeng(oblig.studiepoeng)
-                                //setKlasseId(oblig.klasseId)
-                                
-                            }}>
-
-                            
-                        </InfoButton>
-                                
-
-                            
-                            
                                 <CustomButton 
                                     key={oblig.id}
                                     semester={oblig.semester}
@@ -62,6 +35,17 @@ const ValgtMulighet = ({klasseId, semester, klassetrinn, muligheterId}) => {
 
                                     {oblig.fagnavn}
                                 </CustomButton>
+
+                                <InfoButton 
+                                onClick={() =>{ 
+                                    setIsOpen(true)
+                                    setFagnavn(oblig.fagnavn)
+                                    //setSemester(oblig.semester)
+                                    setEmneKode(oblig.emnekode)
+                                    setStudiepoeng(oblig.studiepoeng)
+                                    //setKlasseId(oblig.klasseId)
+                                }}>    
+                                </InfoButton>
                                
                                           
                             </>
