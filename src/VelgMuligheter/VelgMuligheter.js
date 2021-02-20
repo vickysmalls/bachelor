@@ -50,6 +50,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <>
 
         <h2>muligheter</h2>
+
+
         <div className='card-container'>
         <h3>Semester 4</h3> <h1>{valgtFag4}</h1> <h2>{muligheterId1}</h2>
         
@@ -123,7 +125,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             //masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
             fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  ||fagNavn.includes('Tegnspråk')|| 
 
-             masterId ===15 || masterId ===16 || masterId ===17 || masterId === 18 ||
+            fagNavn.includes('Pedagogikk') || masterId ===15 || masterId ===16 || masterId ===17 || masterId === 18 ||
             masterId ===19 || masterId ===20 || masterId ===21 || masterId ===22 || masterId ===23 
          ) 
          ? 
