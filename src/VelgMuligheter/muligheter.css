@@ -1,0 +1,18 @@
+.semester{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(50px, 50px);
+    width: 100px;
+}
+
+.sluttskjerm{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    grid-template-rows: 250px;
+}
+
+.card-container{
+    height: 250px;
+}

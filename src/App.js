@@ -16,7 +16,7 @@ function App () {
       
 
       <div className="content">
-        <div className='fagcard'>
+        <div className='body'>
 
           <KlasseList/>
           

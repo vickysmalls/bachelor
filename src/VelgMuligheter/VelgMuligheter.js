@@ -7,6 +7,7 @@ import useFetch from '../useFetch';
 import ResultatCard from '../VisResultat/Resultat-card';
 import Muligheter from './Muligheter';
 import ValgtMulighet from './ValgtMulighet';
+import './muligheter.css';
 
 
 const _ = require("lodash");  
@@ -200,40 +201,38 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         </div>
 
-        <div>
+        <div className="videre knapp">
         <CustomButton onClick={() => setVidere(true)}>Videre</CustomButton>
         </div>
 
-        <div>
+        <div className="sluttskjerm">
         { //Viser hele studieløpet om man trykker på videreknappen
         videre &&
         <>
- 
-        <div>
-        <h1>semester 1</h1>
+        
         <div className='card-container'>
-            <div className="semester1">
-            
+        <h1>semester 1</h1>
+            <div className="semester">
                 <ObligFagSemester semester={1} answer={answer}/>
             </div>
         </div>
         
             
             <div className='card-container'>
-                <div className="semester2">
-                <h1>semester 2</h1>
+            <h1>semester 2</h1>
+                <div className="semester">
                     <ObligFagSemester semester={2} answer={answer}/>    
                 </div>
             </div>
             <div className='card-container'>
-                <div className="semester3">
-                <h1>semester 3</h1>
+            <h1>semester 3</h1>
+                <div className="semester">
                     <ObligFagSemester semester={3} answer={answer}/>    
                 </div>
             </div>
             <div className='card-container'>
-                <div className="semester4">
-                <h1>semester 4</h1>
+            <h1>semester 4</h1>
+                <div className="semester">
                     <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
                     {
                         <ValgtMulighet klassetrinn={klassetrinn} muligheterId={muligheterId1} ></ValgtMulighet>
@@ -241,8 +240,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                 </div>
             </div>
             <div className='card-container'>
-                <div className="semester5">
-                <h1>semester 5</h1>
+            <h1>semester 5</h1>
+                <div className="semester">
                     <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
                     {
                         <ValgtMulighet klassetrinn={klassetrinn} muligheterId={muligheterId2} ></ValgtMulighet>
@@ -250,42 +249,38 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                 </div>
             </div>
             <div className='card-container'>
-                <div className="semester6">
-                <h1>semester 6</h1>
+            <h1>semester 6</h1>
+                <div className="semester">
                     <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
                     {
-
                         <ValgtMulighet klassetrinn={klassetrinn} muligheterId={muligheterId3} ></ValgtMulighet>
                     }
                 </div>
             </div>
             <div className='card-container'>
-                <div className="semester7">
-                <h1>semester 7</h1>
+            <h1>semester 7</h1>
+                <div className="semester">
                     <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
                     <ObligFagSemester semester={7} answer={answer}/>
-
                 </div>
             </div>
             <div className='card-container'>
-                <div className="semester8">
-                <h1>semester 8</h1>
+            <h1>semester 8</h1>
+                <div className="semester">
                     <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
                     <ObligFagSemester semester={8} answer={answer}/>
-
                 </div>
             </div>
             <div className='card-container'>
-                <div className="semester9">
-                <h1>semester 9</h1>
+            <h1>semester 9</h1>
+                <div className="semester">
                     <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
                     <ObligFagSemester semester={9} answer={answer}/>
-
                 </div>
             </div>
             
            
-        </div>
+        
         </>
         }
 

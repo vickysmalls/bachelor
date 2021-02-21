@@ -31,7 +31,7 @@ const VelgMaster = ({answer}) => {
    
     return ( 
         <>
-        <h2>Velg Masteremne</h2>
+        
         <div className='masterfag'>
             {
                 masterFag && masterFag.map((oblig)=>(
@@ -57,14 +57,14 @@ const VelgMaster = ({answer}) => {
             }       
         </div>
         
-        <div className="ny">
+        
         {   
             visVidere&&
             <ObligFagCard masterId={masterId} fagNavn={fagNavn} answer={answer}/>
         
         }
         
-        </div>
+        
         
        
         

@@ -38,7 +38,7 @@ const KlasseList = ({ handleClick}) => {
     
     return ( 
         
-        <div className='1'>
+        <div className="applikasjon">
             <div className='introknapp'>
                 <h2>Velg Klassetrinn</h2>
                     {
@@ -61,19 +61,21 @@ const KlasseList = ({ handleClick}) => {
                             </CustomButton>  
                         ))
                     }
-            </div> 
-            <div className='masterfagkort'>
+            </div>  
+            
+            
                 {
                     //gjør answer og obj til props, slik at den kan brukes i ObligFagCard
-                    //aswer blir klasse id, som blir satt i onClick funkjsonen
+                    //answer blir klasse id, som blir satt i onClick funkjsonen
                     visVidere &&
                     <VelgMaster 
                     answer={answer}
                     obj={obj}
                     />                       
                 }
-            </div>     
-        </div>
+            
+        </div>   
+          
      );
 }
  

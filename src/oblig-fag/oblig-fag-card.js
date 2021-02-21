@@ -21,6 +21,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
     return ( 
         
         <>
+        <div className="obligatoriske semestre">
         <h2>Obligs</h2>
         <h2>Semester 1</h2> 
         <div className="fag">
@@ -53,7 +54,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
             }
             </div>
             
-
+        </div>
         
 
         
@@ -62,13 +63,13 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
         
 
-        <div>
+        <div className="videre knapp">
             {
                 <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
             }
         </div>
         
-        <div className="ny">
+        <div className="veivalg for resten av studieløpet">
         {
             
             visVidere&&

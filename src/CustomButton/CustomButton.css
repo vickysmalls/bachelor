@@ -1,6 +1,6 @@
 .custom-button {
     height: 50px;
-    width: 600px; /* for å fikse bredden på knappene om man endrer tesksten */
+    width: 400px; /* for å fikse bredden på knappene om man endrer tesksten */
     letter-spacing: 0.5px;
     line-height: 50px;
     padding: fill;
@@ -11,7 +11,7 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
-    text-align: center;
+    text-align: justify;
 }
 
 .custom-button:hover {
