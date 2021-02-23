@@ -1,7 +1,7 @@
 .custom-button {
     height: 50px;
     width: 400px; /* for å fikse bredden på knappene om man endrer tesksten */
-    letter-spacing: 0.5px;
+    letter-spacing: 0.1px;
     line-height: 50px;
     padding: fill;
     font-size: 15px;

@@ -4,7 +4,6 @@ import Modal from '../Modal/Modal';
 import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
 import useFetch from '../useFetch';
-import ResultatCard from '../VisResultat/Resultat-card';
 import Muligheter from './Muligheter';
 import ValgtMulighet from './ValgtMulighet';
 import './muligheter.css';
@@ -52,10 +51,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         <h2>muligheter</h2>
 
-
-        <div className='card-container'>
-        <h3>Semester 4</h3> <h1>{valgtFag4}</h1> <h2>{muligheterId1}</h2>
-        
+        <h3>Semester 4</h3> 
+        <div className='fag'>
         {
             <Muligheter fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
         } 

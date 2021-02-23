@@ -53,7 +53,7 @@ const Semester = ({klasseId, semester, klassetrinn, setMuligheterId}) => {
                                         handleMuligheter(oblig.id)
                                     }}
                                 >
-                                    semester:{oblig.semester}, fag:{oblig.fagnavn}
+                                    {oblig.fagnavn}
                                 </CustomButton>
                                
                                 <InfoButton 

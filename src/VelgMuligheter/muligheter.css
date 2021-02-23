@@ -8,11 +8,11 @@
 
 .sluttskjerm{
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 10px;
     grid-template-rows: 250px;
 }
 
 .card-container{
-    height: 250px;
+    
 }
