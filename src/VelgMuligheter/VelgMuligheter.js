@@ -51,7 +51,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         <h2>muligheter</h2>
 
-        <h3>Semester 4</h3> 
+        <h2>Semester 4</h2> 
         <div className='fag'>
         {
             <Muligheter fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
