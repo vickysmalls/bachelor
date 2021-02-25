@@ -49,7 +49,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         <>
 
-        <h2>muligheter</h2>
+        <h1>Veien videre</h1>
 
         <h2>Semester 4</h2> 
         <div className='fag'>
@@ -198,7 +198,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         </div>
 
-        <div className="videre knapp">
+        <div className="videreknapp">
         <CustomButton onClick={() => setVidere(true)}>Videre</CustomButton>
         </div>
 

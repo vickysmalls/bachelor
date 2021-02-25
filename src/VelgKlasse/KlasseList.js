@@ -39,8 +39,10 @@ const KlasseList = ({ handleClick}) => {
     return ( 
         
         <div className="applikasjon">
+            <h2>Velg Klassetrinn</h2>
             <div className='introknapp'>
-                <h2>Velg Klassetrinn</h2>
+            
+                
                     {
                         //sjekker om klassetrinn er ok, deretter mappe gjennom klassene
                         klassetrinn && 

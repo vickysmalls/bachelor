@@ -5,3 +5,14 @@
     grid-auto-rows: minmax(50px, 50px);
     width: 100px;
 }
+
+.obligatoriske.semestre{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: repeat(2,auto);
+}
+
+.videreknapp{
+    margin-top: 100px;
+    margin-left: 200px;
+}

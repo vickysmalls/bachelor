@@ -11,7 +11,7 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
-    text-align: justify;
+    
 }
 
 .custom-button:hover {

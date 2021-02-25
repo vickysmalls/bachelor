@@ -46,7 +46,7 @@ const VelgMaster = ({answer}) => {
                                 handleClick(oblig)
                                 setMasterId(oblig.id)
                                 setFagnavn(oblig.fagnavn)
-                                setVisVidere(true)                        
+                                setVisVidere(true)
                             }}
                             >
                             {oblig.fagnavn}

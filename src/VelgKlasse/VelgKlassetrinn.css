@@ -1,8 +1,7 @@
 .benButton{
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    justify-content: center;
-    position: center;
+    justify-self: center;
     height: 180px;
     width: 180px;
     background-color: #FFDC00;
@@ -13,6 +12,7 @@
     font-size: 15px;
     font-weight: bolder;
     border: 0px solid #ccc;
+    
 }
 
 .benButton:hover{
@@ -20,7 +20,12 @@
 }
 
 .introknapp{
-    position: center;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(2,auto);
+    margin-bottom: 100px;
 }
 
-
+.applikasjon{
+    width: 805px;
+}

@@ -21,39 +21,42 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
     return ( 
         
         <>
+        <h2>Obligatoriske semestre</h2>
         <div className="obligatoriske semestre">
-        <h2>Obligs</h2>
-        <h2>Semester 1</h2> 
-        <div className="fag">
-            {
-                    // det sorterte arrayet mappes
-                    <ObligFagSemester semester={1} answer={answer}/>
-            }
+            <div classname="obligkort">
+                <h2>Semester 1</h2> 
+                <div className="fag">
+                    {
+                        // det sorterte arrayet mappes
+                        <ObligFagSemester semester={1} answer={answer}/>
+                    }
+                </div>
             </div>
+                
 
        
-
-        <h2>Semester 2</h2>
-        <div className="fag">
+            <div className="obligkort">
+                <h2>Semester 2</h2>
+                <div className="fag">
+                    {
+                        // det sorterte arrayet mappes
+                        <ObligFagSemester semester={2} answer={answer}/>
+                    }
+                </div>
+            </div>
         
-            {
-                    // det sorterte arrayet mappes
-                <ObligFagSemester semester={2} answer={answer}/>
-            }
-        </div>
         
             
 
-       
-        <h2>Semester 3</h2>
-        <div className="fag">
-        
-            {
-                    // det sorterte arrayet mappes
-                    <ObligFagSemester semester={3} answer={answer}/>
-            }
+            <div className="obligkort">
+                <h2>Semester 3</h2>
+                <div className="fag">
+                    {
+                        // det sorterte arrayet mappes
+                        <ObligFagSemester semester={3} answer={answer}/>
+                    }
+                </div>
             </div>
-            
         </div>
         
 
@@ -63,7 +66,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
         
 
-        <div className="videre knapp">
+        <div className="videreknapp">
             {
                 <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
             }
