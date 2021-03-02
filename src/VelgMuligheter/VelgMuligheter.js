@@ -194,8 +194,13 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         {
             <ObligFagSemester semester={9} answer={answer}/>
         }
+        </div>
         
-
+        <h2>Semester 10</h2>
+        <div className='fag'>
+        {
+            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+        } 
         </div>
 
         <div className="videreknapp">
@@ -273,6 +278,13 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                 <div className="semester">
                     <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
                     <ObligFagSemester semester={9} answer={answer}/>
+                </div>
+            </div>
+          
+            <div className='card-container'>
+            <h1>semester 10</h1>  
+                <div className="semester">
+                    <Muligheter  klassetrinn={klassetrinn} answer={answer} sorted={sorted} semester={10} masterId={masterId}/>
                 </div>
             </div>
             
