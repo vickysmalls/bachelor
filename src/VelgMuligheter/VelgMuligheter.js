@@ -61,7 +61,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
             (
                 //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===11 || 
-                fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  ||fagNavn.includes('Engelsk')|| fagNavn.includes('Profesjonsrettet pedagogikk') ||
+                fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  || fagNavn.includes('Profesjonsrettet pedagogikk') ||
                 masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
                 masterId ===16 || masterId ===17 || masterId ===24 || masterId ===25 || 
                 masterId ===26 || masterId ===27 
@@ -97,7 +97,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         {
             (
                 fagNavn.includes('Profesjonsrettet pedagogikk')|| masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
-                masterId ===16 || masterId ===17 || masterId ===24 || masterId ===25 || masterId ===26 || 
+                masterId ===16 || masterId ===17  || masterId ===25 || masterId ===26 || 
                 masterId ===27
             ) 
         ? 
@@ -121,9 +121,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         {(
             //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===4  || masterId ===5  ||
-            fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  ||fagNavn.includes('Engelsk')|| fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøvning')|| 
+            fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  ||fagNavn.includes('Engelsk')|| fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøving')|| 
             //masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
-            fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  ||fagNavn.includes('Tegnspråk')|| 
+            fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  || 
 
             fagNavn.includes('Pedagogikk') || masterId ===15 || masterId ===16 || masterId ===17 || masterId === 18 ||
             masterId ===19 || masterId ===20 || masterId ===21 || masterId ===22 || masterId ===23 
