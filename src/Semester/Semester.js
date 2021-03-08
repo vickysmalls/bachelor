@@ -12,7 +12,8 @@ const Semester = ({
   setMuligheterId,
   activeButton,
   farge,
-  setActiveButton
+  setActiveButton,
+  setMasterFagId
 }) => {
 
     
