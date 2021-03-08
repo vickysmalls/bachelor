@@ -3,6 +3,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import Modal from '../Modal/Modal';
 import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
+import Print from '../Print/Print'
 import useFetch from '../useFetch';
 import Muligheter from './Muligheter';
 import ValgtMulighet from './ValgtMulighet';
@@ -33,7 +34,6 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
 
     const [videre, setVidere] = useState(false);
-
 
 
     
@@ -211,7 +211,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         { //Viser hele studieløpet om man trykker på videreknappen
         videre &&
         <>
-        
+        <div classname='card-container' id='printId'> 
         <div className='card-container'>
         <h1>semester 1</h1>
             <div className="semester">
@@ -287,20 +287,22 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                     <Muligheter  klassetrinn={klassetrinn} answer={answer} sorted={sorted} semester={10} masterId={masterId}/>
                 </div>
             </div>
+            </div>
+
+            <div className='card-container2'>
+            <h1>Lagre din vei til master</h1>  
+                <div className="print">
+                    <Print/>
+                </div>
+            </div>
             
-           
-        
         </>
         }
-
-        </div>
-
-        
-
-        
-        </>
-        
+    </div>
+    </>
         
      );
+     
 };
+
 export default VelgMuligheter;
