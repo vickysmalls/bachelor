@@ -7,6 +7,8 @@ import Print from '../Print/Print'
 import useFetch from '../useFetch';
 import Muligheter from './Muligheter';
 import ValgtMulighet from './ValgtMulighet';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import './muligheter.css';
 
 
@@ -32,6 +34,12 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [valgtFag5, setValgtFag5] = useState();
     const [valgtFag6, setValgtFag6] = useState();
 
+    //Sette farge valgt semester
+    const [activeButton, setActiveButton] = useState();
+    // farge for for semester 6
+    const [activeButton2, setActiveButton2] = useState();
+
+    
 
     const [videre, setVidere] = useState(false);
 
@@ -76,6 +84,10 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                     klassetrinn={klassetrinn} 
                     semester={4} 
                     klasseId ={answer}
+                    activeButton={activeButton}
+                   
+                    setActiveButton ={setActiveButton}
+                    
                 />
             ) 
         : 
@@ -91,7 +103,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <div className='fag'>
         
         {
-            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -102,7 +114,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             ) 
         ? 
             (
-                <Semester setMuligheterId={setMuligheterId2} muligheterId={muligheterId2} klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
+                
+                <Semester activeButton={activeButton} setActiveButton ={setActiveButton}  setMuligheterId={setMuligheterId2} muligheterId={muligheterId2} klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
             ) 
         : 
             null
@@ -130,7 +143,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
          ) 
          ? 
          (
-            <Semester setMuligheterId={setMuligheterId3} muligheterId={muligheterId3}  klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
+            <Semester activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3}  klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
          ) 
         : null
         }

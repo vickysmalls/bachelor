@@ -1,3 +1,4 @@
+
 .custom-button {
     height: 50px;
     width: 400px; /* for å fikse bredden på knappene om man endrer tesksten */
@@ -22,11 +23,20 @@
     transition: transform 0.25s ease-out;
 }
 
+.red {
+    background-color: #FFDC00;
+    color: black;
+    border: none;
+}
+
+/**
+
 .custom-button, .inverted:hover {
     background-color: #FFDC00;
     color: black;
     border: none;
 }
+*/
 
 .infoknapp{
     width: 40px;

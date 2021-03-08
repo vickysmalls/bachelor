@@ -20,7 +20,14 @@ const VelgMaster = ({answer}) => {
     const [masterId, setMasterId] = useState();
     const [visVidere, setVisVidere] = useState(false);    
 
+     //Sette farge valgt semester
+     const [activeButton, setActiveButton] = useState();
     
+     const onSideBtnClick = e => {
+        
+        setActiveButton(e.id);
+        //alert(e.id);
+    };
    
     //logger ved trykk
     function handleClick(e) {
@@ -34,26 +41,39 @@ const VelgMaster = ({answer}) => {
         
         <div className='masterfag'>
             {
-                masterFag && masterFag.map((oblig)=>(
-                    //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
+                masterFag && masterFag.map(oblig=>{
+                    const className = activeButton === oblig.id ? "red" : "";
+
+                    return(
+                        //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
                     oblig.klasseId === answer &&
+                    
                     <>
+                    
                     <div className='masterknapper'>
                         <CustomButton
+                            inverted={className}
                             key={oblig.id}
-                            options={oblig}                
+                            options={oblig}
+                            activeButton={activeButton}
+                                        
                             onClick={() =>{
                                 handleClick(oblig)
                                 setMasterId(oblig.id)
                                 setFagnavn(oblig.fagnavn)
                                 setVisVidere(true)
+                                onSideBtnClick(oblig)
                             }}
                             >
                             {oblig.fagnavn}
                         </CustomButton>
                     </div>    
                 </>
-                ))
+
+
+                    )
+                    
+                        })
             }       
         </div>
         
