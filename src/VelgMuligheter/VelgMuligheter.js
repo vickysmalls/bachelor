@@ -191,7 +191,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         }
         {
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={activeButton}/>
+            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={activeButton}/>
         } 
         
         </div>
