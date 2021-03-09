@@ -143,8 +143,23 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
          ) 
          ? 
          (
+             <>
             <Semester activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3}  klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
-         ) 
+            <Semester 
+                    setMuligheterId={setMuligheterId3} 
+                    muligheterId={muligheterId3}
+                    setValgtFag={setValgtFag4} 
+                    valgtFag={valgtFag4} 
+                    klassetrinn={klassetrinn} 
+                    semester={4} 
+                    klasseId ={answer}
+                    activeButton={activeButton2}
+                   
+                    setActiveButton ={setActiveButton2}
+                    
+                />
+            </>
+        ) 
         : null
         }
     
