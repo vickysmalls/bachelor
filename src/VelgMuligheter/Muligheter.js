@@ -6,13 +6,15 @@ import InfoButton from '../CustomButton/InfoButton';
 
 
 
-const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
+const Muligheter = ({masterId, setSemesterList7, semester, klassetrinn, sorted}) => {
 
-    
+   
+  
+
     //logger ved trykk
     function handleClick(e) {
         console.log('The link was clicked.');
-        
+        setSemesterList7(e);
         console.log(e);
         
     }
@@ -35,9 +37,10 @@ const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
         {   
             klassetrinn&&
             
-                sorted.map((oblig)=>(
-                        
-                        //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
+                sorted.map((oblig)=>{
+                    
+                        return(
+                            //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
                         oblig.masterFagId === masterId &&
                         oblig.semester === semester &&
                         <>
@@ -50,7 +53,8 @@ const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
                                 fag={oblig.fagnavn}
                                 
                                 onClick ={() =>{
-                                    handleClick(oblig);   
+                                    handleClick(oblig); 
+                                    
                             }}>
                                 {oblig.fagnavn}
                             </CustomButton>
@@ -66,11 +70,15 @@ const Muligheter = ({masterId, semester, klassetrinn, sorted}) => {
                                 
                             }}>
                             </InfoButton>
+
+
+                       
+                        
                             
 
                         </>
-                        
-                    ))
+                         )
+                    })
                 }
 
                 

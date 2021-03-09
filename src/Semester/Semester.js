@@ -13,7 +13,8 @@ const Semester = ({
   activeButton,
   farge,
   setActiveButton,
-  setMasterFagId
+  setMasterFagId,
+  setSemesterList7
 }) => {
 
     
@@ -26,7 +27,7 @@ const Semester = ({
   const onSideBtnClick = e => {
         
     setActiveButton(e.masterFagId);
-    //alert(e.masterFagId);
+    alert(e.masterFagId);
 };
 
   const [fagnavn, setFagnavn] = useState();

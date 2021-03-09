@@ -8,7 +8,7 @@ const _ = require("lodash");
 
 
 //Denne koomponenten gjør at man kan plotte inn semestesr og klasse id(answer) i oblig-fag-card
-const ObligFagSemester = ({answer, semester}) => {
+const ObligFagSemester = ({answer, semester, setSemesterList7}) => {
 
     
     
@@ -57,6 +57,7 @@ const ObligFagSemester = ({answer, semester}) => {
                                 setEmneKode(oblig.emnekode)
                                 setStudiepoeng(oblig.studiepoeng)
                                 setKlasseId(oblig.klasseId)
+                                setSemesterList7(setSemesterList7)
                             }}> 
                         </InfoButton>                        
                       </>  
