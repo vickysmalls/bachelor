@@ -29,3 +29,30 @@
 .applikasjon{
     width: 805px;
 }
+
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 125px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #Seksti {
+    float: left;
+    width: 50%;
+  }
+
+  #Forti {
+    float: left;
+    width: 50%;
+  }
+
+  .row {
+      margin-bottom: 125px;
+  }

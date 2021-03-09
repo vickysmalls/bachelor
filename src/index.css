@@ -8,8 +8,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    font-family: 'Fira Sans', sans-serif;
+    font-family: work-sans;
 }
 
 main{
@@ -19,6 +18,43 @@ main{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
+
+#Innledning {
+    position: left;
+    font-size: 30px;
+    text-align: left;
+}
+
+#Venstre {
+    position: left;
+    text-align: left;
+    font-size: 20px;
+}
+
+#Liste {
+    position: left;
+    text-align: left;
+    font-size: 20px;
+    padding-left: 75px;
+}
+
+#Bold {
+    font-weight: 700;
+    position: left;
+    text-align: left;
+    font-size: 25px;
+}
+
+#InnledningSlutt {
+    padding-bottom: 125px;
+}
+
+#Illustrasjon {
+    max-width: 120%;
+    margin-left: -50px;
+    margin-top: -145px;
+    margin-bottom: -145px;
 }
 
 /* knapp*/

@@ -1,15 +1,22 @@
 .header {
-    height: 150px;
+    height: 60vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 55px;
+    padding-bottom: 75px;
+    background-image: url("Bakgrunn.jpg");
+    background-repeat: no-repeat;
+    background-position: top-left;
+    background-size: cover;
     background-color: #FFDC00;
-    font-family: Arial, Helvetica, sans-serif;
+    background-image: Bakgrunn.jpg;
+    font-family: work-sans;
   }
 
-  img{
-    scale: 50%;
-    padding: 5px;
+  img {
+    scale: 25%;
+    padding: 110px;
+    margin-top: -25px;
+    margin-bottom: 50px;
   }
-  

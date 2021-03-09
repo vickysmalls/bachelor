@@ -21,10 +21,16 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
     return ( 
         
         <>
-        <h2>Obligatoriske semestre</h2>
+        <h3>3. Obligatoriske emner</h3>
+        <h2>Oversikt over obligatoriske emnene i de tre første semestrene</h2>
+        <p>De tre første semesterene består kun av obligatoriske emner. Disse er felles for begge studieretninger og 
+            påvirker ikke masteroppgaven. I løpet av de tre første semestrene vil alle gjennomføre eksamner i Norsk og Matematikk, 
+            samt få innføring i pedagogikk.
+        </p>
         <div className="obligatoriske semestre">
             <div classname="obligkort">
                 <h2>Semester 1</h2> 
+                <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
                 <div className="fag">
                     {
                         // det sorterte arrayet mappes
@@ -37,6 +43,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
        
             <div className="obligkort">
                 <h2>Semester 2</h2>
+                <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
                 <div className="fag">
                     {
                         // det sorterte arrayet mappes
@@ -50,6 +57,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
             <div className="obligkort">
                 <h2>Semester 3</h2>
+                <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
                 <div className="fag">
                     {
                         // det sorterte arrayet mappes

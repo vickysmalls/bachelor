@@ -3,6 +3,10 @@ import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
 import './VelgKlassetrinn.css';
+import Illustrasjon from './Illustrasjon.png';
+import VelgEmne from './VelgEmne.png';
+import ToBilder from './ToBilder.png';
+
 
 
 const KlasseList = ({ handleClick}) => {
@@ -35,11 +39,45 @@ const KlasseList = ({ handleClick}) => {
         setVisVidere(true)
     }
     
-    
-    return ( 
+   
+     return ( 
         
         <div className="applikasjon">
-            <h2>Velg Klassetrinn</h2>
+    
+        <div id="InnledningDiv">
+        <h2 id="Innledning">Med denne veilederen kan du utforske hvordan du ønsker å legge opp studieløpet ditt her ved OsloMet. 
+            Utforsk de forskjellige fagene, og se hvilke konsekvenser valgt av fag vil ha senere i studiet.
+        </h2>
+        </div>
+        <div id="InnledningDiv">
+        <p id="Venstre">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
+        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. 
+        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        </p>
+        </div> 
+
+        <div id="Venstre">
+        <img id="Illustrasjon" src={Illustrasjon} alt="Illustrasjon"/>
+        </div>
+
+
+        <div class="row">
+  <div class="column" id="Seksti">
+    <p id="Bold">Hvordan fungerer veilederen?</p>
+    <ol id="Liste">
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        </ol>
+  </div>
+  <div class="column" id="Forti">
+  <img id="Illustrasjon" src={VelgEmne} alt="Illustrasjon"/>
+  </div>
+</div>
+  
+        
+            <h3>1.Velg studieretning </h3>      
+            <h2>Velg din studieretning/klassetrinn</h2>
             <div className='introknapp'>
             
                 

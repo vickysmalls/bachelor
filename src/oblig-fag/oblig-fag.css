@@ -15,4 +15,19 @@
 .videreknapp{
     margin-top: 100px;
     margin-left: 200px;
+    margin-bottom: 125px;
 }
+
+h5 {
+    text-align: left;
+    font-size: 25px;
+    font-family: work-sans;
+    font-weight: 700;
+  }
+
+  #SemesterBeskrivelse {
+      margin-top: -20px;
+      margin-bottom: 20px;
+      font-weight: 700;
+      font-size: 18px;
+  }

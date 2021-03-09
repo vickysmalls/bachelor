@@ -58,8 +58,14 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         
         <>
+        <h3>4. Veien videre</h3>
+        <h2>Velg ritige valgfrie emner for å kunne skrive master innenfor ønsket emne!</h2>
+        <p>Fra og med semester fire vil det være viktig å velge de riktige emnene for å få nok studiepoeng til
+            å skrive masteroppgave innenfor ønsker emne. Oversikten under viser hvordan ditt studieløp kan se ut. 
+            Emner som vil være helt nødvendig å ta for å kunne skrive master innenfor valgt emne er markert i grønt. 
+            Kun de emnene som er tilgjengelig for deg utifra valgt ønsket masteremne vil vises.
+        </p>
 
-        <h1>Veien videre</h1>
 
         <h2>Semester 4</h2> 
         <div className='fag'>

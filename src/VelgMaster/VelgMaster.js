@@ -38,6 +38,11 @@ const VelgMaster = ({answer}) => {
    
     return ( 
         <>
+        <h3>2. Velg Masteremne</h3>
+        <h2>Velg hvilket emne du ønsker en master</h2>
+        <p>Valget du gjør her vil påvirke hvilke valgmulighetene resten av studiet. For å kunne skrive master i et av de
+            følgende emnene må du ha nok studiepoeng i valgt emne for å kunne skrive masteroppgave i det aktuelle faget.
+        </p>
         
         <div className='masterfag'>
             {
