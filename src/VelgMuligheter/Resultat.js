@@ -4,7 +4,7 @@ import ValgtMulighet from "./ValgtMulighet";
 import Print from '../Print/Print';
 
 
-const Resultat = ({answer, klassetrinn, sorted, activeButton, muligheterId1, muligheterId2, muligheterId3, masterId}) => {
+const Resultat = ({answer, klassetrinn, sorted, activeButton, muligheterId1, muligheterId2, muligheterId3, masterId, semesterList7}) => {
     return ( 
         <div>
         <div classname='card-container' id='printId'> 
@@ -58,21 +58,76 @@ const Resultat = ({answer, klassetrinn, sorted, activeButton, muligheterId1, mul
             <div className='card-container'>
             <h1>semester 7</h1>
                 <div className="semester">
-                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+                {
+                    (
+                    masterId === 12 || masterId === 13 || masterId === 14 ||
+                    masterId ===15 || masterId ===16 || masterId ===17 || masterId ===18 || masterId ===19 ||
+                    masterId ===20 || masterId ===21  ||masterId ===22 || masterId ===23 ||masterId ===24 || 
+                    masterId ===25 || masterId ===26 || masterId ===27
+                    ) 
+                ? 
+                    (
+                        
+                        <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={semesterList7}/>                        
+                    ) 
+                : 
+                (
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/> 
+                )
+                                           
+
+                }
+                   
                     <ObligFagSemester semester={7} answer={answer}/>
                 </div>
             </div>
             <div className='card-container'>
             <h1>semester 8</h1>
                 <div className="semester">
-                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
+                {
+                    (
+                    masterId === 12 || masterId === 13 || masterId === 14 ||
+                    masterId ===15 || masterId ===16 || masterId ===17 || masterId ===18 || masterId ===19 ||
+                    masterId ===20 || masterId ===21  ||masterId ===22 || masterId ===23 ||masterId ===24 || 
+                    masterId ===25 || masterId ===26 || masterId ===27
+                    ) 
+                ? 
+                    (
+                        
+                        <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={semesterList7}/>                        
+                    ) 
+                : 
+                (
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/> 
+                )
+                                           
+
+                }
                     <ObligFagSemester semester={8} answer={answer}/>
                 </div>
             </div>
             <div className='card-container'>
             <h1>semester 9</h1>
                 <div className="semester">
-                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+                {
+                    (
+                    masterId === 12 || masterId === 13 || masterId === 14 ||
+                    masterId ===15 || masterId ===16 || masterId ===17 || masterId ===18 || masterId ===19 ||
+                    masterId ===20 || masterId ===21  ||masterId ===22 || masterId ===23 ||masterId ===24 || 
+                    masterId ===25 || masterId ===26 || masterId ===27
+                    ) 
+                ? 
+                    (
+                        
+                        <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={semesterList7}/>                        
+                    ) 
+                : 
+                (
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/> 
+                )
+                                           
+
+                }
                     <ObligFagSemester semester={9} answer={answer}/>
                 </div>
             </div>

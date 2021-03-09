@@ -41,7 +41,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [activeButton2, setActiveButton2] = useState();
 
     //Set semester 7 liste
-    const [semesterList7, setSemesterList7] = useState([]);
+    const [semesterList7, setSemesterList7] = useState();
 
     const [videre, setVidere] = useState(false);
 
@@ -195,7 +195,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         ? 
             (
                 
-                <Muligheter activeButton2={activeButton2} setActiveButton2 ={setActiveButton2} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={activeButton}/>
+                <Muligheter setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={activeButton}/>
                 ) 
         : 
             null
@@ -295,6 +295,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         muligheterId2={muligheterId2} 
         muligheterId3={muligheterId3} 
         masterId ={masterId}
+        semesterList7={semesterList7}
         />
             
         </>
