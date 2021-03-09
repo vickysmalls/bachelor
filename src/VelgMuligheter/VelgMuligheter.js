@@ -210,6 +210,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         {
             <ObligFagSemester semester={9} answer={answer}/>
         }
+        {
+            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={activeButton}/>
+        } 
         </div>
         
         <h2>Semester 10</h2>
@@ -251,7 +254,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             <div className='card-container'>
             <h1>semester 4</h1>
                 <div className="semester">
-                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={activeButton}/>
                     {
                         <ValgtMulighet klassetrinn={klassetrinn} muligheterId={muligheterId1} ></ValgtMulighet>
                     }
@@ -260,7 +263,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             <div className='card-container'>
             <h1>semester 5</h1>
                 <div className="semester">
-                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={activeButton}/>
                     {
                         <ValgtMulighet klassetrinn={klassetrinn} muligheterId={muligheterId2} ></ValgtMulighet>
                      }
@@ -269,7 +272,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             <div className='card-container'>
             <h1>semester 6</h1>
                 <div className="semester">
-                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+                    <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={activeButton}/>
                     {
                         <ValgtMulighet klassetrinn={klassetrinn} muligheterId={muligheterId3} ></ValgtMulighet>
                     }
