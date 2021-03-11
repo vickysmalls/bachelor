@@ -47,7 +47,7 @@ const VelgMaster = ({answer}) => {
         <div className='masterfag'>
             {
                 masterFag && masterFag.map(oblig=>{
-                    const className = activeButton === oblig.id ? "red" : "";
+                    const className = activeButton === oblig.id ? 'yellow' : "";
 
                     return(
                         //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>

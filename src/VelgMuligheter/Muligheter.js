@@ -49,7 +49,7 @@ const Muligheter = ({masterId, setSemesterList7, semesterList7, semester, klasse
                       
                             <CustomButton
                                 //setter fargen på den valgte fagveien
-                                style={{backgroundColor: 'red'}} 
+                                style={{backgroundColor: '#FFDC00'}} 
                                 key={oblig.id}
                                 fag={oblig.fagnavn}
                                 
