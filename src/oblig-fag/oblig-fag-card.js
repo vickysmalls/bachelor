@@ -74,16 +74,12 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
         
 
-        <div className="videreknapp">
-            {
-                <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
-            }
-        </div>
+        
         
         <div className="veivalg for resten av studieløpet">
         {
             
-            visVidere&&
+           
             <VelgMuligheter fagNavn ={fagNavn} masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
             
 
