@@ -205,7 +205,7 @@ const Resultat = ({
               answer={answer}
               sorted={sorted}
               semester={10}
-              masterId={masterId}
+              masterId={semesterList7}
             />
           </div>
         </div>

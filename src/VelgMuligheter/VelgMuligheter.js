@@ -280,7 +280,14 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <h2>Semester 10</h2>
         <div className='fag'>
         {
-            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+            //Om semesterList7 er true (altså har blitt satt i 7)
+            semesterList7 ? (
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semesterList7}/>
+            ) : (
+                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+
+            )
+            
         } 
         </div>
 
