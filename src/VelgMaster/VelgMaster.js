@@ -42,7 +42,7 @@ const VelgMaster = ({answer}) => {
     <div class="column" id="Hundre">
     <h3>2. Velg Masteremne</h3>
     </div>
-    <div class="column" id="MasterBilde">
+    <div class="column" id="Tjue">
     </div>
 
     <div class="column" id="Atti">
