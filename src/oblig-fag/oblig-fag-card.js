@@ -18,31 +18,33 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
         setVisVidere(true)
     }
  
-    return ( 
-        
+    return (  
         <>
+<div class="row">
+    <div class="column" id="Hundre">
         <h3>3. Obligatoriske emner</h3>
-        <h2>Oversikt over obligatoriske emnene i de tre første semestrene</h2>
-        <p>De tre første semesterene består kun av obligatoriske emner. Disse er felles for begge studieretninger og 
+        <h2>Oversikt over de obligatoriske emnene i de tre første semestrene</h2>
+        <p id="Beskrivelse">De tre første semesterene består kun av obligatoriske emner. Disse er felles for begge studieretninger og 
             påvirker ikke masteroppgaven. I løpet av de tre første semestrene vil alle gjennomføre eksamner i Norsk og Matematikk, 
             samt få innføring i pedagogikk.
         </p>
         <div className="obligatoriske semestre">
-            <div classname="obligkort">
-                <h2>Semester 1</h2> 
+            <div classname="Seksti">
+                <h5>Semester 1</h5> 
                 <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
                 <div className="fag">
                     {
                         // det sorterte arrayet mappes
-                        <ObligFagSemester semester={1} answer={answer}/>
+                        <ObligFagSemester id="IkkeKnapp" semester={1} answer={answer}/>
                     }
                 </div>
             </div>
+            
                 
 
        
-            <div className="obligkort">
-                <h2>Semester 2</h2>
+            <div className="Forti">
+                <h5>Semester 2</h5>
                 <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
                 <div className="fag">
                     {
@@ -51,12 +53,13 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
                     }
                 </div>
             </div>
+    
         
         
             
 
             <div className="obligkort">
-                <h2>Semester 3</h2>
+                <h5>Semester 3</h5>
                 <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
                 <div className="fag">
                     {
@@ -66,17 +69,15 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
                 </div>
             </div>
         </div>
+        </div>
+    </div>
         
 
-        
-
-        
-
-        
-
-        <div className="videreknapp">
+    <div class="row">
+    <div class="column" id="Hundre">    
+        <div className="videreknapp" id="Videre">
             {
-                <CustomButton onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
+                <CustomButton id="Videre" onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
             }
         </div>
         
@@ -90,6 +91,8 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
        
         }
         
+        </div>
+        </div>
         </div>
         
        

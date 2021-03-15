@@ -36,7 +36,7 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
                 <>
                   <CustomButton key={oblig.id}>{oblig.fagnavn}</CustomButton>
 
-                  <InfoButton
+                  <InfoButton 
                     className="infoknapp"
                     onClick={() => {
                       setIsOpen(true);
@@ -55,7 +55,7 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
       </>
 
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <h3>Info om {fagnavn}</h3>
+        <h5>Info om {fagnavn}</h5>
         <br />
 
         <ul>
@@ -67,5 +67,7 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
       </Modal>
     </>
   );
+  
 };
+
 export default ObligFagSemester;

@@ -11,8 +11,29 @@
     border: none;
     cursor: pointer;
     display: flex;
+    justify-content: center;   
+}
+
+#Videre {
+    height: 50px;
+    width: 400px; /* for å fikse bredden på knappene om man endrer tesksten */
+    letter-spacing: 0.1px;
+    line-height: 50px;
+    padding: fill;
+    font-size: 22px;
+    font-family: Arial;
+    text-transform: initial;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: flex;
     justify-content: center;
-    
+    background-color: #FFDC00;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+    text-decoration: underline;
+    -webkit-text-decoration-color:#FFDC00; /* Safari */  
+    text-decoration-color: #FFDC00;
 }
 
 .custom-button:hover {

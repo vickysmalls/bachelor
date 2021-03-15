@@ -6,7 +6,9 @@ import './VelgKlassetrinn.css';
 import Illustrasjon from './Illustrasjon.png';
 import VelgEmne from './VelgEmne.png';
 import ToBilder from './ToBilder.png';
-
+import Elever from './Elever.jpeg';
+import Undervisning from './undervisning.jpeg';
+import Praksis from './Praksis.jpeg';
 
 
 const KlasseList = ({ handleClick}) => {
@@ -42,42 +44,49 @@ const KlasseList = ({ handleClick}) => {
    
      return ( 
         
-        <div className="applikasjon">
+        
+        
+<div className="applikasjon">
     
-        <div id="InnledningDiv">
-        <h2 id="Innledning">Med denne veilederen kan du utforske hvordan du ønsker å legge opp studieløpet ditt her ved OsloMet. 
+    
+    <div class="row">
+  <div class="column" id="Seksti">
+  <img id="Illustrasjon" src={Elever} alt="Illustrasjon"/>  
+  <h2 id="Innledning">Med denne veilederen kan du utforske hvordan du ønsker å legge opp studieløpet ditt her ved OsloMet. 
             Utforsk de forskjellige fagene, og se hvilke konsekvenser valgt av fag vil ha senere i studiet.
         </h2>
-        </div>
-        <div id="InnledningDiv">
-        <p id="Venstre">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
+        <p id="Padding">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
         Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. 
         Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
         </p>
-        </div> 
 
-        <div id="Venstre">
-        <img id="Illustrasjon" src={Illustrasjon} alt="Illustrasjon"/>
         </div>
-
-
-        <div class="row">
-  <div class="column" id="Seksti">
-    <p id="Bold">Hvordan fungerer veilederen?</p>
-    <ol id="Liste">
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        </ol>
-  </div>
+  
   <div class="column" id="Forti">
-  <img id="Illustrasjon" src={VelgEmne} alt="Illustrasjon"/>
+  <img id="Illustrasjon" src={Praksis} alt="Illustrasjon"/>
+  <h2 id="Innledning">Hvordan bruke veilederen?
+        </h2>
+        <p id="Padding">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
+        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. 
+        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.<br /><br />
+
+        2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
+        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. 
+        <br /><br />
+
+        3. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.        
+        </p>
+
+        <p id="Bold">Scroll ned for å starte veilederen!</p>
   </div>
 </div>
+
+<div class="row">
+<div class="column" id="Hundre">
   
         
             <h3>1.Velg studieretning </h3>      
-            <h2>Velg din studieretning/klassetrinn</h2>
+            <h2>Velg din studieretning ved OsloMet</h2>
             <div className='introknapp'>
             
                 
@@ -101,7 +110,9 @@ const KlasseList = ({ handleClick}) => {
                             </CustomButton>  
                         ))
                     }
-            </div>  
+            </div>
+        </div> 
+     </div> 
             
             
                 {

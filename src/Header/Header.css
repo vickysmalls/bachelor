@@ -1,5 +1,5 @@
 .header {
-    height: 60vh;
+    height: 65vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -11,12 +11,17 @@
     background-size: cover;
     background-color: #FFDC00;
     background-image: Bakgrunn.jpg;
-    font-family: work-sans;
+    background-attachment: fixed;
+    font-family: Arial;
+    text-decoration: underline;
+    text-decoration-color: #FFDC00;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
   }
 
   img {
-    scale: 25%;
-    padding: 110px;
+    padding: 125px;
     margin-top: -25px;
     margin-bottom: 50px;
+
   }

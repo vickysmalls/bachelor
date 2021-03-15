@@ -1,18 +1,25 @@
 .benButton{
     letter-spacing: 0.5px;
-    text-transform: uppercase;
+    text-transform: normal;
     justify-self: center;
-    height: 180px;
-    width: 180px;
+    height: 80px;
+    width: 350px;
     background-color: #FFDC00;
-    border-radius: 100px;
+    border-radius: 0px;
     transform: rotate(0deg) skew(0deg);
     -webkit-transform: rotate(0deg) skew(0deg);
     cursor: pointer;
     font-size: 15px;
+    font-family: arial;
     font-weight: bolder;
     border: 0px solid #ccc;
     
+}
+
+.KlasseList {
+    min-height: 60vh;
+    width: 100%;
+    background-color: #FFDC00;
 }
 
 .benButton:hover{
@@ -24,16 +31,18 @@
     gap: 25px;
     grid-template-columns: repeat(2,auto);
     margin-bottom: 100px;
+    width: 805px;
 }
 
+
 .applikasjon{
-    width: 805px;
+    width: 1410px;
 }
 
 .column {
     float: left;
     width: 50%;
-    margin-top: 125px;
+    margin-top: -55px;
   }
   
   /* Clear floats after the columns */
@@ -46,13 +55,44 @@
   #Seksti {
     float: left;
     width: 50%;
+    background-color: #FFDC00;
+    padding-bottom: 75px;
   }
 
   #Forti {
     float: left;
     width: 50%;
+    padding: 0;
+  }
+
+  #Hundre {
+    float: center;
+    width: 1410px;
+    padding: 0;
+    margin-left: 265px;
+    margin-right: 265px;
+
   }
 
   .row {
-      margin-bottom: 125px;
+      margin-bottom: 150px;
+  }
+
+  #InnledningDiv {
+    width: 805px;
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  .InnledningKolonner {
+    width: 1400px;
+  }
+  
+  #InnledningKolonner {
+    width: 1400px;
+    margin-left: 0;
+  }
+
+  #Gul {
+    background-color: #FFDC00;
   }
