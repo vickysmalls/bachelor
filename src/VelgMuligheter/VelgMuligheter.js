@@ -25,18 +25,27 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
+
     //for å filtrere muligheter i Semester, når man ser hva man har valgt
     const [muligheterId1, setMuligheterId1] = useState();
     const [muligheterId2, setMuligheterId2] = useState();
     const [muligheterId3, setMuligheterId3] = useState();
+
+    const [mulighetTull, setMulighetTull] = useState();
 
 
     const [valgtFag4, setValgtFag4] = useState();
     const [valgtFag5, setValgtFag5] = useState();
     const [valgtFag6, setValgtFag6] = useState();
 
-    //Sette farge valgt semester
     const [activeButton, setActiveButton] = useState();
+    function handleReset(){
+        setMulighetTull("");
+        setActiveButton('');
+      }
+
+    //Sette farge valgt semester
+   
     // farge for for semester 6
     const [activeButton2, setActiveButton2] = useState();
 
@@ -70,7 +79,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <h5>Semester 4</h5> 
         <div className='fag'>
         {
-            <Muligheter fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+            //reset setMulighetTull i master
+            <Muligheter setSemesterList7={setMulighetTull} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
         } 
 
         {
@@ -101,6 +111,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         : 
             null
         }
+        <button onClick={() => handleReset()} >Reset</button>
         
         
         
@@ -111,7 +122,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <div className='fag'>
         
         {
-            <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter setSemesterList7={setMulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -137,7 +148,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         
         {
-            <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+            <Muligheter setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
         } 
 
         {(
@@ -282,9 +293,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         {
             //Om semesterList7 er true (altså har blitt satt i 7)
             semesterList7 ? (
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semesterList7}/>
+                <Muligheter setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semesterList7}/>
             ) : (
-                <Muligheter  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+                <Muligheter setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
 
             )
             

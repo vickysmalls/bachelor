@@ -81,10 +81,17 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
             }
         </div>
         
+
+        
+
+        
+
+        
+        
         <div className="veivalg for resten av studieløpet">
         {
             
-            visVidere&&
+           
             <VelgMuligheter fagNavn ={fagNavn} masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
             
 

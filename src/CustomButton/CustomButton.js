@@ -6,7 +6,7 @@ const CustomButton = ({
 }) => {
     return (
         <button
-        className={`${inverted ? 'red': ''} custom-button`}
+        className={`${inverted ? 'yellow': ''} custom-button`}
         {...otherProps}
         >
         {children}
