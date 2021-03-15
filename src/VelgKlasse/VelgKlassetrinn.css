@@ -65,6 +65,43 @@
     padding: 0;
   }
 
+  #Tjue {
+    float: left;
+    width: 300px;
+    padding: 0;
+    background: url(Elever.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin-left: 200px;
+  }
+
+  #MasterBilde {
+    float: left;
+    width: 300px;
+    padding: 0;
+    background: url(undervisning.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin-left: 200px;
+  }
+
+  #Atti {
+    float: left;
+    width: 710px;
+    padding: 0;
+    padding-left: 45px;
+    padding-right: 45px;
+    background-color: #FFDC00;
+    text-align: left;
+    margin-right: 200px;
+  }
+
+  #Left {
+    text-align: left;
+  }
+
   #Hundre {
     float: center;
     width: 1410px;
@@ -76,6 +113,11 @@
 
   .row {
       margin-bottom: 150px;
+  }
+
+  #Space {
+    margin-left: 250px;
+    margin-right: 250px;
   }
 
   #InnledningDiv {
