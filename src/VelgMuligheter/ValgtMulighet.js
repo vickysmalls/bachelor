@@ -31,7 +31,7 @@ const ValgtMulighet = ({klasseId, semester, klassetrinn, muligheterId}) => {
                                     klasseId = {oblig.klasseId}
                                     
                                 >
-                                    
+                                    {oblig.semester} 
 
                                     {oblig.fagnavn}
                                 </CustomButton>

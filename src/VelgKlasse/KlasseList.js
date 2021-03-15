@@ -66,15 +66,14 @@ const KlasseList = ({ handleClick}) => {
   <img id="Illustrasjon" src={Praksis} alt="Illustrasjon"/>
   <h2 id="Innledning">Hvordan bruke veilederen?
         </h2>
-        <p id="Padding">1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
-        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. 
-        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.<br /><br />
+        <p id="Padding">1. Velg studieretning, det første valget du får er om du går grunnskoleutdanning 1-7 eller grunnskoleutdanning 5-10. <br /><br />
 
-        2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
-        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. 
+        2. Deretter får du muligheten til å velge hvilket masteremne du vil gå opp til i 10. semester. Basert på valget du tar vil studieplanen 
+        oppdatere seg med de fagene du trenger for valgt masteremne.
         <br /><br />
 
-        3. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.        
+        3. Siste del er å fylle inn planen med valgfag. 
+        Husk at man trenger 60 studiepoeng i syklus 1 for å ta faget videre i syklus 2. Om du har to fag kan du velge selv i semester 7    
         </p>
 
         <p id="Bold">Scroll ned for å starte veilederen!</p>
