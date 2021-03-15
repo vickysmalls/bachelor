@@ -36,6 +36,7 @@ const VelgMaster = ({ answer }) => {
   function handleReset() {
     setMasterId("");
     setActiveButton("");
+    setFagnavn('');
   }
 
   return (
