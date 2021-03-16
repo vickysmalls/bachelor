@@ -70,10 +70,9 @@ main {
 #Beskrivelse {
     font-weight: 300;
     font-family: Arial;
-    text-align: center;
+    text-align: left;
     font-size: 20px;
     line-height: 30px;
-    padding-left: 75px;
     padding-right: 45px;
 }
 
@@ -89,7 +88,6 @@ main {
 
 Bold {
     font-weight: 700;
-    color: red;
 }
 
 #Gul {

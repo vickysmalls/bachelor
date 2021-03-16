@@ -4,6 +4,7 @@ import Modal from '../Modal/Modal';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagSemester from './oblig-fag-semester';
 import './oblig-fag.css';
+import Elever from './Elever.jpeg';
 
 const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
@@ -22,12 +23,24 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
         <>
 <div class="row">
     <div class="column" id="Hundre">
-        <h3>3. Obligatoriske emner</h3>
-        <h2>Oversikt over de obligatoriske emnene i de tre første semestrene</h2>
+    <h3>3. Obligatoriske emner</h3>
+    </div>
+    <div class="column" id="Tjue">
+    </div>
+
+    <div class="column" id="Atti">
+        <h2 id="Left">Oversikt over de obligatoriske emnene i de tre første semestrene</h2>
         <p id="Beskrivelse">De tre første semesterene består kun av obligatoriske emner. Disse er felles for begge studieretninger og 
             påvirker ikke masteroppgaven. I løpet av de tre første semestrene vil alle gjennomføre eksamner i Norsk og Matematikk, 
-            samt få innføring i pedagogikk.
+            samt få innføring i pedagogikk. <br /><br />
+            <bold>De obligatoriske emnene er listet opp under!</bold>
         </p>
+    </div>  
+</div>
+
+
+    <div class="row">
+    <div class="column" id="Hundre">
         <div className="obligatoriske semestre">
             <div classname="Seksti">
                 <h5>Semester 1</h5> 
@@ -69,7 +82,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     </div>
         
 

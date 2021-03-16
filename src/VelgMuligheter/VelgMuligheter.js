@@ -80,11 +80,11 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         <>
         <h3>4. Veien videre</h3>
-        <h2>Velg ritige valgfrie emner for å kunne skrive master innenfor ønsket emne!</h2>
-        <p id="Beskrivelse">Fra og med semester fire vil det være viktig å velge de riktige emnene for å få nok studiepoeng til
-            å skrive masteroppgave innenfor ønsker emne. Oversikten under viser hvordan ditt studieløp kan se ut. <br /><br />
-            Emner som vil være helt nødvendig å ta for å kunne skrive master innenfor valgt emne er <bold>markert i rødt. </bold>
-            Kun de emnene som er tilgjengelig for deg utifra valgt ønsket masteremne vil vises.
+        <h2>Velg ønsket valgfag</h2>
+        <p id="Beskrivelse">Semester fire er det semesteret man først får lov til å velge fag selv. her kan du velge mellom en del ulike fag.
+        Fagene du trenger for å gå opp til master er allerede lagt inn og er <bold>markert i rødt. </bold> 
+        Så du får muligheten til å ta et fag til og få 60 studiepoeng i det emne, det er ikke nødvendig å ha 60 studiepoeng i det valgfrie
+        emne, men er en fin ting å tenke på om du får lyst til å endre studieløpet underveis i studie.
         </p>
 
 
