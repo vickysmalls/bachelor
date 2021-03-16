@@ -33,8 +33,7 @@ const Semester = ({
   
   //
   function handleMuligheter(ele) {
-    setMuligheterId(ele);
-    
+    setMuligheterId(ele);    
   }
   const onSideBtnClick = e => {
         

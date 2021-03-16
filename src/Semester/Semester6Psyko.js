@@ -63,6 +63,7 @@ const Semester6Psyko = ({
                   onClick={() => {
                     handleMuligheter(oblig.id);
                     onSideBtnClick(oblig);
+                    
                    
 
                   }}

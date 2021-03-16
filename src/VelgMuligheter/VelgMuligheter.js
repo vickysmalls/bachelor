@@ -32,6 +32,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [muligheterId3, setMuligheterId3] = useState();
 
     const [mulighetTull, setMulighetTull] = useState();
+    const [mulighetTull2, setMulighetTull2] = useState();
+
 
     const [valgtFag4, setValgtFag4] = useState();
    
@@ -125,9 +127,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         }
         <button onClick={() => handleReset()} >Reset</button>
         
-        
-        
-        
+
         </div>
 
         <h2>Semester 5</h2>
@@ -184,6 +184,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                 klasseId ={answer}
                 activeButton={activeButton2}
                 setActiveButton ={setActiveButton2}
+                setSemesterList7={setMulighetTull2}
+                
                 
             />
             </>
@@ -331,7 +333,11 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             semesterList7={semesterList7}
             mulighetTull={mulighetTull}
             fagNavn={fagNavn}
+            mulighetTull2={mulighetTull2}
+
+            klasseId={answer}
             
+
         />
             
         </>

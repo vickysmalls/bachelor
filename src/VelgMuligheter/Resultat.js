@@ -2,6 +2,8 @@ import ObligFagSemester from "../oblig-fag/oblig-fag-semester";
 import Muligheter from "./Muligheter";
 import ValgtMulighet from "./ValgtMulighet";
 import Print from "../Print/Print";
+import Semester6Psyko from "../Semester/Semester6Psyko";
+import Semester from "../Semester/Semester";
 
 const Resultat = ({
   answer,
@@ -16,10 +18,16 @@ const Resultat = ({
   mulighetTull,
   fagNavn,
   setMessages,
+  mulighetTull2,
   messages
 
 }) => {
-  
+  console.log('muligheterId3', muligheterId3);
+  console.log('mulighetTull', mulighetTull);
+  console.log('masterId', masterId);
+  console.log('mulighetTull2', mulighetTull2);
+
+
 
   return (
     <div>
@@ -64,12 +72,12 @@ const Resultat = ({
           masterId === 15 ||
           masterId ===16 ||
           masterId === 17 ?(
-            <Muligheter
-              klassetrinn={klassetrinn}
-              sorted={sorted}
-              semester={4}
-              masterId={mulighetTull}
-            />
+            //Byttet ut muligheter med ValgtMuligheter pga man vil ha hvilken knapp man trykket på
+            //det andre er irrelevant fro norsk matte engelsk
+            <ValgtMulighet
+            klassetrinn={klassetrinn}
+            muligheterId={muligheterId1}
+          ></ValgtMulighet>
           ):(
             <Muligheter
             klassetrinn={klassetrinn}
@@ -103,6 +111,7 @@ const Resultat = ({
           masterId === 15 ||
           masterId ===16 ||
           masterId === 17 ?(
+            //gjelder norsk matte engelsk
             <Muligheter
               klassetrinn={klassetrinn}
               sorted={sorted}
@@ -130,39 +139,39 @@ const Resultat = ({
             masterId=== 25 ||
             masterId=== 26 || 
             masterId=== 27 ? ( 
-              <>
-          <ValgtMulighet
-            klassetrinn={klassetrinn}
-            muligheterId={muligheterId3}
-          ></ValgtMulighet>
-          <Muligheter
-          klassetrinn={klassetrinn}
-          sorted={sorted}
-          semester={6}
-          masterId={masterId}
-        />
-          </>
+              <div>
+              <ValgtMulighet
+                klassetrinn={klassetrinn}
+                muligheterId={muligheterId3}
+              ></ValgtMulighet>
+              <Muligheter
+              klassetrinn={klassetrinn}
+              sorted={sorted}
+              semester={6}
+              masterId={masterId}
+            />
+              </div>
 
           ): 
+          
           masterId=== 1||
           masterId=== 2 ||
           masterId=== 3 ||
           masterId === 15 ||
           masterId ===16 ||
           masterId === 17 ?(
-            <Muligheter
-              klassetrinn={klassetrinn}
-              sorted={sorted}
-              semester={6}
-              masterId={mulighetTull}
-            />
-          ):(
-            <Muligheter
+
+            //byttet ut muligheter med ValgtMuligheter
+            <ValgtMulighet
             klassetrinn={klassetrinn}
-            sorted={sorted}
-            semester={6}
-            masterId={masterId}
-          />
+            muligheterId={muligheterId3}
+          ></ValgtMulighet>
+            
+          ):(
+            <ValgtMulighet
+            klassetrinn={klassetrinn}
+            muligheterId={muligheterId3}
+          ></ValgtMulighet>
           ) 
         
         }

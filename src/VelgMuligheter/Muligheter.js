@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
 import  Modal  from '../Modal/Modal';
 import InfoButton from '../CustomButton/InfoButton';
@@ -19,6 +19,8 @@ const Muligheter = ({masterId, setFag, setSemesterList7, semesterList7, semester
     const [klasseId ,setKlasseId] = useState();
     const [isOpen, setIsOpen] = useState(false);
 
+
+    
 
        
     return ( 
@@ -46,7 +48,7 @@ const Muligheter = ({masterId, setFag, setSemesterList7, semesterList7, semester
                                 fag={oblig.fagnavn}
                                 
                                 onClick ={() =>{
-                                    setSemesterList7(oblig.masterFagId);
+                                    setSemesterList7(oblig.id);
                                     setFag(oblig);
 
                                     
