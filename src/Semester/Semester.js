@@ -14,15 +14,27 @@ const Semester = ({
   farge,
   setActiveButton,
   setMasterFagId,
-  setSemesterList7
+  setSemesterList7,
+  setFag,
+  
+  setValgtFag,
+  messages,
+  fag
 }) => {
 
     
   //
 
+  function handleFag(ele){
+     setFag(ele);
+     console.log('ele', ele);
+
+  }
+  
   //
   function handleMuligheter(ele) {
     setMuligheterId(ele);
+    
   }
   const onSideBtnClick = e => {
         
@@ -56,6 +68,9 @@ const Semester = ({
                   onClick={() => {
                     handleMuligheter(oblig.id);
                     onSideBtnClick(oblig);
+                    handleFag(oblig);
+                   
+
                   }}
                 >
                   {oblig.fagnavn}

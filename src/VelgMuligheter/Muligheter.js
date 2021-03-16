@@ -6,20 +6,12 @@ import InfoButton from '../CustomButton/InfoButton';
 
 
 
-const Muligheter = ({masterId, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) => {
+const Muligheter = ({masterId, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) => {
 
    
   
 
-    //logger ved trykk
-    function handleClick(e) {
-        
-        setSemesterList7(e);
-        console.log('The link was clicked.', e);
-        
-        
-    }
-
+   
     const [fagnavn, setFagnavn] = useState();
     //const [semester, setSemester] = useState();
     const [emnekode, setEmneKode] = useState();
@@ -54,7 +46,9 @@ const Muligheter = ({masterId, setSemesterList7, semesterList7, semester, klasse
                                 fag={oblig.fagnavn}
                                 
                                 onClick ={() =>{
-                                    handleClick(oblig.masterFagId); 
+                                    setSemesterList7(oblig.masterFagId);
+                                    setFag(oblig);
+
                                     
                             }}>
                                 {oblig.fagnavn}

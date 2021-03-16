@@ -13,7 +13,14 @@ const Resultat = ({
   muligheterId3,
   masterId,
   semesterList7,
+  mulighetTull,
+  fagNavn,
+  setMessages,
+  messages
+
 }) => {
+  
+
   return (
     <div>
       <div classname="card-container" id="printId">
@@ -38,53 +45,127 @@ const Resultat = ({
         </div>
         <div className="card-container">
           <h1>semester 4</h1>
+          
           <div className="semester">
+          {masterId === 12 ||
+            masterId=== 13|| 
+            masterId=== 14 ||
+            masterId=== 25 ||
+            masterId=== 26 || 
+            masterId=== 27 ? ( 
+          <ValgtMulighet
+            klassetrinn={klassetrinn}
+            muligheterId={muligheterId1}
+          ></ValgtMulighet>
+          ): 
+          masterId=== 1||
+          masterId=== 2 ||
+          masterId=== 3 ||
+          masterId === 15 ||
+          masterId ===16 ||
+          masterId === 17 ?(
             <Muligheter
               klassetrinn={klassetrinn}
               sorted={sorted}
               semester={4}
-              masterId={activeButton}
+              masterId={mulighetTull}
             />
-            {
-              <ValgtMulighet
-                klassetrinn={klassetrinn}
-                muligheterId={muligheterId1}
-              ></ValgtMulighet>
-            }
+          ):(
+            <Muligheter
+            klassetrinn={klassetrinn}
+            sorted={sorted}
+            semester={4}
+            masterId={masterId}
+          />
+          )
+        
+        }
+            
           </div>
         </div>
         <div className="card-container">
           <h1>semester 5</h1>
           <div className="semester">
+          {masterId === 12 ||
+            masterId=== 13|| 
+            masterId=== 14 ||
+            masterId=== 25 ||
+            masterId=== 26 || 
+            masterId=== 27 ? ( 
+          <ValgtMulighet
+            klassetrinn={klassetrinn}
+            muligheterId={muligheterId2}
+          ></ValgtMulighet>
+          ): 
+          masterId=== 1||
+          masterId=== 2 ||
+          masterId=== 3 ||
+          masterId === 15 ||
+          masterId ===16 ||
+          masterId === 17 ?(
             <Muligheter
               klassetrinn={klassetrinn}
               sorted={sorted}
               semester={5}
-              masterId={activeButton}
+              masterId={mulighetTull}
             />
-            {
-              <ValgtMulighet
-                klassetrinn={klassetrinn}
-                muligheterId={muligheterId2}
-              ></ValgtMulighet>
-            }
+          ):(
+            <Muligheter
+            klassetrinn={klassetrinn}
+            sorted={sorted}
+            semester={5}
+            masterId={masterId}
+          />
+          )
+        
+        }
           </div>
         </div>
         <div className="card-container">
           <h1>semester 6</h1>
           <div className="semester">
+          {masterId === 12 ||
+            masterId=== 13|| 
+            masterId=== 14 ||
+            masterId=== 25 ||
+            masterId=== 26 || 
+            masterId=== 27 ? ( 
+              <>
+          <ValgtMulighet
+            klassetrinn={klassetrinn}
+            muligheterId={muligheterId3}
+          ></ValgtMulighet>
+          <Muligheter
+          klassetrinn={klassetrinn}
+          sorted={sorted}
+          semester={6}
+          masterId={masterId}
+        />
+          </>
+
+          ): 
+          masterId=== 1||
+          masterId=== 2 ||
+          masterId=== 3 ||
+          masterId === 15 ||
+          masterId ===16 ||
+          masterId === 17 ?(
             <Muligheter
               klassetrinn={klassetrinn}
               sorted={sorted}
               semester={6}
-              masterId={activeButton}
+              masterId={mulighetTull}
             />
-            {
-              <ValgtMulighet
-                klassetrinn={klassetrinn}
-                muligheterId={muligheterId3}
-              ></ValgtMulighet>
-            }
+          ):(
+            <Muligheter
+            klassetrinn={klassetrinn}
+            sorted={sorted}
+            semester={6}
+            masterId={masterId}
+          />
+          ) 
+        
+        }
           </div>
         </div>
         <div className="card-container">
