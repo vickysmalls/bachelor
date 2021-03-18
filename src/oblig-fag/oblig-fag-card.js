@@ -25,7 +25,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
     <div class="column" id="Hundre">
     <h3>3. Obligatoriske emner</h3>
     </div>
-    <div class="column" id="Tjue">
+    <div class="column" id="MasterBilde">
     </div>
 
     <div class="column" id="Atti">
@@ -84,24 +84,26 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
         </div>
     </div>
     </div>
-        
 
     <div class="row">
-    <div class="column" id="Hundre">    
-        <div className="videreknapp" id="Videre">
-            {
-                <CustomButton id="Videre" onClick={() => {visVidereClick(visVidere)}} >Videre</CustomButton>
-            }
-        </div>
-        
+    <div class="column" id="Hundre">
+    <h3>4. Veien Videre</h3></div>
+    <div class="column" id="BygningBilde"></div>
 
-        
+    <div class="column" id="Atti">
+        <h2 id="Left">Få oversikt over emnene du må ta, samt hvilke semestre du kan velge valgfrie emner</h2>
+        <p id="Beskrivelse">Semester fire er det semesteret man først får lov til å velge fag selv. her kan du velge mellom en del ulike fag.
+        Fagene du trenger for å gå opp til master er allerede lagt inn og er <bold>markert i gult. </bold> 
+        Så du får muligheten til å ta et fag til og få 60 studiepoeng i det emne, det er ikke nødvendig å ha 60 studiepoeng i det valgfrie
+        emne, men er en fin ting å tenke på om du får lyst til å endre studieløpet underveis i studie.
+        </p>
+    </div> 
+</div> 
 
-        
 
+    
+    <div className="VeienVidere">         
         
-        
-        <div className="veivalg for resten av studieløpet">
         {
             
            
@@ -111,9 +113,8 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
        
         }
         
-        </div>
-        </div>
-        </div>
+    </div>    
+
         
        
         </>

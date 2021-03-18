@@ -21,3 +21,21 @@
 .card-container2{
     padding-left: 340px;
 }
+
+.VeienVidere {
+    float: center;
+    padding: 0;
+    margin-left: 265px;
+    margin-right: 265px;
+}
+
+#BygningBilde {
+    float: left;
+    width: 300px;
+    padding: 0;
+    background: url(OsloMetBygning.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin-left: 200px;
+  }

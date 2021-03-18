@@ -8,6 +8,8 @@ import useFetch from '../useFetch';
 import Muligheter from './Muligheter';
 import ValgtMulighet from './ValgtMulighet';
 import "bootstrap/dist/css/bootstrap.min.css";
+import '../VelgKlasse/VelgKlassetrinn.css';
+import '../VelgMaster/VelgMaster.css';
 
 import './muligheter.css';
 import Resultat from './Resultat';
@@ -80,14 +82,6 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         
         <>
-        <h3>4. Veien videre</h3>
-        <h2>Velg ønsket valgfag</h2>
-        <p id="Beskrivelse">Semester fire er det semesteret man først får lov til å velge fag selv. her kan du velge mellom en del ulike fag.
-        Fagene du trenger for å gå opp til master er allerede lagt inn og er <bold>markert i rødt. </bold> 
-        Så du får muligheten til å ta et fag til og få 60 studiepoeng i det emne, det er ikke nødvendig å ha 60 studiepoeng i det valgfrie
-        emne, men er en fin ting å tenke på om du får lyst til å endre studieløpet underveis i studie.
-        </p>
-
 
         <h5>Semester 4</h5> 
         <div className='fag'>
