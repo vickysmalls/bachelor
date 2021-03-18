@@ -48,6 +48,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     
 
     console.log('valg7Master', valg7Master);
+    console.log('muligheterId3', muligheterId3);
 
     
 
@@ -255,7 +256,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                 <Muligheter setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
                 ) 
         : 
-            null
+                <Muligheter setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
+
         }
         
         </div>
@@ -276,6 +278,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             <ObligFagSemester setSemesterList7={setSemesterList7} semester={9} answer={answer}/>
         }
         {
+            //om det er semeseter 2
             (
             masterId === 12 || masterId === 13 || masterId === 14 ||
             masterId ===15 || masterId ===16 || masterId ===17 || masterId ===18 || masterId ===19 ||
@@ -288,17 +291,18 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                 <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
                 ) 
         : 
-            null
-        }
+                <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+
+    
+    }
         </div>
         
         <h2>Semester 10</h2>
         <div className='fag'>
         {
            
-            //Viser basert på valg i 9 semeseter
-            //må gjøre slik at den vises før man velger i semester 9   
-            muligheterId3 ? (
+            //hvis 
+            masterFagId ? (
                 <Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
             ) :
