@@ -103,6 +103,8 @@ const Resultat = ({
             muligheterId={muligheterId2}
           ></ValgtMulighet>
           ): 
+
+          //tull med noe her
           masterId=== 1||
           masterId=== 2 ||
           masterId=== 3 ||
@@ -110,19 +112,21 @@ const Resultat = ({
           masterId ===16 ||
           masterId === 17 ?(
             //gjelder norsk matte engelsk
-            <Muligheter
-              klassetrinn={klassetrinn}
-              sorted={sorted}
-              semester={5}
-              masterId={mulighetTull}
-            />
-          ):(
-            <Muligheter
+             <Muligheter
             klassetrinn={klassetrinn}
             sorted={sorted}
             semester={5}
             masterId={masterId}
           />
+          ):
+
+          (
+           <Muligheter
+              klassetrinn={klassetrinn}
+              sorted={sorted}
+              semester={5}
+              masterId={mulighetTull}
+            />
           )
         
         }
