@@ -295,9 +295,17 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <h2>Semester 10</h2>
         <div className='fag'>
         {
-            //Om semesterList7 er true (altså har blitt satt i 7)
-              
+           
+            //Viser basert på valg i 9 semeseter
+            //må gjøre slik at den vises før man velger i semester 9   
+            muligheterId3 ? (
                 <Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+
+            ) :
+            (
+                <Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+
+            )
 
             
             
