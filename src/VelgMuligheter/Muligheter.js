@@ -49,8 +49,6 @@ const Muligheter = ({masterId, setFag, setSemesterList7, semesterList7, semester
                                 
                                 onClick ={() =>{
                                     setSemesterList7(oblig.id);
-                                    setFag(oblig);
-
                                     
                             }}>
                                 {oblig.fagnavn}

@@ -18,14 +18,12 @@ const Resultat = ({
   mulighetTull,
   fagNavn,
   setMessages,
-  mulighetTull2,
   messages
 
 }) => {
   console.log('muligheterId3', muligheterId3);
   console.log('mulighetTull', mulighetTull);
   console.log('masterId', masterId);
-  console.log('mulighetTull2', mulighetTull2);
 
 
 

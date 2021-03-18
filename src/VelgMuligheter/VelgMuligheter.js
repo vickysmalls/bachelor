@@ -35,13 +35,10 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [mulighetTull2, setMulighetTull2] = useState();
 
 
+
     const [valgtFag4, setValgtFag4] = useState();
    
-    const [fag1, setFag1] = useState(); 
-    const [fag2, setFag2] = useState();
-    const [fag3, setFag3] = useState();
-    const [fag4, setFag4] = useState();
-
+    
 
 
     
@@ -54,12 +51,6 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
       }
 
 
-      /*
-    console.log('mulighet set (semsester7list(setMulighetTull)): ', mulighetTull,
-    'semester (mulighetId, blir fagIder): ', muligheterId1,',', muligheterId2, ', ', muligheterId3,
-     'masterId (activebutton1 : ', activeButton, 'activebutton2 : ', activeButton,
-     console.log('fag', fag1);
-    )*/
     // farge for for semester 6
     const [activeButton2, setActiveButton2] = useState();
 
@@ -69,6 +60,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [videre, setVidere] = useState(false);
 
     console.log('tull', mulighetTull);
+    console.log('masterId', masterId);
 
     
     //lager et array som sortrer etter semester
@@ -95,7 +87,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <div className='fag'>
         {
             //reset setMulighetTull i master
-            <Muligheter setFag={setFag1} setSemesterList7={setMulighetTull} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+            <Muligheter  setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
         } 
 
         {
@@ -109,7 +101,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             ) 
         ? 
             (
-                <Semester setFag={setFag1} 
+                <Semester 
                     setMuligheterId={setMuligheterId1} 
                     muligheterId={muligheterId1}
                     setValgtFag={setValgtFag4} 
@@ -133,7 +125,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <h2>Semester 5</h2>
         <div className='fag'>
         {
-            <Muligheter setFag={setFag2} setSemesterList7={setMulighetTull} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -145,7 +137,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         ? 
             (
                 
-                <Semester setFag={setFag2} activeButton={activeButton} setActiveButton ={setActiveButton}  setMuligheterId={setMuligheterId2} muligheterId={muligheterId2} klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
+                <Semester activeButton={activeButton} setActiveButton ={setActiveButton}  setMuligheterId={setMuligheterId2} muligheterId={muligheterId2} klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
             ) 
         : 
             null
@@ -159,7 +151,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         
         {
-            <Muligheter setFag={setFag3} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+            <Muligheter setSemesterList7={setMulighetTull2}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
         } 
 
         {(
@@ -176,7 +168,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
              <>
             <Semester6Psyko activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
            
-                <Semester setFag={setFag4} 
+                <Semester 
                 setMuligheterId={setMuligheterId3} 
                 muligheterId={muligheterId3}
                 klassetrinn={klassetrinn} 
@@ -184,7 +176,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
                 klasseId ={answer}
                 activeButton={activeButton2}
                 setActiveButton ={setActiveButton2}
-                setSemesterList7={setMulighetTull2}
+                
                 
                 
             />
@@ -333,10 +325,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             semesterList7={semesterList7}
             mulighetTull={mulighetTull}
             fagNavn={fagNavn}
-            mulighetTull2={mulighetTull2}
 
             klasseId={answer}
-            
+
 
         />
             

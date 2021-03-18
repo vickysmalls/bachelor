@@ -11,25 +11,16 @@ const Semester = ({
   klassetrinn,
   setMuligheterId,
   activeButton,
-  farge,
+
   setActiveButton,
-  setMasterFagId,
-  setSemesterList7,
+
   setFag,
-  
-  setValgtFag,
-  messages,
-  fag
+
 }) => {
 
     
   //
 
-  function handleFag(ele){
-     setFag(ele);
-     console.log('ele', ele);
-
-  }
   
   //
   function handleMuligheter(ele) {
@@ -67,7 +58,7 @@ const Semester = ({
                   onClick={() => {
                     handleMuligheter(oblig.id);
                     onSideBtnClick(oblig);
-                    handleFag(oblig);
+                   
                    
 
                   }}
