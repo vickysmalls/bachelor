@@ -46,9 +46,12 @@ const VelgMaster = ({answer}) => {
     </div>
 
     <div class="column" id="Atti">
-        <h2 id="Left">Velg hvilket masteremne du ønsker å ha</h2>
+        <h2 id="Left">Velg et masteremne og se hvordan du må bygge oppstudiet for å kunne skrive masteroppgave i det valgt emnet</h2>
         <p id="Beskrivelse">Valget du gjør her vil påvirke valgmulighetene resten av studiet. For å kunne skrive master i et av de
             følgende emnene må du ha nok studiepoeng i valgt emne for å kunne skrive masteroppgave i det aktuelle faget. <br /><br />
+
+            Du kan senere gå tilbake til denne delen og velge et annet mastermne du kunne være interessert i å skrive masteroppgave. <br /><br />
+
             <bold>Alle mulighetene er listet opp under!</bold>
         </p>
     </div>  
@@ -57,7 +60,7 @@ const VelgMaster = ({answer}) => {
 
 <div class="row">
     <div class="column" id="Hundre">
-    <h2>Masteremner: </h2> 
+    <h2>Velg et masteremne: </h2> 
         <div className='masterfag'>
             {
                 masterFag && masterFag.map(oblig=>{

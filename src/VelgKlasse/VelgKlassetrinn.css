@@ -87,6 +87,17 @@
     margin-left: 200px;
   }
 
+  #ObligFagBilde {
+    float: left;
+    width: 300px;
+    padding: 0;
+    background: url(Elever.jpeg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    margin-left: 200px;
+  }
+
   #Atti {
     float: left;
     width: 710px;
@@ -112,7 +123,7 @@
   }
 
   .row {
-      margin-bottom: 150px;
+      margin-bottom: 100px;
   }
 
   #Space {
@@ -137,4 +148,8 @@
 
   #Gul {
     background-color: #FFDC00;
+  }
+
+  #Start {
+    margin-top: 150px;
   }

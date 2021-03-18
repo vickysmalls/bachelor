@@ -55,9 +55,10 @@ const KlasseList = ({ handleClick}) => {
   <h2 id="Innledning">Med denne veilederen kan du utforske hvordan du ønsker å legge opp studieløpet ditt her ved OsloMet. 
             Utforsk de forskjellige fagene, og se hvilke konsekvenser valgt av fag vil ha senere i studiet.
         </h2>
-        <p id="Padding">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. 
-        Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. 
-        Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.
+        <p id="Padding">Veilederen er utviklet for at alle elever skal ta riktige valg underveis i lærerutdanningen. Målet
+        er at du som student skal legge opp studieløpet riktig slik at du får en master innenfor det emnet du ønsker deg. Vi vet 
+        at oppbyggingen av lærerutdanningen kan være vanskelig å forstå, og dermed er denne veilederen utviklet for å visualisere
+        oppbyggingen av studiet på en bedre måte. 
         </p>
 
         </div>
@@ -80,7 +81,7 @@ const KlasseList = ({ handleClick}) => {
   </div>
 </div>
 
-<div class="row">
+<div class="row" id="Start">
 <div class="column" id="Hundre">
   
         
