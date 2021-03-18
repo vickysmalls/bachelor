@@ -83,7 +83,13 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         <>
 
-        <h5>Semester 4</h5> 
+<div class="row">
+    <div class="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+
+        <h5>Semester 4</h5>
+        <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p> 
         <div className='fag'>
         {
             //reset setMulighetTull i master
@@ -117,13 +123,22 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         : 
             null
         }
-        <button onClick={() => handleReset()} >Reset</button>
-        
+    </div>
+ </div>
 
+            <div className="Forti"></div>
         </div>
+    </div>
+</div>
 
-        <h2>Semester 5</h2>
-        <div className='fag'>
+<div class="row">
+    <div class="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+        
+            <h5>Semester 5</h5>
+            <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p> 
+            <div className='fag'>
         {
             <Muligheter setValg7Master setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
@@ -142,11 +157,11 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         : 
             null
         }
-        
-        
+
+            </div>
         </div>
 
-        <h2>Semester 6</h2>
+        <h5>Semester 6</h5>
         <div className='fag'>
         
         
@@ -187,9 +202,18 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     
 
         </div>
-{console.log('semesterList7', semesterList7)}
+        {console.log('semesterList7', semesterList7)}
+
+
+
         
-        <h2>Semester 7</h2>
+        </div>
+    </div>
+</div>
+
+
+        
+        <h5>Semester 7</h5>
         <div className='fag'>
         
         {

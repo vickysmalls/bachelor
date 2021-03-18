@@ -153,3 +153,13 @@
   #Start {
     margin-top: 150px;
   }
+
+  ol {
+    margin-left: 25px;
+  }
+
+  li {
+    font-size: 18px;
+    line-height: 30px;
+    font-family: Arial;
+  }
