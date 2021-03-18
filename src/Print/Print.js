@@ -5,7 +5,7 @@ import './print.css'
 export default class PrintComponent extends React.Component {
 
     // Printer resultatskjerm til PDF
-    // Problem: Applikasjonen må lastes på nytt etter print
+
     printResultat = () => {
         const printElementer = document.getElementById('printId').innerHTML;
         const resultat = '<html><head><title></title></head><body>' + printElementer + '</body></html>'
@@ -13,6 +13,8 @@ export default class PrintComponent extends React.Component {
         document.body.innerHTML = resultat;
         window.print();
         document.body.innerHTML = tilbakeTilApp
+        console.log("Print utført");
+        window.location.reload();
     }
 
     render () {
