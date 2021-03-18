@@ -6,7 +6,7 @@ import InfoButton from '../CustomButton/InfoButton';
 
 
 
-const Muligheter = ({masterId, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) => {
+const Muligheter = ({masterId, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) => {
 
    
   
@@ -49,6 +49,7 @@ const Muligheter = ({masterId, setFag, setSemesterList7, semesterList7, semester
                                 
                                 onClick ={() =>{
                                     setSemesterList7(oblig.id);
+                                    setValg7Master(oblig.masterFagId)
                                     
                             }}>
                                 {oblig.fagnavn}
