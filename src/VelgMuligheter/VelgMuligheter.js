@@ -28,6 +28,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [isOpen, setIsOpen] = useState(false);
 
 
+
     //for å filtrere muligheter i Semester, når man ser hva man har valgt
     const [muligheterId1, setMuligheterId1] = useState();
     const [muligheterId2, setMuligheterId2] = useState();
@@ -45,10 +46,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [valgtFag4, setValgtFag4] = useState();
    
     const [empty, setEmpty] = useState();
-    
 
-    console.log('valg7Master', valg7Master);
-    console.log('muligheterId3', muligheterId3);
+
+    const [semester9Resultat, setSemester9Resultat] = useState();
 
     
 
@@ -68,16 +68,17 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
     const [videre, setVidere] = useState(false);
 
-    console.log('tull', mulighetTull);
-    console.log('masterId', masterId);
-
     
     //lager et array som sortrer etter semester
     const iteratees = obj => obj.semester;
     const sorted = _.sortBy(klassetrinn, iteratees);
 
-   
-    
+    console.log('semesterList7', semesterList7)
+
+    console.log('masterId', masterId)
+
+    console.log('semester9Resultat', semester9Resultat);
+
                     
     return ( 
         
@@ -188,7 +189,6 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     
 
         </div>
-{console.log('semesterList7', semesterList7)}
         
         <h2>Semester 7</h2>
         <div className='fag'>
@@ -208,10 +208,12 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         }
         {
             (
-            masterId === 12 || masterId === 13 || masterId === 14 ||
-            masterId ===15 || masterId ===16 || masterId ===17 || masterId ===18 || masterId ===19 ||
-            masterId ===20 || masterId ===21  ||masterId ===22 || masterId ===23 ||masterId ===24 || 
-            masterId ===25 || masterId ===26 || masterId ===27
+            /*
+              kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
+            masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
+
+            //om klasseId (klassetrinn 1-7, eller klassetrinn 5-10) og pedagogikk 1-7
+           answer===2 || masterId === 12 || masterId === 13 || masterId === 14
             ) 
         ? 
             (
@@ -244,11 +246,15 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         }
         {
+            //Nå vises ikke fagene for semeseter 8-9, tror id feil, kommer om man uncommenter mulighet øverst
             (
-            masterId === 12 || masterId === 13 || masterId === 14 ||
-            masterId ===15 || masterId ===16 || masterId ===17 || masterId ===18 || masterId ===19 ||
-            masterId ===20 || masterId ===21  ||masterId ===22 || masterId ===23 ||masterId ===24 || 
-            masterId ===25 || masterId ===26 || masterId ===27
+            //om klasseId (klassetrinn 1-7, eller klassetrinn 5-10) og pedagogikk 1-7
+           answer===2 || masterId === 12 || masterId === 13 || masterId === 14
+
+            /*
+              kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
+            masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
+             
             ) 
         ? 
             (
@@ -280,18 +286,19 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         {
             //om det er semeseter 2
             (
-            masterId === 12 || masterId === 13 || masterId === 14 ||
-            masterId ===15 || masterId ===16 || masterId ===17 || masterId ===18 || masterId ===19 ||
-            masterId ===20 || masterId ===21  ||masterId ===22 || masterId ===23 ||masterId ===24 || 
-            masterId ===25 || masterId ===26 || masterId ===27
+            /*
+              kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
+            masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
+             //om klasseId (klassetrinn 1-7, eller klassetrinn 5-10) og pedagogikk 1-7
+           answer===2 || masterId === 12 || masterId === 13 || masterId === 14
             ) 
         ? 
             (
                 
-                <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+                <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
                 ) 
         : 
-                <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+                <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
 
     
     }
@@ -337,8 +344,9 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             semesterList7={semesterList7}
             mulighetTull={mulighetTull}
             fagNavn={fagNavn}
-
+            valg7Master={valg7Master}
             klasseId={answer}
+            semester9Resultat={semester9Resultat}
 
 
         />

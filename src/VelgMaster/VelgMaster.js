@@ -20,9 +20,13 @@ const VelgMaster = ({answer}) => {
     const [masterId, setMasterId] = useState();
     const [visVidere, setVisVidere] = useState(false);    
 
+    const [klasseId, setKlasseId] = useState();
+
+
      //Sette farge valgt semester
      const [activeButton, setActiveButton] = useState();
     
+
      const onSideBtnClick = e => {
         
         setActiveButton(e.id);
@@ -33,6 +37,7 @@ const VelgMaster = ({answer}) => {
     function handleClick(e) {
         console.log('The link was clicked.');
         console.log(e);
+       
     }
 
    
@@ -85,6 +90,7 @@ const VelgMaster = ({answer}) => {
                                 setFagnavn(oblig.fagnavn)
                                 setVisVidere(true)
                                 onSideBtnClick(oblig)
+                                
                             }}
                             >
                             {oblig.fagnavn}

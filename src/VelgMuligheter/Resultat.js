@@ -19,10 +19,10 @@ const Resultat = ({
   fagNavn,
   setMessages,
   messages,
+  valg7Master,
+  semesterList9
 }) => {
-  console.log("muligheterId3", muligheterId3);
-  console.log("mulighetTull", mulighetTull);
-  console.log("masterId", masterId);
+  
 
   return (
     <div>
@@ -133,29 +133,18 @@ const Resultat = ({
           <h1>semester 7</h1>
           <div className="semester">
             {
-            //sjekker om noe er i semester2
+           /*
+              kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
+            masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
+            
             masterId === 12 ||
             masterId === 13 ||
             masterId === 14 ||
-            masterId === 15 ||
-            masterId === 16 ||
-            masterId === 17 ||
-            masterId === 18 ||
-            masterId === 19 ||
-            masterId === 20 ||
-            masterId === 21 ||
-            masterId === 22 ||
-            masterId === 23 ||
-            masterId === 24 ||
-            masterId === 25 ||
-            masterId === 26 ||
-            masterId === 27 ? (
-              <Muligheter
-                klassetrinn={klassetrinn}
-                sorted={sorted}
-                semester={7}
-                masterId={semesterList7}
-              />
+            answer===2 ? (
+              <ValgtMulighet
+              klassetrinn={klassetrinn}
+              muligheterId={semesterList7}
+            ></ValgtMulighet>
             ) : (
               <Muligheter
                 klassetrinn={klassetrinn}
@@ -171,28 +160,15 @@ const Resultat = ({
         <div className="card-container">
           <h1>semester 8</h1>
           <div className="semester">
-            {masterId === 12 ||
+            {
+              /*
+            masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
+            masterId === 12 ||
             masterId === 13 ||
             masterId === 14 ||
-            masterId === 15 ||
-            masterId === 16 ||
-            masterId === 17 ||
-            masterId === 18 ||
-            masterId === 19 ||
-            masterId === 20 ||
-            masterId === 21 ||
-            masterId === 22 ||
-            masterId === 23 ||
-            masterId === 24 ||
-            masterId === 25 ||
-            masterId === 26 ||
-            masterId === 27 ? (
-              <Muligheter
-                klassetrinn={klassetrinn}
-                sorted={sorted}
-                semester={8}
-                masterId={semesterList7}
-              />
+            answer ===2 ? (
+              <Muligheter klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
+
             ) : (
               <Muligheter
                 klassetrinn={klassetrinn}
@@ -207,28 +183,18 @@ const Resultat = ({
         <div className="card-container">
           <h1>semester 9</h1>
           <div className="semester">
-            {masterId === 12 ||
+            {
+              /*
+              kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
+            masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
+            masterId === 12 ||
             masterId === 13 ||
             masterId === 14 ||
-            masterId === 15 ||
-            masterId === 16 ||
-            masterId === 17 ||
-            masterId === 18 ||
-            masterId === 19 ||
-            masterId === 20 ||
-            masterId === 21 ||
-            masterId === 22 ||
-            masterId === 23 ||
-            masterId === 24 ||
-            masterId === 25 ||
-            masterId === 26 ||
-            masterId === 27 ? (
-              <Muligheter
-                klassetrinn={klassetrinn}
-                sorted={sorted}
-                semester={9}
-                masterId={semesterList7}
-              />
+            answer ===2 ? (
+              <ValgtMulighet
+              klassetrinn={klassetrinn}
+              muligheterId={semesterList9}
+            ></ValgtMulighet>
             ) : (
               <Muligheter
                 klassetrinn={klassetrinn}
