@@ -24,10 +24,12 @@ const KlasseList = ({ handleClick}) => {
     const [visVidere, setVisVidere] = useState(false);
     
     
+    const [klasseId, setKlasseId] = useState();
+
     
     //logger ved trykk
     function handleClick(e) {
-        console.log('The link was clicked.');
+        console.log('The link was clicked. klasse');
         console.log(e);
         const id = e.id;
         console.log('id fra handleClick = '+id);
