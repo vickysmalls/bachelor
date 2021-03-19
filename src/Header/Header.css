@@ -1,5 +1,5 @@
 .header {
-    height: 65vh;
+    height: 58vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -20,7 +20,7 @@
   }
 
   img {
-    padding: 125px;
+    padding: 105px;
     margin-top: -25px;
     margin-bottom: 50px;
 

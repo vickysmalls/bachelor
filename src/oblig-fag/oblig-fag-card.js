@@ -102,7 +102,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
 
     
-    <div className="VeienVidere">         
+    <div>         
         
         {
             

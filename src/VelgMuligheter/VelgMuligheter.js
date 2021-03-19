@@ -85,7 +85,25 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         <>
 
-        <h5>Semester 4</h5> 
+<div class="row">
+    <div class="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+            <h5>Semester 3</h5>
+            <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
+            <div className="fag">
+            {
+                        // det sorterte arrayet mappes
+                        <ObligFagSemester id="Gul" semester={3} answer={answer}/>
+            }
+        
+        </div>
+        </div>
+
+            <div className="Forti">
+
+            <h5>Semester 4</h5>
+        <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
         {
             //reset setMulighetTull i master
@@ -119,13 +137,23 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         : 
             null
         }
-        <button onClick={() => handleReset()} >Reset</button>
-        
+    </div>  
 
+            </div>
         </div>
+    </div>
+</div>
 
-        <h2>Semester 5</h2>
-        <div className='fag'>
+<div class="row">
+    <div class="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+        
+            <h5>Semester 5</h5>
+            <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p> 
+
+            
+            <div className='fag'>
         {
             <Muligheter setValg7Master setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
@@ -144,11 +172,13 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         : 
             null
         }
-        
-        
-        </div>
 
-        <h2>Semester 6</h2>
+            </div>
+        </div>
+        
+        <div className="Forti">
+        <h5>Semester 6</h5>
+        <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
         
         
@@ -187,10 +217,24 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         : null
         }
     
-
+    </div>  
         </div>
+        {console.log('semesterList7', semesterList7)}
+
+
+
         
-        <h2>Semester 7</h2>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+        
+        <h5>Semester 7</h5>
+        <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p> 
         <div className='fag'>
         
         {
@@ -224,12 +268,12 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             null
         }
         
-        
-        
-        
         </div>
+    </div>
 
-        <h2>Semester 8</h2>
+    <div className="Forti">
+        <h5>Semester 8</h5>
+        <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
         
         {
@@ -267,8 +311,18 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         }
         
         </div>
+        </div>
+    </div>
+    </div>
+    </div>
 
-        <h2>Semester 9</h2>
+    <div class="row">
+    <div class="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+
+        <h5>Semester 9</h5>
+        <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p> 
         <div className='fag'>
         
         {
@@ -303,8 +357,12 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     
     }
         </div>
+    </div>
         
-        <h2>Semester 10</h2>
+
+    <div className="Forti">
+        <h5>Semester 10</h5>
+        <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
         {
            
@@ -323,6 +381,13 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         } 
         
         </div>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="column" id="Hundre">
 
         <div className="videreknapp">
         <CustomButton onClick={() => setVidere(true)}>Videre</CustomButton>
@@ -353,6 +418,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             
         </>
         }
+    </div>
+    </div>
     </div>
     </>
         
