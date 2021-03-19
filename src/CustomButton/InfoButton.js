@@ -1,4 +1,4 @@
-const { AiFillQuestionCircle } = require("react-icons/ai")
+const { AiFillInfoCircle} = require("react-icons/ai")
 
 const InfoButton = ({
     children,
@@ -10,7 +10,7 @@ const InfoButton = ({
         className='infoknapp'
         {...otherProps}
         >
-            <AiFillQuestionCircle size='2em'/>
+            <AiFillInfoCircle size='1.5em'/>
         </button>
                
      );

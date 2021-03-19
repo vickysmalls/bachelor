@@ -40,7 +40,7 @@ const VelgMaster = ({answer}) => {
         <>
 <div class="row">
     <div class="column" id="Hundre">
-    <h3>2. Velg Masteremne</h3>
+    <h3>Velg Masteremne</h3>
     </div>
     <div class="column" id="Tjue">
     </div>

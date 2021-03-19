@@ -114,6 +114,25 @@
     line-height: 35px;
   }
 
+  #Studieaar {
+    text-align: left;
+    line-height: 55px;
+    padding-right: 250px;
+    margin-top: -70px;
+    font-size: 40px;
+    text-decoration-color: black;
+  }
+
+  #AarBeskrivelse {
+    font-weight: 300;
+    font-family: Arial;
+    text-align: left;
+    font-size: 20px;
+    line-height: 30px;
+    padding-right: 45px;
+    padding-right: 150px;
+}
+
   #Hundre {
     float: center;
     width: 1410px;

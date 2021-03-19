@@ -86,6 +86,13 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
 <div class="row">
     <div class="column" id="Hundre">
+    <h3>2. Studieår</h3>
+
+        <h2 id="Studieaar">Obligatorisk emner på høsten og fordypning på våren</h2>
+        <p id="AarBeskrivelse">
+            Lorem Ipsum dorem amet.
+        </p>
+
         <div className="obligatoriske semestre">
             <div classname="Seksti">
             <h5>Semester 3</h5>
@@ -145,9 +152,21 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
 <div class="row">
     <div class="column" id="Hundre">
+    <h3>3. Studieår</h3>
+
+    <h2 id="Studieaar">Mulighet for studier i utlandet og fordypning i valgfrie emner</h2>
+        <p id="AarBeskrivelse">
+            Det tredje året på studiet er preget av at du kan velge fordypning i ønsket emne. Dette er også
+            tidpunktet hvor det er mulighet for å studere fremmedspråk i utlandet. OsloMet tilbyr utveksling på en rekke
+            universiteter i utlandet. Dersom du er interessert i dette oppfordrer vi til å lese mer på OsloMet sine utvekslingssider.
+            <br /><br />
+            For begge studieretninger har studentene mulighet til å fordype seg i ett eller flere valgfrie emner. Valgmulighetene 
+            er listet opp under.
+
+        </p>
+
         <div className="obligatoriske semestre">
             <div classname="Seksti">
-        
             <h5>Semester 5</h5>
             <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p> 
 
@@ -229,6 +248,14 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
 <div class="row">
     <div class="column" id="Hundre">
+    <h3>4. Studieår</h3>
+
+    <h2 id="Studieaar">Forberedelser til masteroppgaven</h2>
+    <p id="AarBeskrivelse">
+        Emnene i dette studieåret er som regel avgjørende for hvilke muligheter du har til masteroppgaven.
+
+    </p>
+
         <div className="obligatoriske semestre">
             <div classname="Seksti">
         
@@ -311,6 +338,13 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
     <div class="row">
     <div class="column" id="Hundre">
+    <h3>5. Studieår</h3>
+
+    <h2 id="Studieaar">Undervisningsfag og masteroppgaven</h2>
+    <p id="AarBeskrivelse">
+    Lorem Ipsum dorem amet.
+
+</p>
         <div className="obligatoriske semestre">
             <div classname="Seksti">
 
@@ -382,7 +416,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     <div class="column" id="Hundre">
 
         <div className="videreknapp">
-        <CustomButton onClick={() => setVidere(true)}>Videre</CustomButton>
+        <CustomButton onClick={() => setVidere(true)}>Se oppsummering</CustomButton>
         </div>
 
         <div className="sluttskjerm">

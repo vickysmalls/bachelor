@@ -23,7 +23,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
         <>
 <div class="row">
     <div class="column" id="Hundre">
-    <h3>3. Obligatoriske emner</h3>
+    <h3>Obligatoriske emner</h3>
     </div>
     <div class="column" id="MasterBilde">
     </div>
@@ -87,7 +87,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
 
     <div class="row">
     <div class="column" id="Hundre">
-    <h3>4. Veien Videre</h3></div>
+    <h3>Veien Videre</h3></div>
     <div class="column" id="BygningBilde"></div>
 
     <div class="column" id="Atti">

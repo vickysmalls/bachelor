@@ -76,7 +76,7 @@ const KlasseList = ({ handleClick}) => {
             <li>Siste del er å fylle inn planen med valgfag. 
         Husk at man trenger 60 studiepoeng i syklus 1 for å ta faget videre i syklus 2. Om du har to fag kan du velge selv i semester 7.</li>
         </ol>
-            
+            yarnç
         </p>
 
         <p id="Bold">Scroll ned for å starte veilederen!</p>
@@ -87,7 +87,7 @@ const KlasseList = ({ handleClick}) => {
 <div class="column" id="Hundre">
   
         
-            <h3>1.Velg studieretning </h3>      
+            <h3>Velg studieretning </h3>      
             <h2>Velg din studieretning ved OsloMet</h2>
             <div className='introknapp'>
             

@@ -34,7 +34,7 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
               oblig.klasseId === answer &&
               oblig.semester === semester && (
                 <>
-                  <CustomButton key={oblig.id}>{oblig.fagnavn}</CustomButton>
+                  <CustomButton id="Videre" key={oblig.id}>{oblig.fagnavn}</CustomButton>
 
                   <InfoButton 
                     className="infoknapp"
