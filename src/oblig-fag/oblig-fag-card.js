@@ -5,8 +5,9 @@ import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
 import ObligFagSemester from './oblig-fag-semester';
 import './oblig-fag.css';
 import Elever from './Elever.jpeg';
+import ObligFagSemester2 from './ObligFagSemester2';
 
-const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
+const ObligFagCard = ({answer, masterId, obj, fagNavn, fagNavnStudierettning}) => {
 
     
     
@@ -46,9 +47,14 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
                 <h5>Semester 1</h5> 
                 <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
                 <div className="fag">
-                    {
-                        // det sorterte arrayet mappes
-                        <ObligFagSemester id="IkkeKnapp" semester={1} answer={answer}/>
+                    { //sjekker om det er 5-10, hvis det er det vil den filtrer i ObligFagSemester2, med fagnavnet satt i VelgStudieRettning
+                    answer ===2  ?(
+                                <ObligFagSemester2 fagNavnStudierettning={fagNavnStudierettning} semester={1} answer={answer}/>
+                            ) :(
+
+                                // det sorterte arrayet mappes
+                                <ObligFagSemester id="IkkeKnapp" semester={1} answer={answer}/>
+                            )
                     }
                 </div>
             </div>
@@ -60,10 +66,15 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
                 <h5>Semester 2</h5>
                 <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
                 <div className="fag">
-                    {
-                        // det sorterte arrayet mappes
-                        <ObligFagSemester semester={2} answer={answer}/>
-                    }
+                { //sjekker om det er 5-10, hvis det er det vil den filtrer i ObligFagSemester2, med fagnavnet satt i VelgStudieRettning
+                    answer ===2  ?(
+                            <ObligFagSemester2 fagNavnStudierettning={fagNavnStudierettning} semester={2} answer={answer}/>
+                        ) :(
+
+                            // det sorterte arrayet mappes
+                            <ObligFagSemester id="IkkeKnapp" semester={2} answer={answer}/>
+                        )
+                }
                 </div>
             </div>
     
@@ -75,10 +86,15 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn}) => {
                 <h5>Semester 3</h5>
                 <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
                 <div className="fag">
-                    {
+                   { //sjekker om det er 5-10, hvis det er det vil den filtrer i ObligFagSemester2, med fagnavnet satt i VelgStudieRettning
+                    answer ===2  ?(
+                        <ObligFagSemester2 fagNavnStudierettning={fagNavnStudierettning} semester={3} answer={answer}/>
+                    ) :(
+
                         // det sorterte arrayet mappes
-                        <ObligFagSemester semester={3} answer={answer}/>
-                    }
+                        <ObligFagSemester id="IkkeKnapp" semester={3} answer={answer}/>
+                    )
+            }
                 </div>
             </div>
         </div>

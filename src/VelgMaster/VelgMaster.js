@@ -10,7 +10,7 @@ const _ = require("lodash");
 
 
 
-const VelgMaster = ({answer}) => {
+const VelgMaster = ({answer, studieId, fagNavnStudierettning}) => {
 
     //setter masterfag tabellen til masterFag
     const {data: masterFag, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
@@ -75,6 +75,7 @@ const VelgMaster = ({answer}) => {
                         //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
                     oblig.klasseId === answer &&
                     
+                    
                     <>
                     
                     <div className='masterknapper'>
@@ -110,7 +111,7 @@ const VelgMaster = ({answer}) => {
         
         {   
             visVidere&&
-            <ObligFagCard masterId={masterId} fagNavn={fagNavn} answer={answer}/>
+            <ObligFagCard fagNavnStudierettning={fagNavnStudierettning} masterId={masterId} fagNavn={fagNavn} answer={answer}/>
         
         }
         

@@ -9,6 +9,8 @@ import ToBilder from './ToBilder.png';
 import Elever from './Elever.jpeg';
 import Undervisning from './undervisning.jpeg';
 import Praksis from './Praksis.jpeg';
+import VelgKlasse from "./VelgKlasse";
+import VelgStudierettning from "./VelgStudierettning";
 
 
 const KlasseList = ({ handleClick}) => {
@@ -23,8 +25,14 @@ const KlasseList = ({ handleClick}) => {
     const [obj, setObj] = useState();
     const [visVidere, setVisVidere] = useState(false);
     
+
+    const [studieRetning, setStudieRetning] = useState();
     
-    const [klasseId, setKlasseId] = useState();
+    const [fagNavnStudierettning, setFagNavnStudierettning] = useState();
+
+    // slik at det brukes/ lagres i neste komponent
+  
+  const [valgtObligFag, setValgtObligFag] = useState();
 
     
     //logger ved trykk
@@ -93,30 +101,26 @@ const KlasseList = ({ handleClick}) => {
             <h2>Velg din studieretning ved OsloMet</h2>
             <div className='introknapp'>
             
-                
-                    {
-                        //sjekker om klassetrinn er ok, deretter mappe gjennom klassene
-                        klassetrinn && 
-                        klassetrinn.map((klasse) =>(
-                            <CustomButton className="benButton"
-                            key={klasse.id}
-                            options={klasse}
-                            onClick={() =>{ 
-                                //setter statene fra øverst, og funksjonen handleclick
-                                setObj(klasse)  
-                                setAnswer(klasse.id)
-                                handleClick(klasse.id)
-                                visVidereClick(visVidere)
-                                
-                            }}
-                            >
-                            Grunnskolelærer {klasse.klassetrinn} trinn
-                            </CustomButton>  
-                        ))
-                    }
+            
+                    <VelgKlasse
+                     visVidere={visVidere} 
+                     setVisVidere={setVisVidere} 
+                     setObj={setObj} 
+                     setAnswer={setAnswer}
+                     klassetrinn={klassetrinn}
+                    
+                    />
+
             </div>
         </div> 
      </div> 
+     {
+         //om man velger 5-10
+         //Bruker fagnavn for å kunne filtrere på det i obligfag
+         answer===2&&
+        <VelgStudierettning fagNavnStudierettning={fagNavnStudierettning} setFagNavnStudierettning={setFagNavnStudierettning} valgtObligFag={valgtObligFag} setValgtObligFag={setValgtObligFag}
+        />
+     }
             
             
                 {
@@ -126,6 +130,8 @@ const KlasseList = ({ handleClick}) => {
                     <VelgMaster 
                     answer={answer}
                     obj={obj}
+                    fagNavnStudierettning={fagNavnStudierettning}
+                    setFagNavnStudierettning={setFagNavnStudierettning}
                     />                       
                 }
             
