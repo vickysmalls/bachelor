@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Nettside/static/css/main.5ea4fc34.chunk.css",
+    "main.js": "/Nettside/static/js/main.96f4cd06.chunk.js",
+    "main.js.map": "/Nettside/static/js/main.96f4cd06.chunk.js.map",
+    "runtime-main.js": "/Nettside/static/js/runtime-main.e79b8752.js",
+    "runtime-main.js.map": "/Nettside/static/js/runtime-main.e79b8752.js.map",
+    "static/css/2.150d169a.chunk.css": "/Nettside/static/css/2.150d169a.chunk.css",
+    "static/js/2.a46a0707.chunk.js": "/Nettside/static/js/2.a46a0707.chunk.js",
+    "static/js/2.a46a0707.chunk.js.map": "/Nettside/static/js/2.a46a0707.chunk.js.map",
+    "index.html": "/Nettside/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/Nettside/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.5ea4fc34.chunk.css.map": "/Nettside/static/css/main.5ea4fc34.chunk.css.map",
+    "static/js/2.a46a0707.chunk.js.LICENSE.txt": "/Nettside/static/js/2.a46a0707.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/Nettside/static/media/Bakgrunn.2061cafa.jpg",
+    "static/media/VelgKlassetrinn.css": "/Nettside/static/media/undervisning.5dea802f.jpeg",
+    "static/media/Illustrasjon.62cda614.png": "/Nettside/static/media/Illustrasjon.62cda614.png",
+    "static/media/LogoOsloMet.0aa23c2a.png": "/Nettside/static/media/LogoOsloMet.0aa23c2a.png",
+    "static/media/OsloMet logo for nett.ad0c0550.png": "/Nettside/static/media/OsloMet logo for nett.ad0c0550.png",
+    "static/media/muligheter.css": "/Nettside/static/media/OsloMetBygning.90923fbd.jpeg",
+    "static/media/Praksis.36a9411b.jpeg": "/Nettside/static/media/Praksis.36a9411b.jpeg",
+    "static/media/ToBilder.a810954e.png": "/Nettside/static/media/ToBilder.a810954e.png",
+    "static/media/VelgEmne.5c24e1fe.png": "/Nettside/static/media/VelgEmne.5c24e1fe.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e79b8752.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.a46a0707.chunk.js",
+    "static/css/main.5ea4fc34.chunk.css",
+    "static/js/main.96f4cd06.chunk.js"
+  ]
+}
