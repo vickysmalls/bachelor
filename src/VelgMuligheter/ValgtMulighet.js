@@ -68,9 +68,6 @@ const ValgtMulighet = ({klasseId, semester, klassetrinn, muligheterId}) => {
                 <li>
                 Studiepoeng: {studiepoeng}
                 </li>
-                <li>
-                klassetrinn: {klasseId}
-                </li>
             </ul>
         </Modal>
  

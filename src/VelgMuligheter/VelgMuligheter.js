@@ -41,7 +41,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
     const [valg7Master ,setValg7Master] = useState();
 
     const [semester9Master, setSemester9Master] = useState();
-
+    
     const [masterFagId, setMasterFagId] = useState();
 
     const [valgtFag4, setValgtFag4] = useState();

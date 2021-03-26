@@ -8,7 +8,7 @@ body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: work-sans;
+    font-family: arial;
 }
 
 main {
@@ -44,6 +44,7 @@ main {
 
 #Bold {
     font-weight: 700;
+    font-family:Arial;
     position: left;
     text-align: left;
     font-size: 22px;
@@ -89,6 +90,8 @@ main {
 
 Bold {
     font-weight: 700;
+    
+      
 }
 
 #Gul {

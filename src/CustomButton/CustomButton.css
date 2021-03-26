@@ -9,7 +9,7 @@
     text-transform: uppercase;
     font-weight: bolder;
     border: none;
-    cursor: pointer;
+    
     display: flex;
     justify-content: center; 
     border-radius: 5;
@@ -28,7 +28,7 @@
     text-transform: uppercase;
     font-weight: 600;
     border: none;
-    cursor: pointer;
+    cursor: default;
     display: flex;
     justify-content: center;
     background-color: #FFDC00;
@@ -40,12 +40,18 @@
     word-break: keep-all;
 }
 
+#Videre:hover {
+    background-color: #FFDC00;
+    color: black;
+    box-shadow: 0 0 20px rgba(0);
+    transform: scale(1);
+    transition: transform 0s ;
+}
+
 .custom-button:hover {
     background-color: #FFDC00;
     color: black;
-    box-shadow: 0 0 20px rgba(33,33,33,.2);
-    transform: scale(1.01);
-    transition: transform 0.25s ease-out;
+    
 }
 
 .red {
@@ -54,14 +60,6 @@
     border: none;
 }
 
-/**
-
-.custom-button, .inverted:hover {
-    background-color: #FFDC00;
-    color: black;
-    border: none;
-}
-*/
 
 .infoknapp{
     width: 20px;

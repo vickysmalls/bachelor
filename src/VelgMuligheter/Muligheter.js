@@ -43,7 +43,7 @@ const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, s
                       
                             <CustomButton
                                 //setter fargen på den valgte fagveien
-                                style={{backgroundColor: '#FFDC00'}} 
+                                
                                 key={oblig.id}
                                 fag={oblig.fagnavn}
                                 
@@ -98,9 +98,6 @@ const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, s
                     </li>
                     <li>
                     Studiepoeng: {studiepoeng}
-                    </li>
-                    <li>
-                    klassetrinn: {klasseId}
                     </li>
                 </ul>
             </Modal>

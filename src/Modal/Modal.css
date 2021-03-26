@@ -17,11 +17,23 @@
   padding: 32px;
   width: 100%;
   max-width: 640px;
-  background-color: #FFF;
+  background-color: white;
 }
 
-.popup-inner .close-btn{
-  position: absolute;
-  top: 16px;
-  right: 16px;
+.popup-inner {
+  border-radius: none;
+}
+
+.close-btn{
+  position: relative;
+  color: black;
+  border: none;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.close-btn:hover{
+  cursor: pointer;
+  transform: scale(1.20);
+  transition: transform 0.25s ease-out;
 }

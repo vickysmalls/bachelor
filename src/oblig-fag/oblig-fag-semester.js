@@ -62,7 +62,6 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
           <li>Fagnavn: {fagnavn}</li>
           <li>Emnekode: {emnekode}</li>
           <li>Studiepoeng: {studiepoeng}</li>
-          <li>klassetrinn: {klasseId}</li>
         </ul>
       </Modal>
     </>

@@ -13,9 +13,7 @@ export default function Modal({children, open, onClose}) {
     
         <div className='popup'>
         <div className="popup-inner">
-          <button>
             <FaRegWindowClose onClick={onClose} size='1.5em' className="close-btn"/>
-          </button>
             {children}
             </div>
           </div>

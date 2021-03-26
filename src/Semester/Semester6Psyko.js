@@ -95,7 +95,6 @@ const Semester6Psyko = ({
           <li>Fagnavn: {fagnavn}</li>
           <li>Emnekode: {emnekode}</li>
           <li>Studiepoeng: {studiepoeng}</li>
-          <li>klassetrinn: {klasseId}</li>
         </ul>
       </Modal>
     </>
