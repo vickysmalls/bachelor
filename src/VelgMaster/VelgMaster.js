@@ -43,7 +43,7 @@ const VelgMaster = ({answer, studieId, fagNavnStudierettning}) => {
    
     return ( 
         <>
-<div class="row">
+<div class="row" id="Masteremner">
     <div class="column" id="Hundre">
     <h3>Velg Masteremne</h3>
     </div>

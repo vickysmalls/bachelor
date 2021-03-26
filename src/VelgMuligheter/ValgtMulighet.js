@@ -56,7 +56,7 @@ const ValgtMulighet = ({klasseId, semester, klassetrinn, muligheterId}) => {
                 open= {isOpen} 
                 onClose={() => setIsOpen(false)}
             >
-            <h3>Info om {fagnavn}</h3><br/>
+            <h5>Info om {fagnavn}</h5><br/>
 
             <ul>
                 <li>

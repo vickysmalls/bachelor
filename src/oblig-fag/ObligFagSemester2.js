@@ -61,7 +61,7 @@ const ObligFagSemester2 = ({answer, semester, fagNavnStudierettning}) => {
             <h5>Info om {fagnavn}</h5>
             <br />
     
-            <ul>
+            <ul id="Innrykk">
               <li>Fagnavn: {fagnavn}</li>
               <li>Emnekode: {emnekode}</li>
               <li>Studiepoeng: {studiepoeng}</li>
