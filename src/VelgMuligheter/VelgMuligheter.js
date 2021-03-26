@@ -429,21 +429,33 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         }
 
         {
-            //DEENNE ER FOR NORSK ENG MATTE 1-7, for begynner opplæring
-            //om semster er 1, og fag er norsk matte eller engelsk vis begynneropplæring
+            //for begynner opplæring
+            //om semster er 1, og begynneropplæring blir valgt i 7, vis valget
             (
-           answer===1 || masterId === 1 || masterId === 2 || masterId === 4
+            answer === 1 && valg7Master === 3
  
             ) 
         ? 
             (
                 //denne gjelder begynner
+                
                 <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
-                ) 
-        : 
-                null//<Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+                
 
+                ) 
+        : answer === 1 ?(
+            //hvis semester er 1, men begynneropplæring ikke blir valgt i 7, vis valget pluss begynner
+            <>
+            <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+
+            <Muligheter setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+
+            </>
+        ) : null
         }
+        
+
+        
         </div>
     </div>
         
