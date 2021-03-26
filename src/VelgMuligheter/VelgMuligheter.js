@@ -468,8 +468,11 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         )   
         :
+        <>
         <Muligheter setIstrue={setDritt} setValg7Master={setDritt} setSemesterList7={setDritt} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+        <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
 
+        </>
         }
         
 
