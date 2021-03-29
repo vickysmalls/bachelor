@@ -7,7 +7,7 @@ import './oblig-fag.css';
 import Elever from './Elever.jpeg';
 import ObligFagSemester2 from './ObligFagSemester2';
 
-const ObligFagCard = ({answer, masterId, obj, fagNavn, fagNavnStudierettning}) => {
+const ObligFagCard = ({studieRetning, answer, masterId, obj, fagNavn, fagNavnStudierettning}) => {
 
     
     
@@ -123,7 +123,7 @@ const ObligFagCard = ({answer, masterId, obj, fagNavn, fagNavnStudierettning}) =
         {
             
            
-            <VelgMuligheter fagNavn ={fagNavn} masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
+            <VelgMuligheter studieRetning={studieRetning} fagNavn ={fagNavn} masterId={masterId} answer={answer} obj={obj}></VelgMuligheter>
             
 
        

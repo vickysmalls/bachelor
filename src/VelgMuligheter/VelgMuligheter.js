@@ -20,7 +20,7 @@ const _ = require("lodash");
 
 
 
-const VelgMuligheter = ({masterId, answer, fagNavn}) => {
+const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
@@ -191,8 +191,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         {
             (
-                fagNavn.includes('Profesjonsrettet pedagogikk')|| masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
-                masterId ===16 || masterId ===17  || masterId ===25 || masterId ===26 || 
+                fagNavn.includes('Profesjonsrettet pedagogikk')|| masterId ===12 || masterId ===13 || masterId ===14 || masterId ===25 || masterId ===26 || 
                 masterId ===27
             ) 
         ? 
@@ -219,11 +218,11 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
         {(
             //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===4  || masterId ===5  ||
-            fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  ||fagNavn.includes('Engelsk')|| fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøving')|| 
+             fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøving')|| 
             //masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
             fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  || 
 
-            fagNavn.includes('Pedagogikk') || masterId ===15 || masterId ===16 || masterId ===17 || masterId === 18 ||
+            fagNavn.includes('Pedagogikk') || masterId === 18 ||
             masterId ===19 || masterId ===20 || masterId ===21 || masterId ===22 || masterId ===23 
          ) 
          ? 
@@ -278,6 +277,10 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         
         {
             <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+            
+        } 
+        {
+            <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={studieRetning}/>
             
         } 
 

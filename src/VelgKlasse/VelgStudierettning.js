@@ -3,7 +3,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
 
-const VelgStudierettning = ({ valgtObligFag, setValgtObligFag, fagNavnStudierettning, setFagNavnStudierettning }) => {
+const VelgStudierettning = ({ setStudieRetning, valgtObligFag, setValgtObligFag, fagNavnStudierettning, setFagNavnStudierettning }) => {
   //setter masterfag tabellen til masterFag
   const { data: masterFag, error, isPending } = useFetch(
     `http://localhost:5000/api/masterfag/`
@@ -50,6 +50,7 @@ const VelgStudierettning = ({ valgtObligFag, setValgtObligFag, fagNavnStudierett
                           options={oblig}
                           activeButton={activeButton}
                           onClick={() => {
+                            setStudieRetning(oblig.id)
                             setValgtObligFag(oblig.id)
                             onSideBtnClick(oblig);
                             setFagNavnStudierettning(oblig.fagnavn)

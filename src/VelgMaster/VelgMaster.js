@@ -10,7 +10,7 @@ const _ = require("lodash");
 
 
 
-const VelgMaster = ({answer, studieId, fagNavnStudierettning}) => {
+const VelgMaster = ({studieRetning, answer, studieId, fagNavnStudierettning}) => {
 
     //setter masterfag tabellen til masterFag
     const {data: masterFag, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
@@ -22,6 +22,7 @@ const VelgMaster = ({answer, studieId, fagNavnStudierettning}) => {
 
     const [klasseId, setKlasseId] = useState();
 
+    console.log("studieRetning", studieRetning);
 
      //Sette farge valgt semester
      const [activeButton, setActiveButton] = useState();
@@ -111,7 +112,7 @@ const VelgMaster = ({answer, studieId, fagNavnStudierettning}) => {
         
         {   
             visVidere&&
-            <ObligFagCard fagNavnStudierettning={fagNavnStudierettning} masterId={masterId} fagNavn={fagNavn} answer={answer}/>
+            <ObligFagCard studieRetning={studieRetning} fagNavnStudierettning={fagNavnStudierettning} masterId={masterId} fagNavn={fagNavn} answer={answer}/>
         
         }
         

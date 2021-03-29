@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
 import  Modal  from '../Modal/Modal';
 import InfoButton from '../CustomButton/InfoButton';
+import className from '../Semester/Semester6Psyko';
 
 
 
@@ -18,8 +19,6 @@ const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, s
     const [studiepoeng, setStudiepoeng] = useState();
     const [klasseId ,setKlasseId] = useState();
     const [isOpen, setIsOpen] = useState(false);
-
-
     
 
        
@@ -33,6 +32,7 @@ const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, s
             klassetrinn&&
             
                 sorted.map((oblig)=>{
+        
                     
                         return(
                             //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
@@ -47,7 +47,10 @@ const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, s
                                 key={oblig.id}
                                 fag={oblig.fagnavn}
                                 
-                                onClick ={() =>{
+                                onClick ={() =>
+                                    
+                                    {
+                                    
                                     setSemesterList7(oblig.id);
                                     setValg7Master(oblig.masterFagId)
                                     setIstrue(oblig.masterFagId);

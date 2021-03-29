@@ -117,7 +117,7 @@ const KlasseList = ({ handleClick}) => {
          //om man velger 5-10
          //Bruker fagnavn for å kunne filtrere på det i obligfag
          answer===2&&
-        <VelgStudierettning fagNavnStudierettning={fagNavnStudierettning} setFagNavnStudierettning={setFagNavnStudierettning} valgtObligFag={valgtObligFag} setValgtObligFag={setValgtObligFag}
+        <VelgStudierettning setStudieRetning={setStudieRetning} fagNavnStudierettning={fagNavnStudierettning} setFagNavnStudierettning={setFagNavnStudierettning} valgtObligFag={valgtObligFag} setValgtObligFag={setValgtObligFag}
         />
      }
             
@@ -127,6 +127,7 @@ const KlasseList = ({ handleClick}) => {
                     //answer blir klasse id, som blir satt i onClick funkjsonen
                     visVidere &&
                     <VelgMaster 
+                    studieRetning={studieRetning}
                     answer={answer}
                     obj={obj}
                     fagNavnStudierettning={fagNavnStudierettning}
