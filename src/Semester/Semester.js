@@ -82,10 +82,10 @@ const Semester = ({
         })}
 
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <h3>Info om {fagnavn}</h3>
+        <h5>Info om {fagnavn}</h5>
         <br />
 
-        <ul>
+        <ul id="Innrykk">
           <li>Fagnavn: {fagnavn}</li>
           <li>Emnekode: {emnekode}</li>
           <li>Studiepoeng: {studiepoeng}</li>

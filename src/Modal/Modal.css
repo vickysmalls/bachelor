@@ -22,6 +22,11 @@
 
 .popup-inner {
   border-radius: none;
+  padding-left: 45px;
+}
+
+#Innrykk {
+  padding-left: 45px;
 }
 
 .close-btn{
