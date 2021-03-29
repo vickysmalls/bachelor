@@ -217,8 +217,8 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         } 
 
         {(
-            //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===4  || masterId ===5  ||
-             fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøving')|| 
+            //masterId ===1  || masterId ===2  || masterId ===3  ||  || masterId ===5  ||
+            masterId ===1  || masterId ===2  || masterId ===4 || fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøving')|| 
             //masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
             fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  || 
 
@@ -279,10 +279,12 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
             
         } 
-        {
+
+        { answer === 2 &&
             <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={studieRetning}/>
             
         } 
+      
 
         
         {
