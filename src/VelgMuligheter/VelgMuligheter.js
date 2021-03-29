@@ -52,6 +52,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
     const [dritt, setDritt] = useState();
 
+    const [tom, setTom] = useState();
+
 
     const [semester9Resultat, setSemester9Resultat] = useState();
 
@@ -88,7 +90,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
 
     console.log('semester9Resultat', semester9Resultat);
 
-    console.log('isTrue; ',isTrue);
+    console.log('dritt; ',dritt);
 
     return ( 
         
@@ -312,8 +314,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             masterId === 2 ||
             masterId === 4 ?
             (
-                
-                <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={begynnerLaring}/>
+                //setValg7Master
+                <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setTom} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={begynnerLaring}/>
             ) : null
         }
         
@@ -446,8 +448,8 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         ? 
             (
                 //denne gjelder begynner
-                
-                <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+                //setDritt
+                <Muligheter setIstrue={setTom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
                 
 
                 ) 
@@ -457,19 +459,19 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             <>
             <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
 
-            <Muligheter setIstrue={setDritt} setValg7Master={setDritt} setSemesterList7={setDritt} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
             </>
             
         )
-        //velger man begynner vil verdiene settes 
+        //velger man begynner vil verdiene settes, den andre if setningen er vanlige fag 
         : isTrue === 3 ?(
             <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
         )   
         :
         <>
-        <Muligheter setIstrue={setDritt} setValg7Master={setDritt} setSemesterList7={setDritt} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+        <Muligheter setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
         <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
 
         </>
@@ -485,6 +487,7 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
         <h5>Semester 10</h5>
         <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
+        
         {
            //om masterfagId (setter pedagogikk i semester6psyko) er true, men fag ikke er norsk engelsk matte
             //Funker 1-7
@@ -495,16 +498,28 @@ const VelgMuligheter = ({masterId, answer, fagNavn}) => {
             //isTrue ===3  ? 
 
             (
-                
+                <>
                 <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
                 
+
+                </> 
             ) : answer ===1  ?(
             <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
+            
+            ): <div></div> //for å fjerne stygge grønt rundt
 
-            ): null
             //prøv: sjekk om begynner er gyldig i semester 8, er den det gi mulighet for begynner
             
         } 
+        {
+        //funker på vanlige fag( ikke norsk, da dobles de)
+        //funker også om man velger pedagogikk i n
+         dritt !== masterId ? (
+            <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
+         )   : null
+
+
+        }
         {
             //hvis 
             //answer ===2 && masterFagId gjør at den automatisk kommer i semster 10, men vises ikke auto i 9
