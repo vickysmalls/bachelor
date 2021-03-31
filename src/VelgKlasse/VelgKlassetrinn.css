@@ -104,6 +104,7 @@
     padding: 0;
     padding-left: 45px;
     padding-right: 45px;
+    padding-bottom: 45px;
     background-color: #FFDC00;
     text-align: left;
     margin-right: 200px;
@@ -183,3 +184,5 @@
     line-height: 30px;
     font-family: Arial;
   }
+
+ 

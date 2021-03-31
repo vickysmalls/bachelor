@@ -10,10 +10,13 @@ import ValgtMulighet from './ValgtMulighet';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../VelgKlasse/VelgKlassetrinn.css';
 import '../VelgMaster/VelgMaster.css';
+import styled from 'styled-components';
 
 import './muligheter.css';
 import Resultat from './Resultat';
 import Semester6Psyko from '../Semester/Semester6Psyko';
+import InfoButton from '../CustomButton/InfoButton';
+import TvungenMulighet from './TvungenMulighet';
 
 
 const _ = require("lodash");  
@@ -98,6 +101,10 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
     console.log('dritt; ',dritt);
 
+  
+    
+    
+
     return ( 
         
         
@@ -130,10 +137,11 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             <h5>Semester 4</h5>
         <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
+        
         {
-            //reset setMulighetTull i master
-            <Muligheter setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
-        } 
+            <TvungenMulighet setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}>{fagNavn}</TvungenMulighet>
+
+        }
 
         {
             //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
@@ -192,7 +200,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
             <div className='fag'>
         {
-            <Muligheter activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <TvungenMulighet activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -515,12 +523,12 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
             (
                 <>
-                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
                 
 
                 </> 
             ) : answer ===1  ?(
-            <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
+            <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
             
             ): <div></div> //for å fjerne stygge grønt rundt
 
@@ -538,9 +546,10 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
          */}
         {
             //om dritt, som basicly er id, ikke er lik valg7master, som også er id, skal denne vises
+            //glitcher når man velger spes, så norsk, da forsvinner norsk
            
              dritt !== valg7Master ? (
-                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
+                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
              )   : null
     
     
@@ -551,7 +560,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             answer ===2
             ? (
                 
-                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
@@ -560,7 +569,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
                //masterId settes ikke i 9
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
-               <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+               <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
 
            ) : null
        }
@@ -575,14 +584,24 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
     </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="Masteremner">
     <div class="column" id="Hundre">
+    <h3>Oppsummering av studieløp</h3>
+    </div>
+    <div class="column" id="Tjue">
+    </div>
 
-        <div className="videreknapp">
+    <div class="column" id="Atti">
+        <h2 id="Left">Under ser du hvordan studieløpet ditt vil bli og valgt masteremne</h2>
+        <p id="Beskrivelse">Her kan du se en oppsumering av studieløpet ditt. Nederst finner du en mulighet til å lagre og 
+            printe ut oppsummeringen slik at du kan ta vare på denne.
+        </p>
+
         <CustomButton onClick={() => setVidere(true)}>Se oppsummering</CustomButton>
-        </div>
 
-        <div className="sluttskjerm">
+    </div>  
+</div>
+
         { //Viser hele studieløpet om man trykker på videreknappen
         videre &&
         <>
@@ -601,15 +620,17 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             valg7Master={valg7Master}
             klasseId={answer}
             semester9Resultat={semester9Resultat}
+            activeButton10={activeButton10}
+           
+            
+
 
 
         />
             
         </>
         }
-    </div>
-    </div>
-    </div>
+
     </>
         
      );

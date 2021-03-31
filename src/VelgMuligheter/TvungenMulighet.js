@@ -2,15 +2,8 @@ import React, {useEffect, useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
 import  Modal  from '../Modal/Modal';
 import InfoButton from '../CustomButton/InfoButton';
-import className from '../Semester/Semester6Psyko';
 
-
-
-
-const Muligheter = ({activeButton ,setActiveButton, masterId, setIstrue, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) => {
-
-    
-
+function TvungenMulighet({activeButton ,setActiveButton, masterId, setIstrue, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) {
     const onSideBtnClick = (e) => {
         setActiveButton(e.id);
         //alert(e.id);
@@ -31,7 +24,7 @@ const Muligheter = ({activeButton ,setActiveButton, masterId, setIstrue, valg7Ma
         
         
         <>
-        <>
+        < >
 
         {   
             klassetrinn&&
@@ -53,6 +46,7 @@ const Muligheter = ({activeButton ,setActiveButton, masterId, setIstrue, valg7Ma
                                 key={oblig.id}
                                 fag={oblig.fagnavn}
                                 activeButton={activeButton}
+                                style={{backgroundColor: '#FFDC00'}}
                                 onClick ={() =>
                                     
                                     {
@@ -121,7 +115,5 @@ const Muligheter = ({activeButton ,setActiveButton, masterId, setIstrue, valg7Ma
             
 
             };
-           
 
-export default Muligheter;
-
+export default TvungenMulighet
