@@ -20,7 +20,7 @@ const _ = require("lodash");
 
 
 
-const VelgMuligheter = ({oblig, ikkeknapp, studieRetning, masterId, answer, fagNavn}) => {
+const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
@@ -191,7 +191,7 @@ const VelgMuligheter = ({oblig, ikkeknapp, studieRetning, masterId, answer, fagN
             
             <div className='fag'>
         {
-            <Muligheter farge={ikkeknapp} activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
