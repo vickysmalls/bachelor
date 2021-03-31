@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import InfoButton from "../CustomButton/InfoButton";
 import Modal from "../Modal/Modal";
@@ -24,6 +24,7 @@ const Semester6Psyko = ({
 
     
   //
+const [nyKlassetrinn, setNyKlassetrinn] = useState([])
 
   
   //
@@ -36,6 +37,13 @@ const Semester6Psyko = ({
     setActiveButton(e.masterFagId);
    
 };
+
+
+//* /filter ut årstudium
+
+        //klasse.id.includes('Årstudium norsk, del 2', 'Årstudium matte, del 2', 'Årstudium engelsk, del 2')
+
+
 
   const [fagnavn, setFagnavn] = useState();
   const [emnekode, setEmneKode] = useState();

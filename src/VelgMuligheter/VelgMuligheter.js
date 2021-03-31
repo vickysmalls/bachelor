@@ -131,7 +131,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         <div className='fag'>
         {
             //reset setMulighetTull i master
-            <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
+            <Muligheter setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}/>
         } 
 
         {
@@ -191,7 +191,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
             <div className='fag'>
         {
-            <Muligheter activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -218,7 +218,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         
         
         {
-            <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull2}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+            <Muligheter setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
         } 
 
         {(
@@ -231,9 +231,10 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             masterId ===19 || masterId ===20 || masterId ===21 || masterId ===22 || masterId ===23 
          ) 
          ? 
-         (
+         (//semester6psyko vise årstudium
              <>
-            <Semester6Psyko setMasterFagId={setMasterFagId} activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
+             
+            <Semester6Psyko  masterId={masterId} setMasterFagId={setMasterFagId} activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
            
                 <Semester 
                 setMuligheterId={setMuligheterId3} 
