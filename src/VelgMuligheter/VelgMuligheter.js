@@ -468,7 +468,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
                 ) 
                 //om man velger norsk didaktikk
-        : isTrue === 1 ?(
+        :  answer === 1 && isTrue === 1 ?(
             //hvis semester er 1, men begynneropplæring ikke blir valgt i 7, vis valget pluss begynner
             <>
             <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
@@ -479,16 +479,18 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
         )
         //velger man begynner vil verdiene settes, den andre if setningen er vanlige fag 
-        : isTrue === 3 ?(
+        : answer === 1 &&  isTrue === 3 ?(
             <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
         )   
-        :
-        <>
-        <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
-        <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+        : answer === 1 ?(
 
-        </>
+            <>
+            <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+    
+            </>
+        ):null
         }
         
 

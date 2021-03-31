@@ -41,13 +41,6 @@ const Semester6Psyko = ({
    
 };
 
-
-//* /filter ut årstudium
-
-        //klasse.id.includes('Årstudium norsk, del 2', 'Årstudium matte, del 2', 'Årstudium engelsk, del 2')
-
-
-
   const [fagnavn, setFagnavn] = useState();
   const [emnekode, setEmneKode] = useState();
   const [studiepoeng, setStudiepoeng] = useState();
