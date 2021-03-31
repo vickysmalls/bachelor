@@ -573,14 +573,24 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
     </div>
     </div>
 
-    <div class="row">
+    <div class="row" id="Masteremner">
     <div class="column" id="Hundre">
+    <h3>Oppsummering av studieløp</h3>
+    </div>
+    <div class="column" id="Tjue">
+    </div>
 
-        <div className="videreknapp">
+    <div class="column" id="Atti">
+        <h2 id="Left">Under ser du hvordan studieløpet ditt vil bli og valgt masteremne</h2>
+        <p id="Beskrivelse">Her kan du se en oppsumering av studieløpet ditt. Nederst finner du en mulighet til å lagre og 
+            printe ut oppsummeringen slik at du kan ta vare på denne.
+        </p>
+
         <CustomButton onClick={() => setVidere(true)}>Se oppsummering</CustomButton>
-        </div>
 
-        <div className="sluttskjerm">
+    </div>  
+</div>
+
         { //Viser hele studieløpet om man trykker på videreknappen
         videre &&
         <>
@@ -605,9 +615,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
         </>
         }
-    </div>
-    </div>
-    </div>
+
     </>
         
      );
