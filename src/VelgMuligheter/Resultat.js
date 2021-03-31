@@ -26,31 +26,49 @@ const Resultat = ({
 
   return (
     <div>
-      <div classname="card-container" id="printId">
-        <div className="card-container">
-          <h1>semester 1</h1>
-          <div className="semester">
+      <div id="printId">
+        <div className="row">
+        <div className="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+          <h5>Semester 1</h5>
+          <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
+          <div className="fag">
             <ObligFagSemester semester={1} answer={answer} />
           </div>
         </div>
+        
 
-        <div className="card-container">
-          <h1>semester 2</h1>
-          <div className="semester">
+        <div className="Forti">
+          <h5>Semester 2</h5>
+          <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
+          <div className="fag">
             <ObligFagSemester semester={2} answer={answer} />
           </div>
         </div>
-        <div className="card-container">
-          <h1>semester 3</h1>
-          <div className="semester">
+      </div>
+    </div>
+  </div>
+
+
+
+        <div className="row">
+        <div className="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+          <h5>Semester 3</h5>
+          <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
+          <div className="fag">
             <ObligFagSemester semester={3} answer={answer} />
           </div>
         </div>
-        <div className="card-container">
-          <h1>semester 4</h1>
+
+        <div className="Forti">
+          <h5>Semester 4</h5>
+          <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
 
           
-          <div className="semester">
+          <div className="fag">
             {
             //sjekker om id err norsk matte engelsk eller pedagogikk  
             masterId === 1 ||
@@ -77,11 +95,22 @@ const Resultat = ({
                 masterId={masterId}
               />
             )}
-          </div>
+         </div>
         </div>
-        <div className="card-container">
-          <h1>semester 5</h1>
-          <div className="semester">
+      </div>
+    </div>
+  </div>
+        
+        
+        
+        
+  <div className="row">
+        <div className="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+          <h5>Semester 5</h5>
+          <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
+          <div className="fag">
             {
             //sjekker om noe er pedagogikk
             masterId === 12 ||
@@ -104,9 +133,13 @@ const Resultat = ({
             )}
           </div>
         </div>
-        <div className="card-container">
-          <h1>semester 6</h1>
-          <div className="semester">
+        
+        
+        
+        <div className="Forti">
+          <h5>Semester 6</h5>
+          <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
+          <div className="fag">
             {
             //sjeekker om noe er pedagogikk
             masterId === 12 ||
@@ -129,9 +162,20 @@ const Resultat = ({
             )}
           </div>
         </div>
-        <div className="card-container">
-          <h1>semester 7</h1>
-          <div className="semester">
+      </div>
+    </div>
+  </div>
+        
+        
+        
+        
+  <div className="row">
+        <div className="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+          <h5>Semester 7</h5>
+          <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
+          <div className="fag">
             {
            /*
               kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
@@ -157,9 +201,14 @@ const Resultat = ({
             <ObligFagSemester semester={7} answer={answer} />
           </div>
         </div>
-        <div className="card-container">
-          <h1>semester 8</h1>
-          <div className="semester">
+        
+        
+        
+        
+        <div className="Forti">
+          <h5>Semester 8</h5>
+          <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
+          <div className="fag">
             {
               /*
             masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
@@ -178,11 +227,22 @@ const Resultat = ({
               />
             )}
             <ObligFagSemester semester={8} answer={answer} />
-          </div>
+            </div>
         </div>
-        <div className="card-container">
-          <h1>semester 9</h1>
-          <div className="semester">
+      </div>
+    </div>
+  </div>
+        
+        
+        
+        
+  <div className="row">
+        <div className="column" id="Hundre">
+        <div className="obligatoriske semestre">
+            <div classname="Seksti">
+          <h5>Semester 9</h5>
+          <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
+          <div className="fag">
             {
               /*
               kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
@@ -207,9 +267,12 @@ const Resultat = ({
           </div>
         </div>
 
-        <div className="card-container">
-          <h1>semester 10</h1>
-          <div className="semester">
+        
+        
+        <div className="Forti">
+          <h5>Semester 10</h5>
+          <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
+          <div className="fag">
             <Muligheter
               klassetrinn={klassetrinn}
               answer={answer}
@@ -220,6 +283,9 @@ const Resultat = ({
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  </div>
 
       <div className="card-container2">
         <h1>Lagre din vei til master</h1>
@@ -227,7 +293,8 @@ const Resultat = ({
           <Print />
         </div>
       </div>
-    </div>
+      </div>
+    
   );
 };
 
