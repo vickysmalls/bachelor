@@ -20,14 +20,12 @@ const _ = require("lodash");
 
 
 
-const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
+const VelgMuligheter = ({oblig, ikkeknapp, studieRetning, masterId, answer, fagNavn}) => {
 
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
 
     const [isOpen, setIsOpen] = useState(false);
-
-
 
 
     //for å filtrere muligheter i Semester, når man ser hva man har valgt
@@ -69,7 +67,14 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
     // farge for for semester 6
     const [activeButton2, setActiveButton2] = useState();
-
+    // farge for for semester 7
+    const [activeButton7, setActiveButton7] = useState();
+    // farge for for semester 8
+    const [activeButton8, setActiveButton8] = useState();
+    // farge for for semester 9
+    const [activeButton9, setActiveButton9] = useState();
+    // farge for for semester 10
+    const [activeButton10, setActiveButton10] = useState();
     //Set semester 7 liste
     const [semesterList7, setSemesterList7] = useState();
 
@@ -186,7 +191,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
             <div className='fag'>
         {
-            <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter farge={ikkeknapp} activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -218,7 +223,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
         {(
             //masterId ===1  || masterId ===2  || masterId ===3  ||  || masterId ===5  ||
-            masterId ===1  || masterId ===2  || masterId ===4 || fagNavn.includes('KRLE')  ||fagNavn.includes('Kroppsøving')|| 
+            masterId ===1  || masterId ===2  || masterId ===4 || fagNavn.includes('RLE')  ||fagNavn.includes('Kroppsøving')|| 
             //masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
             fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  || 
 
@@ -276,19 +281,19 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         <div className='fag'>
         
         {
-            <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+            <Muligheter activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
             
         } 
 
         { answer === 2 &&
-            <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={studieRetning}/>
+            <Muligheter activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={studieRetning}/>
             
         } 
       
 
         
         {
-            <Semester setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={answer}/>
+            <Semester activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={answer}/>
         
         }
         {
@@ -306,7 +311,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         ? 
             (
                 
-                <Muligheter setIstrue={setDritt} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={activeButton}/>
+                <Muligheter activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setDritt} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={activeButton}/>
             ) 
         :  
             
@@ -322,7 +327,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
                 //setValg7Master
                 //setTom
                 //setTom isteden gjør at den ikke kommer i semester 8, og fucker opp semester 10
-                <Muligheter setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={begynnerLaring}/>
+                <Muligheter activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={begynnerLaring}/>
             ) : null
         }
         
@@ -339,7 +344,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         } 
 
         {masterId === 1 && (
-            <Semester setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={answer}/>
+            <Semester activeButton={activeButton8} setActiveButton ={setActiveButton8} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={answer}/>
         )
         }
         {
@@ -360,7 +365,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             ) 
         ? 
             (
-                <Muligheter setIstrue={setDritt} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
+                <Muligheter activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setDritt} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
                 ) 
         : 
                null
@@ -378,12 +383,12 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             (
                 //denne
                 //masterId egentlig velg7master
-                <Muligheter setIstrue={setDritt} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
+                <Muligheter activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setDritt} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
             )
             //om muligheter over er true 
         : empty ?(
 
-            <Muligheter setIstrue={setDritt} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
+            <Muligheter activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setDritt} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
         ) : null
 
         }
@@ -412,11 +417,11 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         
         {
             muligheterId3 &&
-            <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterFagId}/>
+            <Muligheter  activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterFagId}/>
         } 
 
         {masterId ===1 && (
-            <Semester setIstrue={setDritt} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={answer}/>
+            <Semester activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={answer}/>
         )
         }
         {
@@ -434,7 +439,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         ? 
             (
                 
-                <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+                <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
             ) 
         : 
         null
@@ -456,7 +461,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             (
                 //denne gjelder begynner
                 //setDritt
-                <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+                <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
                 
 
                 ) 
@@ -464,22 +469,22 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         : isTrue === 1 ?(
             //hvis semester er 1, men begynneropplæring ikke blir valgt i 7, vis valget pluss begynner
             <>
-            <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+            <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
 
-            <Muligheter setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
             </>
             
         )
         //velger man begynner vil verdiene settes, den andre if setningen er vanlige fag 
         : isTrue === 3 ?(
-            <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
         )   
         :
         <>
-        <Muligheter setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
-        <Muligheter setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+        <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+        <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
 
         </>
         }
@@ -506,7 +511,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
             (
                 <>
-                <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
                 
 
                 </> 
@@ -531,7 +536,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             //om dritt, som basicly er id, ikke er lik valg7master, som også er id, skal denne vises
            
              dritt !== valg7Master ? (
-                <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
+                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
              )   : null
     
     
@@ -542,7 +547,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             answer ===2
             ? (
                 
-                <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+                <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
@@ -551,7 +556,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
                //masterId settes ikke i 9
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
-               <Muligheter setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+               <Muligheter activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
 
            ) : null
        }

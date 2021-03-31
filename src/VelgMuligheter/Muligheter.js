@@ -7,10 +7,14 @@ import className from '../Semester/Semester6Psyko';
 
 
 
-const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) => {
+const Muligheter = ({activeButton ,setActiveButton, masterId, setIstrue, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) => {
 
    
-  
+
+    const onSideBtnClick = (e) => {
+        setActiveButton(e.id);
+        //alert(e.id);
+      };
 
    
     const [fagnavn, setFagnavn] = useState();
@@ -32,7 +36,7 @@ const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, s
             klassetrinn&&
             
                 sorted.map((oblig)=>{
-        
+                    const className = activeButton === oblig.id ? "red" : "";
                     
                         return(
                             //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster) 
@@ -43,14 +47,14 @@ const Muligheter = ({masterId, setIstrue, valg7Master, setValg7Master, setFag, s
                       
                             <CustomButton
                                 //setter fargen på den valgte fagveien
-                                
+                                inverted={className}
                                 key={oblig.id}
                                 fag={oblig.fagnavn}
-                                
+                                activeButton={activeButton}
                                 onClick ={() =>
                                     
                                     {
-                                    
+                                    onSideBtnClick(oblig);
                                     setSemesterList7(oblig.id);
                                     setValg7Master(oblig.masterFagId)
                                     setIstrue(oblig.masterFagId);
