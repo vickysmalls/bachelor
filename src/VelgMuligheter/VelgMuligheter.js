@@ -27,6 +27,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    
 
     //for å filtrere muligheter i Semester, når man ser hva man har valgt
     const [muligheterId1, setMuligheterId1] = useState();

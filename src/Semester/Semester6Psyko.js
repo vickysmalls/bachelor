@@ -4,6 +4,7 @@ import InfoButton from "../CustomButton/InfoButton";
 import Modal from "../Modal/Modal";
 import Muligheter from "../VelgMuligheter/Muligheter";
 import './Semester.css';
+const _ = require("lodash");  
 
 const Semester6Psyko = ({
   klasseId,
@@ -20,13 +21,15 @@ const Semester6Psyko = ({
   setValgtFag,
   messages,
   fag
+  
+
 }) => {
 
     
-  //
-const [nyKlassetrinn, setNyKlassetrinn] = useState([])
-
-  
+  //filtrer ut årstudium
+  let filtered_klassetrinn = _.filter(klassetrinn, function(klasse)
+    { return klasse.fagnavn !== 'Årstudium norsk, del 2' && klasse.fagnavn !== 'Årstudium matte, del 2' && klasse.fagnavn !== 'Årstudium engelsk, del 2';}
+)
   //
   function handleMuligheter(ele) {
     setMuligheterId(ele);
@@ -51,10 +54,12 @@ const [nyKlassetrinn, setNyKlassetrinn] = useState([])
 
   const [isOpen, setIsOpen] = useState(false);
 
+  
+
   return (
     <>
       {klassetrinn &&
-        klassetrinn.map((oblig) => {
+        filtered_klassetrinn.map((oblig) => {
           const className = activeButton === oblig.masterFagId ? "red" : "";
           
           return (
