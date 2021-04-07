@@ -76,3 +76,29 @@ h5 {
       font-family: Arial;
   }
 
+
+
+  /*Mobiloptimalisering
+  ------------------------------------------------------
+  */
+
+
+
+
+  @media screen and (max-width: 480px) {
+    .fag{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        grid-auto-rows: minmax(50px, 50px);
+        width: 100px;
+        background-color: transparent;
+    }
+
+    .obligatoriske.semestre{
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(1,auto);
+    }
+  }
+

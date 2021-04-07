@@ -70,3 +70,40 @@ p {
 
 
 
+
+
+
+/*Mobiloptimalisering
+  ------------------------------------------------------
+  */
+
+
+
+
+
+@media screen and (max-width: 480px) {
+  h3 {
+    position: left;
+    color: #5b5b5c;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 95px;
+    font-family: Arial;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .masterfag {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5px;
+    grid-auto-rows: minmax(50px, auto);
+    margin-bottom: 125px;
+  }
+
+}
+

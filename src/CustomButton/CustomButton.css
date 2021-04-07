@@ -76,3 +76,44 @@
     transform: scale(1.21);
     transition: transform 0.25s ease-out;
 }
+
+#Oppsummering {
+    justify-content: left;
+    background-color: transparent;
+    width: 300px;
+    -webkit-text-decoration-color:#000000; /* Safari */  
+    text-decoration-color: #000000;
+    text-underline-offset: 5px;
+    margin-right: 30px;
+    border-bottom: Solid 3px #000000;
+    text-decoration-thickness: 3px;
+    font-size: 20px;
+    text-transform: initial;
+}
+
+
+
+/*Mobiloptimalisering
+  ------------------------------------------------------
+  */
+
+
+
+
+
+  @media screen and (max-width: 480px) {
+    .custom-button {
+        height: 50px;
+        width: 350px;
+        font-size: 12px;
+    }
+
+    #Videre {
+        width: 350px;
+        font-size: 12px;
+    }
+
+    #Oppsummering {
+        width: 250px;
+    }
+  }

@@ -597,7 +597,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             printe ut oppsummeringen slik at du kan ta vare på denne.
         </p>
 
-        <CustomButton onClick={() => setVidere(true)}>Se oppsummering</CustomButton>
+        <CustomButton onClick={() => setVidere(true)} id="Oppsummering">Se oppsummering</CustomButton>
 
     </div>  
 </div>

@@ -104,4 +104,40 @@ Bold {
   }
 
 
-/* knapp*/
+/*Mobiloptimalisering
+  ------------------------------------------------------
+  */
+
+
+
+
+  @media screen and (max-width: 480px) {
+    #Innledning {
+        font-size: 25px;
+        line-height: 30px;
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    #Padding {
+        font-weight: 300;
+        font-family: Arial;
+        position: left;
+        text-align: left;
+        font-size: 18px;
+        line-height: 26px;
+        padding-left: 50px;
+        padding-right: 45px;
+    }
+
+    #Beskrivelse {
+        font-weight: 300;
+        font-family: Arial;
+        text-align: left;
+        font-size: 18px;
+        line-height: 25px;
+        padding-right: 45px;
+    }
+  }
