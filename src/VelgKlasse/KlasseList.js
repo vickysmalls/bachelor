@@ -1,4 +1,4 @@
-import { useState  } from "react";
+import { useEffect, useRef, useState  } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
@@ -34,6 +34,18 @@ const KlasseList = ({ handleClick}) => {
   
   const [valgtObligFag, setValgtObligFag] = useState();
 
+  //det under er for smooth scroll
+  const divRef = useRef();
+
+  //for å slippe å trykke to ganger, må loades først slik at den får
+  // plassert divRef i VelgMaster masteremne diven
+  useEffect(() => {
+    handleScrollClick()  });
+
+  const handleScrollClick = () => {
+    visVidere&&
+    divRef.current.scrollIntoView({ behavior: "smooth" });
+  };
     
     //logger ved trykk
     function handleClick(e) {
@@ -108,6 +120,7 @@ const KlasseList = ({ handleClick}) => {
                      setObj={setObj} 
                      setAnswer={setAnswer}
                      klassetrinn={klassetrinn}
+                     handleScrollClick={handleScrollClick}
                     />
 
             </div>
@@ -132,6 +145,7 @@ const KlasseList = ({ handleClick}) => {
                     obj={obj}
                     fagNavnStudierettning={fagNavnStudierettning}
                     setFagNavnStudierettning={setFagNavnStudierettning}
+                    divRef={divRef}
                     />                       
                 }
             

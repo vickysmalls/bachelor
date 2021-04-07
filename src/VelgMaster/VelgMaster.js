@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from 'react'
+import React, {useState, useReducer, useRef, useEffect} from 'react'
 import './VelgMaster.css';
 import CustomButton from '../CustomButton/CustomButton';
 import useFetch from '../useFetch';
@@ -6,11 +6,13 @@ import ObligFagCard from '../oblig-fag/oblig-fag-card';
 import { FaEnvelopeOpenText } from 'react-icons/fa';
 import InfoButton from '../CustomButton/InfoButton';
 import Modal from '../Modal/Modal';
+import { AiOutlineArrowDown } from 'react-icons/ai';
+
 const _ = require("lodash");  
 
 
 
-const VelgMaster = ({studieRetning, answer, studieId, fagNavnStudierettning}) => {
+const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettning}) => {
 
     //setter masterfag tabellen til masterFag
     const {data: masterFag, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
@@ -41,10 +43,19 @@ const VelgMaster = ({studieRetning, answer, studieId, fagNavnStudierettning}) =>
        
     }
 
+    //det under er for smooth scroll
+  const obligDivRef = useRef();
+
+  
+  const handleScrollClick = () => {
+      visVidere&&
+    obligDivRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
    
     return ( 
         <>
-<div class="row" id="Masteremner">
+<div class="row" id="Masteremner" ref={divRef}>
     <div class="column" id="Hundre">
     <h3>Velg Masteremne</h3>
     </div>
@@ -92,6 +103,7 @@ const VelgMaster = ({studieRetning, answer, studieId, fagNavnStudierettning}) =>
                                 setFagnavn(oblig.fagnavn)
                                 setVisVidere(true)
                                 onSideBtnClick(oblig)
+                                //handleScrollClick()
                                 
                             }}
                             >
@@ -107,12 +119,13 @@ const VelgMaster = ({studieRetning, answer, studieId, fagNavnStudierettning}) =>
             }       
         </div>
     </div>
+    <AiOutlineArrowDown size={40} onClick={handleScrollClick} ></AiOutlineArrowDown>
 </div>
         
         
         {   
             visVidere&&
-            <ObligFagCard studieRetning={studieRetning} fagNavnStudierettning={fagNavnStudierettning} masterId={masterId} fagNavn={fagNavn} answer={answer}/>
+            <ObligFagCard obligDivRef={obligDivRef} studieRetning={studieRetning} fagNavnStudierettning={fagNavnStudierettning} masterId={masterId} fagNavn={fagNavn} answer={answer}/>
         
         }
         

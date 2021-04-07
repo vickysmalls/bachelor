@@ -4,7 +4,7 @@ import useFetch from "../useFetch";
 import './VelgKlassetrinn.css';
 
 
-const VelgKlasse = ({handleClick, klassetrinn, setVisVidere, visVidere, setAnswer, setObj}) => {
+const VelgKlasse = ({handleScrollClick, handleClick, klassetrinn, setVisVidere, visVidere, setAnswer, setObj}) => {
      
      //logger ved trykk
      function handleClick(e) {
@@ -21,6 +21,7 @@ const VelgKlasse = ({handleClick, klassetrinn, setVisVidere, visVidere, setAnswe
          
          setVisVidere(true)
      }
+    
     return ( 
         <>
         {
@@ -36,6 +37,7 @@ const VelgKlasse = ({handleClick, klassetrinn, setVisVidere, visVidere, setAnswe
                     setAnswer(klasse.id)
                     handleClick(klasse.id)
                     visVidereClick(visVidere)
+                    handleScrollClick()
                     
                 }}
                 >

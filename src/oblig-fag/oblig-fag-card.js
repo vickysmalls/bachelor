@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useRef, useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
 import Modal from '../Modal/Modal';
 import VelgMuligheter from '../VelgMuligheter/VelgMuligheter';
@@ -6,8 +6,10 @@ import ObligFagSemester from './oblig-fag-semester';
 import './oblig-fag.css';
 import Elever from './Elever.jpeg';
 import ObligFagSemester2 from './ObligFagSemester2';
+import { AiOutlineArrowDown } from 'react-icons/ai';
 
-const ObligFagCard = ({studieRetning, answer, masterId, obj, fagNavn, fagNavnStudierettning}) => {
+
+const ObligFagCard = ({obligDivRef, studieRetning, answer, masterId, obj, fagNavn, fagNavnStudierettning}) => {
 
     
     
@@ -19,10 +21,17 @@ const ObligFagCard = ({studieRetning, answer, masterId, obj, fagNavn, fagNavnStu
         
         setVisVidere(true)
     }
+
+       //det under er for smooth scroll
+  const velgMuligheterDivRef = useRef();
+
+  const handleScrollClick = () => {
+    velgMuligheterDivRef.current.scrollIntoView({ behavior: "smooth" });
+  };
  
     return (  
         <>
-<div class="row">
+    <div class="row" ref={obligDivRef}>
     <div class="column" id="Hundre">
     <h3>Obligatoriske emner</h3>
     </div>
@@ -99,6 +108,7 @@ const ObligFagCard = ({studieRetning, answer, masterId, obj, fagNavn, fagNavnStu
             </div>
         </div>
     </div>
+
     </div>
 
     <div class="row">
