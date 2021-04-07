@@ -7,6 +7,8 @@ import { FaEnvelopeOpenText } from 'react-icons/fa';
 import InfoButton from '../CustomButton/InfoButton';
 import Modal from '../Modal/Modal';
 import { AiOutlineArrowDown } from 'react-icons/ai';
+import {handleClick} from '../Helpers';
+
 
 const _ = require("lodash");  
 
@@ -36,12 +38,7 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
         //alert(e.id);
     };
    
-    //logger ved trykk
-    function handleClick(e) {
-        console.log('The link was clicked.');
-        console.log(e);
-       
-    }
+  
 
     //det under er for smooth scroll
   const obligDivRef = useRef();
@@ -49,9 +46,13 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
   
   const handleScrollClick = () => {
       visVidere&&
-    obligDivRef.current.scrollIntoView({ behavior: "smooth" });
+    obligDivRef.current.scrollIntoView({ behavior: "smooth", inline: 'center', block: 'center' });
   };
 
+  //filtrer slik at fag man velger i 5-10, norsk engelsk eller matte, blir filtrert ut
+  let filtered_klassetrinn = _.filter(masterFag, function(klasse)
+    { return klasse.fagnavn !== fagNavnStudierettning;}
+)
    
     return ( 
         <>
@@ -80,7 +81,7 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
     <h2>Velg et masteremne: </h2> 
         <div className='masterfag'>
             {
-                masterFag && masterFag.map(oblig=>{
+                masterFag && filtered_klassetrinn.map(oblig=>{
                     const className = activeButton === oblig.id ? "red" : "";
 
                     return(
@@ -103,7 +104,7 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
                                 setFagnavn(oblig.fagnavn)
                                 setVisVidere(true)
                                 onSideBtnClick(oblig)
-                                //handleScrollClick()
+                                
                                 
                             }}
                             >

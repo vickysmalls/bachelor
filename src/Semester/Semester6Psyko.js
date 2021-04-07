@@ -28,7 +28,7 @@ const Semester6Psyko = ({
     
   //filtrer ut årstudium
   let filtered_klassetrinn = _.filter(klassetrinn, function(klasse)
-    { return klasse.fagnavn !== 'Årstudium norsk, del 2' && klasse.fagnavn !== 'Årstudium matte, del 2' && klasse.fagnavn !== 'Årstudium engelsk, del 2';}
+    { return klasse.fagnavn !== 'Årstudium norsk, del 2' && klasse.fagnavn !== 'Årstudium matte, del 2' && klasse.fagnavn !== 'Årstudium engelsk, del 2' && klasse.fagnavn !== 'Norsk tegnspråk 2';}
 )
   //
   function handleMuligheter(ele) {
