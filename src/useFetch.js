@@ -7,10 +7,8 @@ const useFetch = (url, id) => {
     const [error, setError] = useState(null);
     const [obligFag, setObligFag] = useState(null);
     
-    
-      
       //runs every re-render
-      //Fetches data as soon as the component renders, then updates state
+      //Fetch data når komponent rendrer, så updates state
     useEffect(() => {
         const abortCont = new AbortController();
         console.log('use effetct ran');

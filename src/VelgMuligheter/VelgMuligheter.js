@@ -227,7 +227,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         
         
         {
-            <Muligheter setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+            <Muligheter setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
         } 
 
         {(
@@ -311,11 +311,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         }
         {
             (
-            /*
-              kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
-            masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
-
-            //om klasseId (klassetrinn 1-7, eller klassetrinn 5-10) og pedagogikk 1-7
+            //klassetrinn = 2, valgt  masterFag Norsk Engelsk Matte
            answer===2 || masterId === 12 || masterId === 13 || masterId === 14
             ) 
         ? 
@@ -329,7 +325,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
         }
         {
-            //begynner oplæring for norsk
+            //begynner oplæring for norsk Engelsk Matte
             masterId === 1 ||
             masterId === 2 ||
             masterId === 4 ?
@@ -375,7 +371,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             ) 
         ? 
             (
-                <Muligheter activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setDritt} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
+                null//<Muligheter activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setDritt} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
                 ) 
         : 
                null
@@ -449,7 +445,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         ? 
             (
                 
-                <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+               null// <Muligheter activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
             ) 
         : 
         null

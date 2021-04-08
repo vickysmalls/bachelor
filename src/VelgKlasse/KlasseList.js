@@ -43,8 +43,8 @@ const KlasseList = ({ handleClick}) => {
     handleScrollClick()  });
 
   const handleScrollClick = () => {
-    visVidere&&
-    divRef.current.scrollIntoView({ behavior: "smooth" });
+    /* visVidere&&
+    divRef.current.scrollIntoView({ behavior: "smooth" }); */
   };
     
     //logger ved trykk
