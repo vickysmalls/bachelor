@@ -16,15 +16,29 @@
     
 }
 
+#hoydeBenBtn{
+    letter-spacing: 0.5px;
+    text-transform: normal;
+    justify-self: center;
+    height: 80px;
+    width: 350px;
+    border-radius: 0px;
+    transform: rotate(0deg) skew(0deg);
+    -webkit-transform: rotate(0deg) skew(0deg);
+    cursor: pointer;
+    font-size: 15px;
+    font-family: arial;
+    font-weight: bolder;
+    border: 0px solid #ccc;
+}
+
 .KlasseList {
     min-height: 60vh;
     width: 100%;
     background-color: #FFDC00;
 }
 
-.benButton:hover{
-    box-shadow: 0 0 20px rgba(33,33,33,.2);
-}
+
 
 .introknapp{
     display: grid;

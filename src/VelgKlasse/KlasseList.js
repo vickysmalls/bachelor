@@ -24,7 +24,9 @@ const KlasseList = ({ handleClick}) => {
     //brukes til å lagre objektet
     const [obj, setObj] = useState();
     const [visVidere, setVisVidere] = useState(false);
-    
+
+    const [activeButton, setActiveButton] = useState(false);
+
 
     const [studieRetning, setStudieRetning] = useState();
     
@@ -106,7 +108,7 @@ const KlasseList = ({ handleClick}) => {
 </div>
 
 <div class="row" id="Start">
-<div class="column" id="Hundre">
+<div className="column" id="Hundre">
   
         
             <h3>Velg studieretning </h3>      
@@ -121,6 +123,7 @@ const KlasseList = ({ handleClick}) => {
                      setAnswer={setAnswer}
                      klassetrinn={klassetrinn}
                      handleScrollClick={handleScrollClick}
+                     
                     />
 
             </div>
