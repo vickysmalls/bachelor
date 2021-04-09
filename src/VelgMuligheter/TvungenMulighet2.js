@@ -3,16 +3,16 @@ import CustomButton from '../CustomButton/CustomButton';
 import  Modal  from '../Modal/Modal';
 import InfoButton from '../CustomButton/InfoButton';
 
-function TvungenMulighet({activeButton, setActiveButton, activeButtonTvungen, setActiveButtonTvungen, masterId, setIstrue, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) {
-    
+function TvungenMulighet2({activeButton ,setActiveButton, activeButtonTvungen2, setActiveButtonTvungen2, masterId, setIstrue, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) {
+   
 
       const onExist = (e) => {
-        setActiveButtonTvungen(e.id);
+        setActiveButtonTvungen2(e.id);
         //alert(e.id);
       };
 
+   
     const [fagnavn, setFagnavn] = useState();
-    const [URL, setURL] = useState();
     //const [semester, setSemester] = useState();
     const [emnekode, setEmneKode] = useState();
     const [studiepoeng, setStudiepoeng] = useState();
@@ -47,13 +47,12 @@ function TvungenMulighet({activeButton, setActiveButton, activeButtonTvungen, se
                                 inverted={className}
                                 key={oblig.id}
                                 fag={oblig.fagnavn}
-                                activeButtonTvungen={activeButtonTvungen}
-                                setActiveButtonTvungen={onExist(oblig)}
+                                activeButtonTvungen2={activeButtonTvungen2}
+                                setActiveButtonTvungen2={onExist(oblig)}
                                 style={{backgroundColor: '#FFDC00'}}
                                 onClick ={() =>
                                     
                                     {
-                                   
                                     setSemesterList7(oblig.id);
                                     setValg7Master(oblig.masterFagId)
                                     setIstrue(oblig.masterFagId);
@@ -70,7 +69,6 @@ function TvungenMulighet({activeButton, setActiveButton, activeButtonTvungen, se
                                 setEmneKode(oblig.emnekode)
                                 setStudiepoeng(oblig.studiepoeng)
                                 setKlasseId(oblig.klasseId)
-                                setURL(oblig.url);
                                 
                             }}>
                             </InfoButton>
@@ -115,4 +113,4 @@ function TvungenMulighet({activeButton, setActiveButton, activeButtonTvungen, se
 
             };
 
-export default TvungenMulighet
+export default TvungenMulighet2

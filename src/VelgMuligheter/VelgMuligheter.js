@@ -17,6 +17,7 @@ import Resultat from './Resultat';
 import Semester6Psyko from '../Semester/Semester6Psyko';
 import InfoButton from '../CustomButton/InfoButton';
 import TvungenMulighet from './TvungenMulighet';
+import TvungenMulighet2 from './TvungenMulighet';
 
 
 const _ = require("lodash");  
@@ -68,7 +69,12 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         setMuligheterId1('');
       }
 
-      // farge for for semester 4
+    
+    // automatisk setting av valg når det eksisterer en tvungen mulighet
+    const [activeButtonTvungen, setActiveButtonTvungen] = useState();
+    const [activeButtonTvungen2, setActiveButtonTvungen2] = useState();
+
+    // farge for for semester 4
     const [activeButton4, setActiveButton4] = useState();
 
     // farge for for semester 6
@@ -141,7 +147,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         <div className='fag'>
         
         {
-            <TvungenMulighet setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}>{fagNavn}</TvungenMulighet>
+            <TvungenMulighet activeButtonTvungen={activeButtonTvungen} setActiveButtonTvungen={setActiveButtonTvungen} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}>{fagNavn}</TvungenMulighet>
 
         }
 
@@ -204,7 +210,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         {
             //hvis den ikke er begynner så må denne vises
             masterId!==3&&
-            <TvungenMulighet activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <TvungenMulighet activeButtonTvungen={activeButtonTvungen2} setActiveButtonTvungen={setActiveButtonTvungen2} activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
         {
             masterId===3&&
@@ -601,7 +607,21 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             printe ut oppsummeringen slik at du kan ta vare på denne.
         </p>
 
-        <CustomButton onClick={() => setVidere(true)} id="Oppsummering">Se oppsummering</CustomButton>
+        {
+            // Validering av valg
+            (activeButtonTvungen && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            ||
+            (activeButtonTvungen2 && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            ||
+            (activeButtonTvungen && activeButtonTvungen2 && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            || 
+            (activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            
+            ?
+            <CustomButton onClick={() => setVidere(true)} id="Oppsummering">Se oppsummering</CustomButton>
+            :
+            <CustomButton onClick={() => setVidere(false)} id="Oppsummering">Se oppsummering</CustomButton>
+        }
 
     </div>  
 </div>
