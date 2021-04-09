@@ -25,7 +25,7 @@ const KlasseList = ({ handleClick}) => {
     const [obj, setObj] = useState();
     const [visVidere, setVisVidere] = useState(false);
 
-    const [activeButton, setActiveButton] = useState(false);
+    const [resetState, setResetState] = useState(false);
 
 
     const [studieRetning, setStudieRetning] = useState();
@@ -123,7 +123,8 @@ const KlasseList = ({ handleClick}) => {
                      setAnswer={setAnswer}
                      klassetrinn={klassetrinn}
                      handleScrollClick={handleScrollClick}
-                     
+                     resetState = {resetState}
+                     setResetState={setResetState}
                     />
 
             </div>

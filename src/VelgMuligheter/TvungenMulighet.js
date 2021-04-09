@@ -4,12 +4,12 @@ import  Modal  from '../Modal/Modal';
 import InfoButton from '../CustomButton/InfoButton';
 
 function TvungenMulighet({activeButton ,setActiveButton, masterId, setIstrue, valg7Master, setValg7Master, setFag, setSemesterList7, semesterList7, semester, klassetrinn, sorted}) {
+    
     const onSideBtnClick = (e) => {
         setActiveButton(e.id);
         //alert(e.id);
       };
 
-   
     const [fagnavn, setFagnavn] = useState();
     //const [semester, setSemester] = useState();
     const [emnekode, setEmneKode] = useState();

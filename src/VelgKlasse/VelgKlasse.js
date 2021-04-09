@@ -10,13 +10,16 @@ const VelgKlasse = ({ handleScrollClick, klassetrinn, setVisVidere, visVidere, s
      
      
     //Sette farge valgt semester
-  const [activeButton, setActiveButton] = useState();
+    const [activeButton, setActiveButton] = useState();
 
-  const onSideBtnClick = (e) => {
-    setActiveButton(e.id);
-    //alert(e.id);
-  };
-     function visVidereClick(visVidere){
+    const onSideBtnClick = (e) => {
+        setActiveButton(e.id);
+        
+        //alert(e.id);
+    };
+    
+    
+    function visVidereClick(visVidere){
          console.log('vis videre klikket');
          console.log(visVidere);
          
@@ -45,6 +48,7 @@ const VelgKlasse = ({ handleScrollClick, klassetrinn, setVisVidere, visVidere, s
                         visVidereClick(visVidere)
                         handleScrollClick()
                         onSideBtnClick(klasse)
+                        
                     }}
                     >
                     Grunnskolelærer {klasse.klassetrinn} trinn

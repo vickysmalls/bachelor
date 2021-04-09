@@ -147,7 +147,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
             (
                 //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===11 || 
-                fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  || fagNavn.includes('Profesjonsrettet pedagogikk') ||
+                fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  || masterId ===3  || fagNavn.includes('Profesjonsrettet pedagogikk') ||
                 masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
                 masterId ===16 || masterId ===17 || masterId ===24 || masterId ===25 || 
                 masterId ===26 || masterId ===27 
@@ -200,7 +200,13 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
             <div className='fag'>
         {
+            //hvis den ikke er begynner så må denne vises
+            masterId!==3&&
             <TvungenMulighet activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+        } 
+        {
+            masterId===3&&
+            <Muligheter setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -232,7 +238,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
         {(
             //masterId ===1  || masterId ===2  || masterId ===3  ||  || masterId ===5  ||
-            masterId ===1  || masterId ===2  || masterId ===4 || fagNavn.includes('RLE')  ||fagNavn.includes('Kroppsøving')|| 
+            masterId ===1  || masterId ===2  ||  masterId ===3 || masterId ===4 || fagNavn.includes('RLE')  ||fagNavn.includes('Kroppsøving')|| 
             //masterId ===6  || masterId ===7  || masterId ===8  || masterId ===9  || masterId ===10 || 
             fagNavn.includes('Kunst og håndverk')  || fagNavn.includes('Musikk')  ||fagNavn.includes('Naturfag')|| fagNavn.includes('Samfunnsfag')  || 
 
@@ -301,7 +307,6 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         } 
       
 
-        
         {
             <Semester activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={answer}/>
         
