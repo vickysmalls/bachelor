@@ -68,6 +68,8 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         setMuligheterId1('');
       }
 
+      // farge for for semester 4
+    const [activeButton4, setActiveButton4] = useState();
 
     // farge for for semester 6
     const [activeButton2, setActiveButton2] = useState();
@@ -206,7 +208,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         } 
         {
             masterId===3&&
-            <Muligheter setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
