@@ -11,6 +11,7 @@ function TvungenMulighet({activeButton ,setActiveButton, masterId, setIstrue, va
       };
 
     const [fagnavn, setFagnavn] = useState();
+    const [URL, setURL] = useState();
     //const [semester, setSemester] = useState();
     const [emnekode, setEmneKode] = useState();
     const [studiepoeng, setStudiepoeng] = useState();
@@ -67,6 +68,7 @@ function TvungenMulighet({activeButton ,setActiveButton, masterId, setIstrue, va
                                 setEmneKode(oblig.emnekode)
                                 setStudiepoeng(oblig.studiepoeng)
                                 setKlasseId(oblig.klasseId)
+                                setURL(oblig.url);
                                 
                             }}>
                             </InfoButton>
@@ -93,15 +95,10 @@ function TvungenMulighet({activeButton ,setActiveButton, masterId, setIstrue, va
                 <h5>Info om {fagnavn}</h5><br/>
 
                 <ul id="Innrykk">
-                    <li>
-                    Fagnavn: {fagnavn}
-                    </li>
-                    <li>
-                    Emnekode: {emnekode}
-                    </li>
-                    <li>
-                    Studiepoeng: {studiepoeng}
-                    </li>
+                    <li>Fagnavn: {fagnavn}</li>
+                    <li>Emnekode: {emnekode}</li>
+                    <li>Studiepoeng: {studiepoeng}</li>
+                    <li>Fagside: <a href={URL} target="_blank" rel="noreferrer" > Link til fagside </a></li>
                 </ul>
             </Modal>
        

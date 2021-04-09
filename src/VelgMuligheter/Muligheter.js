@@ -24,6 +24,7 @@ const Muligheter = ({
   };
 
   const [fagnavn, setFagnavn] = useState();
+  const [URL, setURL] = useState();
   //const [semester, setSemester] = useState();
   const [emnekode, setEmneKode] = useState();
   const [studiepoeng, setStudiepoeng] = useState();
@@ -66,6 +67,7 @@ const Muligheter = ({
                       setEmneKode(oblig.emnekode);
                       setStudiepoeng(oblig.studiepoeng);
                       setKlasseId(oblig.klasseId);
+                      setURL(oblig.url);
                     }}
                   ></InfoButton>
                 </>
@@ -82,6 +84,7 @@ const Muligheter = ({
           <li>Fagnavn: {fagnavn}</li>
           <li>Emnekode: {emnekode}</li>
           <li>Studiepoeng: {studiepoeng}</li>
+          {semester === 10 ? null : <li>Fagside: <a href={URL} target="_blank" rel="noreferrer" > Link til fagside </a> </li> }
         </ul>
       </Modal>
     </>
