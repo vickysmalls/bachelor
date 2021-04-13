@@ -17,6 +17,7 @@ const Muligheter = ({
   semester,
   klassetrinn,
   sorted,
+  setConditionalSem9,
 }) => {
   const onSideBtnClick = (e) => {
     setActiveButton(e.id);
@@ -54,6 +55,7 @@ const Muligheter = ({
                       setSemesterList7(oblig.id);
                       setValg7Master(oblig.masterFagId);
                       setIstrue(oblig.masterFagId);
+                      setConditionalSem9(oblig.masterFagId);
                     }}
                   >
                     {oblig.fagnavn}
