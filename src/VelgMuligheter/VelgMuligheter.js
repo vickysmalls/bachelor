@@ -76,6 +76,8 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
     // automatisk setting av valg når det eksisterer en tvungen mulighet
     const [activeButtonTvungen, setActiveButtonTvungen] = useState();
     const [activeButtonTvungen2, setActiveButtonTvungen2] = useState();
+    const [activeButtonTvungen3, setActiveButtonTvungen3] = useState();
+
 
     // farge for for semester 4
     const [activeButton4, setActiveButton4] = useState();
@@ -241,11 +243,22 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         <h5>Semester 6</h5>
         <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
-        
-        
         {
-            <Muligheter setConditionalSem9={setConditionalSem9} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+            //hvis den ikke er begynner så må denne vises
+            masterId===12?(
+
+                <TvungenMulighet activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}>{fagNavn}</TvungenMulighet>
+
+            ): 
+            masterId!==12?(
+                <Muligheter setConditionalSem9={setConditionalSem9} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+                ) : null
+
         } 
+
+       
+
+       
 
         {(
             //masterId ===1  || masterId ===2  || masterId ===3  ||  || masterId ===5  ||
@@ -610,7 +623,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
         {
             // Validering av valg
-            (activeButtonTvungen && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            (activeButtonTvungen  && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
             ||
             (activeButtonTvungen2 && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
             ||
@@ -646,7 +659,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             klasseId={answer}
             semester9Resultat={semester9Resultat}
             activeButton10={activeButton10}
-           
+            activeButton9={activeButton9}
             
 
 

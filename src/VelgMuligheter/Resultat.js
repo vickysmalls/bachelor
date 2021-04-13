@@ -22,7 +22,8 @@ const Resultat = ({
   messages,
   valg7Master,
   semesterList9,
-  activeButton10
+  activeButton10,
+  activeButton9
 }) => {
   
 
@@ -123,7 +124,7 @@ const Resultat = ({
             masterId === 27 ? (
               <ValgtMulighet
                 klassetrinn={klassetrinn}
-                muligheterId={muligheterId2}
+                muligheterId={activeButton} 
               ></ValgtMulighet>
             ) : (
               <Muligheter
@@ -258,12 +259,12 @@ const Resultat = ({
               muligheterId={semesterList9}
             ></ValgtMulighet>
             ) : (
-              <Muligheter
+              
+              //annen måte
+                <ValgtMulighet
                 klassetrinn={klassetrinn}
-                sorted={sorted}
-                semester={9}
-                masterId={masterId}
-              />
+                muligheterId={activeButton9}
+              ></ValgtMulighet>
             )}
             
             <ObligFagSemester semester={9} answer={answer} />
@@ -276,13 +277,13 @@ const Resultat = ({
           <h5>Semester 10</h5>
           <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
           <div className="fag">
-            <Muligheter
+           {/*  <Muligheter
               klassetrinn={klassetrinn}
               answer={answer}
               sorted={sorted}
               semester={10}
               masterId={semesterList7}
-            />
+            /> */}
             { //annen måte
               <ValgtMulighet
               klassetrinn={klassetrinn}
