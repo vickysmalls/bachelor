@@ -45,12 +45,17 @@
     gap: 25px;
     grid-template-columns: repeat(2,auto);
     margin-bottom: 100px;
-    width: 805px;
+    max-width: 800px;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
 .applikasjon{
-    width: 1410px;
+    max-width: 1440px;
 }
 
 .column {
@@ -74,9 +79,12 @@
   }
 
   #Forti {
-    float: left;
+    float: center;
     width: 50%;
     padding: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
   }
 
   #Tjue {
@@ -87,7 +95,8 @@
     background-position: center;
     background-size: cover;
     display: flex;
-    margin-left: 200px;
+    margin-left: auto;
+    
   }
 
   #MasterBilde {
@@ -98,7 +107,7 @@
     background-position: center;
     background-size: cover;
     display: flex;
-    margin-left: 200px;
+    margin-left: auto;
   }
 
   #ObligFagBilde {
@@ -109,7 +118,7 @@
     background-position: center;
     background-size: cover;
     display: flex;
-    margin-left: 200px;
+    margin-left: auto;
   }
 
   #Atti {
@@ -122,6 +131,7 @@
     background-color: #FFDC00;
     text-align: left;
     margin-right: 200px;
+    margin-right: auto;
   }
 
   #Left {
@@ -159,6 +169,8 @@
 
   .row {
       margin-bottom: 100px;
+      margin-left: auto;
+      margin-right: auto;
   }
 
   #Space {
@@ -173,11 +185,11 @@
   }
 
   .InnledningKolonner {
-    width: 1400px;
+    width: 100%;
   }
   
   #InnledningKolonner {
-    width: 1400px;
+    width: 100%;
     margin-left: 0;
   }
 
@@ -213,7 +225,8 @@
   @media screen and (max-width: 480px) {
 
   .applikasjon{
-      width: 375px;
+      max-width: 480px;
+      width: 100%;
   }
   
   .column {
@@ -347,11 +360,11 @@
     }
   
     .InnledningKolonner {
-      width: 1400px;
+      width: 100$;
     }
     
     #InnledningKolonner {
-      width: 1400px;
+      width: 100%;
       margin-left: 0;
     }
   

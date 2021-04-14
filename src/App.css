@@ -25,5 +25,22 @@ h1 {
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 120px;
-  margin-top: -25px;
+  margin-top: 25px;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 1px;
+  text-decoration: underline;
+  -webkit-text-decoration-color:#FFDC00; /* Safari */  
+  text-decoration-color: #FFDC00;
+}
+
+@media screen and (max-width: 480px)  {
+
+  h1 {
+    font-size: 28px;
+    line-height: 35px;
+    padding-top: 20px;
+  }
+
+
+
 }

@@ -129,7 +129,12 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
         <h2 id="Studieaar">Obligatorisk emner på høsten og fordypning på våren</h2>
         <p id="AarBeskrivelse">
-            Lorem Ipsum dorem amet.
+            3. semester består av de obligatoriske fagene metematikk, norsk og pedagogikk. Men valget man gjør 4. semester vil
+            være svært viktig for resten av studiet, og hvilke emner du som student har mulighet til skrive masteroppgave innenfor.
+
+            <br /><br />
+            Denne veilederen viser deg valgmulighetene utifra ønsket mastermne som er valgt ovenfor. Noen studenter vil ha mange 
+            valgmuligheter i dette semsteret, mens for enkelte mastermner vil det være nødvendig å velge riktig fordypning.
         </p>
 
         <div className="obligatoriske semestre">
@@ -137,6 +142,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             <h5>Semester 3</h5>
             <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
             <div className="fag">
+                
             {
                         // det sorterte arrayet mappes
                         <ObligFagSemester id="Gul" semester={3} answer={answer}/>
@@ -199,9 +205,15 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             Det tredje året på studiet er preget av at du kan velge fordypning i ønsket emne. Dette er også
             tidpunktet hvor det er mulighet for å studere fremmedspråk i utlandet. OsloMet tilbyr utveksling på en rekke
             universiteter i utlandet. Dersom du er interessert i dette oppfordrer vi til å lese mer på OsloMet sine utvekslingssider.
-            <br /><br />
+            Godkjente utvekslingsopphold er fra 3 måneder til ett år og vil inngå som en forhåndsgodkjent del av utdanningen din.
+            <br />
+
+            <a class="button" href="https://student.oslomet.no/utveksling-femarig-grunnskolelererutdanning" target="_blank" id="Utveksling">Les mer om utveksling </a>
+
+            <br />
             For begge studieretninger har studentene mulighet til å fordype seg i ett eller flere valgfrie emner. Valgmulighetene 
             er listet opp under.
+            
 
         </p>
 
@@ -441,7 +453,8 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
     <h2 id="Studieaar">Undervisningsfag og masteroppgaven</h2>
     <p id="AarBeskrivelse">
-    Lorem Ipsum dorem amet.
+    I siste studiår er pedagogikk og elevkunnskap sentralt, og alle studenter vil studere dette i nest siste semester.
+    Det siste semesteret går utelukkende til å skrive masteroppgaven.
 
 </p>
         <div className="obligatoriske semestre">

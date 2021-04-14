@@ -120,7 +120,10 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
             }       
         </div>
     </div>
-    <AiOutlineArrowDown size={40} onClick={handleScrollClick} ></AiOutlineArrowDown>
+    <div id="Senter">
+        <AiOutlineArrowDown size={40} onClick={handleScrollClick} ></AiOutlineArrowDown>
+    </div>
+    
 </div>
         
         

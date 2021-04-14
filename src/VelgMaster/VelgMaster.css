@@ -58,6 +58,8 @@ p {
   gap: 5px;
   grid-auto-rows: minmax(50px, auto);
   margin-bottom: 125px;
+  align-items: center;
+  justify-items: center;
 }
 
 .masterknapper.custom-button{
@@ -103,6 +105,8 @@ p {
     gap: 5px;
     grid-auto-rows: minmax(50px, auto);
     margin-bottom: 125px;
+    align-items: center;
+  justify-items: center;
   }
 
 }
