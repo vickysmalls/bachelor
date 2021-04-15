@@ -36,8 +36,9 @@ const Semester6Psyko = ({
     
   }
   const onSideBtnClick = e => {
-        
-    setActiveButton(e.masterFagId);
+    setActiveButton(e.id);
+   
+    //setActiveButton(e.masterFagId);
    
 };
 
@@ -54,7 +55,7 @@ const Semester6Psyko = ({
     <>
       {klassetrinn &&
         filtered_klassetrinn.map((oblig) => {
-          const className = activeButton === oblig.masterFagId ? "red" : "";
+          const className = activeButton === oblig.id ? "red" : "";
           
           return (
             //oblig.MasterFagId === masterId &&

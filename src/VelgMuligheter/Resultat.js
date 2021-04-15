@@ -23,10 +23,12 @@ const Resultat = ({
   valg7Master,
   semesterList9,
   activeButton10,
-  activeButton9
+  activeButton9,
+  activeButton2
 }) => {
   
 
+  console.log('activeButton2', activeButton2);
   return (
     <div>
       <div id="printId">
@@ -160,7 +162,7 @@ const Resultat = ({
             ) : (
               <ValgtMulighet
                 klassetrinn={klassetrinn}
-                muligheterId={muligheterId3}
+                muligheterId={activeButton2}
               ></ValgtMulighet>
             )}
           </div>
@@ -254,10 +256,16 @@ const Resultat = ({
             masterId === 13 ||
             masterId === 14 ||
             answer ===2 ? (
+              <>
               <ValgtMulighet
               klassetrinn={klassetrinn}
               muligheterId={semesterList9}
-            ></ValgtMulighet>
+            />
+            <ValgtMulighet
+                klassetrinn={klassetrinn}
+                muligheterId={activeButton9}
+              ></ValgtMulighet>
+            </>
             ) : (
               
               //annen måte
@@ -265,6 +273,7 @@ const Resultat = ({
                 klassetrinn={klassetrinn}
                 muligheterId={activeButton9}
               ></ValgtMulighet>
+              
             )}
             
             <ObligFagSemester semester={9} answer={answer} />

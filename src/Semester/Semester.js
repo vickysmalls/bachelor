@@ -27,8 +27,8 @@ const Semester = ({
     setMuligheterId(ele);    
   }
   const onSideBtnClick = e => {
-        
-    setActiveButton(e.masterFagId);
+    setActiveButton(e.id);
+    //setActiveButton(e.masterFagId);
    
 };
 
@@ -43,7 +43,7 @@ const Semester = ({
     <>
       {klassetrinn &&
         klassetrinn.map((oblig) => {
-          const className = activeButton === oblig.masterFagId ? "red" : "";
+          const className = activeButton === oblig.id ? "red" : "";
           
           return (
             //oblig.MasterFagId === masterId &&

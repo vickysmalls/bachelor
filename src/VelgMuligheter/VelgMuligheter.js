@@ -101,7 +101,8 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
     const [begynnerLaringBoolean, setBegynnerLaringBoolean] = useState(false);
 
-    
+    console.log('activeButton2', activeButton2);
+
     //lager et array som sortrer etter semester
     const iteratees = obj => obj.semester;
     const sorted = _.sortBy(klassetrinn, iteratees);
@@ -673,6 +674,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             semester9Resultat={semester9Resultat}
             activeButton10={activeButton10}
             activeButton9={activeButton9}
+            activeButton2={activeButton2}
             
 
 
