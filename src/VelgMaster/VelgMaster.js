@@ -49,7 +49,8 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
     obligDivRef.current.scrollIntoView({ behavior: "smooth", inline: 'center', block: 'center' });
   };
 
-  //filtrer slik at fag man velger i 5-10, norsk engelsk eller matte, blir filtrert ut
+  //filtrer slik at første fag man velger i 5-10, norsk engelsk eller matte, blir filtrert ut
+
   let filtered_klassetrinn = _.filter(masterFag, function(klasse)
     { return klasse.fagnavn !== fagNavnStudierettning;}
 )

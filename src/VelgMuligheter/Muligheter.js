@@ -19,6 +19,7 @@ const Muligheter = ({
   sorted,
   setConditionalSem9,
 }) => {
+
   const onSideBtnClick = (e) => {
     setActiveButton(e.id);
     //alert(e.id);
@@ -86,7 +87,13 @@ const Muligheter = ({
           <li>Fagnavn: {fagnavn}</li>
           <li>Emnekode: {emnekode}</li>
           <li>Studiepoeng: {studiepoeng}</li>
-          {semester === 10 ? null : <li>Fagside: <a href={URL} target="_blank" rel="noreferrer" > Link til fagside </a> </li> }
+          {
+            semester === 10 ? null 
+            :
+            <li>Fagside: 
+              <a href={URL} target="_blank" rel="noreferrer" > Link til fagside </a>
+            </li> 
+          }
         </ul>
       </Modal>
     </>

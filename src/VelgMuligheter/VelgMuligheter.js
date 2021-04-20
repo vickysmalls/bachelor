@@ -130,7 +130,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
         <h2 id="Studieaar">Obligatorisk emner på høsten og fordypning på våren</h2>
         <p id="AarBeskrivelse">
-            3. semester består av de obligatoriske fagene metematikk, norsk og pedagogikk. Men valget man gjør 4. semester vil
+            3. semester består av de obligatoriske fagene mattematikk, norsk og pedagogikk. Men valget man gjør 4. semester vil
             være svært viktig for resten av studiet, og hvilke emner du som student har mulighet til skrive masteroppgave innenfor.
 
             <br /><br />
