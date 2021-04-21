@@ -37,40 +37,40 @@ const Muligheter = ({
     <>
       <>
         {klassetrinn &&
-          sorted.map((oblig) => {
-            const className = activeButton === oblig.id ? "red" : "";
+          sorted.map((klasse) => {
+            const className = activeButton === klasse.id ? "red" : "";
 
             return (
               //om masterFagId (fra database) er det samme som masterId (hentet fra VelgMaster)
-              oblig.masterFagId === masterId &&
-              oblig.semester === semester && (
+              klasse.masterFagId === masterId &&
+              klasse.semester === semester && (
                 <>
                   <CustomButton
                     //setter fargen på den valgte fagveien
                     inverted={className}
-                    key={oblig.id}
-                    fag={oblig.fagnavn}
+                    key={klasse.id}
+                    fag={klasse.fagnavn}
                     activeButton={activeButton}
                     onClick={() => {
-                      onSideBtnClick(oblig);
-                      setSemesterList7(oblig.id);
-                      setValg7Master(oblig.masterFagId);
-                      setIstrue(oblig.masterFagId);
-                      setConditionalSem9(oblig.masterFagId);
+                      onSideBtnClick(klasse);
+                      setSemesterList7(klasse.id);
+                      setValg7Master(klasse.masterFagId);
+                      setIstrue(klasse.masterFagId);
+                      setConditionalSem9(klasse.masterFagId);
                     }}
                   >
-                    {oblig.fagnavn}
+                    {klasse.fagnavn}
                   </CustomButton>
 
                   <InfoButton
                     onClick={() => {
                       setIsOpen(true);
-                      setFagnavn(oblig.fagnavn);
+                      setFagnavn(klasse.fagnavn);
                       //setSemester(oblig.semester)
-                      setEmneKode(oblig.emnekode);
-                      setStudiepoeng(oblig.studiepoeng);
-                      setKlasseId(oblig.klasseId);
-                      setURL(oblig.url);
+                      setEmneKode(klasse.emnekode);
+                      setStudiepoeng(klasse.studiepoeng);
+                      setKlasseId(klasse.klasseId);
+                      setURL(klasse.url);
                     }}
                   ></InfoButton>
                 </>

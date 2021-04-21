@@ -54,41 +54,41 @@ const Semester6Psyko = ({
   return (
     <>
       {klassetrinn &&
-        filtered_klassetrinn.map((oblig) => {
-          const className = activeButton === oblig.id ? "red" : "";
+        filtered_klassetrinn.map((klasse) => {
+          const className = activeButton === klasse.id ? "red" : "";
           
           return (
             //oblig.MasterFagId === masterId &&
             //om semester = 5 vis semester og semeseter fag
-            oblig.semester === semester &&
-            oblig.klasseId === klasseId && (
+            klasse.semester === semester &&
+            klasse.klasseId === klasseId && (
               <>
                 <CustomButton
                   inverted={className}
-                  key={oblig.id}
-                  semester={oblig.semester}
-                  klasseId={oblig.klasseId}
+                  key={klasse.id}
+                  semester={klasse.semester}
+                  klasseId={klasse.klasseId}
                   onClick={() => {
-                    handleMuligheter(oblig.id);
-                    onSideBtnClick(oblig);
-                    setMasterFagId(oblig.masterFagId)
+                    handleMuligheter(klasse.id);
+                    onSideBtnClick(klasse);
+                    setMasterFagId(klasse.masterFagId)
                     
                    
 
                   }}
                 >
-                  {oblig.fagnavn}
+                  {klasse.fagnavn}
                 </CustomButton>
 
                 <InfoButton
                   onClick={() => {
                     setIsOpen(true);
-                    setFagnavn(oblig.fagnavn);
+                    setFagnavn(klasse.fagnavn);
                     //setSemester(oblig.semester)
-                    setEmneKode(oblig.emnekode);
-                    setStudiepoeng(oblig.studiepoeng);
+                    setEmneKode(klasse.emnekode);
+                    setStudiepoeng(klasse.studiepoeng);
                     //setKlasseId(oblig.klasseId)
-                    setURL(oblig.url);
+                    setURL(klasse.url);
                   }}
                 ></InfoButton>
               </>

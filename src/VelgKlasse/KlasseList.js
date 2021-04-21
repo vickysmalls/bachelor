@@ -13,13 +13,13 @@ import VelgKlasse from "./VelgKlasse";
 import VelgStudierettning from "./VelgStudierettning";
 
 
-const KlasseList = ({ handleClick}) => {
+const KlasseList = () => {
 
     //henter tabellen klasser og plasserer det i klassetrinn
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/klasser`);
 
     //setter klassetrinn til å bli answer
-    const [answer, setAnswer] = useState(klassetrinn);
+    const [klasseId, setKlasseId] = useState(klassetrinn);
 
     //brukes til å lagre objektet
     const [obj, setObj] = useState();
@@ -120,7 +120,7 @@ const KlasseList = ({ handleClick}) => {
                      visVidere={visVidere} 
                      setVisVidere={setVisVidere} 
                      setObj={setObj} 
-                     setAnswer={setAnswer}
+                     setAnswer={setKlasseId}
                      klassetrinn={klassetrinn}
                      handleScrollClick={handleScrollClick}
                      resetState = {resetState}
@@ -133,7 +133,7 @@ const KlasseList = ({ handleClick}) => {
      {
          //om man velger 5-10
          //Bruker fagnavn for å kunne filtrere på det i obligfag
-         answer===2&&
+         klasseId===2&&
         <VelgStudierettning setStudieRetning={setStudieRetning} fagNavnStudierettning={fagNavnStudierettning} setFagNavnStudierettning={setFagNavnStudierettning} valgtObligFag={valgtObligFag} setValgtObligFag={setValgtObligFag}
         />
      }
@@ -145,7 +145,7 @@ const KlasseList = ({ handleClick}) => {
                     visVidere &&
                     <VelgMaster 
                     studieRetning={studieRetning}
-                    answer={answer}
+                    klasseId={klasseId}
                     obj={obj}
                     fagNavnStudierettning={fagNavnStudierettning}
                     setFagNavnStudierettning={setFagNavnStudierettning}

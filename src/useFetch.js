@@ -1,11 +1,10 @@
 import {useState, useEffect} from 'react';
 
         //must pass in the url to fetch
-const useFetch = (url, id) => {
+const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
-    const [obligFag, setObligFag] = useState(null);
     
       //runs every re-render
       //Fetch data når komponent rendrer, så updates state
@@ -26,7 +25,7 @@ const useFetch = (url, id) => {
               setData(data);
               setIsPending(false);
               setError(null);
-              setObligFag(obligFag);
+              
               
 
           })
@@ -46,7 +45,7 @@ const useFetch = (url, id) => {
         //only run the function after the first initial render
     }, [url]);
 
-    return {data, isPending, error, obligFag}
+    return {data, isPending, error}
 
 }
 

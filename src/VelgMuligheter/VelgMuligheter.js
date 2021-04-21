@@ -24,7 +24,7 @@ const _ = require("lodash");
 
 
 
-const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
+const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
 
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
@@ -146,7 +146,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
                 
             {
                         // det sorterte arrayet mappes
-                        <ObligFagSemester id="Gul" semester={3} answer={answer}/>
+                        <ObligFagSemester id="Gul" semester={3} answer={klasseId}/>
             }
         
         </div>
@@ -166,9 +166,9 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         {
             //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
             (
-                //masterId ===1  || masterId ===2  || masterId ===3  || masterId ===11 || 
-                fagNavn.includes('Norsk')  || fagNavn.includes('Matte')  || masterId ===3  || fagNavn.includes('Profesjonsrettet pedagogikk') ||
-                masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
+                masterId ===1  || masterId ===2  || 
+                masterId ===3  || fagNavn.includes('Profesjonsrettet pedagogikk') ||
+                masterId ===11 ||masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
                 masterId ===16 || masterId ===17 || masterId ===24 || masterId ===25 || 
                 masterId ===26 || masterId ===27 
             ) 
@@ -181,7 +181,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
                     valgtFag={valgtFag4} 
                     klassetrinn={klassetrinn} 
                     semester={4} 
-                    klasseId ={answer}
+                    klasseId ={klasseId}
                     activeButton={activeButton}
                     setActiveButton ={setActiveButton}
                     
@@ -226,24 +226,34 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
             <div className='fag'>
         {
-            //hvis den ikke er begynner så må denne vises
+            //hvis den ikke er begynnerlæring så må denne vises
             masterId!==3&&
             <TvungenMulighet activeButtonTvungen={activeButtonTvungen2} setActiveButtonTvungen={setActiveButtonTvungen2} activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
         {
+            //hvis den er begynnerlæring så må denne vises
             masterId===3&&
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
+            //hvis den er noen av pedagogikkfagene, vis Semester
             (
-                fagNavn.includes('Profesjonsrettet pedagogikk')|| masterId ===12 || masterId ===13 || masterId ===14 || masterId ===25 || masterId ===26 || 
-                masterId ===27
+                masterId ===12 || masterId ===13 ||
+                masterId ===14 || masterId ===25 || 
+                masterId ===26 || masterId ===27
             ) 
         ? 
             (
-                
-                <Semester activeButton={activeButton} setActiveButton ={setActiveButton}  setMuligheterId={setMuligheterId2} muligheterId={muligheterId2} klassetrinn={klassetrinn} semester={5} klasseId ={answer}/>
+                <Semester 
+                    activeButton={activeButton} 
+                    setActiveButton ={setActiveButton}  
+                    setMuligheterId={setMuligheterId2} 
+                    muligheterId={muligheterId2} 
+                    klassetrinn={klassetrinn} 
+                    semester={5} 
+                    klasseId ={klasseId}
+                />
             ) 
         : 
             null
@@ -286,14 +296,14 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
          (//semester6psyko vise årstudium
              <>
              
-            <Semester6Psyko  masterId={masterId} setMasterFagId={setMasterFagId} activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={answer}/>
+            <Semester6Psyko  masterId={masterId} setMasterFagId={setMasterFagId} activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={klasseId}/>
            
                 <Semester 
                 setMuligheterId={setMuligheterId3} 
                 muligheterId={muligheterId3}
                 klassetrinn={klassetrinn} 
                 semester={4} 
-                klasseId ={answer}
+                klasseId ={klasseId}
                 activeButton={activeButton2}
                 setActiveButton ={setActiveButton2}
                 
@@ -338,23 +348,23 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
         } 
 
-        { answer === 2 &&
+        { klasseId === 2 &&
             <Muligheter setConditionalSem9={setDritt} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={studieRetning}/>
             
         } 
       
 
         {
-            <Semester activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={answer}/>
+            <Semester activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={klasseId}/>
         
         }
         {
-            <ObligFagSemester setSemesterList7={setSemesterList7}   semester={7} answer={answer}/>
+            <ObligFagSemester setSemesterList7={setSemesterList7}   semester={7} answer={klasseId}/>
         }
         {
             (
             //klassetrinn = 2, valgt  masterFag Norsk Engelsk Matte
-           answer===2 || masterId === 12 || masterId === 13 || masterId === 14
+            klasseId===2 || masterId === 12 || masterId === 13 || masterId === 14
             ) 
         ? 
             (
@@ -393,19 +403,19 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         } 
 
         {masterId === 1 && (
-            <Semester activeButton={activeButton8} setActiveButton ={setActiveButton8} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={answer}/>
+            <Semester activeButton={activeButton8} setActiveButton ={setActiveButton8} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={klasseId}/>
         )
         }
         {
             
-            <ObligFagSemester setSemesterList7={setSemesterList7} semester={8} answer={answer}/>
+            <ObligFagSemester setSemesterList7={setSemesterList7} semester={8} answer={klasseId}/>
 
         }
         {
             //Nå vises ikke fagene for semeseter 8-9, tror id feil, kommer om man uncommenter mulighet øverst
             (
             //om klasseId klassetrinn 5-10) og pedagogikk 1-7
-           answer===2 //|| masterId === 12 || masterId === 13 || masterId === 14
+            klasseId===2 //|| masterId === 12 || masterId === 13 || masterId === 14
 
             /*
               kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
@@ -425,7 +435,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             //DEENNE ER FOR NORSK ENG MATTE 1-7, for begynner opplæring
             //om semster er 1, og fag er norsk matte eller engelsk vis begynneropplæring
             (
-           answer===1 || masterId === 1 || masterId === 2 || masterId === 4
+                klasseId===1 || masterId === 1 || masterId === 2 || masterId === 4
  
             ) 
         ? 
@@ -435,7 +445,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
                 <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setDritt} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
             )
             //om muligheter over er true 
-        : empty &&answer===1 ?(
+        : empty &&klasseId===1 ?(
 
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setDritt} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
         ) : null
@@ -471,11 +481,11 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         } 
 
         {masterId ===1 && (
-            <Semester activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={answer}/>
+            <Semester activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={klasseId}/>
         )
         }
         {
-            <ObligFagSemester setSemesterList7={setSemesterList7} semester={9} answer={answer}/>
+            <ObligFagSemester setSemesterList7={setSemesterList7} semester={9} answer={klasseId}/>
         }
         {
             //om det er semeseter 2
@@ -484,7 +494,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
               kommentert ut var tidligeere, beholder i tilfelle ny løsmninng er bug
             masterId === 12 || masterId === 13 || masterId === 14 || masterId === 15 || masterId === 16 || masterId === 17 || masterId === 18 || masterId === 19 || masterId === 20 || masterId === 21 || masterId === 22 || masterId === 23 || masterId === 24 || masterId === 25 || masterId === 26 || masterId === 27*/
              //om klasseId (klassetrinn 1-7, eller klassetrinn 5-10) og pedagogikk 1-7
-           answer===2 
+             klasseId===2 
             ) 
         ? 
             (
@@ -502,8 +512,8 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             //for begynner opplæring
             //om semster er 1, og begynneropplæring blir valgt i 7, vis valget
             (
-            //answer === 1 && valg7Master === 3 
-            answer === 1 && valg7Master === 3 
+            //klasseId === 1 && valg7Master === 3 
+            klasseId === 1 && valg7Master === 3 
 
  
             ) 
@@ -516,7 +526,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
 
                 ) 
                 //om man velger norsk didaktikk
-        :  answer === 1 && isTrue === 1 ?(
+        :  klasseId === 1 && isTrue === 1 ?(
             //hvis semester er 1, men begynneropplæring ikke blir valgt i 7, vis valget pluss begynner
             <>
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
@@ -527,11 +537,11 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             
         )
         //velger man begynner vil verdiene settes, den andre if setningen er vanlige fag 
-        : answer === 1 &&  isTrue === 3 ?(
+        : klasseId === 1 &&  isTrue === 3 ?(
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
         )   
-        : answer === 1 ?(
+        : klasseId === 1 ?(
 
             <>
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
@@ -557,7 +567,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             //Funker 1-7
             // && valg7Master===3
             //problem er at masterFagId blir true når man velger pedagogikk
-            masterFagId && answer ===1  ? 
+            masterFagId && klasseId ===1  ? 
             //må sette empty i sem 7
             //isTrue ===3  ? 
 
@@ -567,7 +577,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
                 
 
                 </> 
-            ) : answer ===1  ?(
+            ) : klasseId ===1  ?(
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
             
             ): <div></div> //for å fjerne stygge grønt rundt
@@ -594,15 +604,15 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             }
         {
             //hvis 
-            //answer ===2 && masterFagId gjør at den automatisk kommer i semster 10, men vises ikke auto i 9
-            answer ===2
+            //klasseId ===2 && masterFagId gjør at den automatisk kommer i semster 10, men vises ikke auto i 9
+            klasseId ===2
             ? (
                 
                 <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
-           ) : answer ===2 && masterFagId   ?
+           ) : klasseId ===2 && masterFagId   ?
            (
                //masterId settes ikke i 9
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
@@ -658,7 +668,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
         videre &&
         <>
         <Resultat 
-            answer={answer} 
+            answer={klasseId} 
             klassetrinn={klassetrinn} 
             sorted={sorted} 
             activeButton={activeButton} 
@@ -670,7 +680,7 @@ const VelgMuligheter = ({studieRetning, masterId, answer, fagNavn}) => {
             mulighetTull={mulighetTull}
             fagNavn={fagNavn}
             valg7Master={valg7Master}
-            klasseId={answer}
+            klasseId={klasseId}
             semester9Resultat={semester9Resultat}
             activeButton10={activeButton10}
             activeButton9={activeButton9}

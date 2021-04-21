@@ -28,6 +28,12 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
     <>
       <>
         {
+          isPending && <div>Loading...</div>
+        }
+        {
+          error && <div>{error}</div>
+        }
+        {
           // det sorterte arrayet mappes
           sorted.map(
             (oblig) =>
@@ -35,9 +41,11 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
               oblig.klasseId === answer &&
               oblig.semester === semester && (
                 <>
-                  <CustomButton id="Videre" key={oblig.id}>{oblig.fagnavn}</CustomButton>
+                  <CustomButton id="Videre" key={oblig.id}>
+                    {oblig.fagnavn}
+                  </CustomButton>
 
-                  <InfoButton 
+                  <InfoButton
                     className="infoknapp"
                     onClick={() => {
                       setIsOpen(true);
@@ -47,7 +55,6 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
                       setStudiepoeng(oblig.studiepoeng);
                       setKlasseId(oblig.klasseId);
                       setURL(oblig.url);
-                      
                     }}
                   ></InfoButton>
                 </>
@@ -64,12 +71,17 @@ const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
           <li>Fagnavn: {fagnavn}</li>
           <li>Emnekode: {emnekode}</li>
           <li>Studiepoeng: {studiepoeng}</li>
-          <li>Fagside: <a href={URL} target="_blank" rel="noreferrer" > Link til fagside </a></li>
+          <li>
+            Fagside:{" "}
+            <a href={URL} target="_blank" rel="noreferrer">
+              {" "}
+              Link til fagside{" "}
+            </a>
+          </li>
         </ul>
       </Modal>
     </>
   );
-  
 };
 
 export default ObligFagSemester;

@@ -14,7 +14,7 @@ const _ = require("lodash");
 
 
 
-const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettning}) => {
+const VelgMaster = ({divRef, studieRetning, klasseId, studieId, fagNavnStudierettning}) => {
 
     //setter masterfag tabellen til masterFag
     const {data: masterFag, error, isPending} = useFetch(`http://localhost:5000/api/masterfag/`);
@@ -24,7 +24,7 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
     const [masterId, setMasterId] = useState();
     const [visVidere, setVisVidere] = useState(false);    
 
-    const [klasseId, setKlasseId] = useState();
+    
 
     console.log("studieRetning", studieRetning);
 
@@ -82,12 +82,18 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
     <h2>Velg et masteremne: </h2> 
         <div className='masterfag'>
             {
-                masterFag && filtered_klassetrinn.map(oblig=>{
-                    const className = activeButton === oblig.id ? "red" : "";
+                isPending && <div>Loading...</div>
+            }
+            {
+                error && <div>{error}</div>
+            }
+            {
+                masterFag && filtered_klassetrinn.map(fag=>{
+                    const className = activeButton === fag.id ? "red" : "";
 
                     return(
                         //om klasseId er det samme som answer (klassetrinn id) fra KlasseList =>
-                    oblig.klasseId === answer &&
+                        fag.klasseId === klasseId &&
                     
                     
                     <>
@@ -95,21 +101,21 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
                     <div className='masterknapper'>
                         <CustomButton
                             inverted={className}
-                            key={oblig.id}
-                            options={oblig}
+                            key={fag.id}
+                            options={fag}
                             activeButton={activeButton}
                                         
                             onClick={() =>{
-                                handleClick(oblig)
-                                setMasterId(oblig.id)
-                                setFagnavn(oblig.fagnavn)
+                                handleClick(fag)
+                                setMasterId(fag.id)
+                                setFagnavn(fag.fagnavn)
                                 setVisVidere(true)
-                                onSideBtnClick(oblig)
+                                onSideBtnClick(fag)
                                 
                                 
                             }}
                             >
-                            {oblig.fagnavn}
+                            {fag.fagnavn}
                         </CustomButton>
                     </div>    
                 </>
@@ -130,7 +136,7 @@ const VelgMaster = ({divRef, studieRetning, answer, studieId, fagNavnStudierettn
         
         {   
             visVidere&&
-            <ObligFagCard obligDivRef={obligDivRef} studieRetning={studieRetning} fagNavnStudierettning={fagNavnStudierettning} masterId={masterId} fagNavn={fagNavn} answer={answer}/>
+            <ObligFagCard obligDivRef={obligDivRef} studieRetning={studieRetning} fagNavnStudierettning={fagNavnStudierettning} masterId={masterId} fagNavn={fagNavn} klasseId={klasseId}/>
         
         }
         

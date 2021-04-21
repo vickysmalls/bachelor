@@ -28,6 +28,7 @@ const VelgKlasse = ({ handleScrollClick, klassetrinn, setVisVidere, visVidere, s
     
     return ( 
         <>
+        
         {
             //sjekker om klassetrinn er ok, deretter mappe gjennom klassene
             klassetrinn && 

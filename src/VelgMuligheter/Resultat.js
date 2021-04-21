@@ -78,7 +78,7 @@ const Resultat = ({
             //sjekker om id err norsk matte engelsk eller pedagogikk  
             masterId === 1 ||
             masterId === 2 ||
-            masterId === 4 ||
+            //masterId === 4 ||
             masterId === 12 ||
             masterId === 13 ||
             masterId === 14 ||
