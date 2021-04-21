@@ -13,14 +13,7 @@ const ObligFagCard = ({obligDivRef, studieRetning, klasseId, masterId, obj, fagN
 
     
     
-    const [visVidere, setVisVidere] = useState(false);
     
-    function visVidereClick(visVidere){
-        console.log('vis videre klikket');
-        console.log(visVidere);
-        
-        setVisVidere(true)
-    }
 
        //det under er for smooth scroll
   const velgMuligheterDivRef = useRef();
