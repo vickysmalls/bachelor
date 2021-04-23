@@ -584,7 +584,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             //problem er at masterFagId blir true når man velger pedagogikk
 
             //masterFagId && klasseId ===1  ? 
-            masterFagId || muligheterId2|| klasseId ===1  ? 
+            masterFagId || muligheterId2|| klasseId ===1  ?  
             //må sette empty i sem 7
             //isTrue ===3  ? 
 
