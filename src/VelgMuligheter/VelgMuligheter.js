@@ -589,16 +589,16 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             //isTrue ===3  ? 
 
             (
-                <>
+                
                 <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
                 
 
-                </> 
+                
             ) : klasseId ===1  ?(
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
             
             ): 
-            <div></div> //for å fjerne stygge grønt rundt
+            null //for å fjerne stygge grønt rundt
 
             //prøv: sjekk om begynner er gyldig i semester 8, er den det gi mulighet for begynner
             
