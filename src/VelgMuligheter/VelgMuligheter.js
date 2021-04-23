@@ -107,13 +107,18 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
     const iteratees = obj => obj.semester;
     const sorted = _.sortBy(klassetrinn, iteratees);
 
-    console.log('valg7Master', valg7Master)
+    //console.log('valg7Master', valg7Master)
 
     console.log('masterId', masterId)
 
-    console.log('semester9Resultat', semester9Resultat);
+    //console.log('semester9Resultat', semester9Resultat);
 
-    console.log('dritt; ',dritt);
+
+    console.log('muligheterId2; ',muligheterId1);
+
+    console.log('muligheterId2; ',muligheterId2);
+
+    console.log('muligheterId2; ',muligheterId3);
 
   
     
@@ -165,9 +170,12 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
 
         {
             //Hvis valgt masterId er 1,2,10,11,12: hvis alle fag for semesteret
+            //fagNavn.includes('Profesjonsrettet pedagogikk')
+            //bruker samme active button som sem5, må sjekkes ut
+            //husk begynner vises her også, vet ikke om riktig enda
             (
                 masterId ===1  || masterId ===2  || 
-                masterId ===3  || fagNavn.includes('Profesjonsrettet pedagogikk') ||
+                masterId ===3  ||
                 masterId ===11 ||masterId ===12 || masterId ===13 || masterId ===14 || masterId ===15 || 
                 masterId ===16 || masterId ===17 || masterId ===24 || masterId ===25 || 
                 masterId ===26 || masterId ===27 
@@ -254,6 +262,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
                     semester={5} 
                     klasseId ={klasseId}
                 />
+                
             ) 
         : 
             null
@@ -267,7 +276,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
         <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
         {
-            //hvis den ikke er begynner så må denne vises
+            //hvis den ikke er begynner så må denne vises, ER BEGYNNER 12?
             masterId===12?(
 
                 <TvungenMulighet activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}>{fagNavn}</TvungenMulighet>
@@ -293,7 +302,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             masterId ===19 || masterId ===20 || masterId ===21 || masterId ===22 || masterId ===23 
          ) 
          ? 
-         (//semester6psyko vise årstudium
+         (//semester6psyko vise pedagogikk
              <>
              
             <Semester6Psyko  masterId={masterId} setMasterFagId={setMasterFagId} activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={klasseId}/>
@@ -365,11 +374,12 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             (
             //klassetrinn = 2, valgt  masterFag Norsk Engelsk Matte
             klasseId===2 || masterId === 12 || masterId === 13 || masterId === 14
+            //siste endring: byttet masterId fra activeButton til muligheterId2
             ) 
         ? 
             (
                 
-                <Muligheter setConditionalSem9={setDritt} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setDritt} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={activeButton}/>
+                <Muligheter setConditionalSem9={setDritt} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setDritt} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={muligheterId2}/>
             ) 
             
         :  
@@ -479,6 +489,11 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             muligheterId3 &&
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterFagId}/>
         } 
+        {//hvis man velger pedagogikk
+            //evt masterId === pedagogikk ider
+            muligheterId2 &&
+            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+        } 
 
         {masterId ===1 && (
             <Semester activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={klasseId}/>
@@ -567,7 +582,9 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             //Funker 1-7
             // && valg7Master===3
             //problem er at masterFagId blir true når man velger pedagogikk
-            masterFagId && klasseId ===1  ? 
+
+            //masterFagId && klasseId ===1  ? 
+            masterFagId || muligheterId2|| klasseId ===1  ? 
             //må sette empty i sem 7
             //isTrue ===3  ? 
 
@@ -580,11 +597,15 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             ) : klasseId ===1  ?(
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
             
-            ): <div></div> //for å fjerne stygge grønt rundt
+            ): 
+            <div></div> //for å fjerne stygge grønt rundt
 
             //prøv: sjekk om begynner er gyldig i semester 8, er den det gi mulighet for begynner
             
         } 
+
+      
+
         {/* 
         //funker på vanlige fag( ikke norsk, da dobles de)
         //funker også om man velger pedagogikk i n

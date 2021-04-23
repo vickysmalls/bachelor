@@ -23,11 +23,12 @@ const Semester = ({
 
   
   //
-  function handleMuligheter(ele) {
+  /* function handleMuligheter(ele) {
     setMuligheterId(ele);    
-  }
+  } */
   const onSideBtnClick = e => {
     setActiveButton(e.id);
+    //setMuligheterId(e.id)
     //setActiveButton(e.masterFagId);
    
 };
@@ -58,7 +59,7 @@ const Semester = ({
                   semester={klasse.semester}
                   klasseId={klasse.klasseId}
                   onClick={() => {
-                    handleMuligheter(klasse.id);
+                    setMuligheterId(klasse.masterFagId);
                     onSideBtnClick(klasse);
                    
                    
