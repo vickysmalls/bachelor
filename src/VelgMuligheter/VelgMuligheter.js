@@ -492,7 +492,8 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
         {//hvis man velger pedagogikk
             //evt masterId === pedagogikk ider
             //muligheterId2 &&
-            masterId === 12 ||masterId === 13 || masterId === 14 ?(
+            masterId === 12 ||masterId === 13 || masterId === 14 ||
+            masterId === 25 ||masterId === 26 || masterId === 27 ?(
 
                 <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
             ): null
