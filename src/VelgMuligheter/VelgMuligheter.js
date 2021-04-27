@@ -125,7 +125,10 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
     console.log('muligheterId3; ',muligheterId3);
 
   
-    
+    var noeMoro =  masterId ===11 || masterId ===12 || 
+    masterId ===13 ||masterId ===14  ||
+    masterId ===24 || masterId ===25 || 
+    masterId ===26 || masterId ===27; 
     
 
     return ( 
@@ -290,15 +293,22 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
         <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
         {
-            //hvis den ikke er begynner så må denne vises, ER BEGYNNER 12?
-            masterId===12?(
+            //hvis den ikke er begynner så må denne vises, BEGYNNER ER IKKE 12? SKJØNNER IKKE DENNE!!
+            masterId ===11 || masterId ===12 || 
+            masterId ===13 ||masterId ===14  ||
+            masterId ===24 || masterId ===25 || 
+            masterId ===26 || masterId ===27  ?
+            (
 
-                <TvungenMulighet activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}>{fagNavn}</TvungenMulighet>
+                <TvungenMulighet activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
 
             ): 
-            masterId!==12?(
+            //masterId!==12?
+            (
+
                 <Muligheter setConditionalSem9={setConditionalSem9} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
-                ) : null
+            )
+               
 
         } 
 
@@ -491,7 +501,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
     I siste studiår er pedagogikk og elevkunnskap sentralt, og alle studenter vil studere dette i nest siste semester.
     Det siste semesteret går utelukkende til å skrive masteroppgaven.
 
-</p>
+    </p>
         <div className="obligatoriske semestre">
             <div classname="Seksti">
 
