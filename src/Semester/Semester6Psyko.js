@@ -3,8 +3,8 @@ import CustomButton from "../CustomButton/CustomButton";
 import InfoButton from "../CustomButton/InfoButton";
 import Modal from "../Modal/Modal";
 import Muligheter from "../VelgMuligheter/Muligheter";
-import './Semester.css';
-const _ = require("lodash");  
+import "./Semester.css";
+const _ = require("lodash");
 
 const Semester6Psyko = ({
   klasseId,
@@ -17,30 +17,29 @@ const Semester6Psyko = ({
   setMasterFagId,
   setSemesterList7,
   setFag,
-  
+
   setValgtFag,
   messages,
-  fag
-  
-
+  fag,
 }) => {
-
-    
   //filtrer ut årstudium
-  let filtered_klassetrinn = _.filter(klassetrinn, function(klasse)
-    { return klasse.fagnavn !== 'Årstudium norsk, del 2' && klasse.fagnavn !== 'Årstudium matte, del 2' && klasse.fagnavn !== 'Årstudium engelsk, del 2' && klasse.fagnavn !== 'Norsk tegnspråk 2';}
-)
+  let filtered_klassetrinn = _.filter(klassetrinn, function (klasse) {
+    return (
+      klasse.fagnavn !== "Årstudium norsk, del 2" &&
+      klasse.fagnavn !== "Årstudium matte, del 2" &&
+      klasse.fagnavn !== "Årstudium engelsk, del 2" &&
+      klasse.fagnavn !== "Norsk tegnspråk 2"
+    );
+  });
   //
   function handleMuligheter(ele) {
     setMuligheterId(ele);
-    
   }
-  const onSideBtnClick = e => {
+  const onSideBtnClick = (e) => {
     setActiveButton(e.id);
-   
+
     //setActiveButton(e.masterFagId);
-   
-};
+  };
 
   const [fagnavn, setFagnavn] = useState();
   const [URL, setURL] = useState();
@@ -49,14 +48,12 @@ const Semester6Psyko = ({
 
   const [isOpen, setIsOpen] = useState(false);
 
-  
-
   return (
     <>
       {klassetrinn &&
         filtered_klassetrinn.map((klasse) => {
           const className = activeButton === klasse.id ? "red" : "";
-          
+
           return (
             //oblig.MasterFagId === masterId &&
             //om semester = 5 vis semester og semeseter fag
@@ -71,10 +68,7 @@ const Semester6Psyko = ({
                   onClick={() => {
                     handleMuligheter(klasse.id);
                     onSideBtnClick(klasse);
-                    setMasterFagId(klasse.masterFagId)
-                    
-                   
-
+                    setMasterFagId(klasse.masterFagId);
                   }}
                 >
                   {klasse.fagnavn}
@@ -104,7 +98,13 @@ const Semester6Psyko = ({
           <li>Fagnavn: {fagnavn}</li>
           <li>Emnekode: {emnekode}</li>
           <li>Studiepoeng: {studiepoeng}</li>
-          <li>Fagside: <a href={URL} target="_blank" rel="noreferrer" > Link til fagside </a></li>
+          <li>
+            Fagside:{" "}
+            <a href={URL} target="_blank" rel="noreferrer">
+              {" "}
+              Link til fagside{" "}
+            </a>
+          </li>
         </ul>
       </Modal>
     </>

@@ -4,6 +4,8 @@ import InfoButton from "../CustomButton/InfoButton";
 import Modal from "../Modal/Modal";
 import Muligheter from "../VelgMuligheter/Muligheter";
 import './Semester.css';
+const _ = require("lodash");
+
 
 const Semester = ({
   klasseId,
@@ -20,7 +22,15 @@ const Semester = ({
 
     
   //
-
+   //filtrer ut årstudium og tegnspråk
+   let filtered_klassetrinn = _.filter(klassetrinn, function (klasse) {
+    return (
+      klasse.fagnavn !== "Årstudium norsk, del 1" &&
+      klasse.fagnavn !== "Årstudium matte, del 1" &&
+      klasse.fagnavn !== "Årstudium engelsk, del 1" &&
+      klasse.fagnavn !== "Norsk tegnspråk 1"
+    );
+  });
   
   //
   /* function handleMuligheter(ele) {
@@ -44,7 +54,7 @@ const Semester = ({
     <>
 
       {klassetrinn &&
-        klassetrinn.map((klasse) => {
+        filtered_klassetrinn.map((klasse) => {
           const className = activeButton === klasse.id ? "red" : "";
           
           return (

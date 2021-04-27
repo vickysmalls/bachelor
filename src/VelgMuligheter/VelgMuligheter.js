@@ -491,8 +491,11 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
         } 
         {//hvis man velger pedagogikk
             //evt masterId === pedagogikk ider
-            muligheterId2 &&
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+            //muligheterId2 &&
+            masterId === 12 ||masterId === 13 || masterId === 14 ?(
+
+                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+            ): null
         } 
 
         {masterId ===1 && (
@@ -584,7 +587,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             //problem er at masterFagId blir true når man velger pedagogikk
 
             //masterFagId && klasseId ===1  ? 
-            masterFagId || muligheterId2|| klasseId ===1  ?  
+            masterFagId &&klasseId ===1  ?  
             //må sette empty i sem 7
             //isTrue ===3  ? 
 
@@ -594,7 +597,13 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
                 
 
                 
-            ) : klasseId ===1  ?(
+            ) :
+            muligheterId2&& klasseId ===1 ?
+            (
+                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+
+            )
+            : klasseId ===1  ?(
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
             
             ): 
