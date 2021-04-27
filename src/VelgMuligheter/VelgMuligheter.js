@@ -92,6 +92,10 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
     const [activeButton9, setActiveButton9] = useState();
     // farge for for semester 10
     const [activeButton10, setActiveButton10] = useState();
+
+
+    // farge for for semester 5
+    const [activeButton5, setActiveButton5] = useState();
     //Set semester 7 liste
     const [semesterList7, setSemesterList7] = useState();
 
@@ -114,11 +118,11 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
     //console.log('semester9Resultat', semester9Resultat);
 
 
-    console.log('muligheterId2; ',muligheterId1);
+    console.log('muligheterId1; ',muligheterId1);
 
     console.log('muligheterId2; ',muligheterId2);
 
-    console.log('muligheterId2; ',muligheterId3);
+    console.log('muligheterId3; ',muligheterId3);
 
   
     
@@ -252,22 +256,32 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
                 masterId ===26 || masterId ===27
             ) 
         ? 
-            (
-                <Semester 
-                    activeButton={activeButton} 
-                    setActiveButton ={setActiveButton}  
-                    setMuligheterId={setMuligheterId2} 
-                    muligheterId={muligheterId2} 
-                    klassetrinn={klassetrinn} 
-                    semester={5} 
-                    klasseId ={klasseId}
-                />
+            
+               
+                //Viser nå når man velger fag i 4 semester, baserer seg på muligheterId1
+                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setDritt} setValg7Master={setMuligheterId2} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={muligheterId1}/>
+
                 
-            ) 
+            
         : 
-            null
+         null
         }
 
+        {
+            //mat og helse
+           muligheterId1===29 &&
+           
+            <Semester 
+            activeButton={activeButton} 
+            setActiveButton ={setActiveButton}  
+            setMuligheterId={setMuligheterId2} 
+            muligheterId={muligheterId2} 
+            klassetrinn={klassetrinn} 
+            semester={5} 
+            klasseId ={klasseId}
+        />
+           
+        }
             </div>
         </div>
         

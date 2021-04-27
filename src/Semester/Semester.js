@@ -72,8 +72,6 @@ const Semester = ({
                     setMuligheterId(klasse.masterFagId);
                     onSideBtnClick(klasse);
                    
-                   
-
                   }}
                 >
                   {klasse.fagnavn}
