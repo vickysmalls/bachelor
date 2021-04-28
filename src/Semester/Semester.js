@@ -13,7 +13,7 @@ const Semester = ({
   klassetrinn,
   setMuligheterId,
   activeButton,
-
+  setForceRender,
   setActiveButton,
 
   setFag,
@@ -71,6 +71,7 @@ const Semester = ({
                   onClick={() => {
                     setMuligheterId(klasse.masterFagId);
                     onSideBtnClick(klasse);
+                    setForceRender(false);
                    
                   }}
                 >

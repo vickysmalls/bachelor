@@ -17,7 +17,8 @@ const Semester6Psyko = ({
   setMasterFagId,
   setSemesterList7,
   setFag,
-
+  forceRender,
+  setForceRender,
   setValgtFag,
   messages,
   fag,
@@ -40,6 +41,16 @@ const Semester6Psyko = ({
 
     //setActiveButton(e.masterFagId);
   };
+
+
+
+ //om semester blir trykket på, blir semester6psyko resatt slik at den ikke vises i sem 9
+ useEffect(() => {
+  forceRender===false && setMasterFagId('');
+
+ }, [forceRender])
+   
+   console.log('forceRender', forceRender);
 
   const [fagnavn, setFagnavn] = useState();
   const [URL, setURL] = useState();
@@ -69,6 +80,9 @@ const Semester6Psyko = ({
                     handleMuligheter(klasse.id);
                     onSideBtnClick(klasse);
                     setMasterFagId(klasse.masterFagId);
+                    //handleReset();
+                    setForceRender(true);
+                    
                   }}
                 >
                   {klasse.fagnavn}
