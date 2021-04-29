@@ -199,6 +199,8 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
                     klasseId ={klasseId}
                     activeButton={activeButton}
                     setActiveButton ={setActiveButton}
+                    setForceRender = {setTom}
+
                     
                 />
             ) 
@@ -439,7 +441,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
         } 
 
         {masterId === 1 && (
-            <Semester activeButton={activeButton8} setActiveButton ={setActiveButton8} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={klasseId}/>
+            <Semester setForceRender = {setTom} activeButton={activeButton8} setActiveButton ={setActiveButton8} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={klasseId}/>
         )
         }
         {
@@ -526,7 +528,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
         } 
 
         {masterId ===1 && (
-            <Semester activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={klasseId}/>
+            <Semester setForceRender = {setTom} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={klasseId}/>
         )
         }
         {
