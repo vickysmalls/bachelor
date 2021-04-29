@@ -48,9 +48,8 @@ const Semester6Psyko = ({
  useEffect(() => {
   forceRender===false && setMasterFagId('');
 
- }, [forceRender])
+ }, [forceRender]);
    
-   console.log('forceRender', forceRender);
 
   const [fagnavn, setFagnavn] = useState();
   const [URL, setURL] = useState();

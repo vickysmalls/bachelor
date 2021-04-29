@@ -20,8 +20,7 @@ const VelgKlasse = ({ handleScrollClick, klassetrinn, setVisVidere, visVidere, s
     
     
     function visVidereClick(visVidere){
-         console.log('vis videre klikket');
-         console.log(visVidere);
+ 
          
          setVisVidere(true)
      }

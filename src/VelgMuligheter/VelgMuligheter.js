@@ -121,16 +121,10 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
     const sorted = _.sortBy(klassetrinn, iteratees);
 
    /*  //console.log('valg7Master', valg7Master)
-
     console.log('masterId', masterId)
-
     //console.log('semester9Resultat', semester9Resultat);
-
-
     console.log('muligheterId1; ',muligheterId1);
-
     console.log('muligheterId2; ',muligheterId2);
-
     console.log('muligheterId3; ',muligheterId3);
  */
   
@@ -396,7 +390,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
       
 
         {
-            <Semester activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={klasseId}/>
+            <Semester setForceRender = {setTom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={klasseId}/>
         
         }
         {

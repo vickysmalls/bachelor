@@ -23,8 +23,7 @@ const VelgStudierettning = ({
     //alert(e.id);
   };
 
-  console.log("valgtObligFag", valgtObligFag);
-  console.log("fagNavnStudierettning", fagNavnStudierettning);
+ 
 
   return (
     <>

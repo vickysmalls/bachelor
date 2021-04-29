@@ -23,6 +23,7 @@ const ObligFagSemester2 = ({ answer, semester, fagNavnStudierettning }) => {
   const sorted = _.sortBy(klassetrinn, iteratees);
 
   console.log("fagNavnStudierettning2", fagNavnStudierettning);
+  
   return (
     <>
       <>

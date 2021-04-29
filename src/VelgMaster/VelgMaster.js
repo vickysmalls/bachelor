@@ -26,7 +26,6 @@ const VelgMaster = ({divRef, studieRetning, klasseId, studieId, fagNavnStudieret
 
     
 
-    console.log("studieRetning", studieRetning);
 
      //Sette farge valgt semester
      const [activeButton, setActiveButton] = useState();

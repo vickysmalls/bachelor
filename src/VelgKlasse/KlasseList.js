@@ -49,21 +49,7 @@ const KlasseList = () => {
     divRef.current.scrollIntoView({ behavior: "smooth" }); */
   };
     
-    //logger ved trykk
-    function handleClick(e) {
-        console.log('The link was clicked. klasse');
-        console.log(e);
-        const id = e.id;
-        console.log('id fra handleClick = '+id);
-        
-    }
-
-    function visVidereClick(visVidere){
-        console.log('vis videre klikket');
-        console.log(visVidere);
-        
-        setVisVidere(true)
-    }
+    
     
    
      return ( 
