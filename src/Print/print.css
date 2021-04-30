@@ -1,8 +1,11 @@
 /* Kode som kan brukes til å skjule spesifikke elementer fra print */
 
-/* #print {
-    display: none;
+#printId {
+    margin-left: 0;
+    padding-left: 0;
 }
+
+/* 
 @media print {
     #print {
         display: block;

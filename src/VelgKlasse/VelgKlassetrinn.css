@@ -20,7 +20,9 @@
     letter-spacing: 0.5px;
     text-transform: normal;
     justify-self: center;
-    height: 80px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    height: auto;
     width: 350px;
     border-radius: 0px;
     transform: rotate(0deg) skew(0deg);

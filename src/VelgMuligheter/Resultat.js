@@ -311,7 +311,7 @@ const Resultat = ({
           <Print />
         </div>
       </div>
-      </div>
+    </div>
     
   );
 };

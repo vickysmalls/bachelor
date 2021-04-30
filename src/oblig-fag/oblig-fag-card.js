@@ -26,17 +26,17 @@ const ObligFagCard = ({obligDivRef, studieRetning, klasseId, masterId, obj, fagN
         <>
     <div class="row" ref={obligDivRef}>
     <div class="column" id="Hundre">
-    <h3>Obligatoriske emner</h3>
+    <h3>1. Studieår: Obligatoriske emner</h3>
     </div>
     <div class="column" id="MasterBilde">
     </div>
 
     <div class="column" id="Atti">
-        <h2 id="Left">Oversikt over de obligatoriske emnene i de tre første semestrene</h2>
+        <h2 id="Left">De tre første semestrene består obligatoriske emner</h2>
         <p id="Beskrivelse">De tre første semesterene består kun av obligatoriske emner. Disse er felles for begge studieretninger og 
-            påvirker ikke masteroppgaven. I løpet av de tre første semestrene vil alle gjennomføre eksamner i Norsk og Matematikk, 
+            påvirker ikke masteroppgaven. I løpet av de tre første semestrene vil alle gjennomføre eksamner i Norsk, Engelsk eller Matematikk, 
             samt få innføring i pedagogikk. <br /><br />
-            <bold>De obligatoriske emnene er listet opp under!</bold>
+            <bold>De obligatoriske emnene er markert i gult!</bold>
         </p>
     </div>  
 </div>
@@ -81,24 +81,7 @@ const ObligFagCard = ({obligDivRef, studieRetning, klasseId, masterId, obj, fagN
             </div>
     
         
-        
-            
-
-            <div className="obligkort">
-                <h5>Semester 3</h5>
-                <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
-                <div className="fag">
-                   { //sjekker om det er 5-10, hvis det er det vil den filtrer i ObligFagSemester2, med fagnavnet satt i VelgStudieRettning
-                    klasseId ===2  ?(
-                        <ObligFagSemester2 fagNavnStudierettning={fagNavnStudierettning} semester={3} answer={klasseId}/>
-                    ) :(
-
-                        // det sorterte arrayet mappes
-                        <ObligFagSemester id="IkkeKnapp" semester={3} answer={klasseId}/>
-                    )
-            }
-                </div>
-            </div>
+    
         </div>
     </div>
 
