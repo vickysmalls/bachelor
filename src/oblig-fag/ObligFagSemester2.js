@@ -18,11 +18,30 @@ const ObligFagSemester2 = ({ answer, semester, fagNavnStudierettning }) => {
   const [klasseId, setKlasseId] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
+
+
+
+
+  
   //lager et array som sortrer etter semester
   const iteratees = (obj) => obj.semester;
   const sorted = _.sortBy(klassetrinn, iteratees);
 
+  //filtrer ut årstudium
+let filtered_klassetrinn = _.filter(sorted, function (klasse) {
+  return (
+     
+   
+    klasse.fagnavn === 'Pedagogikk og elevkunnskap 1, emne 1'||
+    klasse.fagnavn === 'Pedagogikk og elevkunnskap 1, emne 2'
+    
+  );
+});
+  
   console.log("fagNavnStudierettning2", fagNavnStudierettning);
+  console.log(' filtered_klassetrinn', filtered_klassetrinn);
+  console.log(' sorrted', sorted);
+
   
   return (
     <>
@@ -35,7 +54,9 @@ const ObligFagSemester2 = ({ answer, semester, fagNavnStudierettning }) => {
             //om klasseId er det samme som answer fra KlasseList =>
             oblig.klasseId === answer &&
             oblig.semester === semester &&
-            oblig.fagnavn.includes(fagNavnStudierettning) ? (
+            oblig.fagnavn.includes(fagNavnStudierettning)
+            
+             ? (
               <>
                 <CustomButton id="Videre" key={oblig.id}>
                   {oblig.fagnavn}{" "}
@@ -57,6 +78,37 @@ const ObligFagSemester2 = ({ answer, semester, fagNavnStudierettning }) => {
             ) : null
           )
         }
+        {
+          // det sorterte arrayet mappes
+          filtered_klassetrinn.map((oblig) =>
+            //om klasseId er det samme som answer fra KlasseList =>
+            oblig.klasseId === 2 &&
+            oblig.semester === semester 
+            
+            
+             ? (
+              <>
+                <CustomButton id="Videre" key={oblig.id}>
+                  {oblig.fagnavn}{" "}
+                </CustomButton>
+
+                <InfoButton
+                  className="infoknapp"
+                  onClick={() => {
+                    setIsOpen(true);
+                    setFagnavn(oblig.fagnavn);
+                    //setSemester(oblig.semester)
+                    setEmneKode(oblig.emnekode);
+                    setStudiepoeng(oblig.studiepoeng);
+                    setKlasseId(oblig.klasseId);
+                    setURL(oblig.url);
+                  }}
+                ></InfoButton>
+              </>
+            ) : null
+          )
+        }
+        
       </>
 
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>

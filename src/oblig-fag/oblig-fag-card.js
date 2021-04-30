@@ -13,8 +13,7 @@ const ObligFagCard = ({obligDivRef, studieRetning, klasseId, masterId, obj, fagN
 
     
     
-    
-
+   
        //det under er for smooth scroll
   const velgMuligheterDivRef = useRef();
 
@@ -109,7 +108,7 @@ const ObligFagCard = ({obligDivRef, studieRetning, klasseId, masterId, obj, fagN
         {
             
            
-            <VelgMuligheter studieRetning={studieRetning} fagNavn ={fagNavn} masterId={masterId} klasseId={klasseId} obj={obj}></VelgMuligheter>
+            <VelgMuligheter fagNavnStudierettning={fagNavnStudierettning} studieRetning={studieRetning} fagNavn ={fagNavn} masterId={masterId} klasseId={klasseId} obj={obj}></VelgMuligheter>
             
 
        

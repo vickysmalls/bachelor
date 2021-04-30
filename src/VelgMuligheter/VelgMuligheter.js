@@ -18,13 +18,14 @@ import Semester6Psyko from '../Semester/Semester6Psyko';
 import InfoButton from '../CustomButton/InfoButton';
 import TvungenMulighet from './TvungenMulighet';
 import TvungenMulighet2 from './TvungenMulighet';
+import ObligFagSemester2 from '../oblig-fag/ObligFagSemester2';
 
 
 const _ = require("lodash");  
 
 
 
-const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
+const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseId, fagNavn}) => {
 
     //database fetch
     const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
@@ -56,6 +57,10 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
     const [dritt, setDritt] = useState();
 
     const [tom, setTom] = useState();
+
+    const [sem9Id, setSem9Id] = useState();
+
+    
 
 
 
@@ -155,11 +160,17 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             <h5>Semester 3</h5>
             <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
             <div className="fag">
-                
-            {
-                        // det sorterte arrayet mappes
-                        <ObligFagSemester id="Gul" semester={3} answer={klasseId}/>
-            }
+            { //sjekker om det er 5-10, hvis det er det vil den filtrer i ObligFagSemester2
+                klasseId ===2  ?(
+                    <ObligFagSemester2 fagNavnStudierettning={fagNavnStudierettning} semester={3} answer={klasseId}/>
+                ) :(
+
+                    // det sorterte arrayet mappes
+                    <ObligFagSemester id="Gul" semester={3} answer={klasseId}/>
+                )
+        }
+           
+            
         
         </div>
         </div>
@@ -580,7 +591,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             <>
             <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setDritt} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
 
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setSem9Id} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
             </>
             
@@ -612,15 +623,18 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
         <h5>Semester 10</h5>
         <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p> 
         <div className='fag'>
-        {console.log('isTrue', isTrue)}
+        {//masterFag id
+            console.log('isTrue', isTrue)}
+
+        
         
         { 
-           //om masterfagId (setter pedagogikk i semester6psyko) er true, men fag ikke er norsk engelsk matte
-            //Funker 1-7
-            // && valg7Master===3
-            //problem er at masterFagId blir true når man velger pedagogikk
-
-            //masterFagId && klasseId ===1  ? 
+            
+           //isTrue =3 BETYR at man har valgt begynner i sem 7
+            //activeButton9 = 14 er begynner i sem 9
+            isTrue !==3 && activeButton9 ===14 ?  <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+            :
+            
             masterFagId &&klasseId ===1  ? 
             //må sette empty i sem 7
             //isTrue ===3  ? 
@@ -645,11 +659,20 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             //prøv: sjekk om begynner er gyldig i semester 8, er den det gi mulighet for begynner
             
         } 
+        {
+            console.log('sem9Id', sem9Id)
+        }
 
-      {
-          isTrue !==3 &&
+        {
+           // activeButton9 ===4 && 
+        }
+
+      {/* 
+          isTrue ===1 && activeButton9 ===14 ?
+          <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setDritt} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+            :
             null
-      }
+       */}
 
         {/* 
         //funker på vanlige fag( ikke norsk, da dobles de)
@@ -662,9 +685,11 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
             //om dritt, som basicly er id, ikke er lik valg7master, som også er id, skal denne vises
             //glitcher når man velger spes, så norsk, da forsvinner norsk
            
-             dritt !== valg7Master ? (
+             dritt !== valg7Master  ? 
+             (
                 <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
-             )   : null
+             )   
+             : null
     
     
             }
@@ -732,7 +757,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
 
         { //Viser hele studieløpet om man trykker på videreknappen
         videre &&
-        <>
+       
         <Resultat 
             answer={klasseId} 
             klassetrinn={klassetrinn} 
@@ -757,7 +782,7 @@ const VelgMuligheter = ({studieRetning, masterId, klasseId, fagNavn}) => {
 
         />
             
-        </>
+       
         }
 
     </>
