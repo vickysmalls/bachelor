@@ -20,6 +20,9 @@ function App() {
             <KlasseList />
           </div>
         </div>
+        <footer>
+          <h2>Dette er en Footer!</h2>
+        </footer>
       </div>
    
   );

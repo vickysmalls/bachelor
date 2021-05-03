@@ -30,14 +30,15 @@ const Resultat = ({
 
   console.log('activeButton2', activeButton2);
   return (
-    <div>
-      <div id="printId">
-        <div className="row">
-        <div className="column" id="Hundre">
+    <>
+        <div className="row" id="printId">
+        <div className="column" id="PrintRad">
+          <h3>Oppsummering av studieløp</h3>
         <div className="obligatoriske semestre">
             <div classname="Seksti">
           <h5>Semester 1</h5>
-          <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng</p>
+          <p id="SemesterBeskrivelse">Høstsemester, 30 studiepoeng
+          </p>
           <div className="fag">
             <ObligFagSemester semester={1} answer={answer} />
           </div>
@@ -53,12 +54,11 @@ const Resultat = ({
         </div>
       </div>
     </div>
-  </div>
 
 
 
-        <div className="row">
-        <div className="column" id="Hundre">
+
+        <div className="column" id="PrintRad">
         <div className="obligatoriske semestre">
             <div classname="Seksti">
           <h5>Semester 3</h5>
@@ -104,13 +104,13 @@ const Resultat = ({
         </div>
       </div>
     </div>
-  </div>
+
         
         
         
         
-  <div className="row">
-        <div className="column" id="Hundre">
+
+        <div className="column" id="PrintRad">
         <div className="obligatoriske semestre">
             <div classname="Seksti">
           <h5>Semester 5</h5>
@@ -169,13 +169,13 @@ const Resultat = ({
         </div>
       </div>
     </div>
-  </div>
+
         
         
         
         
-  <div className="row">
-        <div className="column" id="Hundre">
+
+        <div className="column" id="PrintRad">
         <div className="obligatoriske semestre">
             <div classname="Seksti">
           <h5>Semester 7</h5>
@@ -236,13 +236,12 @@ const Resultat = ({
         </div>
       </div>
     </div>
-  </div>
+
         
         
         
         
-  <div className="row">
-        <div className="column" id="Hundre">
+        <div className="column" id="PrintRad">
         <div className="obligatoriske semestre">
             <div classname="Seksti">
           <h5>Semester 9</h5>
@@ -303,15 +302,16 @@ const Resultat = ({
       </div>
     </div>
   </div>
-  </div>
 
-      <div className="card-container2">
-        <h1>Lagre din vei til master</h1>
-        <div className="print">
+
+  <div className="column" id="PrintRad">
+  <h5 id="PDFknapp">Lagre studieløpet ditt:</h5>
+  <p id="Beskrivelse">Du har nå gjennomført hele veilederen, og kan lagre opplysningene som PDF</p>
+            <div classname="Seksti">
           <Print />
-        </div>
       </div>
-    </div>
+      </div>
+      </>
     
   );
 };

@@ -97,7 +97,7 @@ const VelgMaster = ({divRef, studieRetning, klasseId, studieId, fagNavnStudieret
                     
                     <>
                     
-                    <div className='masterknapper'>
+                    
                         <CustomButton
                             inverted={className}
                             key={fag.id}
@@ -116,7 +116,7 @@ const VelgMaster = ({divRef, studieRetning, klasseId, studieId, fagNavnStudieret
                             >
                             {fag.fagnavn}
                         </CustomButton>
-                    </div>    
+                      
                 </>
 
 

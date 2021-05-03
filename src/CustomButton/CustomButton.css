@@ -147,12 +147,12 @@ a:hover {
   @media screen and (max-width: 480px) {
     .custom-button {
         height: 50px;
-        width: 350px;
+        width: 325px;
         font-size: 12px;
     }
 
     #Videre {
-        width: 350px;
+        width: 325px;
         font-size: 12px;
     }
 

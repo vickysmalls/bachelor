@@ -30,7 +30,7 @@ const VelgStudierettning = ({
       <div class="row">
         <div class="column" id="Hundre">
           <h2>Velg et emne 5-10: </h2>
-          <div className="masterfag">
+          
             {
               isPending && <div>Loading...</div>
             }
@@ -46,7 +46,7 @@ const VelgStudierettning = ({
 
                   fag.id === 15 || fag.id === 16 || fag.id === 17 ? (
                     <>
-                      <div className="masterknapper">
+                      
                         <CustomButton
                           inverted={className}
                           key={fag.id}
@@ -61,12 +61,12 @@ const VelgStudierettning = ({
                         >
                           {fag.fagnavn}
                         </CustomButton>
-                      </div>
+                      
                     </>
                   ) : null
                 );
               })}
-          </div>
+          
         </div>
       </div>
     </>

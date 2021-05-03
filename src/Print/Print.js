@@ -19,7 +19,7 @@ export default class PrintComponent extends React.Component {
 
     render () {
         return (
-            <div className='container'>
+            <div className='fag'>
                 <CustomButton onClick={() => this.printResultat()}>
                     Lagre som PDF
                 </CustomButton>

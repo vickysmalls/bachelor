@@ -5,7 +5,6 @@
 .body{
   display: flex;
   justify-content: space-evenly;
-
 }
 
 
@@ -32,6 +31,14 @@ h1 {
   -webkit-text-decoration-color:#FFDC00; /* Safari */  
   text-decoration-color: #FFDC00;
 }
+
+footer {
+  background-color: #FFDC00;
+  padding-top: 35px;
+  margin-top: 125px;
+  padding-bottom: 10px;
+}
+
 
 @media screen and (max-width: 480px)  {
 
