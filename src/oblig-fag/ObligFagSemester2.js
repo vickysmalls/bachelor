@@ -27,7 +27,7 @@ const ObligFagSemester2 = ({ answer, semester, fagNavnStudierettning }) => {
   const iteratees = (obj) => obj.semester;
   const sorted = _.sortBy(klassetrinn, iteratees);
 
-  //filtrer ut årstudium
+  //filtrer ut PEL
 let filtered_klassetrinn = _.filter(sorted, function (klasse) {
   return (
      
@@ -38,9 +38,6 @@ let filtered_klassetrinn = _.filter(sorted, function (klasse) {
   );
 });
   
-  console.log("fagNavnStudierettning2", fagNavnStudierettning);
-  console.log(' filtered_klassetrinn', filtered_klassetrinn);
-  console.log(' sorrted', sorted);
 
   
   return (
@@ -79,7 +76,7 @@ let filtered_klassetrinn = _.filter(sorted, function (klasse) {
           )
         }
         {
-          // det sorterte arrayet mappes
+          // denne viser PEL
           filtered_klassetrinn.map((oblig) =>
             //om klasseId er det samme som answer fra KlasseList =>
             oblig.klasseId === 2 &&

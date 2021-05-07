@@ -24,7 +24,7 @@ const Resultat = ({
   semesterList9,
   activeButton10,
   activeButton9,
-  activeButton2
+  activeButton2,
 }) => {
   
 
@@ -88,10 +88,12 @@ const Resultat = ({
             masterId === 25 ||
             masterId === 26 ||
             masterId === 27 ? (
-              <ValgtMulighet
-                klassetrinn={klassetrinn}
-                muligheterId={muligheterId1}
-              ></ValgtMulighet>
+              <Muligheter
+              klassetrinn={klassetrinn}
+              sorted={sorted}
+              semester={4}
+              masterId={muligheterId1}
+            />
             ) : (
               <Muligheter
                 klassetrinn={klassetrinn}
@@ -199,7 +201,7 @@ const Resultat = ({
                 klassetrinn={klassetrinn}
                 sorted={sorted}
                 semester={7}
-                masterId={masterId}
+                masterId={valg7Master}
               />
             )}
 
@@ -228,7 +230,7 @@ const Resultat = ({
                 klassetrinn={klassetrinn}
                 sorted={sorted}
                 semester={8}
-                masterId={masterId}
+                masterId={valg7Master}
               />
             )}
             <ObligFagSemester semester={8} answer={answer} />
