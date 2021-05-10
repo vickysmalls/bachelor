@@ -29,7 +29,7 @@ const VelgStudierettning = ({
     <>
       <div class="row">
         <div class="column" id="Hundre">
-          <h2>Velg et emne 5-10: </h2>
+          <h2>Trykk på undervisningsfaget du studerer i de tre første semestrene </h2>
           
             {
               isPending && <div>Loading...</div>

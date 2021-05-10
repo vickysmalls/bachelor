@@ -261,7 +261,7 @@ const Resultat = ({
               <ValgtMulighet
               klassetrinn={klassetrinn}
               muligheterId={semesterList9}
-            />
+              />
             <ValgtMulighet
                 klassetrinn={klassetrinn}
                 muligheterId={activeButton9}

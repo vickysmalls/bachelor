@@ -6,9 +6,8 @@ import useFetch from "../useFetch";
 const _ = require("lodash");
 
 const ObligFagSemester2 = ({ answer, semester, fagNavnStudierettning }) => {
-  const { data: klassetrinn, error, isPending } = useFetch(
-    `http://localhost:5000/api/obligfag/`
-  );
+  
+  const { data: klassetrinn, error, isPending } = useFetch( `http://localhost:5000/api/obligfag/`);
 
   const [fagnavn, setFagnavn] = useState();
   const [URL, setURL] = useState();
