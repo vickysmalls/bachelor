@@ -19,6 +19,7 @@ import InfoButton from '../CustomButton/InfoButton';
 import TvungenMulighet from './TvungenMulighet';
 import TvungenMulighet2 from './TvungenMulighet';
 import ObligFagSemester2 from '../oblig-fag/ObligFagSemester2';
+import ValideringAlert from '../Validering/ValideringAlert';
 
 
 const _ = require("lodash");  
@@ -813,7 +814,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         </p>
 
         {
-            // Validering av valg
+            // Tilbakemelding til bruker dersom den mangler valg
             (activeButtonTvungen  && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
             ||
             (activeButtonTvungen2 && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
@@ -823,9 +824,27 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             (activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
             
             ?
-            <CustomButton onClick={() => setVidere(true)} id="Oppsummering">Se oppsummering</CustomButton>
+            null
+            :
+            <ValideringAlert/>
+
+        }
+
+        {
+            // Validering som gir tilgang til side for oppsummering
+            (activeButtonTvungen  && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            ||
+            (activeButtonTvungen2 && activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            ||
+            (activeButtonTvungen && activeButtonTvungen2 && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            || 
+            (activeButton && activeButton2 && activeButton7 && activeButton8 && activeButton9 && activeButton10)
+            
+            ?
+            <CustomButton onClick={() => setVidere(true)}  id="Oppsummering">Se oppsummering</CustomButton>
             :
             <CustomButton onClick={() => setVidere(false)} id="Oppsummering">Se oppsummering</CustomButton>
+          
         }
 
     </div>  
