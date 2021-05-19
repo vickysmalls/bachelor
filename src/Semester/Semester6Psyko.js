@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import InfoButton from "../CustomButton/InfoButton";
 import Modal from "../Modal/Modal";
-import Muligheter from "../VelgMuligheter/Muligheter";
 import "./Semester.css";
 const _ = require("lodash");
 

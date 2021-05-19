@@ -1,7 +1,6 @@
 import { useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
-import VelgMaster from "../VelgMaster/VelgMaster";
 
 const VelgStudierettning = ({
   setStudieRetning,

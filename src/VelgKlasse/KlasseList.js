@@ -1,13 +1,9 @@
 import { useEffect, useRef, useState  } from "react";
-import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
 import VelgMaster from "../VelgMaster/VelgMaster";
 import './VelgKlassetrinn.css';
-import Illustrasjon from './Illustrasjon.png';
-import VelgEmne from './VelgEmne.png';
-import ToBilder from './ToBilder.png';
+
 import Elever from './Elever.jpeg';
-import Undervisning from './undervisning.jpeg';
 import Praksis from './Praksis.jpeg';
 import VelgKlasse from "./VelgKlasse";
 import VelgStudierettning from "./VelgStudierettning";

@@ -2,9 +2,7 @@ import ObligFagSemester from "../oblig-fag/oblig-fag-semester";
 import Muligheter from "./Muligheter";
 import ValgtMulighet from "./ValgtMulighet";
 import Print from "../Print/Print";
-import Semester6Psyko from "../Semester/Semester6Psyko";
-import Semester from "../Semester/Semester";
-import { AiOutlineArrowDown } from "react-icons/ai";
+
 import { useState } from "react";
 
 const Resultat = ({

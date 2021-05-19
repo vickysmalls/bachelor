@@ -1,23 +1,17 @@
 import React, {useReducer, useState} from 'react'
 import CustomButton from '../CustomButton/CustomButton';
-import Modal from '../Modal/Modal';
 import ObligFagSemester from '../oblig-fag/oblig-fag-semester';
 import Semester from '../Semester/Semester';
-import Print from '../Print/Print'
 import useFetch from '../useFetch';
 import Muligheter from './Muligheter';
-import ValgtMulighet from './ValgtMulighet';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../VelgKlasse/VelgKlassetrinn.css';
 import '../VelgMaster/VelgMaster.css';
-import styled from 'styled-components';
 
 import './muligheter.css';
 import Resultat from './Resultat';
 import Semester6Psyko from '../Semester/Semester6Psyko';
-import InfoButton from '../CustomButton/InfoButton';
 import TvungenMulighet from './TvungenMulighet';
-import TvungenMulighet2 from './TvungenMulighet';
 import ObligFagSemester2 from '../oblig-fag/ObligFagSemester2';
 import ValideringAlert from '../Validering/ValideringAlert';
 
@@ -875,9 +869,6 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             activeButton9={activeButton9}
             activeButton2={activeButton2}
             activeButton4={activeButton4}
-            
-
-
 
         />
             
