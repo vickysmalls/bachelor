@@ -1,6 +1,5 @@
 import { useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
-import useFetch from "../useFetch";
 import './VelgKlassetrinn.css';
 import {handleClick} from '../Helpers';
 

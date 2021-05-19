@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import InfoButton from "../CustomButton/InfoButton";
 import Modal from "../Modal/Modal";
-import Muligheter from "../VelgMuligheter/Muligheter";
 
 const ValgtMulighet = ({ klasseId, semester, klassetrinn, muligheterId }) => {
   const [fagnavn, setFagnavn] = useState();

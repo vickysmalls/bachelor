@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import CustomButton from "../CustomButton/CustomButton";
 import InfoButton from "../CustomButton/InfoButton";
 import Modal from "../Modal/Modal";
-import Muligheter from "../VelgMuligheter/Muligheter";
 import './Semester.css';
 const _ = require("lodash");
 
@@ -17,6 +16,8 @@ const Semester = ({
   setActiveButton,
 
   setFag,
+  error,
+  isPending
 
 }) => {
 
@@ -52,6 +53,12 @@ const Semester = ({
 
   return (
     <>
+    {
+      isPending && <div>Loading...</div>
+    }
+    {
+      error && <div>{error}</div>
+    }
 
       {klassetrinn &&
         filtered_klassetrinn.map((klasse) => {

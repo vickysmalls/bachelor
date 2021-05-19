@@ -3,9 +3,7 @@ import "./VelgMaster.css";
 import CustomButton from "../CustomButton/CustomButton";
 import useFetch from "../useFetch";
 import ObligFagCard from "../oblig-fag/oblig-fag-card";
-import { FaEnvelopeOpenText } from "react-icons/fa";
-import InfoButton from "../CustomButton/InfoButton";
-import Modal from "../Modal/Modal";
+
 import { AiOutlineArrowDown } from "react-icons/ai";
 import { handleClick } from "../Helpers";
 

@@ -1,12 +1,9 @@
 import React, { useRef, useState } from "react";
-import CustomButton from "../CustomButton/CustomButton";
-import Modal from "../Modal/Modal";
+
 import VelgMuligheter from "../VelgMuligheter/VelgMuligheter";
 import ObligFagSemester from "./oblig-fag-semester";
 import "./oblig-fag.css";
-import Elever from "./Elever.jpeg";
 import ObligFagSemester2 from "./ObligFagSemester2";
-import { AiOutlineArrowDown } from "react-icons/ai";
 
 const ObligFagCard = ({
   obligDivRef,

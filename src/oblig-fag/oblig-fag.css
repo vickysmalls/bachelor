@@ -84,7 +84,7 @@ h5 {
   */
 
   @media screen and (max-width: 480px) {
-    .fag{
+    .fag {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
@@ -93,7 +93,7 @@ h5 {
         background-color: transparent;
     }
 
-    .obligatoriske.semestre{
+    .obligatoriske.semestre {
         display: grid;
         gap: 5px;
         grid-template-columns: repeat(1,auto);
