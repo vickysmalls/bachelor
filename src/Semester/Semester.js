@@ -17,6 +17,8 @@ const Semester = ({
   setActiveButton,
 
   setFag,
+  error,
+  isPending
 
 }) => {
 
@@ -52,6 +54,12 @@ const Semester = ({
 
   return (
     <>
+    {
+      isPending && <div>Loading...</div>
+    }
+    {
+      error && <div>{error}</div>
+    }
 
       {klassetrinn &&
         filtered_klassetrinn.map((klasse) => {

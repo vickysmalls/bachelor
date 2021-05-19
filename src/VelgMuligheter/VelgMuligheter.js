@@ -270,7 +270,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         <div className='fag'>
         
         {
-            <TvungenMulighet activeButtonTvungen={activeButtonTvungen} setActiveButtonTvungen={setActiveButtonTvungen} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}>{fagNavn}</TvungenMulighet>
+            <TvungenMulighet error={error} isPending={isPending} activeButtonTvungen={activeButtonTvungen} setActiveButtonTvungen={setActiveButtonTvungen} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={4} masterId={masterId}>{fagNavn}</TvungenMulighet>
 
         }
 
@@ -289,6 +289,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         ? 
             (
                 <Semester 
+                error={error} isPending={isPending}
                     setMuligheterId={setMuligheterId1} 
                     muligheterId={muligheterId1}
                     setValgtFag={setValgtFag4} 
@@ -331,12 +332,12 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         {
             //hvis den ikke er begynnerlæring så må denne vises
             masterId!==3&&
-            <TvungenMulighet activeButtonTvungen={activeButtonTvungen2} setActiveButtonTvungen={setActiveButtonTvungen2} activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <TvungenMulighet error={error} isPending={isPending}  activeButtonTvungen={activeButtonTvungen2} setActiveButtonTvungen={setActiveButtonTvungen2} activeButton={activeButton} setActiveButton ={setActiveButton} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} semesterList7={mulighetTull} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
         {
             //hvis den er begynnerlæring så må denne vises
             masterId===3&&
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
+            <Muligheter error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={masterId}/>
         } 
 
         {
@@ -350,7 +351,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             
                
                 //Viser nå når man velger fag i 4 semester, baserer seg på muligheterId1
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setRandom} setValg7Master={setMuligheterId2} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={muligheterId1}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setRandom} setValg7Master={setMuligheterId2} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={muligheterId1}/>
 
                 
             
@@ -363,6 +364,8 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
            muligheterId1===29 &&
            
             <Semester 
+            error={error} 
+            isPending={isPending}
             activeButton={activeButton} 
             setActiveButton ={setActiveButton}  
             setMuligheterId={setMuligheterId2} 
@@ -389,13 +392,13 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             masterId ===26 || masterId ===27  ?
             (
 
-                <TvungenMulighet activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+                <TvungenMulighet  error={error} isPending={isPending}  activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
 
             ): 
             //masterId!==12?
             (
 
-                <Muligheter setConditionalSem9={setConditionalSem9} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
             )
                
 
@@ -418,9 +421,11 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
          (//semester6psyko vise pedagogikk
              <>
              
-            <Semester6Psyko setForceRender = {setForceRender} forceRender={forceRender} masterId={masterId} setMasterFagId={setMasterFagId} activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={klasseId}/>
+            <Semester6Psyko error={error} isPending={isPending} setForceRender = {setForceRender} forceRender={forceRender} masterId={masterId} setMasterFagId={setMasterFagId} activeButton={activeButton2} setActiveButton ={setActiveButton2} setMuligheterId={setMuligheterId3} muligheterId={muligheterId3} klassetrinn={klassetrinn} semester={6} klasseId ={klasseId}/>
            
                 <Semester 
+                error={error} 
+                isPending={isPending}
                 setMuligheterId={setMuligheterId3} 
                 muligheterId={muligheterId3}
                 klassetrinn={klassetrinn} 
@@ -467,18 +472,18 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         <div className='fag'>
         
         {
-            <Muligheter setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={masterId}/>
             
         } 
 
         { klasseId === 2 &&
-            <Muligheter setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={studieRetning}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={studieRetning}/>
             
         } 
       
 
         {
-            <Semester setForceRender = {setTom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={klasseId}/>
+            <Semester error={error} isPending={isPending} setForceRender = {setTom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setSemesterList7={setSemesterList7}   klassetrinn={klassetrinn} semester={7} klasseId ={klasseId}/>
         
         }
         {
@@ -493,7 +498,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         ? 
             (
                 
-                <Muligheter setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setRandom} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={muligheterId2}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setRandom} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={muligheterId2}/>
             ) 
             
         :  
@@ -510,7 +515,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
                 //setValg7Master
                 //setTom
                 //setTom isteden gjør at den ikke kommer i semester 8, og fucker opp semester 10
-                <Muligheter setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={begynnerLaring}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setRandom} activeButton={activeButton7} setActiveButton ={setActiveButton7} setIstrue={setIstrue} valg7Master={valg7Master} setValg7Master={setValg7Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={7} masterId={begynnerLaring}/>
             ) : null
         }
         
@@ -527,7 +532,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         } 
 
         {masterId === 1 && (
-            <Semester setForceRender = {setTom} activeButton={activeButton8} setActiveButton ={setActiveButton8} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={klasseId}/>
+            <Semester  error={error} isPending={isPending} setForceRender = {setTom} activeButton={activeButton8} setActiveButton ={setActiveButton8} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={8} klasseId ={klasseId}/>
         )
         }
         {
@@ -548,7 +553,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             ) 
         ? 
             (
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
                 ) 
         : 
                null
@@ -566,12 +571,12 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             (
                 //denne
                 //masterId egentlig velg7master
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setRandom} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setRandom} setValg7Master={setEmpty} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={valg7Master}/>
             )
             //om muligheter over er true 
         : empty &&klasseId===1 ?(
 
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setRandom} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton8} setActiveButton ={setActiveButton8} setIstrue={setRandom} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={8} masterId={masterId}/>
         ) : null
 
         }
@@ -601,7 +606,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         
         {
             muligheterId3 &&
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterFagId}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterFagId}/>
         } 
         {//hvis man velger pedagogikk
             //evt masterId === pedagogikk ider
@@ -609,12 +614,12 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             masterId === 12 ||masterId === 13 || masterId === 14 ||
             masterId === 25 ||masterId === 26 || masterId === 27 ?(
 
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemesterList7}  klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={masterId}/>
             ): null
         } 
 
         {masterId ===1 && (
-            <Semester setForceRender = {setTom} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={klasseId}/>
+            <Semester  error={error} isPending={isPending} setForceRender = {setTom} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setSemesterList7={setSemesterList7} klassetrinn={klassetrinn} semester={9} klasseId ={klasseId}/>
         )
         }
         {
@@ -632,7 +637,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         ? 
             (
                 
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
             ) 
         : 
         null
@@ -656,7 +661,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             (
                 //denne gjelder begynner
                 //setRandom
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
                 
 
                 ) 
@@ -664,23 +669,23 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
         :  klasseId === 1 && isTrue === 1 ?(
             //hvis semester er 1, men begynneropplæring ikke blir valgt i 7, vis valget pluss begynner
             <>
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
 
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setSem9Id} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setSem9Id} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
             </>
             
         )
         //velger man begynner vil verdiene settes, den andre if setningen er vanlige fag 
         : klasseId === 1 &&  isTrue === 3 ?(
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
 
         )   
         : klasseId === 1 ?(
 
             <>
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setTom} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={begynnerLaring}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton9} setActiveButton ={setActiveButton9} setIstrue={setRandom} setValg7Master={setSemester9Master} setSemesterList7={setSemester9Resultat} klassetrinn={klassetrinn} sorted={sorted} semester={9} masterId={valg7Master}/>
     
             </>
         ):null
@@ -707,7 +712,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             
            //isTrue =3 BETYR at man har valgt begynner i sem 7
             //activeButton9 = 14 er begynner i sem 9
-            isTrue !==3 && activeButton9 ===14 ?  <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+            isTrue !==3 && activeButton9 ===14 ?  <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
             :
             
             masterFagId &&klasseId ===1  ? 
@@ -716,18 +721,18 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
 
             (
                 
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
                 
 
                 
             ) :
             muligheterId2&& klasseId ===1  ?
             (
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
             )
             : klasseId ===1 ?(
-            <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
+            <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
             
             ): null//for å fjerne stygge grønt rundt
 
@@ -762,7 +767,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
            
              randomVar !== valg7Master  ? 
              (
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setTom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={valg7Master}/>
              )   
              : null
     
@@ -774,7 +779,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             klasseId ===2
             ? (
                 
-                <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
+                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
@@ -783,7 +788,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
                //masterId settes ikke i 9
                //<Muligheter setValg7Master setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={semester9Master}/>
 
-               <Muligheter setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
+               <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton10} setActiveButton ={setActiveButton10} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull}  klassetrinn={klassetrinn} sorted={sorted} semester={10} masterId={masterId}/>
 
            ) : null
        }

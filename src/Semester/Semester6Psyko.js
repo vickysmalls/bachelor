@@ -22,6 +22,8 @@ const Semester6Psyko = ({
   setValgtFag,
   messages,
   fag,
+  error,
+  isPending
 }) => {
   //filtrer ut årstudium
   let filtered_klassetrinn = _.filter(klassetrinn, function (klasse) {
@@ -60,6 +62,13 @@ const Semester6Psyko = ({
 
   return (
     <>
+    {
+      isPending && <div>Loading...</div>
+    }
+    {
+      error && <div>{error}</div>
+    }
+
       {klassetrinn &&
         filtered_klassetrinn.map((klasse) => {
           const className = activeButton === klasse.id ? "red" : "";
