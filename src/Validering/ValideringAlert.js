@@ -7,7 +7,7 @@ export default class ValideringComponent extends React.Component {
         return (
           <div id="valideringAlert"> 
           <p id="valideringTekst">
-           Du har ikke gjort alle valg enda.
+           Du har ikke tatt valg i enkelte semestre.
           </p>
           </div>
           );
