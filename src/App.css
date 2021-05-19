@@ -16,8 +16,8 @@ h2 {
 
 h1 {
   text-align: center;
-  margin-top: 50px;
-  font-size: 48px;
+  margin-top: 75px;
+  font-size: 42px;
   font-family: Arial;
   font-weight: 700;
   color: white;
@@ -34,9 +34,28 @@ h1 {
 
 footer {
   background-color: #FFDC00;
-  padding-top: 35px;
+  padding-top: 45px;
   margin-top: 125px;
   padding-bottom: 10px;
+
+    line-height: 30px;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+#Copyright {
+  font-weight: 300;
+    font-family: Arial;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+#FooterTekst {
+  font-weight: 400;
+    font-family: Arial;
+    text-align: left;
+    font-size: 17px;
 }
 
 
@@ -48,6 +67,10 @@ footer {
     padding-top: 20px;
   }
 
+  footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 
 
 }

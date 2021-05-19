@@ -1,6 +1,6 @@
 import './Header.css';
 import logo2 from './OsloMet logo for nett.png';
-import logo3 from './LogoOsloMet.png';
+import logo3 from './GLU-logo.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {

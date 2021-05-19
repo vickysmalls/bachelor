@@ -48,9 +48,7 @@
     grid-template-columns: repeat(2,auto);
     margin-bottom: 100px;
     max-width: 800px;
-    align-items: center;
-    justify-items: center;
-    justify-content: center;
+    
     margin-right: auto;
     margin-left: auto;
 }
@@ -244,12 +242,19 @@
       clear: both;
     }
 
+
+    #hoydeBenBtn {
+      width: 310px;
+      font-size: 12px;
+    }
+
     .introknapp{
       display: grid;
       gap: 25px;
       grid-template-columns: repeat(1,auto);
       margin-bottom: 100px;
-      width: 350px;
+      width: 310px;
+      font-size: 12px;
   }
   
     #Seksti {

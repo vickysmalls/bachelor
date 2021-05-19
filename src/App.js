@@ -4,6 +4,7 @@ import "./App.css";
 import { useState } from "react";
 import Modal from "./Modal/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import logo3 from './GLU-logo.png';
 
 
 
@@ -21,7 +22,15 @@ function App() {
           </div>
         </div>
         <footer>
-          <h2>Dette er en Footer!</h2>
+
+          <h6 id="FooterTekst">Denne digitale veilederen for fagvalg i grunnskolelærerutdanningene ved OsloMet er et bacheloroppgaveprosjekt på bestilling fra Institutt for grunnskole- og faglærerutdanning.
+              <br /> <br />Veilederen er utviklet av studenter ved Institutt for informasjonsteknologi, Fakultet for teknologi, kunst og design. 
+          </h6>    
+
+          <h6 id="Copyright">    
+              © Copyright GFU ved OsloMet 2021 | Utviklet av Christopher Klepp, Andreas Haug Aalby, Wasab Nazir Ali og Viktor Kristoffersen.
+          </h6>
+
         </footer>
       </div>
    

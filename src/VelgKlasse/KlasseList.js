@@ -98,7 +98,7 @@ const KlasseList = () => {
   
         
             <h3>Velg studieretning </h3>      
-            <h2>Velg din studieretning ved OsloMet</h2>
+            <h5>Velg din studieretning ved OsloMet</h5>
             <div className='introknapp'>
             
             
