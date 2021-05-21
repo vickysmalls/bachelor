@@ -59,9 +59,9 @@ const KlasseList = () => {
   <div class="column" id="Seksti">
   <img id="Illustrasjon" src={Elever} alt="Illustrasjon"/>  
   <h2 id="Innledning">Med denne veilederen kan du utforske hvordan du ønsker å legge opp studieløpet ditt her ved OsloMet. 
-            Utforsk de forskjellige fagene, og se hvilke konsekvenser valgt av fag vil ha senere i studiet.
+            Se på de forskjellige fag og fagkombinasjonene, og se hvilke konsekvenser valg av fag vil ha senere i studiet.
         </h2>
-        <p id="Padding">Veilederen er utviklet for at alle elever skal ta riktige valg underveis i lærerutdanningen. Målet
+        <p id="Padding">Veilederen er utviklet for at alle studenter skal ta riktige valg underveis i lærerutdanningen. Målet
         er at du som student skal legge opp studieløpet riktig slik at du får en master innenfor det emnet du ønsker deg. Vi vet 
         at oppbyggingen av lærerutdanningen kan være vanskelig å forstå, og dermed er denne veilederen utviklet for å visualisere
         oppbyggingen av studiet på en bedre måte. 
@@ -77,9 +77,9 @@ const KlasseList = () => {
             
         <ol>
             <li>Velg studieretning, det første valget du får er om du går grunnskoleutdanning 1-7 eller grunnskoleutdanning 5-10.<br /><br /></li>
-            <li>Deretter får du muligheten til å velge hvilket masteremne du vil gå opp til i 10. semester. Basert på valget du tar vil studieplanen 
+            <li>Deretter får du muligheten til å velge hvilket masteremne du vil studere i 10. semester. Basert på valget du tar vil studieplanen 
         oppdatere seg med de fagene du trenger for valgt masteremne.<br /><br /></li>
-            <li>Siste del er å fylle inn planen med valgfag. 
+            <li>Siste del er å fylle inn hvilke ekstra fag du kan tenke deg å studere i løpet av din lærerutdanning. 
         Husk at man trenger 60 studiepoeng i syklus 1 for å ta faget videre i syklus 2. Om du har to fag kan du velge selv i semester 7.</li>
         </ol>
             
