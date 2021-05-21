@@ -14,7 +14,7 @@ const Semester = ({
   activeButton,
   setForceRender,
   setActiveButton,
-
+  masterId,
   setFag,
   error,
   isPending
@@ -29,7 +29,7 @@ const Semester = ({
       klasse.fagnavn !== "Årstudium norsk, del 1" &&
       klasse.fagnavn !== "Årstudium matte, del 1" &&
       klasse.fagnavn !== "Årstudium engelsk, del 1" &&
-      klasse.fagnavn !== "Norsk tegnspråk 1"
+      klasse.fagnavn !== "Norsk tegnspråk 1" 
     );
   });
   
@@ -68,7 +68,9 @@ const Semester = ({
             //oblig.MasterFagId === masterId &&
             //om semester = 5 vis semester og semeseter fag
             klasse.semester === semester &&
-            klasse.klasseId === klasseId && (
+            klasse.klasseId === klasseId &&
+            //den under er ny, filtrer vekk slik at om du velger engelsk som masterfag, vil den ikke vises her
+             (
               <>
                 <CustomButton
                   inverted={className}

@@ -345,12 +345,9 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
             
                
                 //Viser nå når man velger fag i 4 semester, baserer seg på muligheterId1
-                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} activeButton={activeButton4} setActiveButton ={setActiveButton4} setIstrue={setRandom} setValg7Master={setMuligheterId2} setSemesterList7={setMulighetTull2} klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={muligheterId1}/>
-
-                
-            
+                <TvungenMulighet  error={error} isPending={isPending}  activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={5} masterId={muligheterId1}/>
         : 
-         null
+         null 
         }
 
         {
@@ -389,10 +386,11 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
                 <TvungenMulighet  error={error} isPending={isPending}  activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
 
             ): 
-            //masterId!==12?
+            //gjort 21.05, byttet muligheter mede tvungen for å få gul knpp
             (
+                //<Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
 
-                <Muligheter  error={error} isPending={isPending} setConditionalSem9={setConditionalSem9} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} activeButton={activeButton2} setActiveButton ={setActiveButton2} klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
+                <TvungenMulighet  error={error} isPending={isPending}  activeButtonTvungen={setActiveButton2} setActiveButtonTvungen={setActiveButton2} setIstrue={setRandom} setValg7Master={setTom} setSemesterList7={setMulighetTull2} fagNavn={fagNavn}  klassetrinn={klassetrinn} sorted={sorted} semester={6} masterId={masterId}/>
             )
                
 
@@ -428,6 +426,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
                 activeButton={activeButton2}
                 setActiveButton ={setActiveButton2}
                 setForceRender = {setForceRender}
+                masterId = {masterId}
                 
                 
                 
