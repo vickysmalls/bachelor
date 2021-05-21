@@ -18,7 +18,7 @@ const VelgMaster = ({
 }) => {
   //setter masterfag tabellen til masterFag
   const { data: masterFag, error, isPending } = useFetch(
-    `http://localhost:5000/api/masterfag/`
+    `https://api.fagvalget.no/api/masterfag/`
   );
 
   // slik at det brukes/ lagres i neste komponent

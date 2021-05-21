@@ -18,8 +18,6 @@ const Muligheter = ({
   klassetrinn,
   sorted,
   setConditionalSem9,
-  error,
-  isPending
 }) => {
 
   const onSideBtnClick = (e) => {
@@ -38,12 +36,6 @@ const Muligheter = ({
   return (
     <>
       <>
-      {
-        isPending && <div>Loading...</div>
-      }
-      {
-        error && <div>{error}</div>
-      }
         {klassetrinn &&
           sorted.map((klasse) => {
             const className = activeButton === klasse.id ? "red" : "";

@@ -12,7 +12,7 @@ import VelgStudierettning from "./VelgStudierettning";
 const KlasseList = () => {
 
     //henter tabellen klasser og plasserer det i klassetrinn
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/klasser`);
+    const {data: klassetrinn, error, isPending} = useFetch(`https://api.fagvalget.no/api/klasser`);
 
     //setter klassetrinn til å bli answer
     const [klasseId, setKlasseId] = useState(klassetrinn);

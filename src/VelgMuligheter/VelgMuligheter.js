@@ -23,7 +23,7 @@ const _ = require("lodash");
 const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseId, fagNavn}) => {
 
     //database fetch
-    const {data: klassetrinn, error, isPending} = useFetch(`http://localhost:5000/api/muligheter/`);
+    const {data: klassetrinn, error, isPending} = useFetch(`https://api.fagvalget.no/api/muligheter/`);
 
     const [isOpen, setIsOpen] = useState(true);
 

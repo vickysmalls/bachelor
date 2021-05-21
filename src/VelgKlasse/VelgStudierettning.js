@@ -11,7 +11,7 @@ const VelgStudierettning = ({
 }) => {
   //setter masterfag tabellen til masterFag
   const { data: masterFag, error, isPending } = useFetch(
-    `http://localhost:5000/api/masterfag/`
+    `https://api.fagvalget.no/api/masterfag/`
   );
 
   //Sette farge valgt semester
