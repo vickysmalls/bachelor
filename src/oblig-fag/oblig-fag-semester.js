@@ -9,7 +9,7 @@ const _ = require("lodash");
 //Denne koomponenten gjør at man kan plotte inn semestesr og klasse id(answer) i oblig-fag-card
 const ObligFagSemester = ({ answer, semester, setSemesterList7 }) => {
   const { data: klassetrinn, error, isPending } = useFetch(
-    `http://localhost:5000/api/obligfag/`
+    `https://api.fagvalget.no/api/obligfag/`
   );
 
   const [fagnavn, setFagnavn] = useState();
