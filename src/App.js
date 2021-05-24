@@ -24,11 +24,7 @@ function App() {
         <footer>
 
           <h6 id="FooterTekst">Denne digitale veilederen for fagvalg i grunnskolelærerutdanningene ved OsloMet er et bacheloroppgaveprosjekt på bestilling fra Institutt for grunnskole- og faglærerutdanning.
-<<<<<<< HEAD
               <br />Veilederen er utviklet av studenter ved Institutt for informasjonsteknologi, Fakultet for teknologi, kunst og design. 
-=======
-              <br /> Veilederen er utviklet av studenter ved Institutt for informasjonsteknologi, Fakultet for teknologi, kunst og design. 
->>>>>>> 3de2f89e078cfcc51c6be792798dfacd2f1eca1a
           </h6>    
 
           <h6 id="Copyright">    

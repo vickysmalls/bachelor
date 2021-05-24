@@ -2,8 +2,8 @@ import ObligFagSemester from "../oblig-fag/oblig-fag-semester";
 import Muligheter from "./Muligheter";
 import ValgtMulighet from "./ValgtMulighet";
 import Print from "../Print/Print";
-
-import { useState } from "react";
+import useWindowSize from '../useWindowSize';
+import React, { useState } from "react";
 
 const Resultat = ({
   answer,
@@ -27,6 +27,9 @@ const Resultat = ({
   activeButton4,
 }) => {
   const [tom, setTom] = useState();
+
+  const [width, height] = useWindowSize();
+  console.log(width);
 
   console.log("activeButton2", activeButton2);
   return (
@@ -286,7 +289,7 @@ const Resultat = ({
                   masterId === 13 ||
                   masterId === 14 ||
                   answer === 2 ? (
-                    <>
+                    <React.Fragment>
                       <ValgtMulighet
                         klassetrinn={klassetrinn}
                         muligheterId={semesterList9}
@@ -295,7 +298,7 @@ const Resultat = ({
                         klassetrinn={klassetrinn}
                         muligheterId={activeButton9}
                       ></ValgtMulighet>
-                    </>
+                    </React.Fragment>
                   ) : (
                     //annen måte
                     <ValgtMulighet
@@ -308,7 +311,7 @@ const Resultat = ({
                 <ObligFagSemester semester={9} answer={answer} />
               </div>
             </div>
-
+              
             <div className="Forti">
               <h5>Semester 10</h5>
               <p id="SemesterBeskrivelse">Vårsemester, 30 studiepoeng</p>
@@ -333,7 +336,9 @@ const Resultat = ({
         </div>
       </div>
 
-      <div className="column" id="PrintRad">
+      {
+       width > 1024 ?
+        <div className="column" id="PrintRad">
         <h5 id="PDFknapp">Lagre studieløpet ditt:</h5>
         <p id="AarBeskrivelse">
           Du har nå gjennomført hele veilederen, og kan lagre opplysningene som
@@ -342,7 +347,11 @@ const Resultat = ({
         <div classname="Seksti">
           <Print />
         </div>
-      </div>
+      </div> 
+     :
+     null
+      }
+      
     </>
   );
 };
