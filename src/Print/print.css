@@ -19,11 +19,45 @@
     margin-bottom: 15px;
 }
 
-/* 
-@media print {
-    #print {
-        display: block;
+@media screen and (max-width: 480px) { 
+
+    #PrintRad {
+        float: left;
+        width: 100%;
+        float: center;
+        padding: 0;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 25px;
+    
+    }
+
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+
+    #PrintRad {
+        float: left;
+        width: 100%;
+        float: center;
+        padding: 0;
+        margin-left: 0px;
+        margin-right: 0px;
+        padding-left: 25px;
+    
     }
 }
 
-*/
+
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+    #PrintRad {
+        float: center;
+        width: 1024px;
+        padding: 0;
+        margin-left: 75px;
+        margin-right: 75px;
+        margin-top: 75px;
+    }
+}

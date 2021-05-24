@@ -72,3 +72,38 @@
     }
   }
 
+
+
+
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    
+    #header {
+      height: 65vh;
+    }
+
+   
+
+    img {
+      display: block;
+      float: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 150px;
+      margin-bottom: 0px;
+      max-width: 300px;
+      
+    }
+
+    #OsloMetLogo {
+      width: 100%;
+      float: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #Forti {
+      width: 100%;
+      float: left;
+    }
+  }
+

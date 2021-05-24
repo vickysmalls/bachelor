@@ -55,7 +55,7 @@ const VelgMaster = ({
   const infoTekst_1 = (
     <div class="column" id="Atti">
       <h2 id="Left">
-        Velg faget du ønsker å ha som mastegfag, og se hvordan du må bygge opp
+        Velg faget du ønsker å ha som masterfag, og se hvordan du må bygge opp
         studiet for å kunne skrive masteroppgaven i det valgte faget
       </h2>
       <p id="Beskrivelse">

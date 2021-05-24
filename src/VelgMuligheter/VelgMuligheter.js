@@ -167,8 +167,7 @@ const VelgMuligheter = ({fagNavnStudierettning, studieRetning, masterId, klasseI
      </h2>
      <p id="AarBeskrivelse">
        Det tredje året på studiet er preget av at du kan velge fordypning i
-       ønsket emne. Dette er også tidpunktet hvor det er mulighet for å studere
-       fremmedspråk i utlandet. OsloMet tilbyr utveksling på en rekke
+       ønsket emne. Dette er også tidspunktet hvor det er mulighet for å dra på utveksling. OsloMet tilbyr utveksling på en rekke
        universiteter i utlandet. Dersom du er interessert i dette oppfordrer vi
        til å lese mer på OsloMet sine utvekslingssider. Godkjente
        utvekslingsopphold er fra 3 måneder til ett år og vil inngå som en

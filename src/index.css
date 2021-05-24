@@ -141,3 +141,44 @@ Bold {
         padding-right: 45px;
     }
   }
+
+
+
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    
+    #Illustrasjon {
+        Width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #Beskrivelse {
+        font-weight: 300;
+        font-family: Arial;
+        text-align: left;
+        font-size: 18px;
+        line-height: 25px;
+        padding-right: 75px;
+        padding-left: 75px;
+    }
+
+
+  }
+
+
+
+
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+
+    #Beskrivelse {
+        font-weight: 300;
+        font-family: Arial;
+        text-align: left;
+        font-size: 18px;
+        line-height: 25px;
+        padding-right: 100px;
+        padding-left: 75px;
+    }
+
+  }
+
