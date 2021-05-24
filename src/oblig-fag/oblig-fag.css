@@ -105,3 +105,13 @@ h5 {
     }
   }
 
+
+  @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+
+    .obligatoriske.semestre {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(1,auto);
+    }
+  }
+

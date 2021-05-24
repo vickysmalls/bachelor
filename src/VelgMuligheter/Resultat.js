@@ -335,7 +335,7 @@ const Resultat = ({
 
       <div className="column" id="PrintRad">
         <h5 id="PDFknapp">Lagre studieløpet ditt:</h5>
-        <p id="Beskrivelse">
+        <p id="AarBeskrivelse">
           Du har nå gjennomført hele veilederen, og kan lagre opplysningene som
           PDF
         </p>
