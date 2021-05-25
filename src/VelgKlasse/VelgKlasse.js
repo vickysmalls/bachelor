@@ -50,7 +50,7 @@ const VelgKlasse = ({ handleScrollClick, klassetrinn, setVisVidere, visVidere, s
                         
                     }}
                     >
-                    Grunnskolelærer {klasse.klassetrinn} trinn
+                    Grunnskolelærer trinn {klasse.klassetrinn}
                     </CustomButton>  
                     
                 )
